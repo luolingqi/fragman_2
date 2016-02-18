@@ -1,0 +1,17 @@
+#
+#This input file dissects and save individual prep file in all_amino94.in 
+#
+SEPARATOR  "DONE"  
+SEPA_TYPE  1
+MOLNAME_FIELD "CORR"
+MOLNAME_LD -1 0
+TMPFILE  TMP 
+OMIT_LINE  "    1    1    2"
+OMIT_LINE  "db94.dat"
+OMIT_LINE  "STEP"
+ADD_LINE 1 "    0    0    2"
+ADD_LINE 1 "               "
+ADD_LINE -1 "STOP"
+TMPFILE TMP
+COMMAND  "cp TMPFILE MOLNAME.prepi"
+COMMAND  "rm -f TMPFILE"

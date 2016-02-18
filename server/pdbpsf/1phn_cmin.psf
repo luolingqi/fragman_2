@@ -1,0 +1,49 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1PHN; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:27      CREATED BY USER: gychuang                
+
+       8 !NATOM
+       1 X    1    PHN  C1     22   0.250000       12.0110           0
+       2 X    1    PHN  C2     24    0.00000       13.0190           0
+       3 X    1    PHN  C3     24    0.00000       13.0190           0
+       4 X    1    PHN  C4     24    0.00000       13.0190           0
+       5 X    1    PHN  C5     24    0.00000       13.0190           0
+       6 X    1    PHN  C6     24    0.00000       13.0190           0
+       7 X    1    PHN  O      45  -0.650000       15.9994           0
+       8 X    1    PHN  HO      1   0.400000       1.00800           0
+
+       8 !NBOND: bonds
+       1       2       2       3       3       4       4       5
+       5       6       6       1       1       7       7       8
+
+       9 !NTHETA: angles
+       2       1       6       2       1       7       6       1       7
+       1       2       3       2       3       4       3       4       5
+       4       5       6       1       6       5       1       7       8
+
+      10 !NPHI: dihedrals
+       1       2       3       4       1       6       5       4
+       2       1       6       5       2       1       7       8
+       2       3       4       5       3       2       1       6
+       3       2       1       7       3       4       5       6
+       5       6       1       7       6       1       7       8
+
+       0 !NIMPHI: impropers
+
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0       0       0       0       0       0       0
+
+       1       0 !NGRP NST2
+       0       1       0
+
+       0       0 !NUMLP NUMLPH

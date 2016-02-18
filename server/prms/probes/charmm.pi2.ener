@@ -1,0 +1,13 @@
+ TITLE>  * THE SUBUNITS OF PI2
+ TITLE>  *  DATE:     7/ 8/ 8     14:24:41      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      0.92980      0.00005      0.00000
+PRIN EXTERN>        0.00000      0.92980      0.00000      0.00000      0.00000
+PRIN   ACE1>        0.92980      0.00000      0.00000      0.00000
+PRIN   ACE2>        0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------

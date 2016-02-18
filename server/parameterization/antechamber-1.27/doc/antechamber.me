@@ -1,0 +1,700 @@
+.if t .he ''Antechamber'Page %'
+.bp
+\ 
+.sp 1
+.nr sp 16
+.sh 1 "Antechamber"
+.nr sp 13
+.pp
+This is a set of tools to generate "prep" input files for organic molecules,
+which can then be read into LEaP.  The Antechamber suite was written by
+Junmei Wang, and is designed to be used in conjunction with the
+"general AMBER force field (GAFF)" (\fIgaff.dat\fR).
+.[
+gaff
+.]
+.pp
+Molecular mechanics are the key component in the armamentarium used by
+computational chemists for rational drug design and many other tasks.  Force
+fields are the cornerstone of molecular mechanics. A successful force field
+for drug design should work well both for biological macromolecules and the
+organic molecules. The AMBER force fields have built up a good reputation for
+its performance in studies of proteins and nucleic acids. However, the fact
+that AMBER has had only limited parameters for organic molecules has kept it
+from being widely used in ligand-binding or drug design applications.
+Antechamber is based on a new, general AMBER force field (GAFF) that covers
+most pharmaceutical molecules, and which is as compatible as possible with the
+traditional AMBER force fields.
+.pp
+Like the traditional AMBER force fields, GAFF uses a simple harmonic function
+form for bonds and angles. Unlike the traditional AMBER force fields, atom
+types in GAFF are more general and cover most of the organic chemical space.
+In total there are 33 basic atom types and 22 special atom types. The charge
+methods used in GAFF can be HF/6-31G* RESP or AM1-BCC.
+.[
+jakalian bayly 2000
+.]
+.[
+jakalian bayly 2002
+.]
+All of the force field parameterizations were carried out with HF/6-31G* RESP
+charges.  However, in most cases, AM1-BCC, which was parameterized to
+reproduce HF/6-31G* RESP charges, is recommended in the large-scale calculations
+because of its efficiency.
+.pp
+The van der Waals parameters are the same as those used by the traditional
+AMBER force fields.  The equilibrium bond lengths and bond angles came from
+statistics derived from the Cambridge Structural Database, and \fIab initio\fR
+calculations at the MP2/6-31G* level.  The force constants for bonds and
+angles were estimated using empirical models, and the parameters in these
+models were trained using the force field parameters in the traditional AMBER
+force fields. General torsional angle parameters were extensively applied in
+order to reduce the huge number of torsional angle parameters to be derived.
+The force constants and phase angles in the torsional angle parameters were
+optimized using our PARMSCAN package,
+.[
+wang kollman automatic 2001
+.]
+with an aim to reproduce the rotational profiles depicted by high-level \fIab
+initio\fR calculations [geometry optimizations at the MP2/6-31G* level,
+followed by single point calculations at MP4/6-311G(d,p)].
+.pp
+By design, GAFF is a complete force field (so that missing parameters rarely
+occur), it covers almost all the organic chemical space that is made up of C, N, O, 
+S, P, H, F, Cl, Br and I. Moreover, GAFF is totally compatible to the AMBER 
+macromolecular force fields.  We believe that the combination of GAFF with 
+AMBER macromolecular force fields will provide an useful molecular
+mechanical tool for rational drug design, especially in binding free energy 
+calculations and molecular docking studies.
+.pp
+As an auxiliary module in AMBER software packages, antechamber is devoted 
+to build up the bridge between the force fields (GAFF and AMBER) and the MM 
+programs, such as sander et al. With antechamber, one may solve the following 
+problems: (1) identifying bond and atom types; (2) judging atomic equivalence; 
+(3) generating residue topology files; and (4) finding missing force field 
+parameters and supplying reasonable suggestions. The combination of GAFF and 
+antechamber enables one to study most of the organic molecules with AMBER 
+more efficiently. In the following, the main programs in the antechamber package 
+are introduced.
+.pp
+
+.sh 2 "Principal programs"
+.pp
+The \fIantechamber\fR program itself is the main program of Antechamber: if
+your molecule falls in fairly broad categories, this should be all you need
+to convert an input pdb file into a "prep input" file ready for LEaP.
+.pp
+If there are missing parameters after \fIantechamber\fR is finished, you may want to run
+\fIparmchk\fR to generate a \fIfrcmod\fR template that will assist you in
+generating the needed parameters.
+.pp
+
+.sh 3 "antechamber"
+.pp
+This is the most important program in the package. It can perform many
+file conversions, and can also assign atomic charges and atom types.
+As required by the input, \fIantechamber\fR
+executes the following programs: \fIdivcon, atomtype, am1bcc, bondtype, espgen,
+respgen\fR and
+\fIprepgen\fR.  It may also generate a lot of intermediate files (all in
+capital letters).  If there is a problem with \fIantechamber\fR, you may want to run the
+individual programs that are described below.  Antechamber options are
+given here:
+.hl
+.(l
+     -i   input file name
+     -fi  input file format
+     -o   output file name
+     -fo  output file format
+     -c   charge method
+     -cf  charge file name
+     -nc  net molecular charge (int)
+     -a   additional file name
+     -fa  additional file format
+     -ao  additional file operation
+          crd : only read in coordinate
+          crg: only read in charge
+          name  : only read in atom name
+          type  : only read in atom type
+          bond  : only read in bond type 
+     -m   mulitiplicity (2S+1), default is 1
+     -rn  residue name, if not available in the input file, default is MOL
+     -rf  residue toplogy file name in prep input file, default is molecule.res
+     -mk  divcon keyword, in a pair of quotation marks
+     -gk  gaussian keyword, in a pair of quotation marks
+     -at  atom type, can be gaff, amber, bcc and sybyl, default is gaff
+     -du  check atom name duplications, can be yes(y) or no(n), default is yes
+     -j   atom type and bond type prediction index, default is 4 
+          0    : no assignment
+          1    : atom type 
+          2    : full  bond types 
+          3    : part  bond types 
+          4    : atom and full bond type 
+          5    : atom and part bond type 
+     -s   status information, can be 0 (brief), 1 (the default) and 2 (verbose)
+     -pf  remove the intermediate files: can be yes (y) and no (n), default is no
+     -i -o -fi and -fo must appear in command lines and the others are optional
+
+               List of the File Formats  
+
+  file format type  abbre. index | file format type abbre. index
+  --------------------------------------------------------------- 
+  Antechamber        ac       1  | Sybyl Mol2         mol2    2 
+  PDB                pdb      3  | Modifiled PDB      mpdb    4 
+  amber PREP (int)   prepi    5  | 
+  Gaussian Z-Matrix  gzmat    7  | Gaussian Cartesian gcrt    8 
+  Mopac Internal     mopint   9  | Mopac Cartesian    mopcrt 10 
+  Gaussian Output    gout    11  | Mopac Output       mopout 12 
+  Alchemy            alc     13  | CSD                csd    14 
+  MDL                mdl     15  | Hyper              hin    16 
+  amber Restart      rst     17 
+  --------------------------------------------------------------
+
+  amber restart file can only be read in as additional file
+
+               List of the Charge Methods  
+
+  charge method     abbre.  index | charge method      abbre. index
+  ----------------------------------------------------------------  
+  RESP               resp     1  |  AM1-BCC            bcc     2
+  CM2                cm2      3  |  ESP (Kollman)      esp     4
+  Mulliken           mul      5  |  Gasteiger          gas     6
+  Read in Charge     rc       7  |  Write out charge   wc      8
+  ----------------------------------------------------------------
+\fIExamples:\fC
+
+antechamber -i g98.out -fi gout -o sustiva_resp.mol2 -fo mol2 -c resp
+antechamber -i g98.out -fi gout -o sustiva_bcc.mol2 -fo mol2 -c bcc -j 5
+antechamber -i g98.out -fi gout -o sustiva_gas.mol2 -fo mol2 -c gas 
+antechamber -i g98.out -fi gout -o sustiva_cm2.mol2 -fo mol2 -c cm2 
+antechamber -i g98.out -fi gout -o sustiva.ac -fo ac 
+antechamber -i sustiva.ac -fi ac -o sustiva.mpdb -fo mpdb
+antechamber -i sustiva.ac -fi ac -o sustiva.mol2 -fo mol2
+antechamber -i sustiva.mol2 -fi mol2 -o sustiva.gzmat -fo gzmat 
+antechamber -i sustiva.ac -fi ac -o sustiva_gas.ac -fo ac -c gas 
+antechamber -i mtx.pdb -fi pdb -o mtx.mol2 -fo mol2 -c rc -cf mtx.charge
+.)l
+.hl
+.pp
+The \fI-rn\fR line specifies the residue name to be used;
+thus, it must be one to three characters long.
+The \fI-at\fR flag is used to specify whether atom types are to be
+created for the general AMBER force field (gaff) or for atom types
+consistent with parm94.dat and parm99.dat (amber).  Atom types for gaff are
+all in lower case, and the AMBER atom types are always in upper case.  If you are
+using \fIantechamber\fR to create a modified residue for use with the standard
+AMBER parm94/parm99 force fields, you should set this flag to \fCamber\fR;
+if you are looking at a more arbitrary molecule, set this to \fCgaff\fR, even
+if you plan to use this as a ligand bound to a macromolecule described by
+the AMBER force fields. 
+.sh 3 "parmchk"
+.pp
+Parmchk reads in an ac file as well as a force field file 
+(\fIgaff.dat\fR in $AMBERHOME/dat/leap/parm).
+It writes out a frcmod file for the
+missing parameters. For each atom type, an atom type corresponding file
+(ATCOR.DAT) lists its replaceable general atom type. Be careful to those
+problematic parameters indicated with "ATTN, need revision".
+.(l
+Usage: parmchk -i input file name
+               -o frcmod file name
+               -f input file format (prepi, ac ,mol2) 
+               -p ff parmfile
+               -c atom type correspondening file, default is ATCOR.DAT
+.)l
+Example:
+.(l
+parmchk -i sustiva.prep -f prepi -o frcmod
+.)l
+This command reads in sustiva.prep and finds the missing force field parameters 
+listed in frcmod. 
+.sh 2 "A simple example for antechamber"
+.pp
+The most common use of the \fIantechamber\fR program suite is to prepare
+input files for LEaP, starting from a three-dimensional structure, as found
+in a pdb file.  The \fIantechamber\fR suite automates the process of
+developing a charge model and assigning atom types, and partially automates the
+process of developing parameters for the various combinations of atom types
+found in the molecule.
+.pp
+As with any automated procedure, caution should be taken to examine the output.
+Furthermore, the procedure, although carefully tested, has not been widely
+used by lots of people, so users should certainly be on the lookout for
+unusual or incorrect behavior.
+.pp
+Suppose you have a PDB-format file for your ligand, say thiophenol, which 
+looks like this:
+.ps 9
+.TS
+center box ;
+l .
+\fCATOM      1  CG  TP      1      -1.959   0.102   0.795 
+ATOM      2  CD1 TP      1      -1.249   0.602  -0.303  
+ATOM      3  CD2 TP      1      -2.071   0.865   1.963 
+ATOM      4  CE1 TP      1      -0.646   1.863  -0.234
+ATOM      5  C6  TP      1      -1.472   2.129   2.031
+ATOM      6  CZ  TP      1      -0.759   2.627   0.934
+ATOM      7  HE2 TP      1      -1.558   2.719   2.931
+ATOM      8  S15 TP      1      -2.782   0.365   3.060
+ATOM      9  H19 TP      1      -3.541   0.979   3.274
+ATOM     10  H29 TP      1      -0.787  -0.043  -0.938
+ATOM     11  H30 TP      1       0.373   2.045  -0.784
+ATOM     12  H31 TP      1      -0.092   3.578   0.781
+ATOM     13  H32 TP      1      -2.379  -0.916   0.901\fR
+.TE
+.lp
+(This file may be found at \fI$AMBERHOME/test/antechamber/tp/tp.pdb\fR).
+The basic command to create a "prepin" file for LEaP is just:
+.(l
+antechamber -i tp.pdb -fi pdb -o tp.mol2 -fo mol2 -c bcc
+.)l
+.(z
+.ps 9
+.TS
+center box ;
+ciw(5.9i)
+lw(5.9i) .
+tp.mol2
+_
+\fC@<TRIPOS>MOLECULE
+TP  
+   13    13     1     0     0
+SMALL
+bcc
+
+
+@<TRIPOS>ATOM
+      1 CG         -1.9590    0.1020    0.7950 ca        1 TP       -0.1186
+      2 CD1        -1.2490    0.6020   -0.3030 ca        1 TP       -0.1138
+      3 CD2        -2.0710    0.8650    1.9630 ca        1 TP        0.0162
+      4 CE1        -0.6460    1.8630   -0.2340 ca        1 TP       -0.1370
+      5 C6         -1.4720    2.1290    2.0310 ca        1 TP       -0.1452
+      6 CZ         -0.7590    2.6270    0.9340 ca        1 TP       -0.1122
+      7 HE2        -1.5580    2.7190    2.9310 ha        1 TP        0.1295
+      8 S15        -2.7820    0.3650    3.0600 sh        1 TP       -0.2540
+      9 H19        -3.5410    0.9790    3.2740 hs        1 TP        0.1908
+     10 H29        -0.7870   -0.0430   -0.9380 ha        1 TP        0.1345
+     11 H30         0.3730    2.0450   -0.7840 ha        1 TP        0.1336
+     12 H31        -0.0920    3.5780    0.7810 ha        1 TP        0.1332
+     13 H32        -2.3790   -0.9160    0.9010 ha        1 TP        0.1432
+@<TRIPOS>BOND
+     1    1    2 ar  
+     2    1    3 ar  
+     3    1   13 1   
+     4    2    4 ar  
+     5    2   10 1   
+     6    3    5 ar  
+     7    3    8 1   
+     8    4    6 ar  
+     9    4   11 1   
+    10    5    6 ar  
+    11    5    7 1   
+    12    6   12 1   
+    13    8    9 1   
+@<TRIPOS>SUBSTRUCTURE
+     1 TP          1 TEMP              0 ****  ****    0 ROOT\fR
+.TE
+.)z
+.lp
+This command says that the input format is pdb, output format is Sybyl mol2, and the
+BCC charge model is to be used.  The output file is shown in the box 
+titled \fItp.mol2\fR. The format of this file is a common one understood
+by many programs.
+.pp
+You can now run \fIparmchk\fR to see if all of the needed force field parameters
+are available:
+.(l
+parmchk -i tp.mol2 -f mol2 -o frcmod 
+.)l
+This yields the \fIfrcmod\fR file:
+.ps 9
+.TS
+center box ;
+lw(6.0i) .
+\fCremark goes here
+MASS
+
+BOND
+
+ANGLE
+ca-ca-ha   50.000     120.000   same as ca-ca-hc
+
+DIHE
+
+IMPROPER
+ca-ca-ca-ha         1.1          180.0         2.0     Using default value
+ca-ca-ca-sh         1.1          180.0         2.0     Using default value
+
+NONBON\fR
+
+.TE
+.ps
+.lp
+In this case, there was one missing angle parameter from the \fIgaff.dat\fR
+file, and it was determined by analogy to a similar, known, parameter.
+The missing improper dihedral term was assigned a default value.  (As
+\fIgaff.dat\fR continues to be developed, there should be fewer and fewer
+missing parameters to be estimated by \fIparmchk\fR. The above example is
+actually drawn from Amber 7; in Amber 8, all of the needed parameters are in
+\fIgaff.dat\fR, as can be seen in $AMBERHOME/test/antechamber/tp.)
+In some cases,
+\fIparmchk\fR may be unable to make a good estimate; it will then insert a
+placeholder (with zeros everywhere) into the \fIfrcmod\fR file, with the
+comment "ATTN: needs revision".
+After manually editing this to take care of the elements that "need
+revision", you are ready to read this residue into LEaP, either as a
+residue on its own, or as part of a larger system.  The following LEaP input
+file (\fIleap.in\fR) will just create a system with thiophenol in it:
+.ps 9
+.TS
+center box ;
+lw(4.0i) .
+\fCsource leaprc.gaff
+mods = loadAmberParams frcmod
+TP = loadMol2 tp.mol2
+saveAmberParm TP prmtop prmcrd
+quit\fR
+.TE
+.lp
+You can read this into LEaP as follows:
+.(l
+tleap -s -f leap.in 
+.)l
+This will yield a \fIprmtop\fR and \fIprmcrd\fR file.  If you want to use
+this residue in the context of a larger system, you can insert commands 
+after the loadAmberPrep step to construct the system you want, using
+standard LEaP commands.
+.pp
+In this respect, it is worth noting that the atom types in \fIgaff.dat\fR
+are all lower-case, whereas the atom types in the standard AMBER force
+fields are all upper-case.  This means that you can load both \fIgaff.dat\fR
+and (say) \fIparm99.dat\fR into LEaP at the same time, and there won't be
+any conflicts.  Hence, it is generally expected that you will use one of the
+AMBER force fields to describe your protein or nucleic acid, and the
+\fIgaff.dat\fR parameters to describe your ligand; as mentioned above,
+\fIgaff.dat\fR has been designed with this in mind, \fIi.e.\fR to produce
+molecular mechanics descriptions that are generally compatible with the
+AMBER macromolecular force fields.
+.pp
+The procedure above only works as it stands for neutral molecules.  If your
+molecule is charged, you need to set the \fI-nc\fR flag in the initial
+\fIantechamber\fR run.  Also note that this procedure depends heavily upon
+the initial 3D structure: it must have all hydrogens present, and the charges
+computed are those for the conformation you provide, after minimization in
+the AM1 Hamiltonian.  In fact, this means that you must have an reasonable
+all-atom
+initial model of your molecule (so that it can be minimized with the AM1
+Hamiltonian), and you must specify what its net charge is.  The
+system should really be a closed-shell molecule, since all of the
+atom-typing rules assume this implicitly.
+.pp
+Further examples of using \fIantechamber\fR to create force field parameters
+can be found in the \fI$AMBERHOME/test/antechamber\fR directory.  Here are some
+practical tips from Junmei Wang:
+.np
+For the input molecules, make sure there are no open valences and the
+sturctures are reasonable.
+.np
+Failures are most likely produced when \fIantechamber\fR infers an 
+incorrect connectivity.  In such cases, you
+can revise by hand the connectivity information in "ac" or "mol2" files.
+Systematic errors could be corrected by revising the parameters in
+CONNECT.TPL in $AMBERHOME/dat/antechamber.
+.np
+It is a good idea to check the intermediate files in case of a program
+failure, and you can run separate programs one by one.  Use the "-s 2"
+flag to \fIantechamber\fR to see details of what it is doing.
+.np
+Please visit \fIwww.amber.ucsf.edu/antechamber.html\fR to obtain the latest
+information about \fIantechamber\fR development and to download the latest GAFF
+parameters.  Please report program failures to Junmei Wang at
+<jwang@encysive.com>.
+
+.sh 2 "Programs called by antechamber"
+.pp
+The following programs are automatically called by \fIantechamber\fR when
+needed.  Generally, you should not need to run them yourself, unless
+problems arise and/or you want to fine-tune what \fIantechamber\fR does.
+.sh 3 "atomtype"
+.pp
+Atomtype reads in an ac file and assigns the atom types. You may find the default 
+definition files in $AMBERHOME/dat/antechamber: ATOMTYPE_AMBER.DEF (AMBER), ATOMTYPE_GFF.DEF 
+(general AMBER force field).  ATOMTYPE_GFF.DEF is the default definition file.
+.(l
+Usage: atomtype -i input file name
+                -o output file name (ac)
+                -f input file format(ac (the default) or mol2)
+                -p amber or gaff or bcc or gas, it is supressed by "-d" option
+                -d atom type defination file, optional
+.)l
+Example:
+.(l
+atomtype -i sustiva_resp.ac -o sustiva_resp_at.ac -f ac -p amber
+.)l
+This command assigns atom types for \fIsustiva_resp.ac\fR with amber atom 
+type definitions.  The output file name is \fIsustiva_resp_at.ac\fR
+.sh 3 "am1bcc"
+.pp
+Am1bcc first reads in an ac or mol2 file with or without assigned AM1-BCC atom types and 
+bond types. Then the bcc parameter file (the default, BCCPARM.DAT is in 
+$AMBERHOME/dat/antechamber) is read in. An ac file with AM1-BCC charges
+.[
+jakalian bayly 2000
+.]
+.[
+jakalian bayly 2002
+.]
+is written out. Be sure 
+the charges in the input ac file are AM1-Mulliken charges.
+.(l
+Usage: am1bcc -i input file name in ac format 
+              -o output file name 
+              -f output file format(pdb or ac, optional, default is ac)
+              -p bcc parm file name (optional))
+              -j atom and bond type judge option, default is 0)
+                 0: No judgement
+                 1: Atom type
+                 2: Full bond type
+                 3: Partial bond type
+                 4: Atom and full bond type
+                 5: Atom and partial bond type
+.)l
+Example:
+.(l
+am1bcc -i comp1.ac -o comp1_bcc.ac -f ac -j 4
+.)l
+This command reads in \fIcomp1.ac\fR, assigns both atom types and bond types and 
+finally performs bond charge correction to get AM1-BCC charges. The '-j' option of 4, 
+which is the default, means that both the atom and bond type information in the input file is 
+ignored and a full atom and bond type assignments are performed. The '-j' option of 3 and 5
+implies that bond type information (single bond, double bond, triple bond and aromatic bond) is 
+read in and only a bond type adjustment is performed. If the input file is in mol2 format 
+that contains the basic bond type information, option of 5 is highly 
+recommended. \fIcomp1_bcc.ac\fR is an ac file with the final AM1-BCC charges. 
+.sh 3 "bondtype"
+.pp
+bondtype is a program to assign the atom types and bond types according to the
+AM1-BCC definitions (BCCTYPE.DEF in $AMBERHOME/dat/antechamber).
+This program can read an ac file or mol2 file; the output file is an ac file with predicted atom
+types and bond types. You can choose to determine to assign atom types or
+bond types or both. If there is some problem with the assignment of bond
+types, you will get some warnings and for each problematic bond, a "!!!" is
+appended at the end of the line. In initial tests, the current version works for most 
+organic molecules (>95% overall and >90% for charged molecules).
+.(l
+Usage: bondtype -i input file name 
+                -o output file name 
+                -f input file format (ac or mol2)
+                -j judge bond type level option, default is part
+                   full  full judgement
+                   part  partial judgement, only do reassignment according
+                         to known bond type information in the input file
+.)l
+Example:
+.(l
+#! /bin/csh -fv
+set mols = `/bin/ls *.ac`
+foreach mol ($mols)
+   set mol_dir = $mol:r
+   antechamber -i $mol_dir.ac -fi ac -fo ac -o $mol_dir.ac -c mul
+   bondtype -i $mol_dir.ac -f ac -o $mol_dir.dat -j full
+   am1bcc -i $mol_dir.dat -o $mol_dir\_bcc.ac -f ac -j 0 
+end
+exit(0)
+.)l
+The above script finds all the files with the extension of "ac", calculates
+the Mulliken charges using \fIantechamber\fR, and predicts the atom and bond types
+with bondtype. Finally, AM1-BCC charges are generated by running am1bcc to do the 
+bond charge correction.
+
+.sh 3 "prepgen"
+.pp
+Prepgen generates the prep input file from an ac file.
+By default, the program 
+generates a mainchain itself. However, you may also specify the mainchain atom 
+in the mainchain file. From this file, you can also specify which atoms will be
+deleted, and whether to do charge correction or not. In order to generate the
+amino-acid-like residue (this kind of residue has one head atom and one tail
+atom to be connected to other residues), you need a mainchain file. 
+Sample mainchain files are in $AMBERHOME/dat/antechamber.
+.(l
+Usage: prepgen -i  input file name(ac) 
+               -o  output file name 
+               -f  output file format (car or int, default: int)
+               -m  mainchain file name
+               -rn residue name (default: MOL)
+               -rf residue file name (default: molecule.res)
+                   -f -m -rn -rf are optional
+.)l
+Examples:
+.(l
+prepgen -i sustiva_resp_at.ac -o sustiva_int.prep -f int -rn SUS -rf SUS.res
+prepgen -i sustiva_resp_at.ac -o sustiva_car.prep -f car -rn SUS -rf SUS.res
+prepgen -i sustiva_resp_at.ac -o sustiva_int_main.prep -f int -rn SUS 
+        -rf SUS.res -m mainchain_sus.dat
+prepgen -i ala_cm2_at.ac -o ala_cm2_int_main.prep -f int -rn ALA -rf ala.res 
+        -m mainchain_ala.dat 
+.)l
+The above commands generate different kinds of prep input files with and
+without specifying a mainchain file.
+.sh 3 "espgen"
+.pp
+Espgen reads in a gaussian (92,94,98,03) output file and extracts the ESP
+information.  An esp file for the resp program is generated.
+.(l
+Usage: espgen -i   input file name 
+              -o   output file name
+.)l
+Example:
+.(l
+espgen -i sustiva_g98.out -o sustiva.esp
+.)l
+The above command reads in sustiva_g98.out and writes out sustiva.esp, which
+can be used by the resp program.  Note that this program replaces shell scripts
+formerly found on the AMBER web site that perform equivalent tasks.
+.sh 3 "respgen"
+.pp
+Respgen generates the input files for two-stage resp fitting. The current
+version only supports single molecule fitting. Atom equivalence is recognized
+automatically.
+.(l
+Usage: respgen -i input file name(ac)
+               -o output file name
+               -f output file format (resp1 or resp2) 
+                  resp1 - first stage resp fitting 
+                  resp2 - second stage resp fitting
+.)l
+Example:
+.(l
+respgen -i sustiva.ac -o sustiva.respin1 -f resp1
+respgen -i sustiva.ac -o sustiva.respin2 -f resp2
+resp -O -i sustiva.respin1 -o sustiva.respout1 -e sustiva.esp -t qout_stage1
+resp -O -i sustiva.respin2 -o sustiva.respout2 -e sustiva.esp -q qout_stage1 
+        -t qout_stage2
+antechamber -i sustiva.ac -fi ac -o sustiva_resp.ac -fo ac -c rc 
+            -cf qout_stage2
+.)l
+The above commands first generate the input files (sustiva.respin1 and
+sustiva.respin2) for resp fitting, then do two-stage resp fitting and
+finally use \fIantechamber\fR to read in the resp charges and write out an
+ac file \- sustiva_resp.ac.
+.sh 2 "Miscellaneous programs"
+.pp
+The Antechamber suite also contains some utility programs that perform
+various tasks in molecular mechanical calculations.  They are listed in alphabetical order.
+.sh 3 "crdgrow"
+.pp
+Crdgrow reads an incomplete pdb file (at least three atoms in this file)
+and a prep input file, and then generates a complete pdb file. It can be used
+to do residue mutation. For example, if you want to change one protein
+residue to another one, you can just keep the mainchain atoms in a pdb file
+and read in the prep input file of the residue to be changed, and crdgrow will
+generate the coordinates of the missing atoms.
+.(l
+Usage: crdgrow -i input file name 
+               -o output file name 
+               -p prepin file name
+               -f prepin file format: prepi (the default)
+.)l
+Example:
+.(l
+crdgrow -i ref.pdb -o new.pdb -p sustiva_int.prep
+.)l
+This command reads in ref.pdb (only four atoms) and prep input file
+sustiva_int.prep, then generates the coordinates of the missing atoms and
+writes out a pdb file (new.pdb).
+.sh 3 "parmcal"
+.pp
+Parmcal is an interactive program to calculate the bond length and bond
+angle parameters, according to the rules outlined in .
+.[
+gaff
+.]
+.(l
+Please select:
+1. calculate the bond length parameter: A-B
+2. calculate the bond angle parameter: A-B-C
+3. exit
+.)l
+.sh 3 "database"
+.pp
+Database reads in a multiple sdf or mol2 file and a description file to run
+a set of commands for each record sequentially. The commands are defined in
+the description file. 
+.(l
+Usage: database -i database file name
+                -d definition file name
+.)l
+Example:
+.(l
+database -i sample_database.mol2 -d mol2.def
+.)l
+This command reads in a multiple mol2 database - sample_database.mol2 and 
+a description file mol2.def to run a set of commands (defined in mol2.def) to
+generate prep input files and merge them to a single file called total.prepi. 
+Both files are located in the following directory: $AMBERHOME/test/antechamber/database/mol2.
+.sh 3 "translate"
+.nr ii 1.2i
+.pp
+Translate performs translation or rotation or least-squared fitting on a 
+file in either pdb, ac or mol2 format. 
+There are five "command" modes, which are 
+.ip "center"
+Move an atom (specified by -a1) or the geometric center of the molecule to 
+the cartesian coordinate orgin.
+.ip "translate"
+Translate the molecule; the X-vector, Y-vector and Z-vector are 
+specified by -vx, -vy, -vz, respectively.
+.ip "rotate1"
+Rotate the molecule by an amount (in degrees, specified by -d) along the 
+axis defined by two atoms (specified by -a1 and -a2).
+.ip "rotate2"
+Rotate the molecule by an amount (in degrees, specified by -d) along the 
+axis defined by two points (specified by ((-x1, -y1, -z1) and (-x2, -y2,
+-z2)).
+.ip "match"
+Do a least-squares fit, wth the reference molecule being read in with "-r"
+flag.
+.in 0
+.sp
+.(l
+Usage:
+ translate -i  input file name (pdb, ac or mol2)
+           -o  output file name
+           -r  reference file name
+           -f  file format
+           -c  command (center, translate, rotate1, rotate2, match)
+               center:     need -a1;
+               translate:  need -vx, -vy and -vz;
+               rotate1:    need -a1, -a2 and -d;
+               rotate2:    need -x1, -y1, -z1, -x2, -y2, -z2 and -d;
+               match:      need -r;
+           -d  degree to be rotated
+           -vx x vector
+           -vy y vector
+           -vz z vector
+           -a1 id of atom 1 (0 = coordinate center)
+           -a2 id of atom 2
+           -x1 coord x for point 1
+           -y1 coord y for point 1
+           -z1 coord z for point 1
+           -x2 coord x for point 2
+           -y2 coord y for point 2
+           -z2 coord z for point 2
+.)l
+.lp
+Examples: 
+.(l
+translate -i nad.mol2 -f mol2 -o nad_trans.mol2 -c center -a1 0
+translate -i nad.mol2 -f mol2 -o nad_match.mol2 -c match -r nad_ref.mol2
+translate -i nad.mol2 -f mol2 -o nad_rotate.mol2 -c rotate2 \\
+             -x1 0.0 -y1 0.0 -z1 0.0 -x2 1.0 -y2 0.0 -z2 0.0 -d 90.0
+.)l
+.pp
+The first command translates the coordinate center of the molecule to the
+origin; the second command performs least-squared fitting using nad_ref.mol2
+as the refereneral molecule; the last command rotates the molecule 90 degrees
+about the X-axis.
+
+
+

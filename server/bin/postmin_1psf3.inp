@@ -1,0 +1,78 @@
+* minimize receptor and ligand
+* Usage: charmm prmsdir=prmsdir job=job rec=rec lig=lig <postmin.inp>postmin.out
+*
+
+bomlev -2
+
+set rtf @prmsdir/prot_na.rtf
+set prm @prmsdir/prot_na.prm
+
+open read card unit 2 name @rtf
+read rtf card unit 2
+close unit 2
+
+open read card unit 2 name @prm
+read param card unit 2
+close unit 2
+
+! read psf and pdb
+open unit 1 read card name recorig_cmin.psf
+read psf card unit 1
+
+open unit 1 read card name @rec.pdb
+read coor pdb resi unit 1
+
+
+open unit 1 read card name ligorig_cmin.psf
+read psf card unit 1 append
+
+
+open unit 1 read card name @lig.pdb
+read coor pdb resi unit 1 select .not. segid R* end
+
+HBOND
+
+ENER ATOM  IEPS 4.0 SEPS 78.0 ALPHa 1.2 SIGMa 3 SWITch -
+     VDIS VSWI CUTNB 15.0 CTONNB 8.0 CTOFNB 13.0 
+
+define lig select .not. segid R* end
+define movr select segid R* .and. ( lig .around. 5.0 )  show end
+
+coor copy comp select movr end
+
+cons fix select segid R* .and. .not. movr  end
+
+MINIMIZE ABNR NSTEP 500 NPRINT 10
+
+cons fix select none end
+coor copy select movr end
+
+define fixna select segid R* .and. ( RESNAME A .or. RESNAME U .or. RESNAME C .or. RESNAME G ) end
+define fixp select segid R* .and. (type C .or. type O .or. type CA .or. type N) end
+cons fix select fixna .or. fixp end
+
+MINIMIZE ABNR NSTEP 500 NPRINT 10
+
+open unit 2 write card name @job_@rec_forlig_@lig.pdb
+write coor pdb unit 2 select segid R* end
+* pdb of refined @rec 
+*
+
+close unit 2
+
+open unit 2 write card name @job_@lig.pdb
+write coor pdb unit 2 select .not. segid R* end
+* pdb of refined @lig
+*
+
+close unit 2
+
+open unit 2 write card name @job_@rec_and_@lig.pdb
+write coor pdb unit 2 
+* pdb of refined @rec and @lig
+*
+
+close unit 2
+
+stop
+

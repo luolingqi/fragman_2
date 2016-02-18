@@ -1,0 +1,64 @@
+HEADER crosscluster.004.008.pdb
+ATOM      1  C1  ACN V   1      42.395  36.655  47.850   1.000
+ATOM      2  C2  ACN V   1      42.551  37.021  49.254   1.000
+ATOM      3  N   ACN V   1      42.661  37.315  50.372   1.000
+ATOM      4  C1  ACN V   2      42.813  38.959  51.507   1.000
+ATOM      5  C2  ACN V   2      43.290  40.337  51.566   1.000
+ATOM      6  N   ACN V   2      43.669  41.433  51.609   1.000
+ATOM      7  CG  BEN V   3      42.482  41.590  50.673   1.000
+ATOM      8  CD1 BEN V   3      43.448  41.305  51.666   1.000
+ATOM      9  CE1 BEN V   3      43.701  39.965  52.042   1.000
+ATOM     10  CZ  BEN V   3      42.994  38.909  51.422   1.000
+ATOM     11  CE2 BEN V   3      42.030  39.193  50.427   1.000
+ATOM     12  CD2 BEN V   3      41.772  40.534  50.055   1.000
+ATOM     13  C1  DME V   4      42.884  38.987  51.466   1.000
+ATOM     14  O1  DME V   4      42.617  37.598  51.256   1.000
+ATOM     15  C2  DME V   4      42.479  37.308  49.862   1.000
+ATOM     16  C1  ETH V   5      42.733  38.777  51.382   1.000
+ATOM     17  C2  ETH V   5      43.278  40.120  51.901   1.000
+ATOM     18  C   ACT V   6      42.481  38.216  51.412   1.000
+ATOM     19  O   ACT V   6      42.095  37.535  52.354   1.000
+ATOM     20  CH1 ACT V   6      42.347  37.738  49.982   1.000
+ATOM     21  CH2 ACT V   6      43.115  39.576  51.617   1.000
+ATOM     22  C1  AMN V   7      42.841  39.018  51.500   1.000
+ATOM     23  N1  AMN V   7      43.902  39.821  52.124   1.000
+ATOM     24  H1  AMN V   7      44.667  39.935  51.472   1.000
+ATOM     25  H2  AMN V   7      44.271  39.328  52.927   1.000
+ATOM     26  C   BUT V   8      42.697  38.529  51.164   1.000
+ATOM     27  C1  BUT V   8      41.962  39.047  49.920   1.000
+ATOM     28  C2  BUT V   8      41.691  38.001  52.196   1.000
+ATOM     29  C3  BUT V   8      43.563  39.638  51.785   1.000
+ATOM     30  O   BUT V   8      43.522  37.466  50.770   1.000
+ATOM     31  H1  BUT V   8      44.413  37.747  50.919   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    5    6
+REMARK Residue 3
+CONECT    7    8
+CONECT    7   12
+CONECT    8    9
+CONECT   12   11
+CONECT    9   10
+CONECT   11   10
+REMARK Residue 4
+CONECT   13   14
+CONECT   14   15
+REMARK Residue 5
+CONECT   16   17
+REMARK Residue 6
+CONECT   20   18
+CONECT   18   19
+CONECT   18   21
+REMARK Residue 7
+CONECT   22   23
+CONECT   23   24
+CONECT   23   25
+REMARK Residue 8
+CONECT   26   27
+CONECT   26   28
+CONECT   26   29
+CONECT   26   30
+CONECT   30   31

@@ -1,0 +1,27 @@
+ATOM      1  C   ACT     1      20.691  11.800  -6.542   1.000
+ATOM      2  O   ACT     1      21.038  12.905  -6.945   1.000
+ATOM      3  CH1 ACT     1      21.066  11.298  -5.162   1.000
+ATOM      4  CH2 ACT     1      19.866  10.860  -7.397   1.000
+ATOM      5  CG  BEN     2      21.138  11.787  -5.695   1.000
+ATOM      6  CD1 BEN     2      20.899  12.264  -7.005   1.000
+ATOM      7  CE1 BEN     2      20.168  11.476  -7.924   1.000
+ATOM      8  CZ  BEN     2      19.682  10.206  -7.536   1.000
+ATOM      9  CE2 BEN     2      19.932   9.723  -6.230   1.000
+ATOM     10  CD2 BEN     2      20.655  10.516  -5.308   1.000
+ATOM     11  C1  DME     3      19.486  10.587  -7.922   1.000
+ATOM     12  O1  DME     3      19.603  11.353  -6.721   1.000
+ATOM     13  C2  DME     3      20.647  10.846  -5.886   1.000
+REMARK Residue 1
+CONECT    3    1
+CONECT    1    2
+CONECT    1    4
+REMARK Residue 2
+CONECT    5    6
+CONECT    5   10
+CONECT    6    7
+CONECT   10    9
+CONECT    7    8
+CONECT    9    8
+REMARK Residue 3
+CONECT   11   12
+CONECT   12   13

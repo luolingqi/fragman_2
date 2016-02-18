@@ -1,0 +1,55 @@
+ATOM      1  C1  AMN     1      42.841  39.018  51.500   1.000
+ATOM      2  N1  AMN     1      43.902  39.821  52.124   1.000
+ATOM      3  H1  AMN     1      44.669  39.930  51.473   1.000
+ATOM      4  H2  AMN     1      44.269  39.328  52.929   1.000
+ATOM      5  CG  BEN     2      43.451  41.308  51.667   1.000
+ATOM      6  CD1 BEN     2      43.702  39.967  52.042   1.000
+ATOM      7  CE1 BEN     2      42.993  38.913  51.420   1.000
+ATOM      8  CZ  BEN     2      42.030  39.201  50.425   1.000
+ATOM      9  CE2 BEN     2      41.775  40.542  50.054   1.000
+ATOM     10  CD2 BEN     2      42.487  41.596  50.674   1.000
+ATOM     11  C1  DME     3      42.897  39.012  51.482   1.000
+ATOM     12  O1  DME     3      42.623  37.623  51.281   1.000
+ATOM     13  C2  DME     3      42.480  37.326  49.888   1.000
+ATOM     14  C   ACT     4      42.483  38.215  51.411   1.000
+ATOM     15  O   ACT     4      42.096  37.534  52.354   1.000
+ATOM     16  CH1 ACT     4      43.115  39.576  51.615   1.000
+ATOM     17  CH2 ACT     4      42.350  37.736  49.981   1.000
+ATOM     18  C   BUT     5      42.996  40.003  52.035   1.000
+ATOM     19  C1  BUT     5      42.512  38.654  51.477   1.000
+ATOM     20  C2  BUT     5      42.308  40.322  53.373   1.000
+ATOM     21  C3  BUT     5      42.745  41.139  51.032   1.000
+ATOM     22  O   BUT     5      44.377  39.909  52.255   1.000
+ATOM     23  H1  BUT     5      44.490  39.208  52.880   1.000
+ATOM     24  C2  EOL     6      42.808  37.803  50.191   1.000
+ATOM     25  C1  EOL     6      43.184  38.689  51.373   1.000
+ATOM     26  O   EOL     6      43.526  36.575  50.267   1.000
+ATOM     27  H1  EOL     6      44.457  36.750  50.327   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+CONECT    2    4
+REMARK Residue 2
+CONECT    5    6
+CONECT    5   10
+CONECT    6    7
+CONECT   10    9
+CONECT    7    8
+CONECT    9    8
+REMARK Residue 3
+CONECT   11   12
+CONECT   12   13
+REMARK Residue 4
+CONECT   16   14
+CONECT   14   15
+CONECT   14   17
+REMARK Residue 5
+CONECT   18   19
+CONECT   18   20
+CONECT   18   21
+CONECT   18   22
+CONECT   22   23
+REMARK Residue 6
+CONECT   24   25
+CONECT   24   26
+CONECT   26   27

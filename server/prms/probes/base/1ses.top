@@ -1,0 +1,5 @@
+REMARK   single methanol probe
+ATOM      1  OT  SES     1       0.000   0.000   0.000 -0.65 13.00      1SES
+ATOM      2  CH3 SES     1       0.620   1.067  -0.722  0.25 13.00      1SES
+ATOM      3  HO  SES     1      -0.943   0.065  -0.047  0.40  0.00      1SES
+END

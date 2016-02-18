@@ -1,0 +1,18 @@
+ATOM      1  C1  ETH     1      37.354  44.077  60.526   1.000
+ATOM      2  C2  ETH     1      37.972  42.959  61.385   1.000
+ATOM      3  C   ACT     2      38.080  42.643  61.191   1.000
+ATOM      4  O   ACT     2      38.252  42.537  62.399   1.000
+ATOM      5  CH1 ACT     2      38.430  41.523  60.232   1.000
+ATOM      6  CH2 ACT     2      37.493  43.897  60.577   1.000
+ATOM      7  C1  DME     3      38.077  42.802  61.420   1.000
+ATOM      8  O1  DME     3      37.526  44.120  61.440   1.000
+ATOM      9  C2  DME     3      37.163  44.542  60.123   1.000
+REMARK Residue 1
+CONECT    1    2
+REMARK Residue 2
+CONECT    5    3
+CONECT    3    4
+CONECT    3    6
+REMARK Residue 3
+CONECT    7    8
+CONECT    8    9

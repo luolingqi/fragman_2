@@ -1,0 +1,6 @@
+REMARK  SUBUNITS OF 1DME; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:24      CREATED BY USER: gychuang                
+ATOM      1  C1  DME     1      -1.204  -0.070   0.001  1.00  0.00      X   
+ATOM      2  O1  DME     1       0.088   0.530  -0.001  1.00  0.00      X   
+ATOM      3  C2  DME     1       1.117  -0.461  -0.001  1.00  0.00      X   
+END

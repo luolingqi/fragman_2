@@ -1,0 +1,22 @@
+There are a few changes to the standard rungms script which hopefully make
+it easier to get up and running with GAMESS. scratch files default to the
+current directory as does the .dat and .irc files. If you wish to setup a
+seperate scratch directory edit the SCR= line in rungms. If you wish to 
+install the gamess executables in a standard location edit the GMSPATH line
+in the rungms script.
+
+Finally I have included a gms script to simplify running GAMESS jobs 
+interactively. To use it just type:
+
+  ./gms inputname
+
+where inputname is the name of your gamess input file. That will run GAMESS
+and return when the run is finished. The output is stored in inputname.log. 
+
+If you would like to install the binaries in a "known" location and add
+the gms command to your path there are a few changes to make. First off
+pick your location and move the rungms, gamess.*.x, ddikick.x, ericfmt.dat
+and the entire mcpdata directory to that location. Then edit the rungms 
+script to use that path where it sets up GMSPATH. Finally edit the gms 
+script to point to the location of the rungms script and put it in a 
+location that will be on your path.

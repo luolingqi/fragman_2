@@ -1,0 +1,46 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1BEN; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:20      CREATED BY USER: gychuang                
+
+       6 !NATOM
+       1 X    1    BEN  CG     24    0.00000       13.0190           0
+       2 X    1    BEN  CD1    24    0.00000       13.0190           0
+       3 X    1    BEN  CE1    24    0.00000       13.0190           0
+       4 X    1    BEN  CZ     24    0.00000       13.0190           0
+       5 X    1    BEN  CE2    24    0.00000       13.0190           0
+       6 X    1    BEN  CD2    24    0.00000       13.0190           0
+
+       6 !NBOND: bonds
+       1       2       1       6       2       3       6       5
+       3       4       5       4
+
+       6 !NTHETA: angles
+       2       1       6       1       2       3       2       3       4
+       3       4       5       4       5       6       1       6       5
+
+       6 !NPHI: dihedrals
+       1       2       3       4       1       6       5       4
+       2       1       6       5       2       3       4       5
+       3       2       1       6       3       4       5       6
+
+       6 !NIMPHI: impropers
+       1       2       3       4       2       3       4       5
+       3       4       5       6       4       5       6       1
+       5       6       1       2       6       1       2       3
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0       0       0       0       0
+
+       1       0 !NGRP NST2
+       0       0       0
+
+       0       0 !NUMLP NUMLPH

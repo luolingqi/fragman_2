@@ -1,0 +1,28 @@
+HEADER crosscluster.008.003.pdb
+ATOM      1  C   ACT R   1      20.694  11.806  -6.541   1.000
+ATOM      2  O   ACT R   1      21.035  12.910  -6.949   1.000
+ATOM      3  CH1 ACT R   1      21.074  11.309  -5.162   1.000
+ATOM      4  CH2 ACT R   1      19.870  10.859  -7.391   1.000
+ATOM      5  CG  BEN R   2      19.679  10.205  -7.539   1.000
+ATOM      6  CD1 BEN R   2      19.928   9.719  -6.234   1.000
+ATOM      7  CE1 BEN R   2      20.650  10.509  -5.309   1.000
+ATOM      8  CZ  BEN R   2      21.134  11.781  -5.693   1.000
+ATOM      9  CE2 BEN R   2      20.897  12.262  -7.001   1.000
+ATOM     10  CD2 BEN R   2      20.166  11.476  -7.923   1.000
+ATOM     11  C1  DME R   3      19.518  10.783  -8.023   1.000
+ATOM     12  O1  DME R   3      19.551  11.149  -6.641   1.000
+ATOM     13  C2  DME R   3      20.866  11.545  -6.244   1.000
+REMARK Residue 1
+CONECT    3    1
+CONECT    1    2
+CONECT    1    4
+REMARK Residue 2
+CONECT    5    6
+CONECT    5   10
+CONECT    6    7
+CONECT   10    9
+CONECT    7    8
+CONECT    9    8
+REMARK Residue 3
+CONECT   11   12
+CONECT   12   13

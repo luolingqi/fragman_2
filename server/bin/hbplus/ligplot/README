@@ -1,0 +1,308 @@
+
+
+   		         L I G P L O T   v . 4 . 0
+		       -----------------------------
+
+		Written by Andrew Wallace & Roman Laskowski
+
+
+LIGPLOT is a program that automatically generates schematic 2D
+representations of protein-ligand interactions. The input is a
+standard PDB file and the output is a colour or black-and-white
+PostScript file which gives a simple, at-a-glance representation of
+the hydrogen bonds and hydrophobic contacts between protein and
+ligand. The program is completely general and can be used to show
+other interactions such as helix-helix interactions, protein-DNA
+interactions, etc.
+
+The latest version (v.4.0) of the LIGPLOT program is available via
+anonymous ftp on ftp.biochem.ucl.ac.uk, from the directory:-
+
+                        pub/ligplot
+
+This contains a two compressed tar files and a Confidentiality Agreement:
+
+                        ligplot.tar.Z.enc
+                        manual.tar.Z
+                        confid.txt
+
+Use "get" to retrieve all three files. Note that the ligplot.tar.Z.enc
+file is encrypted and requires a decryption key.
+
+Alternatively you can these files via the Web from:-
+
+     http://www.biochem.ucl.ac.uk/bsm/ligplot/ligplot.html
+
+Then, do the following:-
+
+   1. Print off the Confidentiality Agreement, confid.txt. Complete all
+      the relevant information, sign it and either fax or post it to
+      the address given at the bottom of this file.
+
+      If yours is an academic institution you will then receive the
+      decryption key without charge. Please make sure you include your
+      e-mail address so that the key can be despatched to you as soon
+      as possible.
+
+      For non-academic users, there is a consultancy fee of 500 pounds
+      sterling which includes the source code for both LIGPLOT and HBPLUS.
+      Please enquire by e-mail to Eoin Murphy at e.murphy@ucl.ac.uk.
+
+      Note that, if you have already completed a Confidentiality Agreement
+      for an earlier version of LIGPLOT, then you do not need to send
+      in another one. Just send an e-mail message requesting the 
+      current decryption key.
+
+   2. The program documentation is not encrypted, so you can install that
+      straight away.
+
+      Uncompress and untar the file manual.tar.Z as follows:-
+
+                        uncompress manual.tar.Z
+                        tar -xvf manual.tar
+
+      This will create a new directory called "manual" which will contain
+      the program's operating instructions in HTML format.
+
+      To view the instructions use a Web browser, such as Netscape or
+      Mosaic, to call up the contents page: index.html.
+
+      For example, with Netscape, type
+
+                        netscape manual/index.html &
+
+
+I M P O R T A N T
+-----------------
+
+If you have earlier versions of LIGPLOT, please note that, from v.3.0,
+the name of the parameter file has changed from ligplot.par to ligplot.prm
+as the format differs from the earlier versions.
+
+*** The parameter file in the latest version (v.4.0) has several new
+options, so delete any existing copies of ligplot.prm before running the
+new programs so that you can use these new options.
+
+As before, the parameter file is created when you first run LIGPLOT if
+it is absent from the current working directory. So the latest parameter
+file is always created after you have deleted any old copies.
+
+Note that, if you still have parameter files from LIGPLOT v.1.0 (which
+were also called ligplot.prm) please delete these before running the
+new versions of the programs.
+
+Note also, that the decryption code for v.4.0 (and later) is different from
+that for earlier versions.
+
+
+
+HBPLUS - for computing hydrogen bonds
+-------------------------------------
+We recommend you use the program HBPLUS (written by Ian McDonald) for
+calculating the hydrogen bonds and hydrophobic contacts to be plotted by
+LIGPLOT.
+
+This program is available by anonymous ftp from the same address
+(ie ftp.biochem.ucl.ac.uk) and can be found in the directory pub/hbplus.
+
+For further details, see
+
+      http://www.biochem.ucl.ac.uk/~mcdonald/hbplus/home.html
+
+
+Note that, HBPLUS was designed for computing hydrogen bonds within
+proteins, so it often has problems on encountering an unrecognized
+ligand molecule. As a consequence it often misses important H-bonds,
+which then do not appear on the LIGPLOT diagram. It is possible to
+define molecules manually (in terms of which atoms are H-bond
+donors/acceptors, etc) so that HBPLUS knows how to treat them.
+
+An alternative, automatic method - which works in most cases - is the
+HBADD program supplied with v.3.0 (and later) of LIGPLOT. This program
+aims to generate molecule definitions in HBPLUS format from the data
+in the Het Group Dictionary, which is available from the PDB.
+
+The Het Group Dictionary can be picked up from:-
+
+      ftp://pdb.pdb.bnl.gov/pub/resources/hetgroups/het_dictionary.txt
+
+Alternatively, check for PDB mirror sites at:-
+
+      http://www.pdb.bnl.gov/mirror_sites.html
+
+
+
+NACCESS - for computing atom accessibilities
+--------------------------------------------
+You might also like to use the NACCESS program (written by Simon Hubbard)
+for computing the solvent accessibilities of ligand atoms. The different
+accessibilities can be shown on the LIGPLOT as different shades/colour
+behind each of the ligand atoms. NACCESS is also available by anonymous ftp
+from 128.40.46.11, being in directory pub/naccess.
+
+For further details, see
+
+      http://sjh.bi.umist.ac.uk/naccess.html
+
+
+
+Program changes for v.4.0
+-------------------------
+
+1. DIMPLOT - A version of LIGPLOT that plots residue-residue interactions
+across an interface - be it a protein dimer-dimer interface or an interface
+between two domains within the same protein. Residues on one side of the
+interface are plotted down the left-hand side of the page and those from
+the other are printed down the right.
+
+2. New routines to help obtain similar LIGPLOTs in cases where you have two
+(or more) structures of the same protein with different ligands bound.
+
+Each time LIGPLOT is run a new file (extension .rcm) is output containing
+the centres of mass of each of the flattened residues on the plot. These
+positions can, in turn, be used to restrain the equivalent residues in a
+subsequent LIGPLOT so that they appear in approximately the same locations
+as before. Further atomic restraints can also be added to this file to
+fine-tune the positioning of the ligand and protein sidechains on the plot.
+
+3. Inclusion of residue name in the residue range when running LIGPLOT.
+
+Normally, LIGPLOT is run by giving the residue range and chain-id as
+follows:-
+
+      ligplot p1atn.pdb 18 20 D
+
+In many PDB files, however, the residue numbers alone can be ambiguous. In
+the case of 1atn, for example, the protein also contains residues 18-20,
+labelled chain D. In the past, LIGPLOT has had to guess which are the most
+likely residues required.
+
+To overcome this ambiguity, however, you can now prefix the residue numbers
+with the residue names:-
+
+      ligplot p1atn.pdb NAG 18 MAN 20 D
+
+4. Compatibility with the current version of NACCESS.
+
+
+
+Program changes between v.3.2 and v.3.1.2
+-----------------------------------------
+1. Addition of a simple graph-matching algorithm to hbadd to match up atoms
+in the Het Groups in your PDB file to the corresponding entries in the Het
+Group Dictionary. So, even if the atom-names differ, or are in a different
+order, hbadd should be able to handle Het Groups that are present in the
+dictionary.
+
+2. Addition of 3 new options in the ligplot.prm file:-
+
+   1. A rotation angle for rotating the final plot on the page.
+   2. An option to show covalent bonds between the ligand and external
+      residues as solid lines rather than as dotted lines.
+   3. An option for including additional non-bonded contacts, other than
+      just hydrophobic contacts.
+
+Thus you should delete any existing copies of ligplot.prm before running
+the program to allow it to create new versions corresponding to the new set
+of parameters.
+
+
+Program changes between v.3.1.2 and v.3.1.1
+-------------------------------------------
+1. Speed-up of CONECT record processing for NMR structures with large
+numbers of CONECTs.
+
+2. Better handling of metal ligands by fooling HBPLUS into finding
+interactions between sidechains and metals.
+
+
+Program changes between v.3.1.1 and v.3.1
+-----------------------------------------
+Handling of cyclic peptides and complex sugars improved.
+
+
+Program changes between v.3.0 and v.3.1
+---------------------------------------
+Various amendments, including:-
+
+1. Significant speed-up of program by cutting out very many unnecessary
+calls to the most computationally intensive routines.
+
+2. Amendments to cope with some of the peculiarities of PDB files, such as
+duplicate residue names, and HET group attachments to residues.
+
+3. Amendments to hbadd program to generate an HBPLUS entry for residues
+missing from the Het Group Dictionary when the PDB file contains hydrogen
+atoms in the HET group.
+
+
+Program changes between v.2.0 and v.3.0
+---------------------------------------
+The following enhancements have been made to the LIGPLOT program for
+v.3.0:-
+
+1. Addition of HBADD program, making use of the Het Group Dictionary,
+to generate an HBPLUS input file to help that program calculate hydrogen
+bonds.
+
+2. Complete rewrite of most routines, including the energy minimization
+protocol for generating the final diagram. Final plots produced are
+generally a great improvement on those generated by v.2.0 and earlier.
+
+3. Improvements to the "Simple "Residue" representation, including addition
+of hydrophobic contacts to this plot.
+
+4. Ligand can now be a single atom (eg a metal ion).
+
+5. 2D residue representations are more representative of the original 3D
+conformation as all internal atom-atom distances in the 2D version are
+matched against those in the 3D original.
+
+
+Program changes between v.1.2 and v.2.0
+---------------------------------------
+The following enhancements have been made to the LIGPLOT program for
+v.2.0:-
+
+1. Completely revised set of input parameters, including many new
+parameters, particularly those defining the colours and sizes of the
+different items and labels plotted. Portrait/landscape option added. Name
+of input parameter file changed from ligplot.prm to ligplot.par to prevent
+confusion with former version.
+
+2. Changes to PostScript output routines to make the output PostScript file
+simpler to understand and edit.
+
+3. Several bugs in v.1.2 found and fixed.
+
+4. Double- and triple-bond option added (these have to be manually defined,
+though, as described in the Operating Manual).
+
+5. Read-in and use of CONECT records in input PDB file.
+
+6. Output of ligplot.frm file giving original coordinates, in PDB format,
+of all the residues shown on the LIGPLOT diagram.
+
+7. Operating instructions in HTML format.
+
+
+
+Roman Laskowski
+Department of Crystallography
+Birkbeck College
+Malet Street
+London WC1E 7HX
+
+and
+
+Biomolecular Structure and Modelling Unit
+Dept. of Biochemistry
+University College
+Gower Street
+London  WC1E 6BT
+ENGLAND
+
+Tel:- +44 (0)171 419 3890
+Fax:- +44 (0)171 380 7193
+
+roman@biochem.ucl.ac.uk

@@ -1,0 +1,14 @@
+ TITLE>  * NONE *
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      1.42558      0.00000      0.48158
+PRIN INTERN>        0.00112      0.00097      0.00000      0.00172      0.00000
+PRIN EXTERN>       -0.22608      1.64785      0.00000      0.00000      0.00000
+PRIN   ACE1>        1.87040     -3.28090      3.05834      0.00000
+PRIN   ACE2>       -0.22256      3.05834
+ ----------       ---------    ---------    ---------    ---------    ---------

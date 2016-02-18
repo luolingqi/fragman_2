@@ -1,0 +1,51 @@
+/* Change background colour. */
+
+/* No symmetry */
+set symmetry off;
+
+/* antialias default on */
+view -wuantialias false;
+view -antialias true;
+
+/* shadows on */
+/*view -realspheres true;
+view -shadows true;*/
+
+molecule load mol  'examples/neuraminidase_rec.pdb';
+molecule load cc0  'examples/neuraminidase_cc.000.027.pdb';
+molecule load cc1  'examples/neuraminidase_cc.001.013.pdb';
+molecule load cc2  'examples/neuraminidase_cc.002.012.pdb';
+molecule load cc3  'examples/neuraminidase_cc.003.012.pdb';
+molecule load cc4  'examples/neuraminidase_cc.004.011.pdb';
+molecule load cc5  'examples/neuraminidase_cc.005.009.pdb';
+molecule load cc6  'examples/neuraminidase_cc.006.006.pdb';
+molecule load cc7  'examples/neuraminidase_cc.007.002.pdb';
+molecule load lig1 'examples/sialic_acid_neuraminidase.pdb';
+
+/* display as cartoon */
+display lines off molecule mol;
+/* assign secondary structure and display the protein as cartoon */
+secstruc molecule mol;
+schematic -name protein_schematic molecule mol;
+
+display lines off molecule lig1;
+display sticks on molecule lig1;
+color White molecule lig1 and atom C*;
+
+
+color Cyan molecule cc0 and atom C*;
+color Purple molecule cc1 and atom C*;
+color Yellow molecule cc2 and atom C*;
+color Salmon molecule cc3 and atom C*;
+color Plum molecule cc4 and atom C*;
+color Blue molecule cc5 and atom C*;
+color Orange molecule cc6 and atom C*;
+color Green molecule cc7 and atom C*;
+display lines off molecule cc1;
+display lines off molecule cc3;
+display lines off molecule cc4;
+display lines off molecule cc5;
+display lines off molecule cc6;
+display lines off molecule cc7;
+
+center molecule lig1 or molecule cc0 or molecule cc2;

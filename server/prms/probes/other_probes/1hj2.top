@@ -1,0 +1,11 @@
+REMARK HIS 2
+REMARK NEUTRAL HIS -- HYDROGEN ON NE2 
+ATOM      3  CA  HJ2     1       0.821  -0.071  -1.301  0.100 2.00      1HJ2
+ATOM      1  CB  HJ2     1       0.000   0.000   0.000  0.000 6.00      1HJ2 
+ATOM      6  CG  HJ2     1       0.055   1.394   0.597  0.10014.00      1HJ2
+ATOM      7  ND1 HJ2     1      -0.947   2.293   0.409 -0.40014.00      1HJ2
+ATOM      8  CD2 HJ2     1       1.194   1.855   1.414  0.10014.00      1HJ2
+ATOM      9  CE1 HJ2     1      -0.532   3.367   1.136  0.30014.00      1HJ2
+ATOM     10  NE2 HJ2     1       0.748   3.146   1.661 -0.40014.00      1HJ2
+ATOM     21  HE1 HJ2     1       1.287   3.843   2.137  0.300 0.00      1HJ2
+END

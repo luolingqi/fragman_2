@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF PD1
+ TITLE>  *  DATE:     7/ 8/ 8     14:18:41      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1    -16.26112      0.00000      0.00000
+PRIN INTERN>        0.00119      0.00324      0.00000      0.00000      0.00000
+PRIN EXTERN>        0.00000    -16.26555      0.00000      0.00000      0.00000
+PRIN   ACE1>        1.43895    -13.74276     -3.96174      0.00000
+PRIN   ACE2>      -17.70450     -3.96174
+ ----------       ---------    ---------    ---------    ---------    ---------

@@ -1,0 +1,73 @@
+Begin Of Record of MOLNAME
+8047
+  -MTS-   03140522292D 0   0.00000     0.00000     0
+
+  6  5  0  0  0  0  0  0  0  0  1 V2000
+    2.2490   -0.4500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3890    0.0500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5190   -0.4500    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    1.3915    1.0500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.1190    0.0500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9790   -0.4500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2  3  1  0  0  0  0
+  2  4  2  0  0  0  0
+  1  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+M  END
+
+8047
+
+>  <MDLNUMBER>  (8047)
+MCMC00000067
+
+>  <MODELREGNO>  (8047)
+(7983,7983)
+
+>  <MOLFORMULA>  (8047)
+"C3 H7 N O2","C3 H7 N O2"
+
+>  <MOLNAME>  (8047)
+URETHANE
+
+>  <MOLREGNO_LINK>  (8047)
+(8047,8047,8047,8047,8047,8047,8047)
+
+>  <MOLWEIGHT>  (8047)
+89.09
+
+>  <cas>  (8047)
+51-79-6
+
+>  <ccratio>  (8047)
+1.00
+
+>  <class>  (8047)
+Antineoplastic
+
+>  <cmc.ref>  (8047)
+3: 1092
+
+>  <generic.name>  (8047)
+URETHANE [INN]
+
+>  <lit.ref>  (8047)
+(1) 'The Merck Index', Merck & Co., Rahway, NJ, 1983, 10th Ed., entry 9681.
+
+>  <logp_range>  (8047)
+-0.02
+
+>  <modelname>  (8047)
+URETHANE
+
+>  <molecular.weight>  (8047)
+89.09
+
+>  <source>  (8047)
+"Corina 2.62"
+
+>  <MOL_WEIGHT>  (8047)
+89.0940
+
+$$$$
+End Of Record of 

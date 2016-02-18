@@ -1,0 +1,38 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1AMN; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:18      CREATED BY USER: gychuang                
+
+       4 !NATOM
+       1 X    1    AMN  C1     13    0.00000       15.0350           0
+       2 X    1    AMN  N1     36  -0.300000       14.0067           0
+       3 X    1    AMN  H1      1   0.150000       1.00800           0
+       4 X    1    AMN  H2      1   0.150000       1.00800           0
+
+       3 !NBOND: bonds
+       1       2       2       3       2       4
+
+       3 !NTHETA: angles
+       1       2       3       1       2       4       3       2       4
+
+       0 !NPHI: dihedrals
+
+
+       0 !NIMPHI: impropers
+
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0       0       0
+
+       1       0 !NGRP NST2
+       0       1       0
+
+       0       0 !NUMLP NUMLPH

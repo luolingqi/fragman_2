@@ -1,0 +1,76 @@
+#contactform {
+    margin: 0 auto;
+    padding: 0;
+    width:50%;
+}
+
+#contactform fieldset {
+    margin: 1em 0;
+    padding: 0 0.5em;
+    border: none;
+    border-top: 1px solid #777;
+}
+
+#contactform legend {
+    margin: 1em 0;
+    padding: 0 .5em;
+    background: transparent;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#contactform label {
+    float: left;
+    width: 125px;
+    padding: 0 1em;
+    text-align: right;
+    vertical-align:center;
+}
+
+#contactform div {
+    margin-bottom: .5em;
+    padding: 0;
+    display: block;
+}
+
+#contactform input[type=text], #contactform input[type=password], #contactform textarea {
+    width: 210px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 1px;
+    color: #333;
+}
+
+#contactform textarea {
+   height:16em;
+   font-size:medium;
+}
+
+#contactform select {
+    padding: 1px;
+}
+
+#contactform #submit {
+    clear: both;
+    padding-top: 1em;
+    text-align: center;
+    font-weight:bold;
+}
+
+#contactform input:focus, #contactform textarea:focus {
+    background: #efefef;
+    color: #000;
+}
+
+#refreshcaptcha
+{
+   border:1px solid #BBB;
+   background:#EEE;
+   padding:2px;
+   padding-top:0;
+   width:50%;
+   margin-left:50%;
+   cursor:default;
+}

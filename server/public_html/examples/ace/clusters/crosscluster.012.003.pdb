@@ -1,0 +1,42 @@
+ATOM      1  C1  CHX     1      30.446  42.642  51.773   1.000
+ATOM      2  C2  CHX     1      31.785  43.378  51.657   1.000
+ATOM      3  C3  CHX     1      32.963  42.420  51.868   1.000
+ATOM      4  C4  CHX     1      32.845  41.682  53.208   1.000
+ATOM      5  C5  CHX     1      31.503  40.949  53.324   1.000
+ATOM      6  C6  CHX     1      30.325  41.907  53.112   1.000
+ATOM      7  C1  PHN     2      29.344  41.571  53.137   1.000
+ATOM      8  C2  PHN     2      30.241  41.816  52.078   1.000
+ATOM      9  C3  PHN     2      30.681  43.130  51.829   1.000
+ATOM     10  C4  PHN     2      30.199  44.180  52.638   1.000
+ATOM     11  C5  PHN     2      29.314  43.938  53.710   1.000
+ATOM     12  C6  PHN     2      28.884  42.622  53.961   1.000
+ATOM     13  O   PHN     2      28.863  40.291  53.327   1.000
+ATOM     14  HO  PHN     2      28.091  40.319  53.876   1.000
+ATOM     15  C2  DFO     3      29.524  41.682  53.132   1.000
+ATOM     16  N3  DFO     3      29.988  42.742  52.439   1.000
+ATOM     17  O4  DFO     3      29.921  40.532  52.993   1.000
+ATOM     18  C3  DFO     3      29.467  44.083  52.697   1.000
+ATOM     19  C1  DFO     3      31.028  42.529  51.437   1.000
+ATOM     20  H1  DFO     3      28.755  41.979  53.842   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    6
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+REMARK Residue 2
+CONECT    7    8
+CONECT    8    9
+CONECT    9   10
+CONECT   10   11
+CONECT   11   12
+CONECT   12    7
+CONECT    7   13
+CONECT   13   14
+REMARK Residue 3
+CONECT   15   16
+CONECT   15   17
+CONECT   16   18
+CONECT   16   19
+CONECT   15   20

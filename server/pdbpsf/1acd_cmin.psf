@@ -1,0 +1,43 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1ACD; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:14      CREATED BY USER: gychuang                
+
+       6 !NATOM
+       1 X    1    ACD  N1     32  -0.600000       14.0067           0
+       2 X    1    ACD  C2     14   0.600000       12.0110           0
+       3 X    1    ACD  C3     13  -0.500000E-01   15.0350           0
+       4 X    1    ACD  O4     40  -0.550000       15.9994           0
+       5 X    1    ACD  H1      1   0.300000       1.00800           0
+       6 X    1    ACD  H2      1   0.300000       1.00800           0
+
+       5 !NBOND: bonds
+       1       2       1       5       1       6       2       3
+       2       4
+
+       6 !NTHETA: angles
+       2       1       5       2       1       6       5       1       6
+       1       2       3       1       2       4       3       2       4
+
+       4 !NPHI: dihedrals
+       3       2       1       5       3       2       1       6
+       4       2       1       5       4       2       1       6
+
+       2 !NIMPHI: impropers
+       1       5       6       2       2       1       4       3
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0       0       0       0       0
+
+       1       0 !NGRP NST2
+       0       1       0
+
+       0       0 !NUMLP NUMLPH

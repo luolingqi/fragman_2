@@ -1,0 +1,31 @@
+This is Antechamber, version 1.24; it is functionally similar to the version
+that is included in Amber 8, but contains some bug-fixes and parameter updates.
+Two new programs, top2mol2 and charmmgen are added. See the following site 
+for more detail:
+
+     http://amber.scripps.edu/antechamber/antechamber.html
+
+For convenience, we are also including versions of tleap and mopac6, which are
+often used in conjunction with Antechamber.
+
+Documentation is in the file doc/AC.pdf.  Chapter 1 has information on
+installing and testing; Chapter 2 describes the programs; Chapter 3 describes
+tleap, which is also included here for convenience.  Documentation for mopac
+is in the mopac6/doc directory.
+
+The code is distributed under the terms outlined in the LICENSE file.  Note
+especially the following:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

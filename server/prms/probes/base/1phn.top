@@ -1,0 +1,10 @@
+REMARK   single phenol probe
+ATOM      1  C1  PHN     1       0.000   0.000   0.000  0.25 15.00      1PHN
+ATOM      2  C2  PHN     1       0.098  -1.225  -0.650  0.00 16.00      1PHN
+ATOM      3  C3  PHN     1      -0.270  -2.392   0.017  0.00 16.00      1PHN
+ATOM      4  C4  PHN     1      -0.733  -2.327   1.332  0.00 16.00      1PHN
+ATOM      5  C5  PHN     1      -0.828  -1.093   1.979  0.00 16.00      1PHN
+ATOM      6  C6  PHN     1      -0.461   0.077   1.312  0.00 16.00      1PHN
+ATOM      7  O   PHN     1       0.370   1.118  -0.689 -0.65 13.00      1PHN
+ATOM      8  HO  PHN     1       0.010   1.895  -0.232  0.40  0.00      1PHN
+END

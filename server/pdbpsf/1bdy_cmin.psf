@@ -1,0 +1,57 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1BDY; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:19      CREATED BY USER: gychuang                
+
+       9 !NATOM
+       1 X    1    BDY  C1     22   0.850000E-01   12.0110           0
+       2 X    1    BDY  C2     24  -0.140000E-01   13.0190           0
+       3 X    1    BDY  C3     24  -0.140000E-01   13.0190           0
+       4 X    1    BDY  C4     24  -0.140000E-01   13.0190           0
+       5 X    1    BDY  C5     24  -0.140000E-01   13.0190           0
+       6 X    1    BDY  C6     24  -0.140000E-01   13.0190           0
+       7 X    1    BDY  C7     14   0.230000       12.0110           0
+       8 X    1    BDY  H1      3   0.185000       1.00800           0
+       9 X    1    BDY  O1     41  -0.430000       15.9994           0
+
+       9 !NBOND: bonds
+       1       2       1       6       2       3       3       4
+       4       5       5       6       1       7       7       8
+       7       9
+
+      11 !NTHETA: angles
+       2       1       6       2       1       7       6       1       7
+       1       2       3       2       3       4       3       4       5
+       4       5       6       1       6       5       1       7       8
+       1       7       9       8       7       9
+
+      12 !NPHI: dihedrals
+       1       2       3       4       1       6       5       4
+       2       1       6       5       2       1       7       8
+       2       1       7       9       2       3       4       5
+       3       2       1       6       3       2       1       7
+       3       4       5       6       5       6       1       7
+       6       1       7       8       6       1       7       9
+
+       8 !NIMPHI: impropers
+       6       1       2       3       2       1       6       5
+       1       2       3       4       2       3       4       5
+       3       4       5       6       4       5       6       1
+       1       2       6       7       7       1       9       8
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0       0       0       0       0       0       0
+       0
+
+       1       0 !NGRP NST2
+       0       1       0
+
+       0       0 !NUMLP NUMLPH

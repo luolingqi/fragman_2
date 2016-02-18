@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF PH2
+ TITLE>  *  DATE:     7/ 8/ 8     14:22:13      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      0.90133      0.00000      0.00000
+PRIN INTERN>        0.17887      1.35316      0.00000      0.00000      0.00000
+PRIN EXTERN>       -0.26087     -0.36983      0.00000      0.00000      0.00000
+PRIN   ACE1>        2.59281    -12.27425     10.48483     -1.17321
+PRIN   ACE2>       -1.78943      9.31162
+ ----------       ---------    ---------    ---------    ---------    ---------

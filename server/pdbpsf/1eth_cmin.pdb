@@ -1,0 +1,5 @@
+REMARK  SUBUNITS OF 1ETH; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:26      CREATED BY USER: gychuang                
+ATOM      1  C1  ETH     1       0.770   0.000   0.000  1.00  0.00      X   
+ATOM      2  C2  ETH     1      -0.770   0.000   0.000  1.00  0.00      X   
+END

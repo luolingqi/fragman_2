@@ -1,0 +1,11 @@
+REMARK  SUBUNITS OF 1URE; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:29      CREATED BY USER: gychuang                
+ATOM      1  C   URE     1       0.430   2.783   7.774  1.00  0.00      X   
+ATOM      2  O   URE     1       1.046   3.085   6.757  1.00  0.00      X   
+ATOM      3  N1  URE     1       1.005   2.968   8.868  1.00  0.00      X   
+ATOM      4  N2  URE     1      -0.720   2.318   7.627  1.00  0.00      X   
+ATOM      5  H1  URE     1       1.933   3.358   8.760  1.00  0.00      X   
+ATOM      6  H2  URE     1       0.622   2.767   9.784  1.00  0.00      X   
+ATOM      7  H3  URE     1      -0.992   2.255   6.654  1.00  0.00      X   
+ATOM      8  H4  URE     1      -1.343   2.026   8.369  1.00  0.00      X   
+END

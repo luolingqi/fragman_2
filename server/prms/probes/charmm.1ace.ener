@@ -1,0 +1,13 @@
+ TITLE>  * THE SUBUNITS OF 1ACE
+ TITLE>  *  DATE:     7/ 8/ 8     13:32:36      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      1.06527      0.00000      0.00000
+PRIN EXTERN>        0.00000      1.06527      0.00000      0.00000      0.00000
+PRIN   ACE1>        1.08396    -12.06485     12.04615      0.00000
+PRIN   ACE2>       -0.01870     12.04615
+ ----------       ---------    ---------    ---------    ---------    ---------

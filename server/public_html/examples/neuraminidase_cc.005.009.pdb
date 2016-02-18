@@ -1,0 +1,83 @@
+HEADER crosscluster.005.009.pdb
+ATOM      1  C1  ACN U   1      36.200  32.072  -9.488   1.000
+ATOM      2  C2  ACN U   1      37.559  31.697  -9.107   1.000
+ATOM      3  N   ACN U   1      38.640  31.402  -8.804   1.000
+ATOM      4  C1  ADY U   2      37.138  31.828  -9.372   1.000
+ATOM      5  C2  ADY U   2      38.391  31.015  -9.113   1.000
+ATOM      6  O1  ADY U   2      39.211  31.369  -8.302   1.000
+ATOM      7  H1  ADY U   2      38.496  30.104  -9.699   1.000
+ATOM      8  C1  AMN U   3      35.776  32.570  -8.793   1.000
+ATOM      9  N1  AMN U   3      35.010  32.743 -10.035   1.000
+ATOM     10  H1  AMN U   3      34.540  33.640 -10.022   1.000
+ATOM     11  H2  AMN U   3      34.290  32.034 -10.090   1.000
+ATOM     12  C1  ETH U   4      35.665  32.287  -9.635   1.000
+ATOM     13  C2  ETH U   4      36.299  32.642  -8.278   1.000
+ATOM     14  C   URE U   5      38.674  30.902  -9.235   1.000
+ATOM     15  O   URE U   5      39.272  31.350  -8.266   1.000
+ATOM     16  N1  URE U   5      37.648  31.526  -9.641   1.000
+ATOM     17  N2  URE U   5      39.121  29.845  -9.773   1.000
+ATOM     18  H1  URE U   5      37.551  31.853 -10.602   1.000
+ATOM     19  H2  URE U   5      36.867  31.740  -9.022   1.000
+ATOM     20  H3  URE U   5      38.515  29.068 -10.035   1.000
+ATOM     21  H4  URE U   5      40.116  29.705  -9.954   1.000
+ATOM     22  C1  AMN U   6      38.113  31.383  -9.170   1.000
+ATOM     23  N1  AMN U   6      39.234  31.099  -8.263   1.000
+ATOM     24  H1  AMN U   6      38.889  31.005  -7.316   1.000
+ATOM     25  H2  AMN U   6      39.878  31.880  -8.266   1.000
+ATOM     26  C2  EOL U   7      38.298  31.314  -9.211   1.000
+ATOM     27  C1  EOL U   7      37.278  32.120  -8.407   1.000
+ATOM     28  O   EOL U   7      39.477  31.123  -8.425   1.000
+ATOM     29  H1  EOL U   7      40.068  31.833  -8.643   1.000
+ATOM     30  C   URE U   8      35.557  32.698  -8.573   1.000
+ATOM     31  O   URE U   8      34.955  31.782  -8.030   1.000
+ATOM     32  N1  URE U   8      35.440  32.827  -9.829   1.000
+ATOM     33  N2  URE U   8      36.260  33.466  -7.849   1.000
+ATOM     34  H1  URE U   8      35.084  33.681 -10.257   1.000
+ATOM     35  H2  URE U   8      35.685  32.076 -10.473   1.000
+ATOM     36  H3  URE U   8      37.242  33.657  -8.048   1.000
+ATOM     37  H4  URE U   8      35.883  33.917  -7.017   1.000
+ATOM     38  C2  EOL U   9      35.563  32.696  -8.997   1.000
+ATOM     39  C1  EOL U   9      36.849  31.969  -9.390   1.000
+ATOM     40  O   EOL U   9      34.762  32.907 -10.162   1.000
+ATOM     41  H1  EOL U   9      34.434  33.796 -10.120   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    5    6
+CONECT    5    7
+REMARK Residue 3
+CONECT    8    9
+CONECT    9   10
+CONECT    9   11
+REMARK Residue 4
+CONECT   12   13
+REMARK Residue 5
+CONECT   14   15
+CONECT   16   14
+CONECT   16   18
+CONECT   16   19
+CONECT   17   14
+CONECT   17   20
+CONECT   17   21
+REMARK Residue 6
+CONECT   22   23
+CONECT   23   24
+CONECT   23   25
+REMARK Residue 7
+CONECT   26   27
+CONECT   26   28
+CONECT   28   29
+REMARK Residue 8
+CONECT   30   31
+CONECT   32   30
+CONECT   32   34
+CONECT   32   35
+CONECT   33   30
+CONECT   33   36
+CONECT   33   37
+REMARK Residue 9
+CONECT   38   39
+CONECT   38   40
+CONECT   40   41

@@ -1,0 +1,81 @@
+HEADER crosscluster.003.009.pdb
+ATOM      1  C1  DME W   1       8.973  18.952  -5.435   1.000
+ATOM      2  O1  DME W   1       8.942  19.959  -6.450   1.000
+ATOM      3  C2  DME W   1       8.862  19.367  -7.750   1.000
+ATOM      4  C2  EOL W   2       9.278  19.646  -7.963   1.000
+ATOM      5  C1  EOL W   2       7.907  19.022  -8.212   1.000
+ATOM      6  O   EOL W   2       9.684  20.396  -9.110   1.000
+ATOM      7  H1  EOL W   2      10.489  20.005  -9.426   1.000
+ATOM      8  C1  ETH W   3       8.710  19.219  -7.800   1.000
+ATOM      9  C2  ETH W   3       8.757  19.188  -6.261   1.000
+ATOM     10  C1  AMN W   4       8.964  19.385  -7.875   1.000
+ATOM     11  N1  AMN W   4       9.592  20.392  -8.741   1.000
+ATOM     12  H1  AMN W   4      10.158  19.930  -9.442   1.000
+ATOM     13  H2  AMN W   4      10.225  20.961  -8.192   1.000
+ATOM     14  C1  ADY W   5       8.311  18.698  -7.920   1.000
+ATOM     15  C2  ADY W   5       9.269  19.869  -7.871   1.000
+ATOM     16  O1  ADY W   5       9.458  20.480  -6.848   1.000
+ATOM     17  H1  ADY W   5       9.767  20.118  -8.806   1.000
+ATOM     18  CH  THS W   6       8.892  19.499  -7.834   1.000
+ATOM     19  CH1 THS W   6       7.494  19.221  -8.378   1.000
+ATOM     20  CH2 THS W   6       9.411  18.304  -7.041   1.000
+ATOM     21  OT  THS W   6       9.773  19.818  -8.914   1.000
+ATOM     22  HO  THS W   6      10.630  19.442  -8.778   1.000
+ATOM     23  N1  ACD W   7       9.349  20.115  -8.508   1.000
+ATOM     24  C2  ACD W   7       9.072  19.610  -7.297   1.000
+ATOM     25  C3  ACD W   7       8.541  18.193  -7.347   1.000
+ATOM     26  O4  ACD W   7       9.223  20.212  -6.241   1.000
+ATOM     27  H1  ACD W   7      10.278  20.408  -8.732   1.000
+ATOM     28  H2  ACD W   7       8.632  20.208  -9.197   1.000
+ATOM     29  C   ACT W   8       9.082  19.003  -6.480   1.000
+ATOM     30  O   ACT W   8       9.230  19.933  -5.696   1.000
+ATOM     31  CH1 ACT W   8       9.374  17.569  -6.087   1.000
+ATOM     32  CH2 ACT W   8       8.595  19.221  -7.897   1.000
+ATOM     33  C   URE W   9       9.160  19.619  -7.637   1.000
+ATOM     34  O   URE W   9       9.191  20.186  -6.553   1.000
+ATOM     35  N1  URE W   9       8.874  18.384  -7.660   1.000
+ATOM     36  N2  URE W   9       9.418  20.300  -8.674   1.000
+ATOM     37  H1  URE W   9       8.387  17.950  -8.443   1.000
+ATOM     38  H2  URE W   9       9.110  17.760  -6.890   1.000
+ATOM     39  H3  URE W   9      10.364  20.609  -8.893   1.000
+ATOM     40  H4  URE W   9       8.694  20.583  -9.334   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    4    6
+CONECT    6    7
+REMARK Residue 3
+CONECT    8    9
+REMARK Residue 4
+CONECT   10   11
+CONECT   11   12
+CONECT   11   13
+REMARK Residue 5
+CONECT   14   15
+CONECT   15   16
+CONECT   15   17
+REMARK Residue 6
+CONECT   19   18
+CONECT   18   21
+CONECT   18   20
+CONECT   21   22
+REMARK Residue 7
+CONECT   23   24
+CONECT   23   27
+CONECT   23   28
+CONECT   24   25
+CONECT   24   26
+REMARK Residue 8
+CONECT   31   29
+CONECT   29   30
+CONECT   29   32
+REMARK Residue 9
+CONECT   33   34
+CONECT   35   33
+CONECT   35   37
+CONECT   35   38
+CONECT   36   33
+CONECT   36   39
+CONECT   36   40

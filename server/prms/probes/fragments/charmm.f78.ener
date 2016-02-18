@@ -1,0 +1,15 @@
+ TITLE>  * NONE *
+ TITLE>  *  DATE:     3/15/ 6     11:45:44      CREATED BY USER: dlancia
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1     21.77754     -0.00092      1.50749
+PRIN INTERN>        2.49341      0.39218      0.00000      0.00011      0.00190
+PRIN EXTERN>       20.32799     -1.43806      0.00000      0.00000      0.00000
+PRIN   ACE1>        3.85255    -13.01509      9.48512     -1.76064
+PRIN   ACE2>       -3.52998      7.72448
+ ----------       ---------    ---------    ---------    ---------    ---------

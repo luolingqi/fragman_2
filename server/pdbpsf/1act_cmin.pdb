@@ -1,0 +1,7 @@
+REMARK  SUBUNITS OF 1ACT; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:16      CREATED BY USER: gychuang                
+ATOM      1  C   ACT     1      -0.001   0.081   0.047  1.00  0.00      X   
+ATOM      2  O   ACT     1      -0.010   1.124   0.691  1.00  0.00      X   
+ATOM      3  CH1 ACT     1      -0.006   0.068  -1.467  1.00  0.00      X   
+ATOM      4  CH2 ACT     1       0.016  -1.272   0.729  1.00  0.00      X   
+END

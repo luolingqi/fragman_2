@@ -1,0 +1,36 @@
+PSF 
+
+       2 !NTITLE
+* THE SUBUNITS OF 1ETH; INITIAL CHARMM PSF                                      
+*  DATE:     2/11/ 9     16:56:26      CREATED BY USER: gychuang                
+
+       2 !NATOM
+       1 X    1    ETH  C1     13    0.00000       15.0350           0
+       2 X    1    ETH  C2     13    0.00000       15.0350           0
+
+       1 !NBOND: bonds
+       1       2
+
+       0 !NTHETA: angles
+
+
+       0 !NPHI: dihedrals
+
+
+       0 !NIMPHI: impropers
+
+
+       0 !NDON: donors
+
+
+       0 !NACC: acceptors
+
+
+       0 !NNB
+
+       0       0
+
+       1       0 !NGRP NST2
+       0       0       0
+
+       0       0 !NUMLP NUMLPH

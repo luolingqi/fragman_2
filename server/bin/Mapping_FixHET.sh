@@ -1,0 +1,14 @@
+perl -p -i -e 's/ACN/CCN/g' *.pdb
+perl -p -i -e 's/ACT/ACN/g' *.pdb
+perl -p -i -e 's/BUT/TBU/g' *.pdb
+perl -p -i -e 's/PHN/IPH/g' *.pdb
+perl -p -i -e 's/SES/MOH/g' *.pdb
+perl -p -i -e 's/THS/IOH/g' *.pdb
+perl -p -i -e 's/BEN/BNZ/g' *.pdb
+perl -p -i -e 's/DME/PES/g' *.pdb
+perl -p -i -e 's/ETH/EHN/g' *.pdb
+perl -p -i -e 's/AMN/_NC/g' *.pdb
+perl -p -i -e 's/ADY/EOH/g' *.pdb
+perl -p -i -e 's/BDY/HBE/g' *.pdb
+perl -p -i -e 's/DFO/DMF/g' *.pdb
+perl -p -i -e 's/ACD/ACM/g' *.pdb

@@ -1,0 +1,113 @@
+ATOM      1  C   BUT     1      46.490  23.962 -24.220   1.000
+ATOM      2  C1  BUT     1      47.364  23.325 -23.125   1.000
+ATOM      3  C2  BUT     1      45.410  22.973 -24.694   1.000
+ATOM      4  C3  BUT     1      47.355  24.425 -25.404   1.000
+ATOM      5  O   BUT     1      45.853  25.088 -23.678   1.000
+ATOM      6  H1  BUT     1      45.185  24.747 -23.097   1.000
+ATOM      7  C1  PHN     2      45.414  24.984 -24.487   1.000
+ATOM      8  C2  PHN     2      45.126  23.602 -24.507   1.000
+ATOM      9  C3  PHN     2      45.864  22.753 -25.352   1.000
+ATOM     10  C4  PHN     2      46.861  23.306 -26.183   1.000
+ATOM     11  C5  PHN     2      47.154  24.686 -26.162   1.000
+ATOM     12  C6  PHN     2      46.421  25.532 -25.308   1.000
+ATOM     13  O   PHN     2      44.663  25.829 -23.700   1.000
+ATOM     14  HO  PHN     2      44.039  25.327 -23.198   1.000
+ATOM     15  CH  THS     3      46.072  24.454 -24.329   1.000
+ATOM     16  CH1 THS     3      47.205  24.092 -23.368   1.000
+ATOM     17  CH2 THS     3      45.251  23.219 -24.691   1.000
+ATOM     18  OT  THS     3      45.234  25.450 -23.739   1.000
+ATOM     19  HO  THS     3      44.739  25.078 -23.021   1.000
+ATOM     20  C   URE     4      46.028  25.301 -24.486   1.000
+ATOM     21  O   URE     4      46.917  24.991 -23.704   1.000
+ATOM     22  N1  URE     4      46.313  25.351 -25.719   1.000
+ATOM     23  N2  URE     4      44.881  25.555 -24.014   1.000
+ATOM     24  H1  URE     4      45.620  25.600 -26.424   1.000
+ATOM     25  H2  URE     4      47.247  25.143 -26.071   1.000
+ATOM     26  H3  URE     4      44.682  25.494 -23.015   1.000
+ATOM     27  H4  URE     4      44.093  25.819 -24.605   1.000
+ATOM     28  C1  ACN     5      45.476  23.131 -24.831   1.000
+ATOM     29  C2  ACN     5      46.004  24.489 -24.734   1.000
+ATOM     30  N   ACN     5      46.438  25.562 -24.656   1.000
+ATOM     31  C1  BDY     6      45.846  23.908 -25.058   1.000
+ATOM     32  C2  BDY     6      46.735  23.834 -26.155   1.000
+ATOM     33  C3  BDY     6      47.101  22.577 -26.674   1.000
+ATOM     34  C4  BDY     6      46.572  21.409 -26.085   1.000
+ATOM     35  C5  BDY     6      45.678  21.474 -24.996   1.000
+ATOM     36  C6  BDY     6      45.311  22.733 -24.482   1.000
+ATOM     37  C7  BDY     6      45.483  25.222 -24.514   1.000
+ATOM     38  H1  BDY     6      44.634  25.210 -23.832   1.000
+ATOM     39  O1  BDY     6      46.058  26.247 -24.789   1.000
+ATOM     40  CG  BEN     7      46.939  25.025 -26.461   1.000
+ATOM     41  CD1 BEN     7      46.768  23.654 -26.767   1.000
+ATOM     42  CE1 BEN     7      46.075  22.811 -25.868   1.000
+ATOM     43  CZ  BEN     7      45.544  23.339 -24.669   1.000
+ATOM     44  CE2 BEN     7      45.713  24.711 -24.365   1.000
+ATOM     45  CD2 BEN     7      46.411  25.553 -25.260   1.000
+ATOM     46  C2  DFO     8      45.424  25.206 -24.529   1.000
+ATOM     47  N3  DFO     8      45.903  24.051 -25.039   1.000
+ATOM     48  O4  DFO     8      45.918  26.312 -24.721   1.000
+ATOM     49  C3  DFO     8      47.066  24.095 -25.920   1.000
+ATOM     50  C1  DFO     8      45.263  22.777 -24.719   1.000
+ATOM     51  H1  DFO     8      44.537  25.036 -23.922   1.000
+ATOM     52  C2  EOL     9      46.077  24.546 -24.316   1.000
+ATOM     53  C1  EOL     9      45.378  23.246 -24.715   1.000
+ATOM     54  O   EOL     9      45.119  25.463 -23.782   1.000
+ATOM     55  H1  EOL     9      44.568  24.974 -23.184   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    3
+CONECT    1    4
+CONECT    1    5
+CONECT    5    6
+REMARK Residue 2
+CONECT    7    8
+CONECT    8    9
+CONECT    9   10
+CONECT   10   11
+CONECT   11   12
+CONECT   12    7
+CONECT    7   13
+CONECT   13   14
+REMARK Residue 3
+CONECT   16   15
+CONECT   15   18
+CONECT   15   17
+CONECT   18   19
+REMARK Residue 4
+CONECT   20   21
+CONECT   22   20
+CONECT   22   24
+CONECT   22   25
+CONECT   23   20
+CONECT   23   26
+CONECT   23   27
+REMARK Residue 5
+CONECT   28   29
+CONECT   29   30
+REMARK Residue 6
+CONECT   31   32
+CONECT   31   36
+CONECT   32   33
+CONECT   33   34
+CONECT   34   35
+CONECT   35   36
+CONECT   31   37
+CONECT   37   38
+CONECT   37   39
+REMARK Residue 7
+CONECT   40   41
+CONECT   40   45
+CONECT   41   42
+CONECT   45   44
+CONECT   42   43
+CONECT   44   43
+REMARK Residue 8
+CONECT   46   47
+CONECT   46   48
+CONECT   47   49
+CONECT   47   50
+CONECT   46   51
+REMARK Residue 9
+CONECT   52   53
+CONECT   52   54
+CONECT   54   55

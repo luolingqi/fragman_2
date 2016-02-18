@@ -1,0 +1,9 @@
+REMARK  SUBUNITS OF 1ACD; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:14      CREATED BY USER: gychuang                
+ATOM      1  N1  ACD     1      -4.273   9.319   1.394  1.00  0.00      X   
+ATOM      2  C2  ACD     1      -4.736  10.410   2.018  1.00  0.00      X   
+ATOM      3  C3  ACD     1      -6.243  10.441   2.146  1.00  0.00      X   
+ATOM      4  O4  ACD     1      -4.029  11.312   2.453  1.00  0.00      X   
+ATOM      5  H1  ACD     1      -4.915   8.626   1.067  1.00  0.00      X   
+ATOM      6  H2  ACD     1      -3.294   9.182   1.248  1.00  0.00      X   
+END

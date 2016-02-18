@@ -1,0 +1,66 @@
+ATOM      1  C1  ACN     1      36.154  32.065  -9.479   1.000
+ATOM      2  C2  ACN     1      37.521  31.759  -9.067   1.000
+ATOM      3  N   ACN     1      38.609  31.521  -8.739   1.000
+ATOM      4  C1  ADY     2      37.154  31.813  -9.376   1.000
+ATOM      5  C2  ADY     2      38.415  31.019  -9.104   1.000
+ATOM      6  O1  ADY     2      39.225  31.389  -8.289   1.000
+ATOM      7  H1  ADY     2      38.536  30.105  -9.682   1.000
+ATOM      8  C1  AMN     3      35.778  32.568  -8.794   1.000
+ATOM      9  N1  AMN     3      35.011  32.744 -10.035   1.000
+ATOM     10  H1  AMN     3      34.540  33.641 -10.019   1.000
+ATOM     11  H2  AMN     3      34.291  32.035 -10.091   1.000
+ATOM     12  C1  ETH     4      35.667  32.287  -9.633   1.000
+ATOM     13  C2  ETH     4      36.307  32.636  -8.278   1.000
+ATOM     14  C   URE     5      35.645  32.696  -8.618   1.000
+ATOM     15  O   URE     5      35.978  33.724  -8.044   1.000
+ATOM     16  N1  URE     5      35.218  32.791  -9.808   1.000
+ATOM     17  N2  URE     5      35.748  31.601  -7.989   1.000
+ATOM     18  H1  URE     5      35.142  33.694 -10.276   1.000
+ATOM     19  H2  URE     5      34.926  31.981 -10.354   1.000
+ATOM     20  H3  URE     5      36.096  31.565  -7.031   1.000
+ATOM     21  H4  URE     5      35.492  30.703  -8.399   1.000
+ATOM     22  C1  AMN     6      38.042  31.481  -9.065   1.000
+ATOM     23  N1  AMN     6      39.129  31.221  -8.109   1.000
+ATOM     24  H1  AMN     6      39.355  30.235  -8.118   1.000
+ATOM     25  H2  AMN     6      38.812  31.438  -7.173   1.000
+ATOM     26  C2  EOL     7      38.610  30.998  -9.711   1.000
+ATOM     27  C1  EOL     7      38.870  31.445  -8.278   1.000
+ATOM     28  O   EOL     7      39.119  31.986 -10.607   1.000
+ATOM     29  H1  EOL     7      40.034  31.799 -10.746   1.000
+ATOM     30  C2  EOL     8      35.559  32.753  -8.968   1.000
+ATOM     31  C1  EOL     8      36.502  31.569  -9.182   1.000
+ATOM     32  O   EOL     8      34.785  32.961 -10.152   1.000
+ATOM     33  H1  EOL     8      34.322  33.782 -10.043   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    5    6
+CONECT    5    7
+REMARK Residue 3
+CONECT    8    9
+CONECT    9   10
+CONECT    9   11
+REMARK Residue 4
+CONECT   12   13
+REMARK Residue 5
+CONECT   14   15
+CONECT   16   14
+CONECT   16   18
+CONECT   16   19
+CONECT   17   14
+CONECT   17   20
+CONECT   17   21
+REMARK Residue 6
+CONECT   22   23
+CONECT   23   24
+CONECT   23   25
+REMARK Residue 7
+CONECT   26   27
+CONECT   26   28
+CONECT   28   29
+REMARK Residue 8
+CONECT   30   31
+CONECT   30   32
+CONECT   32   33

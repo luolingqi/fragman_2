@@ -1,0 +1,9 @@
+REMARK  SUBUNITS OF 1BEN; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:20      CREATED BY USER: gychuang                
+ATOM      1  CG  BEN     1       0.705   1.225   0.000  1.00  0.00      X   
+ATOM      2  CD1 BEN     1      -0.708   1.223   0.000  1.00  0.00      X   
+ATOM      3  CE1 BEN     1      -1.414   0.000   0.000  1.00  0.00      X   
+ATOM      4  CZ  BEN     1      -0.706  -1.225   0.000  1.00  0.00      X   
+ATOM      5  CE2 BEN     1       0.708  -1.226   0.000  1.00  0.00      X   
+ATOM      6  CD2 BEN     1       1.413   0.003   0.000  1.00  0.00      X   
+END

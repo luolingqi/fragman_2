@@ -1,0 +1,4 @@
+.vagrant
+
+server/public_html/env/*.php
+storage

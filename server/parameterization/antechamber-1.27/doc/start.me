@@ -1,0 +1,93 @@
+.he ''\fR\n(mo/\n(dy/\n(y2''
+\ 
+.sp
+.sp 1i
+.ps 24
+.nf
+.ce 100
+\fBAntechamber Users' Manual\fR
+ 
+.ps 18
+Version 1.0
+ 
+.ps 12
+Junmei Wang\*{1\*} and David A. Case\*{2\*}
+ 
+\fI\*{1\*}Encysive, Inc., Houston TX, 77030
+
+\*{2\*}The Scripps Research Institute, La Jolla, CA 92037\fR
+.ce 0
+.fi
+.bp
+.sp
+.sp 2.0i
+.pp
+This manual is copyright (C) 2005, by Junmei Wang and David A. Case.
+The antechamber source code is copyright (C) 2005, by Junmei Wang.
+.pp
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 1, or (at your option) any later
+version. The GNU General Public License should be in a file called
+COPYING; if not, write to the Free Software Foundation, Inc.,
+59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+.pp
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+.hl
+.lp
+We thank Peter Kollman for encouragement and advice during the development of
+this project.  \fIother acknowledgements here!\fR
+.he '\fR\n(mo/\n(dy/\n(y2'Installation and Getting Started'%'
+.bp
+.EQ
+delim ``
+.EN
+.sh 1 "Installation and Getting Started."
+.sh 2 "Installation."
+.pp
+The \fIantechamber\fR package is available from
+http://amber.scripps.edu/pub/antechamber/download.html.
+The first step in setting up the nab package is to unpack the tar file
+using the UNIX commands gunzip and tar:
+.(l
+gunzip antechamber-1.0.x.tar.gz
+tar xvf antechamber-1.0.x.tar
+.)l
+The path to this new directory (\fIe.g. \fC/usr/local/antechamber-1.0\fR, if you
+unpacked the distribution in \fC/usr/local\fR) 
+should be defined as the environment variable $ACHOME.
+If you are
+using \fIsh, zsh\fR or \fIbash\fR as your shell:
+.(l
+export ACHOME=\fIinsertyourpathhere\fC/antechamber-1.0
+.)l
+If you are using \fIcsh\fR or \fItcsh\fR as your shell:
+.(l
+setenv ACHOME \fIinsertyourpathhere\fC/antechamber-1.0
+.)l
+Now, in the top-level ($ACHOME) directory, you should edit the \fIconfig.h\fR
+file, if necessary.  If you have the GNU compiler tools installed, no changes
+should be necessary.  Then
+.(l
+make
+.)l
+will compile things, putting the executable files in $ACHOME/bin.
+This can be followed by
+.(l
+make test
+.)l
+which will run tests and will report successes or failures.  
+.pp
+Now,  add the path to the binary executable of nab to your
+own path and rehash the search path, e.g.,
+.(l
+set path = ( $ACHOME/bin $path )
+rehash
+.)l
+.sh 2 "Contacting the developers"
+.pp
+Please send suggestions and questions to \fIjwang@encysive.com\fR or 
+\fCcase@scripps.edu\fR.

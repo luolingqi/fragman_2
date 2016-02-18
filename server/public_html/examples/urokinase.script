@@ -1,0 +1,44 @@
+/* Change background colour. */
+
+/* No symmetry */
+set symmetry off;
+
+/* antialias default on */
+view -wuantialias false;
+view -antialias true;
+
+/* shadows on */
+/*view -realspheres true;
+view -shadows true;*/
+
+molecule load mol  'examples/urokinase_rec.pdb';
+molecule load cc0  'examples/urokinase_cc.000.029.pdb';
+molecule load cc1  'examples/urokinase_cc.001.022.pdb';
+molecule load cc2  'examples/urokinase_cc.002.014.pdb';
+molecule load cc3  'examples/urokinase_cc.003.013.pdb';
+molecule load cc4  'examples/urokinase_cc.004.007.pdb';
+molecule load cc5  'examples/urokinase_cc.005.002.pdb';
+molecule load lig1 'examples/130_1gjc_urokinase.pdb';
+
+/* display as cartoon */
+display lines off molecule mol;
+/* assign secondary structure and display the protein as cartoon */
+secstruc molecule mol;
+schematic -name protein_schematic molecule mol;
+
+display lines off molecule lig1;
+display sticks on molecule lig1;
+color Gray molecule lig1 and atom C*;
+
+
+color Cyan molecule cc0 and atom C*;
+color Purple molecule cc1 and atom C*;
+color Yellow molecule cc2 and atom C*;
+color Salmon molecule cc3 and atom C*;
+color Plum molecule cc4 and atom C*;
+color Blue molecule cc5 and atom C*;
+display lines off molecule cc2;
+display lines off molecule cc4;
+display lines off molecule cc5;
+
+center molecule lig1 or molecule cc0 or molecule cc1 or molecule cc3;

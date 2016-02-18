@@ -1,0 +1,83 @@
+ATOM      1  C1  PHN     1      34.731  34.268  53.647   1.000
+ATOM      2  C2  PHN     1      35.409  33.732  54.761   1.000
+ATOM      3  C3  PHN     1      34.810  33.801  56.032   1.000
+ATOM      4  C4  PHN     1      33.514  34.348  56.153   1.000
+ATOM      5  C5  PHN     1      32.828  34.873  55.037   1.000
+ATOM      6  C6  PHN     1      33.436  34.814  53.771   1.000
+ATOM      7  O   PHN     1      35.192  33.959  52.389   1.000
+ATOM      8  HO  PHN     1      34.670  33.238  52.052   1.000
+ATOM      9  CH  THS     2      35.083  34.570  53.740   1.000
+ATOM     10  CH1 THS     2      33.617  34.888  54.036   1.000
+ATOM     11  CH2 THS     2      35.644  33.533  54.711   1.000
+ATOM     12  OT  THS     2      35.210  34.096  52.400   1.000
+ATOM     13  HO  THS     2      34.696  33.306  52.279   1.000
+ATOM     14  C   BUT     3      32.667  34.889  54.519   1.000
+ATOM     15  C1  BUT     3      32.035  36.280  54.711   1.000
+ATOM     16  C2  BUT     3      32.871  34.210  55.885   1.000
+ATOM     17  C3  BUT     3      34.008  34.996  53.768   1.000
+ATOM     18  O   BUT     3      31.782  34.107  53.757   1.000
+ATOM     19  H1  BUT     3      32.176  33.246  53.701   1.000
+ATOM     20  C   URE     4      30.995  34.853  54.152   1.000
+ATOM     21  O   URE     4      30.719  35.993  54.499   1.000
+ATOM     22  N1  URE     4      32.188  34.453  54.302   1.000
+ATOM     23  N2  URE     4      30.070  34.142  53.661   1.000
+ATOM     24  H1  URE     4      32.492  33.516  54.035   1.000
+ATOM     25  H2  URE     4      32.910  35.052  54.702   1.000
+ATOM     26  H3  URE     4      30.215  33.182  53.354   1.000
+ATOM     27  H4  URE     4      29.120  34.496  53.552   1.000
+ATOM     28  C2  DFO     5      33.085  34.439  54.696   1.000
+ATOM     29  N3  DFO     5      31.805  34.493  55.122   1.000
+ATOM     30  O4  DFO     5      34.062  34.310  55.424   1.000
+ATOM     31  C3  DFO     5      30.716  34.658  54.163   1.000
+ATOM     32  C1  DFO     5      31.522  34.380  56.551   1.000
+ATOM     33  H1  DFO     5      33.145  34.526  53.613   1.000
+ATOM     34  C   URE     6      38.838  32.767  52.945   1.000
+ATOM     35  O   URE     6      39.256  31.638  52.735   1.000
+ATOM     36  N1  URE     6      38.770  33.568  51.965   1.000
+ATOM     37  N2  URE     6      38.502  33.068  54.129   1.000
+ATOM     38  H1  URE     6      39.051  33.290  51.025   1.000
+ATOM     39  H2  URE     6      38.433  34.526  52.061   1.000
+ATOM     40  H3  URE     6      38.150  33.990  54.382   1.000
+ATOM     41  H4  URE     6      38.565  32.394  54.891   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+CONECT    6    1
+CONECT    1    7
+CONECT    7    8
+REMARK Residue 2
+CONECT   10    9
+CONECT    9   12
+CONECT    9   11
+CONECT   12   13
+REMARK Residue 3
+CONECT   14   15
+CONECT   14   16
+CONECT   14   17
+CONECT   14   18
+CONECT   18   19
+REMARK Residue 4
+CONECT   20   21
+CONECT   22   20
+CONECT   22   24
+CONECT   22   25
+CONECT   23   20
+CONECT   23   26
+CONECT   23   27
+REMARK Residue 5
+CONECT   28   29
+CONECT   28   30
+CONECT   29   31
+CONECT   29   32
+CONECT   28   33
+REMARK Residue 6
+CONECT   34   35
+CONECT   36   34
+CONECT   36   38
+CONECT   36   39
+CONECT   37   34
+CONECT   37   40
+CONECT   37   41

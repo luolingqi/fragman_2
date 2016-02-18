@@ -1,0 +1,30 @@
+The "antechamber" and "tleap" codes are provided under the GNU General Public
+Library, version 2.  A copy of this license is in the file "GPL".  The
+copyright to the antechamber source code is held by Junmei Wang and David A.
+Case, (c) 2005.
+
+The "mopac6" code has been placed in the public domain by its authors.  Here
+is the statement from the source code:
+C
+C         Notice of Public Domain nature of MOPAC
+C
+C      'This computer program is a work of the United States
+C       Government and as such is not subject to protection by
+C       copyright (17 U.S.C. # 105.)  Any person who fraudulently
+C       places a copyright notice or does any other act contrary
+C       to the provisions of 17 U.S. Code 506(c) shall be subject
+C       to the penalties provided therein.  This notice shall not
+C       be altered or removed from this software and is to be on
+C       all reproductions.'
+C
+
+The force field parameter files in the "dat" subdirectory have been placed in
+the public domain by their authors.
+
+Note especially the following, from the GPL file:
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+

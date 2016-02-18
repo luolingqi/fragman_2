@@ -1,0 +1,67 @@
+HEADER crosscluster.006.007.pdb
+ATOM      1  C1  CHX T   1      38.320  16.140 -23.934   1.000
+ATOM      2  C2  CHX T   1      39.406  15.881 -24.984   1.000
+ATOM      3  C3  CHX T   1      39.841  17.158 -25.713   1.000
+ATOM      4  C4  CHX T   1      38.655  17.951 -26.275   1.000
+ATOM      5  C5  CHX T   1      37.563  18.212 -25.231   1.000
+ATOM      6  C6  CHX T   1      37.135  16.946 -24.481   1.000
+ATOM      7  C1  DME T   2      36.323  20.842 -27.103   1.000
+ATOM      8  O1  DME T   2      36.956  20.341 -25.923   1.000
+ATOM      9  C2  DME T   2      37.116  18.921 -25.991   1.000
+ATOM     10  C1  ETH T   3      37.620  17.738 -24.699   1.000
+ATOM     11  C2  ETH T   3      37.264  18.737 -25.815   1.000
+ATOM     12  C   URE T   4      36.268  20.243 -26.650   1.000
+ATOM     13  O   URE T   4      35.445  19.543 -27.225   1.000
+ATOM     14  N1  URE T   4      37.094  19.678 -25.871   1.000
+ATOM     15  N2  URE T   4      36.242  21.491 -26.866   1.000
+ATOM     16  H1  URE T   4      37.827  19.058 -26.215   1.000
+ATOM     17  H2  URE T   4      37.062  19.804 -24.860   1.000
+ATOM     18  H3  URE T   4      35.378  21.980 -27.099   1.000
+ATOM     19  H4  URE T   4      37.081  22.071 -26.828   1.000
+ATOM     20  C1  ACN T   5      37.603  17.738 -24.792   1.000
+ATOM     21  C2  ACN T   5      37.233  18.906 -25.586   1.000
+ATOM     22  N   ACN T   5      36.940  19.838 -26.212   1.000
+ATOM     23  C1  AMN T   6      37.378  18.533 -25.651   1.000
+ATOM     24  N1  AMN T   6      37.066  19.967 -25.735   1.000
+ATOM     25  H1  AMN T   6      37.407  20.432 -24.903   1.000
+ATOM     26  H2  AMN T   6      36.062  20.093 -25.748   1.000
+ATOM     27  CG  BEN T   7      37.144  18.477 -25.488   1.000
+ATOM     28  CD1 BEN T   7      38.148  18.573 -26.479   1.000
+ATOM     29  CE1 BEN T   7      39.376  17.890 -26.312   1.000
+ATOM     30  CZ  BEN T   7      39.596  17.103 -25.157   1.000
+ATOM     31  CE2 BEN T   7      38.589  17.001 -24.169   1.000
+ATOM     32  CD2 BEN T   7      37.364  17.688 -24.334   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    6
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+REMARK Residue 2
+CONECT    7    8
+CONECT    8    9
+REMARK Residue 3
+CONECT   10   11
+REMARK Residue 4
+CONECT   12   13
+CONECT   14   12
+CONECT   14   16
+CONECT   14   17
+CONECT   15   12
+CONECT   15   18
+CONECT   15   19
+REMARK Residue 5
+CONECT   20   21
+CONECT   21   22
+REMARK Residue 6
+CONECT   23   24
+CONECT   24   25
+CONECT   24   26
+REMARK Residue 7
+CONECT   27   28
+CONECT   27   32
+CONECT   28   29
+CONECT   32   31
+CONECT   29   30
+CONECT   31   30

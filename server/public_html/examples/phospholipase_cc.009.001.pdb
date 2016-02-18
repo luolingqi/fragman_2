@@ -1,0 +1,7 @@
+HEADER crosscluster.009.001.pdb
+ATOM      1  C1  ACN Q   1       1.577  19.418  -4.999   1.000
+ATOM      2  C2  ACN Q   1       1.048  18.355  -4.149   1.000
+ATOM      3  N   ACN Q   1       0.628  17.512  -3.471   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3

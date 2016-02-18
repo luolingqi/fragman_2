@@ -1,0 +1,59 @@
+/* Change background colour. */
+
+/* No symmetry */
+set symmetry off;
+
+/* antialias default on */
+view -wuantialias false;
+view -antialias true;
+
+/* shadows on */
+/*view -realspheres true;
+view -shadows true;*/
+
+molecule load mol  'examples/phospholipase_rec.pdb';
+molecule load cc0  'examples/phospholipase_cc.000.025.pdb';
+molecule load cc1  'examples/phospholipase_cc.001.014.pdb';
+molecule load cc2  'examples/phospholipase_cc.002.010.pdb';
+molecule load cc3  'examples/phospholipase_cc.003.009.pdb';
+molecule load cc4  'examples/phospholipase_cc.004.008.pdb';
+molecule load cc5  'examples/phospholipase_cc.005.008.pdb';
+molecule load cc6  'examples/phospholipase_cc.006.006.pdb';
+molecule load cc7  'examples/phospholipase_cc.007.006.pdb';
+molecule load cc8  'examples/phospholipase_cc.008.003.pdb';
+molecule load cc9  'examples/phospholipase_cc.009.001.pdb';
+molecule load cc10 'examples/phospholipase_cc.010.001.pdb';
+molecule load lig1 'examples/niflumic_acid_phospholipase.pdb';
+
+/* display as cartoon */
+display lines off molecule mol;
+/* assign secondary structure and display the protein as cartoon */
+secstruc molecule mol;
+schematic -name protein_schematic molecule mol;
+
+display lines off molecule lig1;
+display sticks on molecule lig1;
+color White molecule lig1 and atom C*;
+
+
+color Cyan molecule cc0 and atom C*;
+color Purple molecule cc1 and atom C*;
+color Yellow molecule cc2 and atom C*;
+color Salmon molecule cc3 and atom C*;
+color Plum molecule cc4 and atom C*;
+color Blue molecule cc5 and atom C*;
+color Orange molecule cc6 and atom C*;
+color Green molecule cc7 and atom C*;
+color Magenta molecule cc8 and atom C*;
+color Pink molecule cc9 and atom C*;
+color Maroon molecule cc10 and atom C*;
+display lines off molecule cc1;
+display lines off molecule cc2;
+display lines off molecule cc3;
+display lines off molecule cc5;
+display lines off molecule cc7;
+display lines off molecule cc8;
+display lines off molecule cc9;
+display lines off molecule cc10;
+
+center molecule lig1 or molecule cc0 or molecule cc4 or molecule cc6;

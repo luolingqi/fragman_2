@@ -1,0 +1,55 @@
+! EXAM31.
+!
+!  Water in PCM water...RHF geometry optimization
+!  FINAL E= -74.9673976135, 12 iters, RMS Grad = 0.0326800
+!  FINAL E= -74.9578249526,  8 iters, RMS Grad = 0.0473274
+!  FINAL E= -74.9699652159,  7 iters, RMS Grad = 0.0121342
+!  FINAL E= -74.9711637211,  8 iters, RMS Grad = 0.0035688
+!  FINAL E= -74.9712141099,  8 iters, RMS Grad = 0.0026300
+!  FINAL E= -74.9712430915,  7 iters, RMS Grad = 0.0000503
+!  FINAL E= -74.9712430935,  4 iters, RMS Grad = 0.0000048
+!  The final geometry is not symmetric,
+!     O
+!     H      1    .9873769
+!     H      1    .9873998  2    99.9907020
+!  
+!          ----------------------------------------------
+!          -------   RESULTS OF PCM CALCULATION   -------
+!          ----------------------------------------------
+!  
+!  FREE ENERGY IN SOLVENT        =      -74.9712430935 A.U.
+!  INTERNAL ENERGY IN SOLVENT    =      -74.9656079889 A.U.
+!  DELTA INTERNAL ENERGY         =         .0000000000 A.U.
+!  ELECTROSTATIC INTERACTION     =        -.0056351046 A.U.
+!  PIEROTTI CAVITATION ENERGY    =         .0000000000 A.U.
+!  DISPERSION FREE ENERGY        =         .0000000000 A.U.
+!  REPULSION FREE ENERGY         =         .0000000000 A.U.
+!  TOTAL INTERACTION             =        -.0056351046 A.U.
+!  TOTAL FREE ENERGY IN SOLVENT  =      -74.9712430935 A.U.
+!  -------------------------------------------------------------
+!  If run as water in COSMO water...RHF geometry optimization
+!  TOTAL ENERGY = -74.9668641024, GRADIENT = 0.0328762
+!  TOTAL ENERGY = -74.9573773677, GRADIENT = 0.0472014
+!  TOTAL ENERGY = -74.9694735831, GRADIENT = 0.0119467
+!  TOTAL ENERGY = -74.9706638172, GRADIENT = 0.0034561
+!  TOTAL ENERGY = -74.9707113416, GRADIENT = 0.0025645
+!  TOTAL ENERGY = -74.9707113012, GRADIENT = 0.0000435
+!  TOTAL ENERGY = -74.9707113422, GRADIENT = 0.0000035
+!
+ $contrl scftyp=rhf runtyp=optimize coord=zmt $end
+ $system timlim=1 mwords=2 $end
+ $basis  gbasis=sto ngauss=3 $end
+ $guess  guess=huckel $end
+ $pcm    solvnt=water $end
+--- $cosgms epsi=80.0 $end
+ $data
+a water molecule solvated by water
+Cnv 2
+
+O
+H 1 rOH
+H 1 rOH 2 aHOH 
+
+rOH=0.95
+aHOH=104.5
+ $end

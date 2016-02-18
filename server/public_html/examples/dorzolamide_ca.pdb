@@ -1,0 +1,90 @@
+HETATM    1  S1  ETS A 263      33.680  15.175 -18.214  1.00  7.20           S  
+HETATM    2  C2  ETS A 263      34.632  16.501 -17.772  1.00  6.93           C  
+HETATM    3  C3  ETS A 263      35.247  17.138 -18.852  1.00  7.55           C  
+HETATM    4  C4  ETS A 263      34.909  16.473 -20.070  1.00  8.05           C  
+HETATM    5  C5  ETS A 263      35.425  16.869 -21.405  1.00  8.99           C  
+HETATM    6  C6  ETS A 263      34.575  16.234 -22.524  1.00  9.44           C  
+HETATM    7  C7  ETS A 263      34.398  14.738 -22.431  1.00  8.42           C  
+HETATM    8  S8  ETS A 263      33.275  14.454 -21.081  1.00  8.78           S  
+HETATM    9  C9  ETS A 263      34.058  15.365 -19.846  1.00  8.03           C  
+HETATM   10  S10 ETS A 263      34.742  16.981 -16.115  1.00  5.91           S  
+HETATM   11  O11 ETS A 263      34.555  15.784 -15.346  1.00  6.77           O  
+HETATM   12  O12 ETS A 263      33.839  18.076 -15.898  1.00  6.31           O  
+HETATM   13  N13 ETS A 263      36.339  17.535 -15.837  1.00  5.20           N  
+HETATM   14  N14 ETS A 263      36.826  16.421 -21.498  1.00  9.52           N  
+HETATM   15  C15 ETS A 263      33.792  14.211 -23.745  1.00  9.52           C  
+HETATM   16  O16 ETS A 263      33.341  13.060 -20.732  1.00  8.98           O  
+HETATM   17  O17 ETS A 263      31.994  15.074 -21.294  1.00  8.71           O  
+HETATM   18  C18 ETS A 263      37.560  16.975 -22.644  1.00 11.10           C  
+HETATM   19  C19 ETS A 263      39.045  16.698 -22.401  1.00 10.98           C  
+CONECT    1    2
+CONECT    1    2
+CONECT    1    2
+CONECT    1    2
+CONECT    1    9
+CONECT    1    9
+CONECT    1    9
+CONECT    1    9
+CONECT    2    1
+CONECT    2    1
+CONECT    2    1
+CONECT    2    1
+CONECT    2    3
+CONECT    2    3
+CONECT    2    3
+CONECT    2    3
+CONECT    2   10
+CONECT    3    2
+CONECT    3    2
+CONECT    3    2
+CONECT    3    2
+CONECT    3    4
+CONECT    3    4
+CONECT    3    4
+CONECT    3    4
+CONECT    4    3
+CONECT    4    3
+CONECT    4    3
+CONECT    4    3
+CONECT    4    5
+CONECT    4    9
+CONECT    4    9
+CONECT    4    9
+CONECT    4    9
+CONECT    5    4    6   14
+CONECT    6    5    7
+CONECT    7    6    8   15
+CONECT    8    7    9
+CONECT    8   16
+CONECT    8   16
+CONECT    8   17
+CONECT    8   17
+CONECT    9    1
+CONECT    9    1
+CONECT    9    1
+CONECT    9    1
+CONECT    9    4
+CONECT    9    4
+CONECT    9    4
+CONECT    9    4
+CONECT    9    8
+CONECT   10    2
+CONECT   10   11
+CONECT   10   11
+CONECT   10   12
+CONECT   10   12
+CONECT   10   13
+CONECT   11   10
+CONECT   11   10
+CONECT   12   10
+CONECT   12   10
+CONECT   13   10
+CONECT   14    5   18
+CONECT   15    7
+CONECT   16    8
+CONECT   16    8
+CONECT   17    8
+CONECT   17    8
+CONECT   18   14   19
+CONECT   19   18
+END

@@ -1,0 +1,101 @@
+-u ETH 
+-M ETH " C1  C2  O   H1  H2  H3  H4  H5  HO " 
+-T ETH " C1  C2 : C2  O  : C1  H1 : C1  H2 : C1  H3 : C2  H4 : C2  H5 : O   HO " 
+-e ETH " O  " 2 
+-E ETH " O  " 1  
+-u SES 
+-M SES " OT  CH3 " 
+-T SES " CH3  OT " 
+-e SES " OT " 2 
+-E SES " OT " 1  
+-u THS 
+-M THS " CH1 CH2 CH  OT  HO " 
+-T THS " CH  CH2: CH  CH1: CH  OT : OT  HO " 
+-e THS " OT " 2 
+-E THS " OT " 1  
+-u ACT 
+-M ACT " CH1 CH2  C  O  "  
+-T ACT " CH1  C  : CH2 C  : C   O  " 
+-e ACT " O  " 2 
+-u URE 
+-M URE " C   O   N1  N2  H1  H2  H3  H4 " 
+-T URE " N1  C  : N2  C  : N1  H1 : N1  H1 : N1  H2 : N2  H3 : N2  H4 : C   O  " 
+-e URE " O  " 2 
+-e URE " N1 " 1 
+-e URE " N2 " 1 
+-E URE " N1 " 2 
+-E URE " N2 " 2 
+-u DMS 
+-M DMS " S1  C1  C2  O   H1  H2  H3  H4  H5  H6 " 
+-T DMS " S1  C1 : S1  C2 : S1  O  : C1  H1 : C1  H2 : C1  H3 : C2  H4 "
+-T DMS " C2  H5 : C2  H6 " 
+-e DMS " O  " 2 
+-u BUT 
+-M BUT " C   C1  C2  C3  H1  H2  H3  H4  H5  H6  H7  H8  H9  O   HO " 
+-T BUT " C   C1 : C   C2 : C   C3 : C1  H1 : C1  H2 : C1  H3 : C2  H4 "
+-T BUT " C2  H5 : C2  H6 : C3  H7 : C3  H8 : C3  H9 : C   O  : O   HO " 
+-e BUT " O  " 2 
+-E BUT " O  " 1 
+-u PHN 
+-M PHN " C4  C5  C3  C6  C2  C1  O   HO " 
+-T PHN " C4  C5 : C5  C6 : C6  C1 : C1  C2 : C2  C3 : C3  C4 : C1  O  : O   HO " 
+-e PHN " O  " 2 
+-E PHN " O  " 1 
+-u ACN 
+-M ACN " C1  C2  H1  H2  H3  N  " 
+-T ACN " C1  C2 : C1  H1 : C1  H2 : C1  H3 : C2  N  " 
+-e ACN " N  " 1 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

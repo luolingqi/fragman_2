@@ -1,0 +1,38 @@
+#!/bin/bash
+cd $1
+grep -v C1 1acn.min.pdb >1acn.min.mdl
+grep -v "CH[1,2]" 1act.min.pdb >1act.min.mdl
+cat 1ady.min.pdb  >1ady.min.mdl
+grep -v "H[1,2]" 1amn.min.pdb >1amn.min.mdl
+perl -n -e 'if (m/C[1,4]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/C6/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[1,2,3,4,5,6]/)){print;}' 1bdy.min.pdb >1bdy.min.mdl 
+perl -n -e 'if (m/C[G,Z]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/CD2/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[GZDE]/)){print;}' 1ben.min.pdb >1ben.min.mdl 
+grep -v "C[1,2,3]" 1but.min.pdb >1but.min.mdl
+perl -n -e 'if (m/C[1,4]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/C6/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[1,2,3,4,5,6]/)){print;}' 1chx.min.pdb >1chx.min.mdl
+grep -v "C[1,2]" 1dme.min.pdb >1dme.min.mdl
+perl -n -e 'if (m/C[1,2]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/C2/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[1,2]/)){print;}' 1eth.min.pdb >1eth.min.mdl
+perl -n -e 'if (m/C[1,4]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/C6/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[1,2,3,4,5,6]/)){print;}' 1phn.min.pdb >1phn.min.mdl
+cat 1ses.min.pdb >1ses.min.mdl
+grep -v "CH[1,2]" 1ths.min.pdb >1ths.min.mdl
+grep -v "[N,H][1,2,3,4]" 1ure.min.pdb >1ure.min.mdl
+grep -v "H[1,2]" 1acd.min.pdb >1acd.min.mdl
+cat 1eol.min.pdb >1eol.min.mdl
+grep -v "C[1,3]" 1dfo.min.pdb >1dfo.min.mdl
+grep -v "C[2,3]" 1sau.min.pdb|grep -v "H[1,2]" >1sau.min.mdl
+grep -v "C[2,3,4]" 1sbf.min.pdb|grep -v "H[1,2]" >1sbf.min.mdl
+grep -v "H[1,2]" 1r23.min.pdb >1r23.min.mdl
+cat 1ace.min.pdb > 1ace.min.mdl
+cat pc1.min.pdb > pc1.min.mdl
+grep -v "OD[1,2]" pd1.min.pdb >pd1.min.mdl
+grep -v "OE[1,2]" pe1.min.pdb >pe1.min.mdl
+cat ph1.min.pdb > ph1.min.mdl
+cat ph2.min.pdb > ph2.min.mdl
+cat ph3.min.pdb > ph3.min.mdl
+perl -n -e 'if (m/C[B,D]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/CD/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (m/CG/){for($i=0;$i<3;$i++) {$y[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/CG1/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$y[$i])};@y=();print};if (!(/C[BGD]/)){print;}' pi1.min.pdb >pi1.min.mdl 
+perl -n -e 'if (m/C[G,D]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/CD/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[G,D]/)){print;}' pi2.min.pdb >pi2.min.mdl
+grep -v "HZ[1,2,3]" pk1.min.pdb >pk1.min.mdl
+grep -v "C[B,D]" pl1.min.pdb >pl1.min.mdl
+grep -v "C[G,E]" pm1.min.pdb >pm1.min.mdl
+perl -n -e 'if (m/C[D,A,B,G]/){for($i=0;$i<3;$i++) {$x[$i]+=(substr ($_,30+8*$i,8))/2;}};if (m/CG/){for($i=0;$i<3;$i++){substr($_,30+8*$i,8)=sprintf("%8.3f",$x[$i])};@x=();print};if (!(/C[D,A,B,G]/)){print;}' pp1.min.pdb >pp1.min.mdl
+grep -v "[N,H]H" pr1.min.pdb >pr1.min.mdl
+grep -v "CG" pv1.min.pdb >pv1.min.mdl
+cat pw1.min.pdb > pw1.min.mdl

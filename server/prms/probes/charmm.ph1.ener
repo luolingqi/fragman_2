@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF PH1
+ TITLE>  *  DATE:     7/ 8/ 8     14:20:27      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      0.90970      0.00000      0.00000
+PRIN INTERN>        0.17824      1.34949      0.00000      0.00000      0.00000
+PRIN EXTERN>       -0.31628     -0.30175      0.00000      0.00000      0.00000
+PRIN   ACE1>        2.58303    -12.06337     10.35291     -1.17432
+PRIN   ACE2>       -1.71046      9.17859
+ ----------       ---------    ---------    ---------    ---------    ---------

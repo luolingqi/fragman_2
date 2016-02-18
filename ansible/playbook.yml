@@ -1,0 +1,33 @@
+---
+- hosts: db
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - role: db
+      postgresql_listen_addresses:
+        - localhost
+        - "{{ ansible_eth1.ipv4.address }}"
+      postgresql_pg_hba_trust_hosts:
+        - "{{ ansible_eth1.ipv4.network }}/24"
+
+  tasks:
+    - name: Copy FTMap schema
+      copy:
+        src: files/ftmap.schema
+        dest: /home/vagrant/ftmap.schema
+      register: ftmap_schema
+    - name: Generate clean database
+      shell: >
+        echo "drop database if exists ftmap; \i ftmap.schema;"
+        | psql -U postgres
+        && echo "INSERT INTO users
+        (username, password, timecreated, emailJobComplete)
+        VALUES
+        ('piper', MD5('piper'), 'now', 'f');"
+        | psql -U postgres ftmap
+      when: ftmap_schema.changed
+- hosts: web
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - role: web

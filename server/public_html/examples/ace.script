@@ -1,0 +1,65 @@
+/* Change background colour. */
+
+/* No symmetry */
+set symmetry off;
+
+/* antialias default on */
+view -wuantialias false;
+view -antialias true;
+
+/* shadows on */
+/*view -realspheres true;
+view -shadows true;*/
+
+molecule load mol  'examples/ace_rec.pdb';
+molecule load cc0  'examples/ace_cc.000.021.pdb';
+molecule load cc1  'examples/ace_cc.001.011.pdb';
+molecule load cc2  'examples/ace_cc.002.011.pdb';
+molecule load cc3  'examples/ace_cc.003.010.pdb';
+molecule load cc4  'examples/ace_cc.004.008.pdb';
+molecule load cc5  'examples/ace_cc.005.008.pdb';
+molecule load cc6  'examples/ace_cc.006.004.pdb';
+molecule load cc7  'examples/ace_cc.007.004.pdb';
+molecule load cc8  'examples/ace_cc.008.003.pdb';
+molecule load cc9  'examples/ace_cc.009.003.pdb';
+molecule load cc10 'examples/ace_cc.010.003.pdb';
+molecule load cc11 'examples/ace_cc.011.002.pdb';
+molecule load cc12 'examples/ace_cc.012.002.pdb';
+molecule load lig1 'examples/lisinopril_ace.pdb';
+
+/* display as cartoon */
+display lines off molecule mol;
+/* assign secondary structure and display the protein as cartoon */
+secstruc molecule mol;
+schematic -name protein_schematic molecule mol;
+display spheres on name ZN;
+label %a name ZN;
+
+display lines off molecule lig1;
+display sticks on molecule lig1;
+color White molecule lig1 and atom C*;
+
+
+color Cyan molecule cc0 and atom C*;
+color Purple molecule cc1 and atom C*;
+color Yellow molecule cc2 and atom C*;
+color Salmon molecule cc3 and atom C*;
+color Plum molecule cc4 and atom C*;
+color Blue molecule cc5 and atom C*;
+color Orange molecule cc6 and atom C*;
+color Green molecule cc7 and atom C*;
+color Magenta molecule cc8 and atom C*;
+color Pink molecule cc9 and atom C*;
+color Maroon molecule cc10 and atom C*;
+color Red molecule cc11 and atom C*;
+color Peru molecule cc12 and atom C*;
+display lines off molecule cc2;
+display lines off molecule cc3;
+display lines off molecule cc5;
+display lines off molecule cc7;
+display lines off molecule cc8;
+display lines off molecule cc9;
+display lines off molecule cc11;
+display lines off molecule cc12;
+
+center molecule lig1 or molecule cc0 or molecule cc1 or molecule cc4 or molecule cc6 or molecule cc10;

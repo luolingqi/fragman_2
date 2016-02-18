@@ -1,0 +1,53 @@
+---
+- name: Link webapp
+  file:
+    src: /vagrant/server/public_html
+    dest: /var/www
+    state: link
+    force: yes
+
+- name: Ensure www-data can access storage
+  user:
+    name: www-data
+    append: yes
+    groups: vagrant
+    state: present
+
+- name: Configure PHP files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: 'appvars.j2', dest: '/var/www/env/appvars.php' }
+    - { src: 'dbvars.j2', dest: '/var/www/env/dbvars.php' }
+  notify: restart php-fpm
+
+- name: Remove default NGINX site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: restart nginx
+
+- name: Turn Sendfile off
+  lineinfile:
+    dest: /etc/nginx/nginx.conf
+    line: "sendfile off;"
+    regexp: "sendfile (on|off);"
+    state: present
+  notify: restart nginx
+
+- name: Configure FTMap site
+  copy:
+    src: nginx/ftmap
+    dest: /etc/nginx/sites-enabled/ftmap
+  notify: restart nginx
+
+- name: Configure PHP-FPM
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: php-fpm/30-server_options.ini, dest: /etc/php5/fpm/conf.d/30-server_options.ini }
+    - { src: php-fpm/30-server_options.ini, dest: /etc/php5/cli/conf.d/30-server_options.ini }
+    - { src: php-fpm/www.conf, dest: /etc/php5/fpm/pool.d/www.conf }
+  notify: restart php-fpm

@@ -1,0 +1,12 @@
+REMARK  SUBUNITS OF 1BDY; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:19      CREATED BY USER: gychuang                
+ATOM      1  C1  BDY     1      -0.370  -4.706   9.564  1.00  0.00      X   
+ATOM      2  C2  BDY     1      -0.075  -3.344   9.811  1.00  0.00      X   
+ATOM      3  C3  BDY     1      -1.006  -2.540  10.498  1.00  0.00      X   
+ATOM      4  C4  BDY     1      -2.223  -3.113  10.927  1.00  0.00      X   
+ATOM      5  C5  BDY     1      -2.526  -4.467  10.686  1.00  0.00      X   
+ATOM      6  C6  BDY     1      -1.593  -5.269  10.000  1.00  0.00      X   
+ATOM      7  C7  BDY     1       0.604  -5.536   8.850  1.00  0.00      X   
+ATOM      8  H1  BDY     1       0.273  -6.562   8.716  1.00  0.00      X   
+ATOM      9  O1  BDY     1       1.672  -5.136   8.444  1.00  0.00      X   
+END

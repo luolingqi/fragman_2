@@ -1,0 +1,60 @@
+#!/bin/csh
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  ligonly.scr     v.4.0 (16 Nov 97)
+#  -----------
+#  Shell script for running ligplot.  
+#   Andrew Wallace June 1994 
+#  
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#
+# Check that exactly parameters have been entered
+if ($#argv < 1) then
+  echo ' '
+  echo '*** ERROR. Correct usage is:'
+  echo ' '
+  echo 'ligonly  filename  [residue1]  [residue2]  [chain_id]  [-w]  [-h]'
+  echo ' '
+  echo '     where:-   filename = name of the PDB file'
+  echo '               residue1 = first ligand residue number (or name and number)'
+  echo '               residue2 = last ligand residue number (or name and number)'
+  echo '               chain_id = chain identifier for ligand (unless blank)'
+  echo '               -w       = indicator that ligand is one or more waters'
+  echo '               -h       = indicator that a plot heading to be entered'
+  echo ' '
+  echo 'For example:-'
+  echo ' '
+  echo '              ligplot  /data/pdb/p6tmn.pdb  1 4 I'
+  echo ' '
+  echo '         or:-'
+  echo ' '
+  echo '              ligplot  /data/pdb/p6tmn.pdb  CBZ 1 LEU 4 I'
+  echo ' '
+else
+  echo ' '
+  echo ' '
+  set filename = $1
+  echo 'Coordinates file:   [' $filename ']'
+  echo ' '
+#
+#if default parameter file doesn't exist, create it 
+#
+  if (-e ligplot.prm) then
+  else
+    cp $ligdir/ligplot.prm .
+    endif	
+    #---------------#
+    # L I G P L O T #
+    #---------------#
+    echo 'Running ligplot ...'
+    echo ' '
+    $ligdir/ligplot $filename "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" "$10"
+    echo ' '
+    echo '..................................................................'
+else
+    echo 'File not found: '$filename
+   
+endif
+endif
+
+
+

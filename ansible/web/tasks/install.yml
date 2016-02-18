@@ -1,0 +1,37 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+- name: Install apt packages
+  apt:
+    pkg: "{{item}}"
+    state: present
+  with_items:
+    - "nginx"
+    - "php5-common"
+    - "php5-cli"
+    - "php5-fpm"
+    - "php5-pgsql"
+    - "php5-dev"
+    - "php5-sqlite"
+    - "php-pear"
+    - "libfftw3-3"
+    - "libssh2-1"
+    - "libssh2-1-dev"
+    - "optipng"
+    - "pymol"
+    - "dos2unix"
+    - "python-pip"
+    - "python-dev"
+- name: Install PECL packages
+  shell: yes '' | pecl install ssh2-0.12
+  register: pecl_ssh2_result
+  changed_when: "'installed' not in pecl_ssh2_result.stdout"
+  failed_when: "'0.12' not in pecl_ssh2_result.stdout"
+- name: Copy requirements file
+  copy:
+    src: requirements.txt
+    dest: /tmp/requirements.txt
+- name: Install Python packages
+  pip:
+    requirements: "/tmp/requirements.txt"
