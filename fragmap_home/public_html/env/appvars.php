@@ -24,6 +24,7 @@ define('DEFAULT_COEFFS', 'coeffs.0.0.6');
 define('PPI_COEFFS'    , 'ppi_coeffs.0.0.6');
 define('DEFAULT_ROTS'  , 'rot70k.0.0.4.prm');
 
+
 # filenames
 # original user submitted files
 $recorigpre = 'protorig';
