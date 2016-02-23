@@ -1,6 +1,6 @@
 <?php
-$dbname='crysmap';
-$dbuser='crysmap';
+$dbname='fragmap';
+$dbuser='fragmap';
 
 $dbconn = pg_connect("dbname=$dbname user=$dbuser") or die('Could not connect: ' . pg_last_error());
 $dbh = new PDO("pgsql:dbname=$dbname", $dbuser);

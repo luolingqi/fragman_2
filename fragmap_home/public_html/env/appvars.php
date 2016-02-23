@@ -16,7 +16,7 @@ define('PRMS_DIR', $prmsdir);
 define('BIN_DIR', "$rootdir/bin");
 define('SCV_USER', 'gychuang');
 define('SCV_PASS', '223CluaP');
-define('SCV_STORAGE', '/projectnb/docking/marsluo/crysmap/jobs');
+define('SCV_STORAGE', '/projectnb/docking/marsluo/fragmap/jobs');
 define('SCV_BIN', '/projectnb/docking/marsluo/atlas/atlas-1.5.4-alpha.2/atlas_package/python_bin');
 
 define('DEFAULT_ATOMS' , 'atoms.0.0.6.prm.ms.3cap+0.5ace.Hr0rec');
