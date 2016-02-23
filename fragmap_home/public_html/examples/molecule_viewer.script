@@ -1,0 +1,74 @@
+/*
+ * AstexViewer 2.0 script.
+ *
+ * Reads in 1rec.pdb, shows as cartoon. Reads in site_1, 
+ * site_2, site_3, and display as meshes. Reads in site
+ * selections and display as sticks. Center view on the
+ * first site (site_1).
+ *
+ * Chi Ho Ngan, 12-13-2010
+ */
+
+/* Change background colour. */
+background white;
+
+/* No symmetry */
+set symmetry off;
+
+/* antialias default on */
+view -wuantialias false;
+view -antialias true;
+
+/* shadows on */
+/* view -realspheres true;
+view -shadows true; */
+
+/* Load molecule from 1rec.pdb and call it mol */
+molecule load mol '1rec.pdb';
+molecule load site_1 'site_1.pdb';
+molecule load site_2 'site_2.pdb';
+molecule load site_3 'site_3.pdb';
+molecule load select_1 'site_select_1.pdb';
+molecule load select_2 'site_select_2.pdb';
+molecule load select_3 'site_select_3.pdb';
+
+/* do not display lines */
+display lines off molecule mol;
+display lines off molecule site_1;
+display lines off molecule site_2;
+display lines off molecule site_3;
+display lines off molecule select_1;
+display lines off molecule select_2;
+display lines off molecule select_3;
+
+/* assign secondary structure and display the protein as cartoon */
+/*secstruc molecule mol;
+ *schematic -name mol_surf -colobyss true molecule mol;
+ */
+
+/* show sites as meshes (objects) and color them */
+surface surf_1 Maroon molecule site_1;
+surface surf_2 Green molecule site_2;
+surface surf_3 Turquoise molecule site_3;
+object surf_2 display off;
+object surf_3 display off;
+
+surface -solid true protein_surface white aminoacid and molecule mol;
+object protein_surface display off;
+
+
+/* color site selections accordingly */
+color Maroon molecule select_1 and atom C*;
+color Green molecule select_2 and atom C*;
+color Turquoise molecule select_3 and atom C*;
+
+/* center on initial view on site_1 */
+center sphere 15 around molecule site_1;
+
+/*cartoon */
+color_by_rainbow aminoacid and molecule mol; secstruc molecule mol; schematic -name protein_schematic molecule mol; select molecule mol; color_by_atom;
+
+molecule load lig 'lig.pdb';
+display lines off molecule lig;
+display sticks on molecule lig;
+color White molecule lig and atom C*;

@@ -1,0 +1,49 @@
+HEADER crosscluster.008.003.pdb
+ATOM      1  C1  BDY R   1      43.088  44.994  55.299   1.000
+ATOM      2  C2  BDY R   1      42.894  45.805  54.163   1.000
+ATOM      3  C3  BDY R   1      42.500  45.218  52.949   1.000
+ATOM      4  C4  BDY R   1      42.295  43.824  52.897   1.000
+ATOM      5  C5  BDY R   1      42.431  43.016  54.046   1.000
+ATOM      6  C6  BDY R   1      42.829  43.608  55.259   1.000
+ATOM      7  C7  BDY R   1      43.591  45.595  56.528   1.000
+ATOM      8  H1  BDY R   1      42.890  45.547  57.356   1.000
+ATOM      9  O1  BDY R   1      44.677  46.110  56.622   1.000
+ATOM     10  C1  CHX R   2      42.023  43.211  53.848   1.000
+ATOM     11  C2  CHX R   2      42.441  42.755  55.253   1.000
+ATOM     12  C3  CHX R   2      42.501  43.882  56.291   1.000
+ATOM     13  C4  CHX R   2      43.189  45.148  55.786   1.000
+ATOM     14  C5  CHX R   2      42.628  45.593  54.435   1.000
+ATOM     15  C6  CHX R   2      42.724  44.491  53.386   1.000
+ATOM     16  C   URE R   3      43.421  45.198  55.990   1.000
+ATOM     17  O   URE R   3      43.187  45.556  54.843   1.000
+ATOM     18  N1  URE R   3      42.758  44.228  56.465   1.000
+ATOM     19  N2  URE R   3      44.316  45.819  56.633   1.000
+ATOM     20  H1  URE R   3      42.089  44.343  57.227   1.000
+ATOM     21  H2  URE R   3      42.852  43.279  56.104   1.000
+ATOM     22  H3  URE R   3      44.691  45.480  57.518   1.000
+ATOM     23  H4  URE R   3      44.731  46.680  56.275   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    6
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+CONECT    1    7
+CONECT    7    8
+CONECT    7    9
+REMARK Residue 2
+CONECT   10   11
+CONECT   10   15
+CONECT   11   12
+CONECT   12   13
+CONECT   13   14
+CONECT   14   15
+REMARK Residue 3
+CONECT   16   17
+CONECT   18   16
+CONECT   18   20
+CONECT   18   21
+CONECT   19   16
+CONECT   19   22
+CONECT   19   23

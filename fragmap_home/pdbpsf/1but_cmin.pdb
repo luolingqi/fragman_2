@@ -1,0 +1,9 @@
+REMARK  SUBUNITS OF 1BUT; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:21      CREATED BY USER: gychuang                
+ATOM      1  C   BUT     1       0.740   0.162 -15.932  1.00  0.00      X   
+ATOM      2  C1  BUT     1      -0.305   0.174 -17.067  1.00  0.00      X   
+ATOM      3  C2  BUT     1       1.209  -1.273 -15.645  1.00  0.00      X   
+ATOM      4  C3  BUT     1       0.160   0.810 -14.660  1.00  0.00      X   
+ATOM      5  O   BUT     1       1.848   0.920 -16.350  1.00  0.00      X   
+ATOM      6  H1  BUT     1       2.468   0.893 -15.634  1.00  0.00      X   
+END

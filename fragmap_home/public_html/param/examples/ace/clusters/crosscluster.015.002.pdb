@@ -1,0 +1,19 @@
+ATOM      1  C1  ACN     1      40.972  44.763  49.814   1.000
+ATOM      2  C2  ACN     1      41.310  46.178  49.696   1.000
+ATOM      3  N   ACN     1      41.580  47.301  49.593   1.000
+ATOM      4  CG  BEN     2      41.332  46.014  51.043   1.000
+ATOM      5  CD1 BEN     2      41.702  44.905  51.840   1.000
+ATOM      6  CE1 BEN     2      41.803  43.619  51.258   1.000
+ATOM      7  CZ  BEN     2      41.529  43.441  49.882   1.000
+ATOM      8  CE2 BEN     2      41.153  44.550  49.087   1.000
+ATOM      9  CD2 BEN     2      41.059  45.837  49.667   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    4    9
+CONECT    5    6
+CONECT    9    8
+CONECT    6    7
+CONECT    8    7

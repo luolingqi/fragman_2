@@ -1,0 +1,74 @@
+.nr _0 \n(c.
+.\"	@(#)refer.me 1.6 88/02/08 SMI; from UCB 2.2 8/17/84
+.\"  style sheet for grants (like NIH) that want titles
+.de [1
+.\"   journal article
+.(f
+.ip "\\*([F.\0"
+\\*([A.\\0\c
+.\"  uncomment next line to print title:
+.if !"\\*([T"" \\*([T.\\0
+\\f2\\*([J\\f1 \c
+.if !"\\*([V"" \\f3\\*([V,\\f1\\0\c
+.if !"\\*([P"" \\*([P\\| \c
+(\\*([D).
+.if !"\\*([I"" .if "\\*([R"" \\*([I,
+.if !"\\*([O"" \\*([O
+.)f
+..
+.de [2
+.\"  book
+.(f
+.ip "\\*([F.\0"
+.\"  uncomment next line to print title:
+\\*([A.\\0\c
+.if !"\\*([T"" \\f2\\*([T.\\f1\\0\c
+.if !"\\*([E"" \\*([E, Ed.,\\0\c
+.if !"\\*([C"" \\*([C:\\ 
+.if !"\\*([I"" \\*([I,\\ 
+(\\*([D).\\ 
+.if !"\\*([P"" ,\\0pp. \\*([P.
+.if !"\\*([O"" \\*([O
+.)f
+..
+.de [3
+.\"  article in book
+.(f
+.ip "\\*([F.\0"
+.\"  uncomment next line to print title:
+\\*([A.
+.if !"\\*([T"" \\*([T.\\0
+In \\f2\\*([B\\f1, \c
+.if !"\\*([E"" \\*([E, Ed. \c
+.if !"\\*([C"" \\*([C: \c
+.if !"\\*([I"" \\*([I, \c
+(\\*([D).\\0
+.if !"\\*([P"" \\0pp. \\*([P.
+.if !"\\*([O"" \\*([O
+.)f
+..
+.de [4
+.(d
+.ip "\\*([F.\0"
+\\*([A, \\*(lq\\*([T,\\*(rq
+\\*([R\c
+.if !"\\*([G"" \& (\\*([G)\c
+.if !"\\*([I"" ,  \\*([I\c
+.if !"\\*([C"" ,  \\*([C\c
+ (\\*([D).
+.if !"\\*([O"" \\*([O
+.)d
+..
+.de [5
+.(d
+.ip "\\*([F.\0"
+\\*([A, \\f2\\*([T\\f1,
+.ie \\n(TN \\*([M.
+.el Bell Laboratories internal memorandum (\\*([D).
+.)d
+..
+.de ]<
+.lp
+.rm (f )f
+..
+.nr c. \n(_0

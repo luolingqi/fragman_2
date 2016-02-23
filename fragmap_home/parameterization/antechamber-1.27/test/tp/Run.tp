@@ -1,0 +1,19 @@
+#!/bin/csh -f
+
+../../exe/antechamber -i tp.pdb -fi pdb -o tp.mol2 -fo mol2 \
+   -c bcc -s 2 -df 0|| goto error
+
+../../exe/parmchk -i tp.mol2 -f mol2 -o frcmod || goto error
+
+../../exe/tleap -s -f leap.in > leap.out
+
+../../exe/dacdif -t 1 tp.mol2.save tp.mol2
+../../exe/dacdif frcmod.save frcmod
+../../exe/dacdif prmtop.save prmtop
+
+/bin/rm -f ANTE* ATOMTYPE.INF BCCTYPE.INF for* FOR* NEWPDB.PDB PREP.INF mopac.in
+exit(0)
+
+error:
+echo "  ${0}:  Program error"
+exit(1)

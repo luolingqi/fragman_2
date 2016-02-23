@@ -1,0 +1,8 @@
+REMARK  SUBUNITS OF 1THS; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:28      CREATED BY USER: gychuang                
+ATOM      1  CH  THS     1       1.435   0.245 -15.581  1.00  0.00      X   
+ATOM      2  CH1 THS     1       0.099   0.170 -16.325  1.00  0.00      X   
+ATOM      3  CH2 THS     1       2.010  -1.149 -15.316  1.00  0.00      X   
+ATOM      4  OT  THS     1       2.368   1.031 -16.327  1.00  0.00      X   
+ATOM      5  HO  THS     1       2.512   0.641 -17.179  1.00  0.00      X   
+END

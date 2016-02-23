@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF 1RMN
+ TITLE>  *  DATE:     2/29/ 8     14:44:59      CREATED BY USER: gychuang
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN CONSTR:       HARMonic    CDIHedral          CIC     RESDistance       NOE
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1      3.26697     13.35820      0.00000
+PRIN EXTERN>        0.00000      2.88598      0.00000      0.00000      0.00000
+PRIN CONSTR>        0.38099      0.00000      0.00000      0.00000      0.00000
+PRIN   ACE1>        5.47371    -27.98603     25.39831      0.00000
+PRIN   ACE2>       -2.58772     25.39831
+ ----------       ---------    ---------    ---------    ---------    ---------

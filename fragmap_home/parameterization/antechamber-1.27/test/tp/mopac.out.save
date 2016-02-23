@@ -1,0 +1,341 @@
+ *******************************************************************************
+ ** FRANK J. SEILER RES. LAB., U.S. AIR FORCE ACADEMY, COLO. SPGS., CO. 80840 **
+ *******************************************************************************
+
+                                 AM1 CALCULATION RESULTS
+
+
+ *******************************************************************************
+ *          MOPAC:  VERSION  6.00               CALC'D.                         
+ *  GEO-OK   - OVERRIDE INTERATOMIC DISTANCE CHECK
+ *  MMOK     - APPLY MM CORRECTION TO CONH BARRIER
+ *
+ *
+ *
+ *                 CHARGE ON SYSTEM =  0
+ *
+ *
+ *
+ *   T=      - A TIME OF  3600.0 SECONDS REQUESTED
+ *  DUMP=N   - RESTART FILE WRITTEN EVERY  3600.0 SECONDS
+ *  AM1      - THE AM1 HAMILTONIAN TO BE USED
+ *  PRECISE  - CRITERIA TO BE INCREASED BY 100 TIMES
+ ***********************************************************************100BY100
+ AM1 MMOK GEO-OK PRECISE CHARGE=0
+ remark line goes here
+ 
+
+    ATOM   CHEMICAL  BOND LENGTH    BOND ANGLE     TWIST ANGLE
+   NUMBER  SYMBOL    (ANGSTROMS)     (DEGREES)      (DEGREES)
+    (I)                  NA:I          NB:NA:I      NC:NB:NA:I     NA   NB   NC
+
+      1      C       
+      2      C         1.39989  *                                  1
+      3      C         1.39962  *     120.02782  *                 1    2
+      4      C         1.39946  *     120.11216  *    0.22108  *   2    1    3
+      5      C         1.40040  *     119.89048  *    0.00000  *   3    1    2
+      6      C         1.39992  *     120.05865  *   -0.18829  *   5    3    1
+      7      H         1.07958  *     119.97913  *  179.96264  *   5    3    1
+      8      S         1.39962  *     119.99869  *  179.94373  *   3    1    2
+      9      H         0.99944  *     109.52035  * -119.93296  *   8    3    1
+     10      H         1.01622  *     119.60329  *  150.72783  *   2    1    3
+     11      H         1.17217  *     119.42914  *  145.09497  *   4    2    1
+     12      H         1.17162  *     132.92409  * -172.73089  *   6    5    3
+     13      H         1.10633  *     126.60875  * -172.93726  *   1    2    3
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM         X         Y         Z
+
+     1         C        0.0000    0.0000    0.0000
+     2         C        1.3999    0.0000    0.0000
+     3         C       -0.7004    1.2118    0.0000
+     4         C        2.1020    1.2106    0.0047
+     5         C        0.0015    2.4235    0.0000
+     6         C        1.4014    2.4230    0.0040
+     7         H       -0.5373    3.3591   -0.0006
+     8         S       -2.1000    1.2111   -0.0012
+     9         H       -2.4335    1.6813   -0.8176
+    10         H        1.9019   -0.7707    0.4320
+    11         H        3.1152    1.2865    0.5892
+    12         H        2.1994    3.2739    0.1134
+    13         H       -0.6598   -0.8813    0.1092
+  H: (AM1): M.J.S. DEWAR ET AL, J. AM. CHEM. SOC. 107 3902-3909 (1985)          
+  C: (AM1): M.J.S. DEWAR ET AL, J. AM. CHEM. SOC. 107 3902-3909 (1985)          
+  S: (AM1): M.J.S.DEWAR, Y-C YUAN, THEOCHEM, IN  PRESS                          
+
+
+          RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 18
+
+
+            INTERATOMIC DISTANCES
+0
+                  C  1       C  2       C  3       C  4       C  5       C  6
+ ------------------------------------------------------------------------------
+     C    1   0.000000
+     C    2   1.399894   0.000000
+     C    3   1.399620   2.424791   0.000000
+     C    4   2.425682   1.399461   2.802399   0.000000
+     C    5   2.423550   2.798038   1.400400   2.425542   0.000000
+     C    6   2.799097   2.422993   2.425867   1.400246   1.399922   0.000000
+     H    7   3.401762   3.877619   2.153488   3.403190   1.079581   2.152876
+     S    8   2.424195   3.703515   1.399618   4.202016   2.426239   3.705273
+     H    9   3.068761   4.265011   1.972972   4.633416   2.673719   3.991485
+     H   10   2.097117   1.016216   3.299837   2.036746   3.741861   3.260917
+     H   11   3.421508   2.223622   3.861547   1.172171   3.366745   2.137992
+     H   12   3.945689   3.371994   3.560047   2.068450   2.359343   1.171622
+     H   13   1.106327   2.242953   2.096347   3.466173   3.372167   3.895923
+0
+                  H  7       S  8       H  9       H 10       H 11       H 12
+ ------------------------------------------------------------------------------
+     H    7   0.000000
+     S    8   2.656338   0.000000
+     H    9   2.660451   0.999436   0.000000
+     H   10   4.815807   4.486702   5.135167   0.000000
+     H   11   4.240746   5.249072   5.737867   2.393545   0.000000
+     H   12   2.740353   4.770036   4.986656   4.068044   2.239362   0.000000
+     H   13   4.243596   2.542568   3.251522   2.584282   4.379526   5.043865
+0
+                  H 13
+ ------------------
+     H   13   0.000000
+ CYCLE:   1 TIME:   0.02 TIME LEFT:   3600.0 GRAD.:   764.800 HEAT: 80.78304    
+ CYCLE:   2 TIME:   0.01 TIME LEFT:   3600.0 GRAD.:   145.667 HEAT: 44.25190    
+ CYCLE:   3 TIME:   0.02 TIME LEFT:   3599.9 GRAD.:   149.227 HEAT: 38.06794    
+ CYCLE:   4 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:   183.800 HEAT: 34.87267    
+ CYCLE:   5 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:   173.427 HEAT: 32.37657    
+ CYCLE:   6 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:   122.670 HEAT: 30.73632    
+ CYCLE:   7 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:    49.101 HEAT: 28.81152    
+ CYCLE:   8 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:    47.693 HEAT: 27.56381    
+ CYCLE:   9 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:    69.719 HEAT: 26.98909    
+ CYCLE:  10 TIME:   0.01 TIME LEFT:   3599.9 GRAD.:    28.795 HEAT: 26.66658    
+ CYCLE:  11 TIME:   0.00 TIME LEFT:   3599.9 GRAD.:    16.410 HEAT: 26.06004    
+ CYCLE:  12 TIME:   0.02 TIME LEFT:   3599.8 GRAD.:    27.416 HEAT: 25.97795    
+ CYCLE:  13 TIME:   0.02 TIME LEFT:   3599.8 GRAD.:    35.186 HEAT: 25.97125    
+ CYCLE:  14 TIME:   0.02 TIME LEFT:   3599.8 GRAD.:    29.949 HEAT: 25.93395    
+ CYCLE:  15 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:    26.196 HEAT: 25.93117    
+ CYCLE:  16 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:    20.897 HEAT: 26.59549    
+ CYCLE:  17 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:    21.386 HEAT: 25.90279    
+ CYCLE:  18 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:    13.069 HEAT: 25.87285    
+ CYCLE:  19 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:     9.617 HEAT: 25.83040    
+ CYCLE:  20 TIME:   0.01 TIME LEFT:   3599.8 GRAD.:    11.024 HEAT: 25.82494    
+ CYCLE:  21 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     9.350 HEAT: 25.81749    
+ CYCLE:  22 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     7.383 HEAT: 25.79777    
+ CYCLE:  23 TIME:   0.00 TIME LEFT:   3599.7 GRAD.:     6.801 HEAT: 25.78326    
+ CYCLE:  24 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     6.343 HEAT: 25.77796    
+ CYCLE:  25 TIME:   0.00 TIME LEFT:   3599.7 GRAD.:     4.456 HEAT: 25.76867    
+ CYCLE:  26 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     4.088 HEAT: 25.76297    
+ CYCLE:  27 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     6.623 HEAT: 25.75754    
+ CYCLE:  28 TIME:   0.00 TIME LEFT:   3599.7 GRAD.:     3.947 HEAT: 25.75386    
+ CYCLE:  29 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     2.850 HEAT: 25.75116    
+ HEAT OF FORMATION TEST SATISFIED
+                    HOWEVER, A COMPONENT OF GRADIENT IS LARGER THAN  0.20
+
+ CYCLE:  30 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     3.344 HEAT: 25.74921    
+ CYCLE:  31 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     3.525 HEAT: 25.74673    
+ CYCLE:  32 TIME:   0.00 TIME LEFT:   3599.7 GRAD.:     2.598 HEAT: 25.74326    
+ CYCLE:  33 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     2.319 HEAT: 25.73911    
+ HEAT OF FORMATION TEST SATISFIED
+                    HOWEVER, A COMPONENT OF GRADIENT IS LARGER THAN  0.20
+
+ CYCLE:  34 TIME:   0.01 TIME LEFT:   3599.7 GRAD.:     1.868 HEAT: 25.73718    
+ TEST ON X SATISFIED
+                    HOWEVER, A COMPONENT OF GRADIENT IS LARGER THAN  0.20
+
+ CYCLE:  35 TIME:   0.02 TIME LEFT:   3599.6 GRAD.:     3.556 HEAT: 25.73687    
+
+
+          HERBERTS TEST SATISFIED - GEOMETRY OPTIMIZED
+
+ -------------------------------------------------------------------------------
+ AM1 MMOK GEO-OK PRECISE CHARGE=0
+ remark line goes here
+ 
+
+
+     HERBERTS TEST WAS SATISFIED IN BFGS                      
+     SCF FIELD WAS ACHIEVED                                   
+
+
+                                AM1    CALCULATION
+                                                       VERSION  6.00
+                                                                               
+
+
+
+
+          FINAL HEAT OF FORMATION =         25.73687 KCAL
+
+
+          TOTAL ENERGY            =      -1044.78676 EV
+          ELECTRONIC ENERGY       =      -4208.41003 EV
+          CORE-CORE REPULSION     =       3163.62327 EV
+
+          GRADIENT NORM           =          3.55589
+          IONIZATION POTENTIAL    =          8.43407
+          NO. OF FILLED LEVELS    =         18
+          MOLECULAR WEIGHT        =    110.173
+
+
+          SCF CALCULATIONS  =               55
+          COMPUTATION TIME =   0.370 SECONDS
+
+
+
+       FINAL  POINT  AND  DERIVATIVES
+
+   PARAMETER     ATOM    TYPE            VALUE       GRADIENT
+      1          2  C    BOND            1.390863    -0.303189  KCAL/ANGSTROM
+      2          3  C    BOND            1.402361     1.282912  KCAL/ANGSTROM
+      3          3  C    ANGLE         120.288024     2.250199  KCAL/RADIAN  
+      4          4  C    BOND            1.396463    -0.169306  KCAL/ANGSTROM
+      5          4  C    ANGLE         120.139141     0.607196  KCAL/RADIAN  
+      6          4  C    DIHEDRAL        0.130832     0.133247  KCAL/RADIAN  
+      7          5  C    BOND            1.397672     0.106129  KCAL/ANGSTROM
+      8          5  C    ANGLE         119.409130     2.052572  KCAL/RADIAN  
+      9          5  C    DIHEDRAL       -0.205256     0.031020  KCAL/RADIAN  
+     10          6  C    BOND            1.395203     0.889511  KCAL/ANGSTROM
+     11          6  C    ANGLE         120.154468     0.563865  KCAL/RADIAN  
+     12          6  C    DIHEDRAL      360.196429     0.125541  KCAL/RADIAN  
+     13          7  H    BOND            1.100039    -0.030900  KCAL/ANGSTROM
+     14          7  H    ANGLE         120.269222     0.024024  KCAL/RADIAN  
+     15          7  H    DIHEDRAL      180.107103    -0.000360  KCAL/RADIAN  
+     16          8  S    BOND            1.696436     0.049057  KCAL/ANGSTROM
+     17          8  S    ANGLE         116.645338    -0.008443  KCAL/RADIAN  
+     18          8  S    DIHEDRAL      179.846709    -0.029181  KCAL/RADIAN  
+     19          9  H    BOND            1.321568    -0.001558  KCAL/ANGSTROM
+     20          9  H    ANGLE         100.038268     0.007970  KCAL/RADIAN  
+     21          9  H    DIHEDRAL      180.068581     0.014857  KCAL/RADIAN  
+     22         10  H    BOND            1.100112     0.039658  KCAL/ANGSTROM
+     23         10  H    ANGLE         119.836820     0.015702  KCAL/RADIAN  
+     24         10  H    DIHEDRAL      180.072104    -0.010534  KCAL/RADIAN  
+     25         11  H    BOND            1.099632     0.188287  KCAL/ANGSTROM
+     26         11  H    ANGLE         120.139474     0.139936  KCAL/RADIAN  
+     27         11  H    DIHEDRAL      179.990282     0.002022  KCAL/RADIAN  
+     28         12  H    BOND            1.099870    -0.069558  KCAL/ANGSTROM
+     29         12  H    ANGLE         119.681816     0.023581  KCAL/RADIAN  
+     30         12  H    DIHEDRAL      179.828179    -0.086570  KCAL/RADIAN  
+     31         13  H    BOND            1.101171     0.033467  KCAL/ANGSTROM
+     32         13  H    ANGLE         120.185777     0.039581  KCAL/RADIAN  
+     33         13  H    DIHEDRAL      179.890039    -0.012656  KCAL/RADIAN  
+
+
+
+
+
+    ATOM   CHEMICAL  BOND LENGTH    BOND ANGLE     TWIST ANGLE
+   NUMBER  SYMBOL    (ANGSTROMS)     (DEGREES)      (DEGREES)
+    (I)                  NA:I          NB:NA:I      NC:NB:NA:I     NA   NB   NC
+
+      1      C       
+      2      C         1.39086  *                                  1
+      3      C         1.40236  *     120.28802  *                 1    2
+      4      C         1.39646  *     120.13914  *    0.13083  *   2    1    3
+      5      C         1.39767  *     119.40913  *   -0.20526  *   3    1    2
+      6      C         1.39520  *     120.15447  *    0.19643  *   5    3    1
+      7      H         1.10004  *     120.26922  * -179.89290  *   5    3    1
+      8      S         1.69644  *     116.64534  *  179.84671  *   3    1    2
+      9      H         1.32157  *     100.03827  * -179.93142  *   8    3    1
+     10      H         1.10011  *     119.83682  * -179.92790  *   2    1    3
+     11      H         1.09963  *     120.13947  *  179.99028  *   4    2    1
+     12      H         1.09987  *     119.68182  *  179.82818  *   6    5    3
+     13      H         1.10117  *     120.18578  *  179.89004  *   1    2    3
+
+
+            INTERATOMIC DISTANCES
+0
+                  C  1       C  2       C  3       C  4       C  5       C  6
+ ------------------------------------------------------------------------------
+     C    1   0.000000
+     C    2   1.390863   0.000000
+     C    3   1.402361   2.422512   0.000000
+     C    4   2.415587   1.396463   2.799309   0.000000
+     C    5   2.417650   2.790208   1.397672   2.418522   0.000000
+     C    6   2.787192   2.414044   2.420581   1.394194   1.395203   0.000000
+     H    7   3.419073   3.890214   2.171074   3.411970   1.100039   2.161424
+     S    8   2.641652   3.948385   1.696436   4.493530   2.734849   4.013540
+     H    9   3.613649   4.747563   2.325082   4.947553   2.710975   4.106086
+     H   10   2.160392   1.100112   3.418592   2.167426   3.890318   3.412147
+     H   11   3.412505   2.168263   3.898940   1.099632   3.415242   2.165640
+     H   12   3.887059   3.412697   3.415126   2.165839   2.162421   1.099870
+     H   13   1.101171   2.165005   2.168239   3.415157   3.414354   3.888359
+0
+                  H  7       S  8       H  9       H 10       H 11       H 12
+ ------------------------------------------------------------------------------
+     H    7   0.000000
+     S    8   2.935291   0.000000
+     H    9   2.384847   1.321568   0.000000
+     H   10   4.990325   4.801618   5.726959   0.000000
+     H   11   4.317966   5.592923   6.021184   2.499052   0.000000
+     H   12   2.482799   4.895973   4.755378   4.322474   2.496765   0.000000
+     H   13   4.327618   2.762794   3.976371   2.491879   4.323323   4.988222
+0
+                  H 13
+ ------------------
+     H   13   0.000000
+
+
+                  EIGENVALUES
+
+ -39.40091 -31.92710 -31.63303 -23.85556 -23.55097 -19.37910 -17.51064 -16.49751
+ -15.68837 -14.53036 -14.30111 -13.98329 -12.66555 -12.13652 -11.60179 -11.02316
+  -9.85913  -8.43407   0.20959   0.39406   0.69495   1.57332   2.70947   3.77365
+   3.83662   4.00659   4.28211   4.39551   4.71920   4.94007   5.17828   5.35576
+   5.53700   5.88110
+
+
+              NET ATOMIC CHARGES AND DIPOLE CONTRIBUTIONS
+
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1          C          -0.1186          4.1186
+           2          C          -0.1135          4.1135
+           3          C          -0.2103          4.2103
+           4          C          -0.1372          4.1372
+           5          C          -0.1453          4.1453
+           6          C          -0.1124          4.1124
+           7          H           0.1298          0.8702
+           8          S           0.1440          5.8560
+           9          H           0.0192          0.9808
+          10          H           0.1347          0.8653
+          11          H           0.1335          0.8665
+          12          H           0.1331          0.8669
+          13          H           0.1431          0.8569
+ DIPOLE           X         Y         Z       TOTAL
+ POINT-CHG.    -0.262    -0.266    -0.004     0.374
+ HYBRID         0.964     1.253     0.003     1.581
+ SUM            0.702     0.987    -0.001     1.211
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM               X         Y         Z
+
+     1         C                  0.0000    0.0000    0.0000
+     2         C                  1.3909    0.0000    0.0000
+     3         C                 -0.7073    1.2109    0.0000
+     4         C                  2.0920    1.2077    0.0028
+     5         C                 -0.0021    2.4176    0.0044
+     6         C                  1.3931    2.4140    0.0045
+     7         H                 -0.5425    3.3757    0.0062
+     8         S                 -2.4003    1.1032   -0.0041
+     9         H                 -2.7128    2.3872   -0.0046
+    10         H                  1.9382   -0.9543   -0.0012
+    11         H                  3.1917    1.2077    0.0029
+    12         H                  1.9402    3.3682    0.0051
+    13         H                 -0.5537   -0.9519   -0.0018
+
+
+          ATOMIC ORBITAL ELECTRON POPULATIONS
+
+   1.21524   0.93646   0.95793   1.00895   1.21754   0.93332   0.97464   0.98804
+   1.20955   0.97719   0.96850   1.05510   1.21864   0.99080   0.92066   1.00707
+   1.21684   0.94510   0.95039   1.03302   1.21742   0.93171   0.97499   0.98830
+   0.87021   1.85064   0.98326   1.10255   1.91951   0.98078   0.86531   0.86651
+   0.86690   0.85692
+
+
+
+ TOTAL CPU TIME:             0.37 SECONDS
+
+ == MOPAC DONE ==

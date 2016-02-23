@@ -1,0 +1,142 @@
+HEADER crosscluster.003.013.pdb
+ATOM      1  C1  PHN W   1       2.799  20.735   6.494   1.000
+ATOM      2  C2  PHN W   1       1.497  20.384   6.077   1.000
+ATOM      3  C3  PHN W   1       0.385  20.948   6.730   1.000
+ATOM      4  C4  PHN W   1       0.595  21.888   7.759   1.000
+ATOM      5  C5  PHN W   1       1.894  22.234   8.187   1.000
+ATOM      6  C6  PHN W   1       3.004  21.638   7.558   1.000
+ATOM      7  O   PHN W   1       3.865  20.416   5.679   1.000
+ATOM      8  HO  PHN W   1       3.593  20.479   4.772   1.000
+ATOM      9  N1  ACD W   2       1.582  20.326   5.471   1.000
+ATOM     10  C2  ACD W   2       2.660  20.613   6.217   1.000
+ATOM     11  C3  ACD W   2       2.311  21.167   7.582   1.000
+ATOM     12  O4  ACD W   2       3.819  20.455   5.853   1.000
+ATOM     13  H1  ACD W   2       1.705  19.944   4.555   1.000
+ATOM     14  H2  ACD W   2       0.659  20.497   5.814   1.000
+ATOM     15  C1  ADY W   3       1.901  20.841   7.175   1.000
+ATOM     16  C2  ADY W   3       2.562  20.485   5.860   1.000
+ATOM     17  O1  ADY W   3       3.762  20.389   5.764   1.000
+ATOM     18  H1  ADY W   3       1.890  20.338   5.019   1.000
+ATOM     19  C1  CHX W   4       2.260  21.314   7.799   1.000
+ATOM     20  C2  CHX W   4       2.021  22.763   8.242   1.000
+ATOM     21  C3  CHX W   4       0.601  23.006   8.767   1.000
+ATOM     22  C4  CHX W   4      -0.490  22.459   7.839   1.000
+ATOM     23  C5  CHX W   4      -0.242  21.007   7.413   1.000
+ATOM     24  C6  CHX W   4       1.170  20.786   6.861   1.000
+ATOM     25  C2  EOL W   5       1.971  20.477   6.232   1.000
+ATOM     26  C1  EOL W   5       1.118  21.200   7.274   1.000
+ATOM     27  O   EOL W   5       1.223  20.321   5.024   1.000
+ATOM     28  H1  EOL W   5       1.831  20.469   4.310   1.000
+ATOM     29  C   URE W   6       1.789  20.485   6.485   1.000
+ATOM     30  O   URE W   6       0.933  19.915   7.149   1.000
+ATOM     31  N1  URE W   6       2.762  21.024   7.092   1.000
+ATOM     32  N2  URE W   6       1.653  20.502   5.227   1.000
+ATOM     33  H1  URE W   6       3.204  21.879   6.756   1.000
+ATOM     34  H2  URE W   6       3.140  20.644   7.959   1.000
+ATOM     35  H3  URE W   6       1.488  21.368   4.715   1.000
+ATOM     36  H4  URE W   6       1.733  19.662   4.654   1.000
+ATOM     37  C1  ACN W   7       2.442  21.318   7.600   1.000
+ATOM     38  C2  ACN W   7       1.147  20.903   7.071   1.000
+ATOM     39  N   ACN W   7       0.115  20.569   6.659   1.000
+ATOM     40  C2  DFO W   8       2.679  20.594   6.015   1.000
+ATOM     41  N3  DFO W   8       1.887  21.064   7.002   1.000
+ATOM     42  O4  DFO W   8       3.898  20.495   6.082   1.000
+ATOM     43  C3  DFO W   8       0.463  20.745   7.027   1.000
+ATOM     44  C1  DFO W   8       2.472  21.915   8.034   1.000
+ATOM     45  H1  DFO W   8       2.094  20.332   5.136   1.000
+ATOM     46  C1  DME W   9       2.208  21.526   7.969   1.000
+ATOM     47  O1  DME W   9       1.459  20.471   7.359   1.000
+ATOM     48  C2  DME W   9       1.695  20.438   5.950   1.000
+ATOM     49  CH  THS W  10       2.662  20.715   6.906   1.000
+ATOM     50  CH1 THS W  10       2.654  21.938   7.825   1.000
+ATOM     51  CH2 THS W  10       1.361  20.594   6.115   1.000
+ATOM     52  OT  THS W  10       3.783  20.764   6.018   1.000
+ATOM     53  HO  THS W  10       3.485  20.995   5.147   1.000
+ATOM     54  C   ACT W  11       2.833  20.929   6.679   1.000
+ATOM     55  O   ACT W  11       3.972  20.714   6.282   1.000
+ATOM     56  CH1 ACT W  11       1.616  20.416   5.942   1.000
+ATOM     57  CH2 ACT W  11       2.552  21.735   7.930   1.000
+ATOM     58  CG  BEN W  12       0.543  21.680   7.448   1.000
+ATOM     59  CD1 BEN W  12       0.649  20.752   6.387   1.000
+ATOM     60  CE1 BEN W  12       1.921  20.315   5.952   1.000
+ATOM     61  CZ  BEN W  12       3.089  20.793   6.591   1.000
+ATOM     62  CE2 BEN W  12       2.983  21.721   7.653   1.000
+ATOM     63  CD2 BEN W  12       1.711  22.167   8.080   1.000
+ATOM     64  C   BUT W  13       0.847  23.440   7.874   1.000
+ATOM     65  C1  BUT W  13       2.266  23.719   8.402   1.000
+ATOM     66  C2  BUT W  13      -0.203  23.723   8.960   1.000
+ATOM     67  C3  BUT W  13       0.732  21.986   7.380   1.000
+ATOM     68  O   BUT W  13       0.599  24.303   6.796   1.000
+ATOM     69  H1  BUT W  13       1.128  23.978   6.080   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+CONECT    6    1
+CONECT    1    7
+CONECT    7    8
+REMARK Residue 2
+CONECT    9   10
+CONECT    9   13
+CONECT    9   14
+CONECT   10   11
+CONECT   10   12
+REMARK Residue 3
+CONECT   15   16
+CONECT   16   17
+CONECT   16   18
+REMARK Residue 4
+CONECT   19   20
+CONECT   19   24
+CONECT   20   21
+CONECT   21   22
+CONECT   22   23
+CONECT   23   24
+REMARK Residue 5
+CONECT   25   26
+CONECT   25   27
+CONECT   27   28
+REMARK Residue 6
+CONECT   29   30
+CONECT   31   29
+CONECT   31   33
+CONECT   31   34
+CONECT   32   29
+CONECT   32   35
+CONECT   32   36
+REMARK Residue 7
+CONECT   37   38
+CONECT   38   39
+REMARK Residue 8
+CONECT   40   41
+CONECT   40   42
+CONECT   41   43
+CONECT   41   44
+CONECT   40   45
+REMARK Residue 9
+CONECT   46   47
+CONECT   47   48
+REMARK Residue 10
+CONECT   50   49
+CONECT   49   52
+CONECT   49   51
+CONECT   52   53
+REMARK Residue 11
+CONECT   56   54
+CONECT   54   55
+CONECT   54   57
+REMARK Residue 12
+CONECT   58   59
+CONECT   58   63
+CONECT   59   60
+CONECT   63   62
+CONECT   60   61
+CONECT   62   61
+REMARK Residue 13
+CONECT   64   65
+CONECT   64   66
+CONECT   64   67
+CONECT   64   68
+CONECT   68   69

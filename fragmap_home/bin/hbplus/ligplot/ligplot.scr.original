@@ -1,0 +1,102 @@
+#!/bin/csh
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  ligplot.scr     v.4.0 (16 Nov 97)
+#  -----------
+#  Shell script for running ligplot.  
+#  Andrew Wallace June 1994
+#  Amended Feb 1997 - Roman Laskowski
+#
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#
+# Check that exactly parameters have been entered
+if ($#argv < 1) then
+  echo ' '
+  echo '*** ERROR. Correct usage is:'
+  echo ' '
+  echo 'ligplot  filename  [residue1]  [residue2]  [chain_id]  [-w]  [-h]'
+  echo ' '
+  echo '     where:-   filename = name of the PDB file'
+  echo '               residue1 = first ligand residue number (or name and number)'
+  echo '               residue2 = last ligand residue number (or name and number)'
+  echo '               chain_id = chain identifier for ligand (unless blank)'
+  echo '               -w       = indicator that ligand is one or more waters'
+  echo '               -h       = indicator that a plot heading to be entered'
+  echo ' '
+  echo 'For example:-'
+  echo ' '
+  echo '              ligplot  /data/pdb/p6tmn.pdb  1 4 I'
+  echo ' '
+  echo '         or:-'
+  echo ' '
+  echo '              ligplot  /data/pdb/p6tmn.pdb  CBZ 1 LEU 4 I'
+  echo ' '
+else
+  echo ' '
+  echo ' '
+  set filename = $1
+  echo 'Coordinates file:   [' $filename ']'
+  echo ' '
+#
+# If default parameter file doesn't exist, create it 
+#
+  if (-e ligplot.prm) then
+  else
+    cp $ligdir/ligplot.prm .
+  endif
+
+# Set the name of the Het Groups Dictionary (available from the PDB at
+# http://www.pdb.bnl.gov/doc_help.html
+set hetdic = $ligdir'/het_dictionary.txt'
+
+# If the pdb file exists, then do the business
+#
+if (-e $filename) then
+
+# Run HBPLUS only if input filename is not ligplot.pdb
+if ($filename != 'ligplot.pdb') then
+
+    # If the Het Group Dictionary is present, the run HBADD to generate
+    # the input hbplus.rc file defining the PDB file's Het groups in
+    # HBPLUS format
+    #-----------#
+    # H B A D D #
+    #-----------#
+    if (-e $hetdic) then
+        echo 'Running hbadd: '
+        echo ' '
+        if (-e hbplus.rc) then
+           \rm hbplus.rc
+        endif
+        $ligdir/hbadd $filename $hetdic >! hbadd.log
+        grep "\*\*\*" hbadd.log
+        echo ' '
+        echo '.................................................................'
+    endif
+    #-------------#
+    # H B P L U S #
+    #-------------#
+    echo 'Running hbplus: '
+    echo ' '
+    if (-e hbplus.rc) then
+      $hbdir/hbplus -L -f hbplus.rc -h 2.9 -d 5 -N  $filename >! nnb.log
+      $hbdir/hbplus -L -f hbplus.rc -h 2.7 -d 3.35    $filename >! hhb.log
+    else
+      $hbdir/hbplus -L -h 2.9 -d 5 -N  $filename >! nnb.log
+      $hbdir/hbplus -L -h 2.7 -d 3.35    $filename >! hhb.log
+    endif
+    grep -i error nnb.log
+    grep -i error hhb.log
+    echo ' '
+    echo '.................................................................'
+endif
+    #---------------#
+    # L I G P L O T #
+    #---------------#
+    $ligdir/ligplot $filename "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" "$10"
+    echo ' '
+    echo '..................................................................'
+else
+    echo 'File not found: '$filename
+   
+endif
+endif

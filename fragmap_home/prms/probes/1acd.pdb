@@ -1,0 +1,9 @@
+REMARK  NONE *                                                                        
+REMARK   DATE:     1/26/ 6     11:48:20      CREATED BY USER: dlancia                 
+ATOM      1  N1  ACD     1       -.002   -.034   -.085 -0.60  1.00      NP
+ATOM      2  C2  ACD     1      -1.341    .002   -.085  0.60  3.00      C
+ATOM      3  C3  ACD     1      -1.909   1.404   -.085 -0.05 16.00      CH3E
+ATOM      4  O4  ACD     1      -2.061   -.990   -.085 -0.55  4.00      O
+ATOM      5  H1  ACD     1        .489   -.902   -.085  0.30  0.00      H
+ATOM      6  H2  ACD     1        .533    .813   -.085  0.30  0.00      H
+END

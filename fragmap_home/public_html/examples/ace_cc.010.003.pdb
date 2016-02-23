@@ -1,0 +1,31 @@
+HEADER crosscluster.010.003.pdb
+ATOM      1  N1  ACD P   1      38.313  26.528  47.461   1.000
+ATOM      2  C2  ACD P   1      37.881  27.229  46.403   1.000
+ATOM      3  C3  ACD P   1      38.755  27.096  45.174   1.000
+ATOM      4  O4  ACD P   1      36.880  27.933  46.404   1.000
+ATOM      5  H1  ACD P   1      37.691  26.288  48.205   1.000
+ATOM      6  H2  ACD P   1      39.269  26.236  47.523   1.000
+ATOM      7  N1  ACD P   2      39.764  29.910  42.240   1.000
+ATOM      8  C2  ACD P   2      38.993  29.307  43.158   1.000
+ATOM      9  C3  ACD P   2      39.695  28.181  43.891   1.000
+ATOM     10  O4  ACD P   2      37.831  29.618  43.395   1.000
+ATOM     11  H1  ACD P   2      40.015  29.440  41.394   1.000
+ATOM     12  H2  ACD P   2      40.118  30.832  42.391   1.000
+ATOM     13  C1  ACN P   3      39.631  27.439  44.155   1.000
+ATOM     14  C2  ACN P   3      38.384  27.594  44.898   1.000
+ATOM     15  N   ACN P   3      37.395  27.741  45.486   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    5
+CONECT    1    6
+CONECT    2    3
+CONECT    2    4
+REMARK Residue 2
+CONECT    7    8
+CONECT    7   11
+CONECT    7   12
+CONECT    8    9
+CONECT    8   10
+REMARK Residue 3
+CONECT   13   14
+CONECT   14   15

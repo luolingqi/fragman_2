@@ -1,0 +1,7 @@
+REMARK   single isopropanol probe
+ATOM      1  CH  THS     1       0.000   0.000   0.000  0.25  6.00      1THS
+ATOM      2  CH1 THS     1       0.177   0.509  -1.438  0.00 16.00      1THS
+ATOM      3  CH2 THS     1       1.294   0.156   0.811  0.00 16.00      1THS
+ATOM      4  OT  THS     1      -0.995   0.791   0.635 -0.65 13.00      1THS
+ATOM      5  HO  THS     1      -1.233   0.375   1.453  0.40  0.00      1THS
+END

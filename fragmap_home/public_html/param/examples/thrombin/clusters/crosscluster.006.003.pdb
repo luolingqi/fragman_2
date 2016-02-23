@@ -1,0 +1,35 @@
+ATOM      1  C1  ACN     1      14.946 -11.235  15.003   1.000
+ATOM      2  C2  ACN     1      16.374 -10.932  15.037   1.000
+ATOM      3  N   ACN     1      17.509 -10.695  15.068   1.000
+ATOM      4  C1  CHX     2      15.850 -13.049  16.795   1.000
+ATOM      5  C2  CHX     2      16.227 -13.879  15.563   1.000
+ATOM      6  C3  CHX     2      16.553 -12.978  14.365   1.000
+ATOM      7  C4  CHX     2      15.391 -12.026  14.052   1.000
+ATOM      8  C5  CHX     2      15.008 -11.200  15.284   1.000
+ATOM      9  C6  CHX     2      14.686 -12.101  16.483   1.000
+ATOM     10  C   URE     3      17.725 -10.307  12.821   1.000
+ATOM     11  O   URE     3      18.625  -9.484  12.926   1.000
+ATOM     12  N1  URE     3      17.008 -10.533  13.841   1.000
+ATOM     13  N2  URE     3      17.576 -10.887  11.705   1.000
+ATOM     14  H1  URE     3      16.244 -11.209  13.832   1.000
+ATOM     15  H2  URE     3      17.144 -10.036  14.720   1.000
+ATOM     16  H3  URE     3      16.850 -11.585  11.544   1.000
+ATOM     17  H4  URE     3      18.172 -10.679  10.905   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    4    9
+CONECT    5    6
+CONECT    6    7
+CONECT    7    8
+CONECT    8    9
+REMARK Residue 3
+CONECT   10   11
+CONECT   12   10
+CONECT   12   14
+CONECT   12   15
+CONECT   13   10
+CONECT   13   16
+CONECT   13   17

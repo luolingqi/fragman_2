@@ -1,0 +1,16 @@
+#
+#This batch command reads in a multiple mol2 file, then extract every single record and name it "TMP",
+#then copy it to a mol2 file (COMP???.mol2) and convert the mol2 file to a prepi file with antechamber.
+#Finally, "cat" command puts all the prepi input files into a single file called total.prepi
+SEPARATOR  "@<TRIPOS>MOLECULE"  
+SEPA_TYPE  0
+MOLNAME_FIELD "ZINC"
+MOLNAME_LD 0
+TMPFILE  TMP 
+COMMAND  "cp TMPFILE MOLNAME.mol2"
+COMMAND  "$ACHOME/exe/antechamber -fi mol2 -fo prepi -i MOLNAME.mol2 -o MOLNAME.prepi -j 4 -pf yes"
+COMMAND  "cat MOLNAME.prepi >>total.prepi"
+COMMAND  "$ACHOME/exe/parmchk -i MOLNAME.prepi -o MOLNAME.frcmod -f prepi"
+COMMAND  "cat MOLNAME.frcmod >>total.frcmod"
+COMMAND  "rm -f TMPFILE"
+COMMAND  "rm -f MOLNAME.*"

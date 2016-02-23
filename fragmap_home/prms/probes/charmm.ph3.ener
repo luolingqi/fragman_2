@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF PH3
+ TITLE>  *  DATE:     7/ 8/ 8     14:23:16      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1    -10.45294      0.00000      0.00000
+PRIN INTERN>        0.16896      1.36965      0.00000      0.00000      0.00000
+PRIN EXTERN>       -0.39103    -11.60052      0.00000      0.00000      0.00000
+PRIN   ACE1>        2.74889    -18.30072      1.28411      2.66720
+PRIN   ACE2>      -17.01660      3.95131
+ ----------       ---------    ---------    ---------    ---------    ---------

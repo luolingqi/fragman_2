@@ -1,0 +1,7 @@
+REMARK  SUBUNITS OF 1ADY; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:17      CREATED BY USER: gychuang                
+ATOM      1  C1  ADY     1       2.188   3.244   9.008  1.00  0.00      X   
+ATOM      2  C2  ADY     1       1.790   4.366   8.064  1.00  0.00      X   
+ATOM      3  O1  ADY     1       1.712   4.185   6.876  1.00  0.00      X   
+ATOM      4  H1  ADY     1       1.584   5.326   8.529  1.00  0.00      X   
+END

@@ -1,0 +1,140 @@
+#!/bin/csh
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  dimplot.scr
+#  -----------
+#  Shell script for running dimplot programs:
+#       hbadd, hbplus, dimer and ligplot.
+#
+#  Alice Wuensche & Roman Laskowski - Aug 1997
+#
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#
+# Check that exactly 3 parameters have been entered
+if ($#argv != 3 && $#argv != 4) then
+  echo ' '
+  echo '*** ERROR. Correct usage is:'
+  echo ' '
+  echo '    dimplot  filename  chain1  chain2'
+  echo ' '
+  echo 'OR'
+  echo ' '
+  echo '    dimplot  filename  -d  domain1  domain2'
+  echo ' '
+  echo ' where:-     filename  = name of the PDB file'
+  echo '             chain1    = chain identifier for first chain'
+  echo '             chain2    = chain identifier for second chain'
+  echo '             -d        = signifies that interface across two domains required '
+  echo '             chain1    = first domain number'
+  echo '             chain2    = second domain number'
+  echo ' '
+  echo ' '
+  echo 'For example:-'
+  echo ' '
+  echo '    dimplot  /data/pdb/p2msb.pdb  A  B'
+  echo ' '
+  echo 'OR'
+  echo ' '
+  echo '    dimplot  /data/pdb/p1atn.pdb  -d  1  3'
+else
+  echo ' '
+  echo ' '
+  if ($#argv == 3) then
+    set filename = $1
+    set by_domain = 'FALSE'
+    set chain1 = $2
+    set chain2 = $3
+    echo 'Coordinates file:   [' $filename ']'
+    echo ' '
+    echo '          chains:   [' $chain1 '] and [' $chain2 ']'
+    echo ' '
+  else
+    set filename = $1
+    set by_domain = 'TRUE'
+    set domain1 = $3
+    set domain2 = $4
+    echo 'Coordinates file:   [' $filename ']'
+    echo ' '
+    echo '         domains:   [' $domain1 '] and [' $domain2 ']'
+    echo ' '
+  endif
+#
+# If default parameter file doesn't exist, create it 
+#
+  if (-e ligplot.prm) then
+  else
+    cp $ligdir/ligplot.prm .
+  endif
+
+#
+# Set the name of the Het Groups Dictionary (available from the PDB at
+# http://www.pdb.bnl.gov/doc_help.html)
+#
+  set hetdic = $ligdir'/het_dictionary.txt'
+
+# If the PDB file exists, then do the business
+#
+if (-e $filename) then
+
+    # If the Het Group Dictionary is present, the run HBADD to generate
+    # the input hbplus.rc file defining the PDB file's Het groups in
+    # HBPLUS format
+    #-----------#
+    # H B A D D #
+    #-----------#
+    if (-e $hetdic) then
+        echo 'Running hbadd: '
+        echo ' '
+        if (-e hbplus.rc) then
+           \rm hbplus.rc
+        endif
+        $ligdir/hbadd $filename $hetdic >! hbadd.log
+        grep "\*\*\*" hbadd.log
+        echo ' '
+        echo '.................................................................'
+    endif
+
+    # Run HBPLUS
+    #-------------#
+    # H B P L U S #
+    #-------------#
+    echo 'Running hbplus: '
+    echo ' '
+    if (-e hbplus.rc) then
+      $hbdir/hbplus -L -f hbplus.rc -h 2.9 -d 3.9 -N  $filename >! nnb.log
+      $hbdir/hbplus -L -f hbplus.rc -h 2.7 -d 3.35    $filename >! hhb.log
+    else
+      $hbdir/hbplus -L -h 2.9 -d 3.9 -N  $filename >! nnb.log
+      $hbdir/hbplus -L -h 2.7 -d 3.35    $filename >! hhb.log
+    endif
+    grep -i error nnb.log
+    grep -i error hhb.log
+    echo ' '
+    echo '.................................................................'
+
+    # Run DIMER
+    #-----------#
+    # D I M E R #
+    #-----------#
+    echo 'Running dimer ...'
+    if ($by_domain == 'FALSE') then
+        $ligdir/dimer $filename $chain1 $chain2
+    else
+        $ligdir/dimer $filename -d $domain1 $domain2
+    endif
+
+    # Run LIGPLOT
+    #---------------#
+    # L I G P L O T #
+    #---------------#
+    echo 'Running ligplot ...'
+    echo ' '
+    $ligdir/ligplot dimplot.pdb
+
+    echo ' '
+    echo '..................................................................'
+else
+    echo 'File not found: '$filename
+endif
+endif
+
+

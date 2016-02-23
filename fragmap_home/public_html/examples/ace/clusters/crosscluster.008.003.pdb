@@ -1,0 +1,26 @@
+ATOM      1  C1  ACN     1      44.662  26.355  47.071   1.000
+ATOM      2  C2  ACN     1      43.875  27.537  46.732   1.000
+ATOM      3  N   ACN     1      43.254  28.480  46.464   1.000
+ATOM      4  N1  ACD     2      43.859  26.731  48.262   1.000
+ATOM      5  C2  ACD     2      43.678  27.525  47.196   1.000
+ATOM      6  C3  ACD     2      44.827  27.484  46.213   1.000
+ATOM      7  O4  ACD     2      42.691  28.226  47.008   1.000
+ATOM      8  H1  ACD     2      44.692  26.189  48.369   1.000
+ATOM      9  H2  ACD     2      43.140  26.666  48.955   1.000
+ATOM     10  C2  EOL     3      44.422  26.417  47.446   1.000
+ATOM     11  C1  EOL     3      43.821  27.661  46.794   1.000
+ATOM     12  O   EOL     3      43.873  26.264  48.756   1.000
+ATOM     13  H1  EOL     3      42.949  26.096  48.638   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    4    8
+CONECT    4    9
+CONECT    5    6
+CONECT    5    7
+REMARK Residue 3
+CONECT   10   11
+CONECT   10   12
+CONECT   12   13

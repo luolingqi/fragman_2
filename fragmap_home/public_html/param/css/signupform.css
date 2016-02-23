@@ -1,0 +1,99 @@
+#signupform {
+    margin: 0 auto;
+    padding: 0;
+    width:40%;
+}
+
+#signupform fieldset {
+    margin: 1em 0;
+    padding: 0 0.5em;
+    border: none;
+    border-top: 1px solid #777;
+}
+
+#signupform legend {
+    margin: 1em 0;
+    padding: 0 .5em;
+    background: transparent;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#signupform label {
+    float: left;
+    width: 115px;
+    padding: 0 1em;
+    text-align: right;
+    font-weight:bold;
+    vertical-align:center;
+}
+
+#signupform label[for=tos]
+{
+   float: right;
+   text-align:left;
+   font-weight:normal;
+   width:85%;
+   padding-left:5px;
+}
+
+#tos
+{
+   float:left;
+   left:30px;
+   position:relative;
+}
+
+#signupform div {
+    margin-bottom: .5em;
+    padding: 0;
+    display: block;
+}
+
+#signupform input[type=text], #signupform input[type=password], #signupform textarea {
+    width: 150px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 1px;
+    color: #333;
+}
+
+#signupform textarea {
+   height:16em;
+   width:27em;
+}
+
+#signupform select {
+    padding: 1px;
+}
+
+#signupform #submit {
+    clear: both;
+    padding-top: 1em;
+    text-align: center;
+    font-weight:bold;
+}
+
+#signupform input:focus, #signupform textarea:focus {
+    background: #efefef;
+    color: #000;
+}
+#refreshcaptcha
+{
+   border:1px solid #BBB;
+   background:#EEE;
+   padding:2px;
+   padding-top:0;
+   width:50%;
+   margin-left:50%;
+   cursor:default;
+}
+
+#signupform #emailrequirements
+{
+   width:150%;
+   position:relative;
+   right:25%;
+}

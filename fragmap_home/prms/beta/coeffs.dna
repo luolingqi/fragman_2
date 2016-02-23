@@ -1,0 +1,14 @@
+block   0   repvdw               0       repvdw          0
+block   1   attvdw               0       point           0
+block   2   hbond_donor          1       hbond_acceptor  0
+block   3   hbond_acceptor       0       hbond_donor     1
+block   4   cavity               3       point           0
+block   5   pb_potential         0       charge_point    0
+
+set   0
+cor   0     5.0    0   0.0   1     10.0
+cor   1    -1.0    1  10.0   0     0.0
+cor   2   100.0    0   0.0   0     0.0
+cor   3   100.0    0   0.0   0     0.0
+cor   4    -0.1    0   0.0   0     0.0
+cor   5    20.0    0   0.0   0     0.0

@@ -1,0 +1,631 @@
+HBPLUS Hydrogen Bond Calculator v 3.15            Oct 28 12:17:53 EST 2003
+(c) I McDonald, D Naylor, D Jones and J Thornton 1993 All Rights Reserved.
+
+Configured for 60000 atoms and 20000 residues.
+Listing of residue types
+
+ALA
+ N   CA  C   O   CB  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+CYS
+ N   CA  C   O   CB  SG  OXT
+ N   can donate 1 H-Bond 
+ SG  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ SG  can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+ASP
+ N   CA  C   O   CB  CG  OD1 OD2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OD1 can accept 2 H-Bonds
+ OD2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+GLU
+ N   CA  C   O   CB  CG  CD  OE1 OE2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OE1 can accept 2 H-Bonds
+ OE2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PHE
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+GLY
+ N   CA  C   O   C   OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+HIS
+ N   CA  C   O   CB  CG  ND1 CD2 CE1 NE2 OXT
+ N   can donate 1 H-Bond 
+ ND1 can donate 1 H-Bond 
+ NE2 can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ ND1 can accept 1 H-Bond 
+ NE2 can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+ILE
+ N   CA  C   O   CB  CG1 CG2 CD1 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+LYS
+ N   CA  C   O   CB  CG  CD  CE  NZ  OXT
+ N   can donate 1 H-Bond 
+ NZ  can donate 3 H-Bonds
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+LEU
+ N   CA  C   O   CB  CG  CD1 CD2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+MET
+ N   CA  C   O   CB  CG  SD  CE  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ SD  can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+ASN
+ N   CA  C   O   CB  CG  OD1 ND2 OXT
+ N   can donate 1 H-Bond 
+ ND2 can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ OD1 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PRO
+ N   CA  C   O   CB  CG  CD  OXT
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+GLN
+ N   CA  C   O   CB  CG  CD  OE1 NE2 OXT
+ N   can donate 1 H-Bond 
+ NE2 can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ OE1 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+ARG
+ N   CA  C   O   CB  CG  CD  NE  CZ  NH1 NH2 OXT
+ N   can donate 1 H-Bond 
+ NE  can donate 1 H-Bond 
+ NH1 can donate 2 H-Bonds
+ NH2 can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+SER
+ N   CA  C   O   CB  OG  OXT
+ N   can donate 1 H-Bond 
+ OG  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OG  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+THR
+ N   CA  C   O   CB  OG1 CG2 OXT
+ N   can donate 1 H-Bond 
+ OG1 can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OG1 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+VAL
+ N   CA  C   O   CB  CG1 CG2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+TRP
+ N   CA  C   O   CB  CG  CD1 CD2 NE1 CE2 CE3 CZ2 CZ3 CH2 OXT
+ N   can donate 1 H-Bond 
+ NE1 can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+TYR
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  OH  OXT
+ N   can donate 1 H-Bond 
+ OH  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OH  can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+AIB
+ N   CA  C   O   CB1 CB2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PHL
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+SEC
+ N   CA  C   O   CB SEG  OD1 OD2 OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OD1 can accept 2 H-Bonds
+ OD2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+ALM
+ N   CA  C   O   CB  CM  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+MPR
+ ??? CA  C   O   CB  SG 
+ SG  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ SG  can accept 1 H-Bond 
+
+FRD
+ N   CA  C   ??? CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+LYM
+ N   CA  C   O   CB  CG  CD  CE  NZ  CM  OXT
+ N   can donate 1 H-Bond 
+ NZ  can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+GLM
+ N   CA  C   O   CM  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PPH
+ N   CA  P   OP1 OP2 CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ OP1 can accept 2 H-Bonds
+ OP2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PGL
+ N   CA  P   O1P O2P OXT
+ N   can donate 1 H-Bond 
+ O1P can accept 2 H-Bonds
+ O2P can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+OLE
+ ON  CA  C   O   CB  CG  CD1 CD2 OXT
+ ON  can accept 2 H-Bonds
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+ABA
+ N   CA  C   O   CB  CG  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+NLE
+ N   CA  C   O   CB  CG  CD  CE  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+B2V
+ N   CA  B   O1  O2  CB  CG1 CG2 OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+B2I
+ N   CA  B   O1  O2  CB  CG1 CG2 CD1 OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+B1F
+ N   CA  B   O1  O2  CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+BNO
+ N   CA  B   O1  O2  CB  CG  CD  CE  OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+B2A
+ N   CA  B   O1  O2  CB  OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+B2F
+ N   CA  B   O1  O2  CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+IVA
+ ??? CA  C   O   CB  CG1 CG2 OXT
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+LOV
+ N   CA  C   O   CB  CG1 CG2 CD1 CD2 C1G C1B C1A CS  OS  CT  OXT
+ N   can donate 1 H-Bond 
+ OS  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OS  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+STA
+ N   CA  C   O   CB  CG  CD1 CD2 CH  OH  CM  OXT
+ N   can donate 1 H-Bond 
+ OH  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OH  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PVL
+ ON  CA  C   O   CB 
+ ON  can accept 2 H-Bonds
+ O   can accept 2 H-Bonds
+
+CAL
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  CH  OH  CM  CA2 CB2 CG2 CD3 CD4 OXT
+ N   can donate 1 H-Bond 
+ OH  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OH  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+PHA
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+DCI
+ N   CA  ??? ??? CB  CG1 CG2 CD1
+ N   can donate 1 H-Bond 
+
+AHS
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  CH  OH  CM  N1  CB2 CG2 CD3 CD4 OXT
+ N   can donate 1 H-Bond 
+ OH  can donate 1 H-Bond 
+ N1  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OH  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+CHS
+ N   CA  C   O   CB  CG  CD1 CD2 CE1 CE2 CZ  CH  OH  CM  OXT
+ N   can donate 1 H-Bond 
+ OH  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OH  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+MSE
+ N   CA  C   O   CB  CG SED  CE  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+ETA
+ N   CA  ??? O   CB 
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+
+PCA
+ N   CA  C   O   CB  CG  CD  OE  OXT
+ N   can donate 1 H-Bond 
+ OE  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ OE  can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+ASX
+ N   CA  C   O   CB  CG  AD1 AD2 OXT
+ N   can donate 1 H-Bond 
+ AD1 can donate 2 H-Bonds
+ AD2 can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ AD1 can accept 2 H-Bonds
+ AD2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+GLX
+ N   CA  C   O   CB  CG  CD  AE1 AE2 OXT
+ N   can donate 1 H-Bond 
+ AE1 can donate 2 H-Bonds
+ AE2 can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+ AE1 can accept 2 H-Bonds
+ AE2 can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+UNK
+ N   CA  C   O   CB  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+
+CYH
+ N   CA  C   O   CB  SG  OXT
+ N   can donate 1 H-Bond 
+ SG  can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ SG  can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+CSS
+ N   CA  C   O   CB  SG  OXT
+ N   can donate 1 H-Bond 
+ O   can accept 2 H-Bonds
+ SG  can accept 1 H-Bond 
+ OXT can accept 2 H-Bonds
+
+  C
+ ??? O3P P   O1P O2P O5* C5* C4* O4* C3* O3* C2* O2* C1* N1  C2  O2  N3  C4  N4  C5  C6  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N1  can donate 1 H-Bond 
+ N4  can donate 2 H-Bonds
+ O1P can accept 1 H-Bond 
+ O2P can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ O2  can accept 1 H-Bond 
+ N3  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+  A
+ ??? O3P P   O1P O2P O5* C5* C4* O4* C3* O3* C2* O2* C1* N9  C8  N7  C5  C6  N6  N1  C2  N3  C4  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N6  can donate 2 H-Bonds
+ O1P can accept 1 H-Bond 
+ O2P can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ N7  can accept 1 H-Bond 
+ N1  can accept 1 H-Bond 
+ N3  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+  U
+ ??? O3P P   O1P O2P O5* C5* C4* O4* C3* O3* C2* O2* C1* N1  C2  O2  N3  C4  O4  C5  C6  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N3  can donate 1 H-Bond 
+ O1P can accept 1 H-Bond 
+ O2P can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ O2  can accept 1 H-Bond 
+ O4  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+  G
+ ??? O3P P   O1P O2P O5* C5* C4* O4* C3* O3* C2* O2* C1* N9  C8  N7  C5  C6  O6  N1  C2  N2  N3  C4  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N1  can donate 1 H-Bond 
+ N2  can donate 2 H-Bonds
+ O1P can accept 1 H-Bond 
+ O2P can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ N7  can accept 1 H-Bond 
+ O6  can accept 1 H-Bond 
+ N3  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+  T
+ ??? O3P P   O1P O2P O5* C5* C4* O4* C3* O3* C2* O2* C1* N1  C2  O2  N3  C4  O4  C5  C5M C6  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N3  can donate 1 H-Bond 
+ O1P can accept 1 H-Bond 
+ O2P can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ O2  can accept 1 H-Bond 
+ O4  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+ATP
+ ??? PG  O1G O2G O3G PB  O1B O2B O3B PA  O1A O2A O3A O5* C5* C4* O4* C3* O3* C2* O2* C1* N9  C8  N7  C5  C6  N6  N1  C2  N3  C4  OXT
+ O3* can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ N6  can donate 2 H-Bonds
+ O1G can accept 1 H-Bond 
+ O2G can accept 1 H-Bond 
+ O3G can accept 1 H-Bond 
+ O1B can accept 1 H-Bond 
+ O2B can accept 1 H-Bond 
+ O3B can accept 1 H-Bond 
+ O1A can accept 1 H-Bond 
+ O2A can accept 1 H-Bond 
+ O3A can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ N7  can accept 1 H-Bond 
+ N1  can accept 1 H-Bond 
+ N3  can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+COA
+ ???AO6 AP2 AO4 AO5 AO3 AP1 AO1 AO2 AO5*AC5*AC4*AO4*AC3*AO3*AP3*AO7 AO8 AO9 AC2*AO2*AC1*AN9 AC8 AN7 AC5 AC6 AN6 AN1 AC2 AN3 AC4 PS1 PC2 PC3 PN4 PC5 PO5 PC6 PC7 PN8 PC9 PO9 PC10PO10PC11PC12PC13PC14
+AO2* can donate 1 H-Bond 
+AN6  can donate 2 H-Bonds
+PS1  can donate 1 H-Bond 
+PN4  can donate 1 H-Bond 
+PN8  can donate 1 H-Bond 
+PO10 can donate 1 H-Bond 
+AO6  can accept 1 H-Bond 
+AO4  can accept 1 H-Bond 
+AO5  can accept 1 H-Bond 
+AO3  can accept 1 H-Bond 
+AO1  can accept 1 H-Bond 
+AO2  can accept 1 H-Bond 
+AO5* can accept 1 H-Bond 
+AO4* can accept 1 H-Bond 
+AO3* can accept 1 H-Bond 
+AO7  can accept 1 H-Bond 
+AO8  can accept 1 H-Bond 
+AO9  can accept 1 H-Bond 
+AO2* can accept 1 H-Bond 
+AN7  can accept 1 H-Bond 
+AN1  can accept 1 H-Bond 
+AN3  can accept 1 H-Bond 
+PS1  can accept 1 H-Bond 
+PO5  can accept 1 H-Bond 
+PO9  can accept 1 H-Bond 
+PO10 can accept 1 H-Bond 
+
+FMN
+ ??? N1  C2  O2  N3  C4  O4  C4A N5  C5A C6  C7  C7M C8  C8M C9  C9A N10 C10 C1* C2* O2* C3* O3* C4* O4* C5* O5* P   OP1 OP2 OP3 OXT
+ N3  can donate 1 H-Bond 
+ O2* can donate 1 H-Bond 
+ O3* can donate 1 H-Bond 
+ O4* can donate 1 H-Bond 
+ N1  can accept 1 H-Bond 
+ O2  can accept 1 H-Bond 
+ O4  can accept 1 H-Bond 
+ N5  can accept 1 H-Bond 
+ O2* can accept 1 H-Bond 
+ O3* can accept 1 H-Bond 
+ O4* can accept 1 H-Bond 
+ O5* can accept 1 H-Bond 
+ OP1 can accept 1 H-Bond 
+ OP2 can accept 1 H-Bond 
+ OP3 can accept 1 H-Bond 
+ OXT can accept 1 H-Bond 
+
+HEM
+ ???FE   CHA CHB CHC CHD N A C1A C2A C3A C4A CMA CAA CBA CGA O1A O2A N B C1B C2B C3B C4B CMB CAB CBB N C C1C C2C C3C C4C CMC CAC CBC N D C1D C2D C3D C4D CMD CAD CBD CGD O1D O2D
+ O1A can accept 1 H-Bond 
+ O2A can accept 1 H-Bond 
+ O1D can accept 1 H-Bond 
+ O2D can accept 1 H-Bond 
+
+MTX
+ ??? N1  C2  NA2 N3  C4  NA4 C4A N5  C6  C7  N8  C8A C9  N10 CM  C11 C12 C13 C14 C15 C16 C   O   N   CA  CT  O1  O2  CB  CG  CD  OE1 OE2
+ NA2 can donate 2 H-Bonds
+ NA4 can donate 2 H-Bonds
+ N8  can donate 1 H-Bond 
+ N   can donate 1 H-Bond 
+ N1  can accept 1 H-Bond 
+ N3  can accept 1 H-Bond 
+ N5  can accept 1 H-Bond 
+ O   can accept 1 H-Bond 
+ O1  can accept 1 H-Bond 
+ O2  can accept 1 H-Bond 
+ OE1 can accept 1 H-Bond 
+ OE2 can accept 1 H-Bond 
+
+NAD
+ ???AP  AO1 AO2 AO5*AC5*AC4*AO4*AC3*AO3*AC2*AO2*AC1*AN9 AC8 AN7 AC5 AC6 AN6 AN1 AC2 AN3 AC4  O3 NP  NO1 NO2 NO5*NC5*NC4*NO4*NC3*NO3*NC2*NO2*NC1*NN1 NC2 NNC3 NC7 NO7 NN7 NC4 NC5 NC6 
+AO3* can donate 1 H-Bond 
+AO2* can donate 1 H-Bond 
+AN6  can donate 2 H-Bonds
+NO3* can donate 1 H-Bond 
+NO2* can donate 1 H-Bond 
+ NN7 can donate 2 H-Bonds
+AO1  can accept 1 H-Bond 
+AO2  can accept 1 H-Bond 
+AO5* can accept 1 H-Bond 
+AO4* can accept 1 H-Bond 
+AO3* can accept 1 H-Bond 
+AO2* can accept 1 H-Bond 
+AN7  can accept 1 H-Bond 
+AN1  can accept 1 H-Bond 
+AN3  can accept 1 H-Bond 
+NO1  can accept 1 H-Bond 
+NO2  can accept 1 H-Bond 
+NO5* can accept 1 H-Bond 
+NO4* can accept 1 H-Bond 
+NO3* can accept 1 H-Bond 
+NO2* can accept 1 H-Bond 
+ NO7 can accept 1 H-Bond 
+
+ACE
+ ??? CH3 C   O   OXT
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+FOR
+ ??? ??? C   O   OXT
+ O   can accept 2 H-Bonds
+ OXT can accept 2 H-Bonds
+
+SO4
+ S   O1  O2  O3  O4 
+ O1  can accept 2 H-Bonds
+ O2  can accept 2 H-Bonds
+ O3  can accept 2 H-Bonds
+ O4  can accept 2 H-Bonds
+
+FMD
+ N   C   O  
+ N   can donate 2 H-Bonds
+ O   can accept 2 H-Bonds
+
+FML
+ C   O  
+ O   can accept 2 H-Bonds
+
+Criteria
+
+Minimum Angles; DHA 90.00, HAAA 90.00, DAAA 90.00
+Maximum Distances; D-A 3.9, H-A 2.5, S-S 3.0
+Maximum angles at aromatic acceptors DAAX 20.00, HAAAX 20.00
+Minimum covalent separation 3 Covalent bonds
+
+Enter directory name for output file (default current directory)
+
+Enter the name of the next file to be processed:
+just a file name for a Brookhaven Format PDB file or
+@file name for a file holding names of Brookhavenformat files - or a blank line to end.
+

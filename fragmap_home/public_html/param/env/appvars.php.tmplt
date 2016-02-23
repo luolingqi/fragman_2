@@ -1,0 +1,62 @@
+<?php
+$servername='ClusPro';
+define('SERVER_NAME' , $servername);
+define('WEB_ROOT'    , 'http://cluspro.bu.edu/');
+define('SERVER_EMAIL', 'cluspro@gmail.com');
+
+# directories
+$rootdir="/home/rb/public_html/cluspro.test";
+$storagedir = "$rootdir/storage";
+$prmsdir = "$rootdir/bin";
+define('PRMS_DIR', $prmsdir);
+define('ROOT_DIR', $rootdir);
+define('CLASS_DIR', "$rootdir/classes");
+define('STORAGE_DIR', $storagedir);
+define('BIN_DIR', "$rootdir/bin");
+
+# parameters
+define('SCV_USER', 'drhall');
+define('SCV_PASS', '');
+define('SCV_STORAGE', '/usr3/graduate/drhall/dh.test.bgl');
+$nrots=50000;
+$chopres=2; //number of residues dssp chops
+define('DEFAULT_ATOMS' , 'atoms.0.0.4.prm.ms.3cap+0.5ace.Hr0rec');
+define('DEFAULT_COEFFS', 'coeffs');
+define('PPI_COEFFS'    , 'ppi_coeffs');
+define('DEFAULT_ROTS'  , 'rot70k.0.0.4.prm');
+define('USE_REFINEMENT', 0);
+
+# filenames
+# original user submitted files
+$recorigpre = 'recorig';
+$ligorigpre = 'ligorig';
+$recorig = "$recorigpre.pdb";
+$ligorig = "$ligorigpre.pdb";
+
+# processed files
+$rec='rec.pdb';
+$lig='lig.pdb';
+
+# form fields
+$recupfile='rec';
+$ligupfile='lig';
+$recpdb='recpdb';
+$ligpdb='ligpdb';
+$recchain='recchains';
+$ligchain='ligchains';
+
+# website viewing
+$jobsperpage=10;
+
+function __autoload($class)
+{  
+   $path = str_replace('_', DIRECTORY_SEPARATOR, $class) . '.php';
+   if ( is_readable(CLASS_DIR . "/$path") )
+   {
+      require CLASS_DIR . "/$path";
+   }
+   elseif ( is_readable(CLASS_DIR . "/phplibclasses/$path") )
+   {
+      require CLASS_DIR . "/phplibclasses/$path";
+   }
+}

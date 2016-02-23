@@ -1,0 +1,30 @@
+#!/bin/csh -f
+if( ! $?DO_PARALLEL ) then
+        setenv DO_PARALLEL " "
+endif
+rm -rf *.log
+echo "You are now running antechamber commands for about 56,000 molecules in a mutiplemol2 file, it may take a while. " 
+echo "You are now running antechamber commands for about 56,000 molecules in a mutiplemol2 file, it may take a while. " >raw.log
+echo "You may check process.log for job process" 
+echo "You may check process.log for job process" >>raw.log
+echo "You may check error.log for failure molecules and raw.log and tide.log for more detailed information" 
+echo "You may check error.log for failure molecules and raw.log and tide.log for more detailed information" >>raw.log
+echo "tide.log is a clean version of raw.log and it is prodcued when job is done" 
+echo "tide.log is a clean version of raw.log and it is prodcued when job is done" >>raw.log
+echo "---Job begin---" 
+echo "---Job begin---" >>raw.log
+date 
+date >>raw.log
+rm -rf total.prepi
+rm -rf total.frcmod
+../../exe/database -i xpaa.mol2 -d mol2.def >> raw.log || goto error
+echo "---Job end---" 
+echo "---Job end---" >>raw.log
+date 
+date >>raw.log
+cat -s raw.log >tide.log
+exit(0)
+error:
+echo "  Program error"
+exit(1)
+

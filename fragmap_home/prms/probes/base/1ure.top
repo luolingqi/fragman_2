@@ -1,0 +1,10 @@
+REMARK   single urea probe
+ATOM      1  C   URE     1       0.000   0.000   0.000  0.594 3.00      1URE
+ATOM      2  O   URE     1      -0.009   1.002   0.704 -0.55611.00      1URE
+ATOM      3  N1  URE     1       0.009   0.000  -1.345 -0.60711.00      1URE
+ATOM      4  N2  URE     1       0.005  -1.100   0.773 -0.60711.00      1URE
+ATOM      5  H1  URE     1       0.016  -0.869  -1.840  0.294 0.00      1URE
+ATOM      6  H2  URE     1       0.306   0.817  -1.838  0.294 0.00      1URE
+ATOM      7  H3  URE     1       0.012  -2.005   0.348  0.294 0.00      1URE
+ATOM      8  H4  URE     1      -0.297  -1.039   1.725  0.294 0.00      1URE
+END

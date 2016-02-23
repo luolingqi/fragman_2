@@ -1,0 +1,124 @@
+#jobsform {
+    margin: 0 auto;
+    padding: 0;
+    width:70%;
+}
+
+#jobsform label {
+    float: left;
+    width: 70px;
+    text-align: right;
+    font-weight:bold;
+    padding-top:0.25em;
+}
+
+#jobsform div {
+    margin-top:.25em;
+    margin-bottom: .5em;
+    padding: 0;
+    display: block;
+    width: 50%;
+}
+
+#jobsform input[type=text], #jobsform input[type=password], #jobsform textarea {
+    width: 160px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 1px;
+    text-align:left;
+    color: #333;
+}
+
+#jobsform input[type=file]
+{
+   width:160px;
+}
+
+#jobsform textarea {
+   height:7em;
+}
+
+#jobsform select {
+    padding: 1px;
+}
+
+#jobsform .doublespan select {
+    position:relative;
+    left:-45px;
+}
+
+#jobsform #submit {
+    clear: both;
+    padding-top: 1em;
+    text-align: center;
+    font-weight:bold;
+}
+
+#jobsform input:focus, #jobsform textarea:focus {
+    background: #efefef;
+    color: #000;
+}
+
+#jobsform #protpdb
+{
+   padding:2px;
+   width: 34px;
+   position:relative;
+   right:62px;
+}
+#jobsform #protchains
+{
+   width: 80px;
+   position:relative;
+   right:40px;
+}
+
+#jobsform label[for=jobname], #jobsform label[for=server]
+{
+   width:80px;
+}
+
+#showprotfile, #showprotpdb
+{
+   position:relative;
+   right:10px;
+}
+
+#advancedtoggle
+{
+   font-size:medium;
+}
+
+#jobsform label[for=skipcharmm], #jobsform label[for=ppimode], #jobsform label[for=keep_metals], #jobsform label[for=nucleic_acid]
+
+{
+   float: right;
+   text-align:left;
+   font-weight:normal;
+   width:65%;
+   padding-left:5px;
+	padding-bottom:15px;
+}
+
+#jobsform label[for=ppimode] label[for=nucleic_acid]
+{
+   width:85%;
+   padding-left:15px;
+
+}
+
+#jobsform #skipcharmm, #jobsform #ppimode, #jobsform #keep_metals, #jobsform #nucleic_acid
+{
+   float:left;
+   left:20px;
+   position:relative;
+}
+
+#jobsform div.doublespan
+{
+   clear:both;
+   width:120%;
+}
+

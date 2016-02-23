@@ -1,0 +1,44 @@
+ATOM      1  C1  ADY     1       3.581   5.128  11.580   1.000
+ATOM      2  C2  ADY     1       3.379   4.230  12.782   1.000
+ATOM      3  O1  ADY     1       2.630   4.540  13.677   1.000
+ATOM      4  H1  ADY     1       3.949   3.304  12.782   1.000
+ATOM      5  C1  AMN     2       2.127   3.672  12.805   1.000
+ATOM      6  N1  AMN     2       1.684   3.573  14.203   1.000
+ATOM      7  H1  AMN     2       2.186   2.824  14.663   1.000
+ATOM      8  H2  AMN     2       0.703   3.324  14.229   1.000
+ATOM      9  C1  ETH     3       1.889   3.542  13.019   1.000
+ATOM     10  C2  ETH     3       3.129   4.341  12.578   1.000
+ATOM     11  C   URE     4       2.166   3.738  13.147   1.000
+ATOM     12  O   URE     4       1.930   3.832  14.343   1.000
+ATOM     13  N1  URE     4       3.370   3.854  12.766   1.000
+ATOM     14  N2  URE     4       1.189   3.533  12.367   1.000
+ATOM     15  H1  URE     4       4.131   4.020  13.424   1.000
+ATOM     16  H2  URE     4       3.643   3.775  11.787   1.000
+ATOM     17  H3  URE     4       1.302   3.448  11.357   1.000
+ATOM     18  H4  URE     4       0.237   3.438  12.719   1.000
+ATOM     19  C1  AMN     5       3.675   4.977  11.933   1.000
+ATOM     20  N1  AMN     5       5.070   4.744  11.534   1.000
+ATOM     21  H1  AMN     5       5.431   5.572  11.078   1.000
+ATOM     22  H2  AMN     5       5.104   3.995  10.854   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+CONECT    2    4
+REMARK Residue 2
+CONECT    5    6
+CONECT    6    7
+CONECT    6    8
+REMARK Residue 3
+CONECT    9   10
+REMARK Residue 4
+CONECT   11   12
+CONECT   13   11
+CONECT   13   15
+CONECT   13   16
+CONECT   14   11
+CONECT   14   17
+CONECT   14   18
+REMARK Residue 5
+CONECT   19   20
+CONECT   20   21
+CONECT   20   22

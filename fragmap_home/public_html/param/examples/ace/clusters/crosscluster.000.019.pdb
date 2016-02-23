@@ -1,0 +1,203 @@
+ATOM      1  C   BUT     1      41.630  37.019  47.724   1.000
+ATOM      2  C1  BUT     1      42.158  36.288  46.481   1.000
+ATOM      3  C2  BUT     1      42.661  36.962  48.848   1.000
+ATOM      4  C3  BUT     1      40.307  36.409  48.207   1.000
+ATOM      5  O   BUT     1      41.413  38.366  47.410   1.000
+ATOM      6  H1  BUT     1      42.177  38.650  46.921   1.000
+ATOM      7  C2  DFO     2      42.838  36.614  48.949   1.000
+ATOM      8  N3  DFO     2      41.871  36.112  48.150   1.000
+ATOM      9  O4  DFO     2      42.666  37.003  50.100   1.000
+ATOM     10  C3  DFO     2      42.187  35.670  46.794   1.000
+ATOM     11  C1  DFO     2      40.506  36.011  48.660   1.000
+ATOM     12  H1  DFO     2      43.799  36.638  48.439   1.000
+ATOM     13  C2  EOL     3      42.312  37.217  47.726   1.000
+ATOM     14  C1  EOL     3      42.244  36.201  46.591   1.000
+ATOM     15  O   EOL     3      41.577  38.381  47.359   1.000
+ATOM     16  H1  EOL     3      41.984  38.731  46.573   1.000
+ATOM     17  C1  ACN     4      42.397  36.656  47.852   1.000
+ATOM     18  C2  ACN     4      42.552  37.022  49.257   1.000
+ATOM     19  N   ACN     4      42.660  37.316  50.375   1.000
+ATOM     20  C1  ADY     5      42.168  35.407  46.504   1.000
+ATOM     21  C2  ADY     5      42.482  36.618  47.358   1.000
+ATOM     22  O1  ADY     5      41.610  37.375  47.712   1.000
+ATOM     23  H1  ADY     5      43.528  36.753  47.627   1.000
+ATOM     24  C2  EOL     6      43.672  33.205  45.529   1.000
+ATOM     25  C1  EOL     6      42.766  34.298  46.092   1.000
+ATOM     26  O   EOL     6      45.035  33.623  45.609   1.000
+ATOM     27  H1  EOL     6      45.269  33.646  46.529   1.000
+ATOM     28  C1  PHN     7      40.382  38.766  48.214   1.000
+ATOM     29  C2  PHN     7      41.572  38.079  47.886   1.000
+ATOM     30  C3  PHN     7      42.151  37.207  48.826   1.000
+ATOM     31  C4  PHN     7      41.526  37.035  50.078   1.000
+ATOM     32  C5  PHN     7      40.331  37.711  50.405   1.000
+ATOM     33  C6  PHN     7      39.754  38.584  49.462   1.000
+ATOM     34  O   PHN     7      39.798  39.597  47.280   1.000
+ATOM     35  HO  PHN     7      40.358  39.620  46.509   1.000
+ATOM     36  CH  THS     8      42.198  37.059  47.490   1.000
+ATOM     37  CH1 THS     8      41.524  38.165  48.291   1.000
+ATOM     38  CH2 THS     8      41.461  35.740  47.660   1.000
+ATOM     39  OT  THS     8      42.180  37.404  46.111   1.000
+ATOM     40  HO  THS     8      42.002  38.332  46.013   1.000
+ATOM     41  C   ACT     9      41.278  35.768  47.593   1.000
+ATOM     42  O   ACT     9      40.105  35.640  47.926   1.000
+ATOM     43  CH1 ACT     9      42.233  36.660  48.360   1.000
+ATOM     44  CH2 ACT     9      41.855  35.048  46.392   1.000
+ATOM     45  C1  AMN    10      39.758  35.829  48.786   1.000
+ATOM     46  N1  AMN    10      38.441  35.769  48.137   1.000
+ATOM     47  H1  AMN    10      38.296  34.845  47.751   1.000
+ATOM     48  H2  AMN    10      38.423  36.415  47.357   1.000
+ATOM     49  CG  BEN    11      41.867  37.592  48.125   1.000
+ATOM     50  CD1 BEN    11      42.077  36.350  47.481   1.000
+ATOM     51  CE1 BEN    11      41.053  35.374  47.478   1.000
+ATOM     52  CZ  BEN    11      39.821  35.638  48.120   1.000
+ATOM     53  CE2 BEN    11      39.611  36.879  48.765   1.000
+ATOM     54  CD2 BEN    11      40.634  37.857  48.766   1.000
+ATOM     55  C   BUT    12      43.383  33.584  45.205   1.000
+ATOM     56  C1  BUT    12      42.924  32.140  45.462   1.000
+ATOM     57  C2  BUT    12      42.620  34.562  46.115   1.000
+ATOM     58  C3  BUT    12      43.183  33.958  43.727   1.000
+ATOM     59  O   BUT    12      44.753  33.669  45.492   1.000
+ATOM     60  H1  BUT    12      44.829  33.578  46.433   1.000
+ATOM     61  C1  DME    13      41.978  35.118  46.365   1.000
+ATOM     62  O1  DME    13      41.379  36.181  47.109   1.000
+ATOM     63  C2  DME    13      42.364  36.890  47.865   1.000
+ATOM     64  C1  ACN    14      41.970  35.359  46.930   1.000
+ATOM     65  C2  ACN    14      42.420  34.136  46.270   1.000
+ATOM     66  N   ACN    14      42.769  33.167  45.737   1.000
+ATOM     67  C1  BDY    15      41.689  36.511  49.250   1.000
+ATOM     68  C2  BDY    15      41.595  35.828  48.017   1.000
+ATOM     69  C3  BDY    15      40.335  35.410  47.549   1.000
+ATOM     70  C4  BDY    15      39.186  35.681  48.321   1.000
+ATOM     71  C5  BDY    15      39.272  36.361  49.553   1.000
+ATOM     72  C6  BDY    15      40.533  36.779  50.019   1.000
+ATOM     73  C7  BDY    15      42.999  36.947  49.743   1.000
+ATOM     74  H1  BDY    15      43.834  36.666  49.104   1.000
+ATOM     75  O1  BDY    15      43.165  37.564  50.770   1.000
+ATOM     76  C1  ETH    16      40.569  35.807  48.309   1.000
+ATOM     77  C2  ETH    16      39.068  35.909  48.634   1.000
+ATOM     78  C1  PHN    17      44.399  33.757  45.207   1.000
+ATOM     79  C2  PHN    17      44.145  34.068  43.856   1.000
+ATOM     80  C3  PHN    17      42.814  34.202  43.418   1.000
+ATOM     81  C4  PHN    17      41.765  34.042  44.347   1.000
+ATOM     82  C5  PHN    17      42.022  33.725  45.697   1.000
+ATOM     83  C6  PHN    17      43.350  33.572  46.129   1.000
+ATOM     84  O   PHN    17      45.704  33.726  45.637   1.000
+ATOM     85  HO  PHN    17      45.754  33.695  46.581   1.000
+ATOM     86  CH  THS    18      43.747  33.545  45.275   1.000
+ATOM     87  CH1 THS    18      43.238  32.120  45.449   1.000
+ATOM     88  CH2 THS    18      42.888  34.527  46.064   1.000
+ATOM     89  OT  THS    18      45.114  33.627  45.681   1.000
+ATOM     90  HO  THS    18      45.206  33.456  46.609   1.000
+ATOM     91  C1  BDY    19      42.058  34.661  46.278   1.000
+ATOM     92  C2  BDY    19      42.814  33.467  46.291   1.000
+ATOM     93  C3  BDY    19      42.821  32.630  45.159   1.000
+ATOM     94  C4  BDY    19      42.067  33.001  44.026   1.000
+ATOM     95  C5  BDY    19      41.307  34.189  44.004   1.000
+ATOM     96  C6  BDY    19      41.304  35.022  45.139   1.000
+ATOM     97  C7  BDY    19      42.049  35.538  47.455   1.000
+ATOM     98  H1  BDY    19      42.667  35.190  48.281   1.000
+ATOM     99  O1  BDY    19      41.417  36.565  47.530   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    3
+CONECT    1    4
+CONECT    1    5
+CONECT    5    6
+REMARK Residue 2
+CONECT    7    8
+CONECT    7    9
+CONECT    8   10
+CONECT    8   11
+CONECT    7   12
+REMARK Residue 3
+CONECT   13   14
+CONECT   13   15
+CONECT   15   16
+REMARK Residue 4
+CONECT   17   18
+CONECT   18   19
+REMARK Residue 5
+CONECT   20   21
+CONECT   21   22
+CONECT   21   23
+REMARK Residue 6
+CONECT   24   25
+CONECT   24   26
+CONECT   26   27
+REMARK Residue 7
+CONECT   28   29
+CONECT   29   30
+CONECT   30   31
+CONECT   31   32
+CONECT   32   33
+CONECT   33   28
+CONECT   28   34
+CONECT   34   35
+REMARK Residue 8
+CONECT   37   36
+CONECT   36   39
+CONECT   36   38
+CONECT   39   40
+REMARK Residue 9
+CONECT   43   41
+CONECT   41   42
+CONECT   41   44
+REMARK Residue 10
+CONECT   45   46
+CONECT   46   47
+CONECT   46   48
+REMARK Residue 11
+CONECT   49   50
+CONECT   49   54
+CONECT   50   51
+CONECT   54   53
+CONECT   51   52
+CONECT   53   52
+REMARK Residue 12
+CONECT   55   56
+CONECT   55   57
+CONECT   55   58
+CONECT   55   59
+CONECT   59   60
+REMARK Residue 13
+CONECT   61   62
+CONECT   62   63
+REMARK Residue 14
+CONECT   64   65
+CONECT   65   66
+REMARK Residue 15
+CONECT   67   68
+CONECT   67   72
+CONECT   68   69
+CONECT   69   70
+CONECT   70   71
+CONECT   71   72
+CONECT   67   73
+CONECT   73   74
+CONECT   73   75
+REMARK Residue 16
+CONECT   76   77
+REMARK Residue 17
+CONECT   78   79
+CONECT   79   80
+CONECT   80   81
+CONECT   81   82
+CONECT   82   83
+CONECT   83   78
+CONECT   78   84
+CONECT   84   85
+REMARK Residue 18
+CONECT   87   86
+CONECT   86   89
+CONECT   86   88
+CONECT   89   90
+REMARK Residue 19
+CONECT   91   92
+CONECT   91   96
+CONECT   92   93
+CONECT   93   94
+CONECT   94   95
+CONECT   95   96
+CONECT   91   97
+CONECT   97   98
+CONECT   97   99

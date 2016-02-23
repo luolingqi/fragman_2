@@ -1,0 +1,87 @@
+
+
+		         L I G P L O T   v . 4 . 0
+		       -----------------------------
+
+			    Installation guide
+			    ------------------
+
+1. Files supplied in the source directory
+   --------------------------------------
+
+All the LIGPLOT files are text files, so they can be easily transferred
+onto your computer (Sun, Vax, etc.)
+
+The following source code files needs to be compiled as described below:
+
+          ligplot.c        + include-file: ligplot.h
+          hbadd.c          + include-file: hbadd.h
+          dimer.c          + include-file: dimer.h
+
+There are also four script files for unix systems (identified by .scr):
+
+          ligplot.scr      runs HBADD, HBPLUS and LIGPLOT
+	  ligonly.scr      runs only LIGPLOT
+          dimplot.scr      runs HBADD, HBPLUS, DIMER and LIGPLOT
+	  dimonly.scr      runs only LIGPLOT
+	  
+The following additional files will be found in the source directory:
+
+          File             Description
+          ----             -----------
+          ligplot.prm      Default LIGPLOT parameter file
+          install.doc      Installation instructions
+          confid.txt       Confidentiality Agreement
+          README           Reales notes
+
+
+2 Compiling the programs
+  ---------------------
+
+On our system the two LIGPLOT programs are complied in the following manner:
+
+          cc -o ligplot ligplot.c -lm
+          cc -o hbadd hbadd.c -lm
+          cc -o dimer dimer.c
+
+-lm is an option that includes the Standard Maths library.
+
+This produces three executable files: ligplot, hbadd and dimer. If you wish
+to move thes files to another directory, you will need to take with them
+the files: ligplot.scr, ligonly.scr, ligplot.prm, dimplot.scr, dimonly.scr
+and het_dictionary.txt. The last of these files (for use with HBADD) can be
+picked up from the PDB at:-
+
+          ftp://pdb.pdb.bnl.gov/pub/resources/hetgroups/het_dictionary.txt
+
+
+3. Assignment of aliases/logical names
+   -----------------------------------
+
+Under unix, the following aliases need to be defined to run LIGPLOT and
+HBPLUS. They can be inserted into users' '.cshrc' files.
+
+          # LIGPLOT
+          # -------
+          set ligdir = 'ligplot-program-directory'
+          setenv ligdir 'ligplot-program-directory'
+          alias ligplot $ligdir'/ligplot.scr'
+          alias ligonly $ligdir'/ligonly.scr'
+          alias dimplot $ligdir'/dimplot.scr'
+          alias dimonly $ligdir'/dimonly.scr'
+
+where 'ligplot-program-directory' gives the full path to where the
+LIGPLOT program files are (ie ligplot, ligplot.scr, ligonly.scr,
+ligplot.prm, hbadd, dimplot.scr, dimonly.scr and het_dictionary.txt).
+
+For HBPLUS, you will need the following aliases:-
+
+          # HBPLUS
+          # ------
+          set hbdir = 'hbplus-program-directory'
+          setenv hbdir 'hbplus-program-directory'
+          alias hbplus $hbdir'/hbplus'
+
+where 'hbplus-program-directory' is the directory where the HBPLUS programs
+are.
+

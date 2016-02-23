@@ -1,0 +1,2063 @@
+%A D.A. Pearlman
+%A D.A. Case
+%A J.W. Caldwell
+%A W.S. Ross
+%A T.E. Cheatham, III
+%A S. DeBolt
+%A D. Ferguson
+%A G. Seibel
+%A P. Kollman
+%T AMBER, a package of computer programs for applying molecular mechanics,
+normal mode analysis, molecular dynamics and free energy calculations to
+simulate the structural and energetic properties of molecules
+%J Comp. Phys. Commun.
+%V 91
+%P 1-41
+%D 1995
+
+%A S. Harvey
+%A J.A. McCammon
+%T Dynamics of Proteins and Nucleic Acids
+%I Cambridge University Press
+%C Cambridge
+%D 1987
+%K book
+
+%A M.P. Allen
+%A D.J. Tildesley
+%T Computer Simulation of Liquids
+%I Clarendon Press
+%C Oxford
+%D 1987
+%K book
+
+%A D. Frenkel
+%A B. Smit
+%T Understanding Molecular Simulation: From Algorithms to Applications
+%I Academic Press
+%C San Diego
+%D 1996
+
+%T Computer Simulations of Biomolecular Systems, Vol. 3.
+%A W.F. van\0Gunsteren
+%A P.K. Weiner
+%A A.J. Wilkinson, eds.
+%I ESCOM Science Publishers
+%C Leiden
+%D 1997
+%K book
+
+%T Computer Simulations of Biomolecular Systems, Vol. 2.
+%A W.F. van\0Gunsteren
+%A P.K. Weiner
+%A A.J. Wilkinson, eds.
+%I ESCOM Science Publishers
+%C Leiden
+%D 1993
+%K book
+
+%A L.R. Pratt
+%A G. Hummer, eds.
+%T Simulation and Theory of Electrostatic Interactions in Solution
+%D 1999
+%C Melville, NY
+%I American Institute of Physics
+%K book
+
+%A J. Wang
+%A P. Cieplak
+%A P.A. Kollman
+%T How well does a restrained electrostatic potential (RESP) model perform
+in calculating conformational energies of organic and biological molecules?
+%J J. Comput. Chem.
+%V 21
+%P 1049-1074
+%D 2000
+%K parm99
+
+%A R.W. Dixon
+%A P.A. Kollman
+%T Advancing Beyond the Atom-Centered Model in Additive and Nonadditive
+Molecular Mechanics.
+%J J. Comput. Chem.
+%V 18
+%P 1632-1646
+%D 1997
+
+%A W.D. Cornell
+%A P. Cieplak
+%A C.I. Bayly
+%A I.R. Gould
+%A K.M. Merz, Jr.
+%A D.M. Ferguson
+%A D.C. Spellmeyer
+%A T. Fox
+%A J.W. Caldwell
+%A P.A. Kollman
+%T A second generation force field for the simulation of proteins, nucleic
+acids, and organic molecules
+%J J. Am. Chem. Soc.
+%V 117
+%P 5179-5197
+%D 1995
+
+%A M.D. Beachy
+%A R.A. Friesner
+%J J. Am. Chem. Soc.
+%T Accurate ab intio quantum chemical determination of the relative
+energies of peptide conformations and assessment of empirical force fields
+%V 119
+%P 5908-5920
+%D 1997
+
+%A P.A. Kollman
+%A R. Dixon
+%A W. Cornell
+%A T. Fox
+%A C. Chipot
+%A A. Pohorille
+%T The development/application of
+a 'minimalist' organic/biochemical molecular mechanic force field using a
+combination of \fIab initio\fR calculations and experimental data
+%B Computer Simulation of Biomolecular Systems, Vol. 3
+%E A. Wilkinson
+%E P. Weiner
+%E W.F. van\0Gunsteren
+%I Elsevier
+%D 1997
+%P 83-96
+
+%A J. Higo
+%A N. Ito
+%A M. Kuroda
+%A S. Ono
+%A N. Nakajima
+%A H. Nakamura
+%T Energy landscape of a peptide consisting of `alpha`-helix, 3\*<10\*>
+helix, `beta`-turn, `beta`-hairpin and other disordered conformations
+%J Prot. Sci.
+%V 10
+%P 1160-1171
+%D 2001
+
+%A L. Wang
+%A Y. Duan
+%A R. Shortle
+%A B. Imperiali
+%A P.A. Kollman
+%T Study of the stability and unfolding mechanism of BBA1 by molecular
+dynamics simulations at different temperatures
+%J Prot. Sci.
+%V 8
+%P 1292-1304
+%D 1999
+
+%A T.E. Cheatham, III
+%A P. Cieplak
+%A P.A. Kollman
+%T A modified version of the Cornell et al. force field with improved sugar
+pucker phases and helical repeat
+%J J. Biomol. Struct. Dyn.
+%V 16
+%P 845-862
+%D 1999
+%K parm98
+
+%A S.J. Weiner
+%A P.A. Kollman
+%A D.A. Case
+%A U.C. Singh
+%A C. Ghio
+%A G. Alagona
+%A S. Profeta, Jr.
+%A P. Weiner
+%T A new force field for molecular mechanical simulation of
+nucleic acids and proteins
+%J J. Am. Chem. Soc.
+%V 106
+%P 765-784
+%D 1984
+%K united atom 1984
+
+%A S.J. Weiner
+%A P.A. Kollman
+%A D.T. Nguyen
+%A D.A. Case
+%T An all-atom force field for simulations of proteins and nucleic acids
+%J J. Comput. Chem.
+%V 7
+%P 230-252
+%D 1986
+%K allatom amber force field
+
+%A J. Åqvist
+%T Ion-water interaction potentials derived from free energy
+perturbation simulations
+%J J. Phys. Chem.
+%V 94
+%P 8021-8024
+%D 1990
+%K aqvist counterion
+
+%A W.L. Jorgensen
+%A J. Chandrasekhar
+%A J. Madura
+%A M.L. Klein
+%D 1983
+%T Comparison of Simple Potential Functions for Simulating Liquid Water
+%V 79
+%P 926-935
+%J J. Chem. Phys.
+
+%A W.L. Jorgensen
+%A J.D. Madura
+%T Temperature and size dependence for Monte Carlo simulations of TIP4P water
+%J Mol. Phys.
+%V 56
+%P 1381-1392
+%D 1985
+
+%A M.W. Mahoney
+%A W.L. Jorgensen
+%T A five-site model for liquid water and the reproduction of the density
+anomaly by rigid, nonpolarizable potential functions
+%J J. Chem. Phys.
+%V 112
+%P 8910-8922
+%D 2000
+
+%A H.J.C. Berendsen
+%A J.R. Grigera
+%A T.P. Straatsma
+%D 1987
+%T The missing term in effective pair potentials
+%J J. Phys. Chem.
+%V 91
+%P 6269-6271
+
+%A T. Darden
+%A D. York
+%A L. Pedersen
+%T Particle mesh Ewald--an Nlog(N) method for Ewald sums in large systems
+%J J. Chem. Phys.
+%V 98
+%P 10089-10092
+%D 1993
+
+%A U. Essmann
+%A L. Perera
+%A M.L. Berkowitz
+%A T. Darden
+%A H. Lee
+%A L.G. Pedersen
+%T A smooth particle mesh Ewald method
+%J J. Chem. Phys.
+%V 103
+%P 8577-8593
+%D 1995
+
+%A C. Sagui
+%A T.A. Darden
+%T P3M and PME: a comparison of the two methods
+%E L.R. Pratt
+%E G. Hummer
+%B Simulation and Theory of Electrostatic Interactions in Solution
+%D 1999
+%C Melville, NY
+%I American Institute of Physics
+%P 104-113
+
+%A A. Toukmaji
+%A C. Sagui
+%A J. Board
+%A T. Darden
+%T Efficient particle-mesh Ewald based approach to fixed and induced
+dipolar interactions
+%J J. Chem. Phys.
+%V 113
+%P 10913-10927
+%D 2000
+
+%A G.D. Hawkins
+%A C.J. Cramer
+%A D.G. Truhlar
+%T Pairwise solute descreening of solute charges from a dielectric medium
+%J Chem. Phys. Lett.
+%V 246
+%P 122-129
+%D 1995
+
+%A G.D. Hawkins
+%A C.J. Cramer
+%A D.G. Truhlar
+%T Parametrized models of aqueous free energies of solvation based on
+pairwise descreening of solute atomic charges from a dielectric medium
+%J J. Phys. Chem.
+%V 100
+%P 19824-19839
+%D 1996
+
+%A J. Weiser
+%A P.S. Shenkin
+%A W.C. Still
+%T Approximate Atomic Surfaces from Linear Combinations of Pairwise
+Overlaps (LCPO)
+%J J. Comput. Chem.
+%V 20
+%P 217-230
+%D 1999
+
+%A J. Srinivasan
+%A M.W. Trevathan
+%A P. Beroza
+%A D.A. Case
+%T Application of a pairwise generalized Born model to proteins and nucleic
+acids: inclusion of salt effects
+%J Theor. Chem. Acc.
+%V 101
+%P 426-434
+%D 1999
+
+%A W.C. Still
+%A A. Tempczyk
+%A R.C. Hawley
+%A T. Hendrickson
+%T Semianalytical treatment of solvation for molecular mechanics
+and dynamics
+%J J. Am. Chem. Soc.
+%V 112
+%P 6127-6129
+%D 1990
+%K simple model
+
+%A D. Bashford
+%A D.A. Case
+%T Generalized Born Models of Macromolecular Solvation Effects
+%J Annu. Rev. Phys. Chem.
+%V 51
+%P 129-152
+%D 2000
+%K review
+
+%A A. Bondi
+%J J. Chem. Phys.
+%V 64
+%P 441
+%D 1964
+
+%A H.J.C. Berendsen
+%A J.P.M. Postma
+%A W.F. van\0Gunsteren
+%A A. DiNola
+%A J.R. Haak
+%T Molecular dynamics with coupling to an external bath
+%J J. Chem. Phys.
+%V 81
+%P 3684-3690
+%D 1984
+%K temperature coupling original
+
+%A T. Morishita
+%T Fluctuation formulas in molecular-dynamics simulations with the weak
+coupling heat bath
+%J J. Chem. Phys.
+%V 113
+%P 2976
+%D 2000
+
+%A J.-P. Ryckaert
+%A G. Ciccotti
+%A H.J.C. Berendsen
+%T Numerical integration of the cartesian equations of motion
+of a system with constraints: Molecular dynamics of n-alkanes
+%J J. Comput. Phys.
+%V 23
+%P 327-341
+%D 1977
+%K shake original
+
+%A S. Miyamoto
+%A P.A. Kollman
+%T SETTLE: An analytical version of the SHAKE and RATTLE
+algorithm for rigid water models
+%J J. Comput. Chem.
+%V 13
+%P 952-962
+%D 1992
+
+%A C.R. Sanders, II
+%A B.J. Hare
+%A K.P. Howard
+%A J.H. Prestegard
+%T Magnetically-oriented phospholipid micelles as a tool for the study of
+membrane-associated molecules
+%J Prog. NMR Spectr.
+%V 26
+%P 421-444
+%D 1994
+
+%A D.A. Case
+%T Calculations of NMR dipolar coupling strengths in model peptides
+%J J. Biomol. NMR
+%V 15
+%P 95-102
+%D 1999
+
+%A B.M. Duggan
+%A G.B. Legge
+%A H.J. Dyson
+%A P.E. Wright
+%T SANE (Structure Assisted NOE Evaluation): An automated model-based
+approach for NOE assignment
+%J J. Biomol. NMR
+%V 19
+%P 321-329
+%D 2001
+
+%A G.P. Gippert
+%A P.F. Yip
+%A P.E. Wright
+%A D.A. Case
+%T Computational methods for determining protein structures
+from NMR data
+%J Biochem. Pharm.
+%V 40
+%P 15-22
+%D 1990
+%K distance geometry review bpharm paper
+
+%A D.A. Case
+%A P.E. Wright
+%T Determination of high resolution NMR structures of proteins
+%E G.M. Clore
+%E A. Gronenborn
+%B NMR in Proteins
+%I MacMillan
+%C New York
+%D 1993
+%P 53-91
+
+%A D.A. Case
+%A H.J. Dyson
+%A P.E. Wright
+%T Use of chemical shifts and coupling constants in nuclear magnetic
+resonance
+structural studies on peptides and proteins
+%J Meth. Enzymol.
+%V 239
+%P 392-416
+%D 1994
+%K methods enzymology
+
+%A R. Brüschweiler
+%A D.A. Case
+%T Characterization of biomolecular structure and dynamics by NMR
+cross-relaxation
+%J Prog. NMR Spectr.
+%V 26
+%P 27-58
+%D 1994
+%K bruschweiler progress review
+
+%A D.A. Case
+%T The use of chemical shifts and their anisotropies in biomolecular
+structure determination
+%J Curr. Opin. Struct. Biol.
+%V 8
+%P 624-630
+%D 1998
+%k review
+
+%A D.S. Wishart
+%A D.A. Case
+%T Use of chemical shifts in macromolecular structure determination.
+%J Meth. Enzymol.
+%V 338
+%P 3-34
+%D 2001
+%K review
+
+%A A.E. Torda
+%A R.M. Scheek
+%A W.F. VanGunsteren
+%T Time-dependent distance restraints in molecular dynamics simulations
+%J Chem. Phys. Lett.
+%V 157
+%P 289-294
+%D 1989
+%K time average restraint
+
+%A D.A. Pearlman
+%A P.A. Kollman
+%T Are time-averaged restraints necessary for nuclear magnetic
+resonance refinement?  A model study for DNA
+%J J. Mol. Biol.
+%V 220
+%P 457-479
+%D 1991
+%K time average
+
+%A A.E. Torda
+%A R.M. Brunne
+%A T. Huber
+%A H. Kessler
+%A W.F. van\0Gunsteren
+%T Structure refinement using time-averaged J-coupling constant restraints
+%J J. Biomol. NMR
+%V 3
+%P 55-66
+%D 1993
+
+%A D.A. Pearlman
+%T How well to time-averaged J-coupling restraints work?
+%J J. Biomol. NMR
+%V 4
+%P 279-299
+%D 1994
+
+%A D.A. Pearlman
+%T How is an NMR structure best defined?  An analysis of molecular
+dynamics distance-based approaches
+%J J. Biomol. NMR
+%V 4
+%P 1-16
+%D 1994
+
+%A A. Kalk
+%A H.J.C. Berendsen
+%T Proton magnetic relaxation and spin diffusion in proteins
+%J J. Magn. Reson.
+%V 24
+%P 343-366
+%D 1976
+
+%A E.T. Olejniczak
+%A M.A. Weiss
+%T Are methyl groups relaxation sinks in small proteins?
+%J J. Magn. Reson.
+%V 86
+%P 148-155
+%D 1990
+
+%A J.W. Caldwell
+%A P.A. Kollman
+%T Structure and properties of neat liquids using nonadditive molecular
+dynamics: Water, methanol and N-methylacetamide
+%J J. Phys. Chem.
+%V 99
+%P 6208-6219
+%D 1995
+
+%A B. Honig
+%A A. Nicholls
+%T Classical electrostatics in biology and chemistry
+%J Science
+%V 268
+%P 1144-1149
+%D 1995
+
+%A D. Sitkoff
+%A K.A. Sharp
+%A B. Honig
+%T Accurate calculation of hydration free energies using macroscopic solvent
+models
+%J J. Phys. Chem.
+%V 98
+%P 1978-1988
+%D 1994
+%K parse
+
+%A J. Srinivasan
+%A T.E. Cheatham, III
+%A P. Kollman
+%A D.A. Case
+%T Continuum Solvent Studies of the Stability of DNA, RNA, and
+Phosphoramidate--DNA Helices
+%J J. Am. Chem. Soc.
+%V 120
+%P 9401-9409
+%D 1998
+
+%A P.A. Kollman
+%A I. Massova
+%A C. Reyes
+%A B. Kuhn
+%A S. Huo
+%A L. Chong
+%A M. Lee
+%A T. Lee
+%A Y. Duan
+%A W. Wang
+%A O. Donini
+%A P. Cieplak
+%A J. Srinivasan
+%A D.A. Case
+%A T.E. Cheatham, III
+%T Calculating Structures and Free Energies of Complex Molecules:
+Combining Molecular Mechanics and Continuum Models
+%J Accts. Chem. Res.
+%V 33
+%P 889-897
+%D 2000
+
+%A M.L. Connolly
+%T Analytical molecular surface calculation
+%J J. Appl. Cryst.
+%V 16
+%P 548-558
+%D 1983
+
+%A R. Elber
+%A M. Karplus
+%T Enhanced sampling in molecular dynamics.  Use of the time-dependent
+Hartree approximation for a simulation of carbon monoxide diffusion through
+myoglobin
+%J J. Am. Chem. Soc.
+%V 112
+%P 9161-9175
+%D 1990
+
+%A A. Roitberg
+%A R. Elber
+%T Modeling side chains in peptides and proteins: Application of the locally
+enchanced sampling and the simulated annealing methods to find minimum energy
+conformations
+%J J. Chem. Phys.
+%V 95
+%P 9277
+%D 1991
+
+%A C. Simmerling
+%A T. Fox
+%A P.A. Kollman
+%T Use of Locally Enhanced Sampling in Free Energy Calculations: Testing
+and Application of the alpha to beta Anomerization of Glucose.
+%J J. Am. Chem. Soc.
+%V 120
+%P 5771-5782
+%D 1998
+
+%A C. Simmerling
+%A J.L. Miller
+%A P.A. Kollman
+%D 1998
+%T Combined locally enhanced sampling and particle mesh Ewald as a strategy
+to locate the experimental structure of a nonhelical nucleic acid
+%J J. Am. Chem. Soc.
+%V 120
+%P 7149-7155
+%K tetraloop
+
+%A C. Simmerling
+%A M.R. Lee
+%A A.R. Ortiz
+%A A. Kolinski
+%A J. Skolnick
+%A P.A. Kollman
+%T Combining MONSSTER and LES/PME to Predict Protein Structure from Amino
+Acid Sequence: Application to the Small Protein CMTI-1
+%J J. Am. Chem. Soc.
+%V 122
+%P 8392-8402
+%D 2000
+
+%A C. Simmerling
+%A R. Elber
+%T Hydrophobic "collapse" in a cyclic hexapeptide: Computer simulations of
+CHDLFC and CAAAAC in water
+%J J. Am. Chem. Soc.
+%V 116
+%P 2534-2547
+%D 1994
+
+%A A. Miranker
+%A M. Karplus
+%T Functionality maps of binding sites: A multiple copy
+simultaneous search method
+%J Proteins: Str. Funct. Gen.
+%V 11
+%P 29-34
+%D 1991
+
+%A J.E. Straub
+%A M. Karplus
+%T Enery partitioning in the classical time-dependent Hartree approximation
+%J J. Chem. Phys.
+%V 94
+%P 6737
+%D 1991
+
+%A A. Ulitsky
+%A R. Elber
+%T The thermal equilibrium aspects of the time-dependent Hartree and the
+locally enhanced sampling approximations: Formal properties, a correction,
+and computational examples for rare gas clusters
+%J J. Chem. Phys.
+%V 98
+%P 3380
+%D 1993
+
+%A W.S. Ross
+%A C.C. Hardin
+%T Ion-induced stabilization of the G-DNA quadruplex: Free energy
+perturbation
+studies
+%J J. Am. Chem. Soc.
+%V 116
+%P 6070-6080
+%D 1994
+
+%A A. Vedani
+%A D.W. Huhta
+%T A new force field for modeling metalloproteins
+%J J. Am. Chem. Soc.
+%V 112
+%P 4759-4767
+%D 1990
+
+%A D.L. Veenstra
+%A D.M. Ferguson
+%A P.A. Kollman
+%T How transferable are hydrogen parameters in molecular mechanics
+calculations?
+%J J. Comput. Chem.
+%V 13
+%P 971-978
+%D 1992
+
+%A F.H. Allen
+%A O. Kennard
+%A D.G. Watson
+%A L. Brammer
+%A A.G. Orpen
+%A R. Taylor
+%J J. Chem. Soc. Perkin Trans. II
+%P S1-S19
+%D 1987
+
+%A M.D. Harmony
+%A R.W. Laurie
+%A R.L. Kuczkowski
+%A R.H. Schwendemann
+%A D.A. Ramsay
+%A F.J. Lovas
+%A W.J. Lafferty
+%A A.G. Maki
+%J J. Phys. Chem. Ref. Data
+%V 8
+%P 619
+%D 1979
+
+%A A.J. Hopfinger
+%A R.A. Pearlstein
+%T Molecular mechanics force-field parameterization procedures
+%J J. Comput. Chem.
+%V 5
+%P 486-499
+%D 1985
+
+%A J.F. Cannon
+%J J. Comput. Chem.
+%T AMBER force-field parameters for guanosine triphosphate and its imido and 
+methylene analogs
+%V 14
+%P 995-1005
+%D 1993
+
+%A P. Cieplak
+%A W.D. Cornell
+%A C. Bayly
+%A P.A. Kollman
+%T Application of the multimolecule and multiconformational RESP methodology
+to biopolymers: Charge derivation for DNA, RNA and proteins
+%J J. Comput. Chem.
+%V 16
+%P 1357-1377
+%D 1995
+
+%A W.D. Cornell
+%A P. Cieplak
+%A C.I. Bayly
+%A P.A. Kollman
+%T Application of RESP charges to calculate conformational energies,
+hydrogen
+bond energies and free energies of solvation
+%J J. Am. Chem. Soc.
+%V 115
+%P 9620-9631
+%D 1993
+
+%T A Well-Behaved Electrostatic Potential Based
+Method Using Charge Restraints For Determining Atom-Centered Charges:
+The RESP Model
+%A C.I. Bayly
+%A P. Cieplak
+%A W.D. Cornell
+%A P.A. Kollman
+%J J. Phys. Chem.
+%D 1993
+%V 97
+%P 10269
+
+%T A Molecular Mechanical Model that Reproduces the Relative
+Energies for Chair and Twist-Boat Conformations of 1,3-Dioxanes
+%A A.E. Howard
+%A P. Cieplak
+%A P.A. Kollman
+%J J. Comp. Chem.
+%D 1995
+%V 16
+%P 243-261
+
+%A A. St.-Amant
+%A W.D. Cornell
+%A P.A. Kollman
+%A T.A. Halgren
+%T Calculation of molecular geometries, relative conformational energies,
+dipole moments, and molecular electrostatic potential fitted charges of
+small
+organic molecules of biochemical interest by density functional theory
+%J J. Comput. Chem.
+%V 16
+%P 1483-1506
+%D 1995
+
+%A A. Onufriev
+%A D. Bashford
+%A D.A. Case
+%T Modification of the Generalized Born Model Suitable for Macromolecules
+%J J. Phys. Chem. B
+%V 104
+%P 3712-3720
+%D 2000
+
+%A B. Jayaram
+%A D. Sprous
+%A D.L. Beveridge
+%T Solvation free energy of biomacromolecules: Parameters for a modified
+generalized Born model consistent with the AMBER force field
+%J J. Phys. Chem. B
+%V 102
+%P 9571-9576
+%D 1998
+
+%A V. Tsui
+%A D.A. Case
+%T Theory and applications of the generalized Born solvation model in 
+macromolecular simulations
+%J Biopolymers (Nucl. Acid. Sci.)
+%V 56
+%P 275-291
+%D 2001
+
+%A V. Tsui
+%A D.A. Case
+%T Molecular dynamics simulations of nucleic acids using a generalized Born
+solvation model
+%J J. Am. Chem. Soc.
+%V 122
+%P 2489-2498
+%D 2000
+
+%A T.A. Halgren
+%T Merck Molecular Force Field (MMFF94). Part I-V
+%J J. Comput. Chem.
+%V 17
+%P 490-641
+%D 1996
+
+%A J. Wang
+%A P. Morin
+%A W. Wang
+%A P.A. Kollman
+%T Use of MM-PBSA in Reproducing the Binding Free Energies to HIV-1 RT of
+TIBO Derivatives and Predicting the Binding Mode to HIV-1 RT of Efavirenz by
+Docking and MM-PBSA
+%J J. Am. Chem. Soc.
+%V 123
+%P 5221-5230
+%D 2001
+
+%A W. Wang
+%A P. Kollman
+%T Free Energy Calculations on Dimer Stability of the HIV Protease Using
+Molecular Dynamics and a Continuum Solvent Model
+%J J. Mol. Biol.
+%V 303
+%P 567
+%D 2000
+
+%A C. Reyes
+%A P. Kollman
+%T Structure and Thermodynamics of RNA-protein Binding: Using Molecular
+Dynamics and Free Energy Analyses to Calculate the Free Energies of
+Binding and Conformational Change
+%J J. Mol. Biol.
+%V 297
+%P 1145-1158
+%D 2000
+
+%A M.R. Lee
+%A Y. Duan
+%A P.A. Kollman
+%T Use of MM-PB/SA in Estimating the Free Energies of Proteins:
+Application to Native, Intermediates, and Unfolded Vilin Headpiece
+%J Proteins
+%V 39
+%P 309-316
+%D 2000
+
+%A P. Cieplak
+%A J. Caldwell
+%A P. Kollman
+%T Molecular Mechanical Models for Organic and Biological Systems Going
+Beyond the Atom Centered Two Body Additive Approximation: Aqueous Solution
+Free Energies of Methanol and N-Methyl Acetamide, Nucleic Acid Base, and
+Amide Hydrogen Bonding and Chloroform/Water Partition Coefficients of the
+Nucleic Acid Bases
+%J J. Comput. Chem.
+%V 22
+%P 1048-1057
+%D 2001
+
+%A E. Meng
+%A P. Cieplak
+%A J.W. Caldwell
+%A P.A. Kollman
+%T Accurate solvation free energies of acetate and methylammonium ions
+calculated with a polarizable water model
+%J J. Am. Chem. Soc.
+%V 116
+%P 12061-12062
+%D 1994
+
+%A G. Hummer
+%A A. Szabo
+%T Calculation of free-energy differences from computer simulations of
+initial and final states
+%J J. Chem. Phys.
+%V 105
+%P 2004-2010
+%D 1996
+
+%A T. Simonson
+%T Free energy calculations
+%B Computational Biochemistry and Biophysics
+%E O. Becker
+%E A.D. MacKerell
+%E B. Roux
+%E M. Watanabe
+%I Marcel Dekker
+%C New York
+%D 2001
+
+%A J. Wang
+%A P.A. Kollman
+%T Automatic Parameterization of Force Field by Systematic Search and
+Genetic Algorithms
+%J J. Comput. Chem.
+%V 22
+%P 1219-1228
+%D 2001
+
+%A P. Kollman
+%T Free energy calculations:  Applications to chemical and biochemical
+phenomena
+%J Chem. Rev.
+%V 93
+%P 2395-2417
+%D 1993
+%K review
+
+%A D.L. Beveridge
+%A F.M. DiCapua
+%T Free energy simulation via molecular simulations: Applications
+to chemical and biomolecular systems
+%J Annu. Rev. Biophys. Biophys. Chem.
+%V 18
+%P 431-492
+%D 1989
+%K annual review
+
+%A C. Chipot
+%A P.A. Kollman
+%A D.A. Pearlman
+%T Alternative approaches to potential of mean force calculations: free
+energy perturbation versus thermodynamics integration. Case study of
+some representative nonpolar interactions
+%J J. Comput. Chem
+%V 17
+%P 1112-1131
+%D 1996
+
+%A D.A. Pearlman
+%A P.A. Kollman
+%T The overlooked bond-stretching contribution in free energy
+perturbation calculations
+%J J. Chem. Phys.
+%V 94
+%P 4532-4545
+%D 1991
+
+%A D.A. Pearlman
+%T Determining the contributions of constraints in free energy
+calculations: Development, characterization, and recommendations
+%J J. Chem. Phys.
+%V 98
+%P 8946-8957
+%D 1993
+
+%A D.A. Pearlman
+%T Free energy derivatives: A new method for probing the convergence problem
+in free energy calculations
+%J J. Comput. Chem.
+%V 15
+%P 105-123
+%D 1994
+
+%A D.A. Pearlman
+%T A comparison of alternative approaches to free energy calculations
+%J J. Phys. Chem.
+%V 98
+%P 1487-1493
+%D 1994
+
+%A D.A. Pearlman
+%A B.G. Rao
+%T Free energy calculations: Methods and applications
+%P 1036-1061
+%B Encyclopedia of Computational Chemistry
+%E P. von R. Schleyer
+%E N.L. Allinger
+%E T. Clark
+%E J. Gasteiger
+%E P.A. Kollman
+%E H.F. Schaefer, III
+%I John Wiley
+%C Chichester
+%D 1998
+
+%A R.J. Radmer
+%A P.A. Kollman
+%T Free energy calculation methods: A theoretical and empirical comparison
+of numerical errors and a new method for qualitative estimates of free
+energy changes
+%J J. Comput. Chem.
+%V 18
+%P 902-919
+%D 1997
+
+%A D.A. Pearlman
+%A P.A. Kollman
+%T A New Method for Carrying
+Out Free Energy Perturbation Calculations: Dynamically Modified
+Windows
+%J J. Chem. PHys.
+%V 90
+%P 2460-2470
+%D 1989
+
+%A H.-A. Yu
+%A M. Karplus
+%T A thermodynamic analysis of solvation
+%J J. Chem. Phys.
+%V 89
+%P 2366-2379
+%D 1988
+
+%A G. Hummer
+%T Fast-growth thermodynamic integration: Error and efficiency analysis
+%J J. Chem. Phys.
+%V 114
+%P 7330-7337
+%D 2001
+
+%A S.H. Fleischman
+%A C.L. Brooks, III
+%T Thermodynamic calculations on biological systems: Solution properties of 
+alcohols and alkanes
+%J J. Chem. Phys.
+%V 87
+%P 221-234
+%D 1988
+
+%A A. Jakalian
+%A B.L. Bush
+%A D.B. Jack
+%A C.I. Bayly
+%T Fast, Efficient Generation of High-Quality Atomic Charges. AM1-BCC
+Model: I. Method
+%J J. Comput. Chem.
+%V 21
+%P 132-146
+%D 2000
+
+%A A. Jakalian
+%A D.B. Jack
+%A C.I. Bayly
+%T Fast, Efficient Generation of High-Quality Atomic Charges. AM1-BCC Model:
+%II. Parameterization and Validation
+%J J. Comput. Chem.
+%V 23
+%P 1623-1641
+%D 2002
+
+%A J.J. Vincent
+%A K.M. Merz, Jr.
+%T A highly portable parallel implementation of AMBER4 using the message
+passing interface standard
+%J J. Comput. Chem.
+%V 16
+%P 1420-1427
+%D 1995
+
+%A K.J. Cross
+%A P.E. Wright
+%T Calibration of ring-current models for the heme ring
+%J J. Magn. Reson.
+%V 64
+%P 220-231
+%D 1985
+%K ring current
+
+%A K. Ösapay
+%A D.A. Case
+%T A new analysis of proton chemical shifts in proteins
+%J J. Am. Chem. Soc.
+%V 113
+%P 9436-9444
+%D 1991
+%K osapay klara
+
+%A D.A. Case
+%T Calibration of ring-current effects in proteins and nucleic acids
+%J J. Biomol. NMR
+%V 6
+%P 341-346
+%D 1995
+
+%A R. Radmer
+%A P. Kollman
+%T The application of three approximate free energy calculations methods
+to structure based ligand design: Trypsin and its complex with inhibitors
+%J J. Comput.-Aided Mol. Design
+%V 12
+%P 215-228
+%D 1998
+
+%A S.R. Niketic
+%A K. Rasmussen
+%B The Consistent Force Field: A Documentation
+%I Springer-Verlag
+%C New York
+%D 1977
+
+%A C. Cerjan
+%A W.H. Miller
+%T On finding transition states
+%J J. Chem. Phys.
+%V 75
+%P 2800
+%D 1981
+
+%A D.T. Nguyen
+%A D.A. Case
+%T On finding stationary states on large-molecule potential energy
+surfaces
+%J J. Phys. Chem.
+%V 89
+%P 4020-4026
+%D 1985
+
+%A G. Lamm
+%A A. Szabo
+%T Langevin modes of macromolecules
+%J J. Chem. Phys.
+%V 85
+%P 7334-7348
+%D 1986
+
+%A J. Kottalam
+%A D.A. Case
+%T Langevin modes of macromolecules: application to crambin
+and DNA hexamers
+%J Biopolymers
+%V 29
+%P 1409-1421
+%D 1990
+
+%A S. Huo
+%A I. Massova
+%A P.A. Kollman
+%T Computational Alanine Scanning of the 1:1 Human Growth Hormone-Receptor
+Complex
+%J J. Comput. Chem.
+%V 23
+%P 15-27
+%D 2002
+
+%A M. Schaefer
+%A C. Froemmel
+%T A precise analytical method for calculating the electrostatic
+energy of macromolecules in aqueous solution
+%J J. Mol. Biol.
+%V 216
+%P 1045-1066
+%D 1990
+%K flat dielectric boundary
+
+%A M. Schaefer
+%A H.W.T. Van\0Vlijmen
+%A M. Karplus
+%T Electrostatic contributions to molecular free energies in solution.
+%J Adv. Protein Chem.
+%V 51
+%P 1-57
+%D 1998
+%K review
+
+%A T. Darden
+%A D. Pearlman
+%A L.G. Pedersen
+%T Ionic charging free energies: Spherical versus periodic boundary
+conditions
+%J J. Chem. Phys.
+%V 109
+%P 10921-10935
+%D 1998
+
+%A R.M. Levy
+%A M. Karplus
+%A J. Kushick
+%A D. Perahia
+%T Evaluation of the configurational entropy for proteins: Application
+to molecular dynamics simulations of an `alpha`-helix
+%J Macromolecules
+%V 17
+%P 1370-1374
+%D 1984
+
+%A S. Arnott
+%A P.J. Campbell-Smith
+%A R. Chandrasekaran
+%B Handbook of Biochemistry and Molecular Biology, 3rd ed. Nucleic 
+Acids--Volume II
+%C Cleveland
+%I CRC Press
+%D 1976
+%E G.P. Fasman
+%P 411-422
+
+%A V. Tsui
+%A L. Zhu
+%A T.H. Huang
+%A P.E. Wright
+%A D.A. Case
+%T Assessment of zinc finger orientations by residual dipolar coupling
+constants
+%J J. Biomol. NMR
+%V 16
+%P 9-21
+%D 2000
+
+%T Computational Biochemistry and Biophysics
+%A O. Becker
+%A A.D. MacKerell
+%A B. Roux
+%A M. Watanabe, eds.
+%I Marcel Dekker
+%C New York
+%D 2001
+%K book
+
+%A A.R. Leach
+%T Molecular Modelling.  Principles and Applications, Second Edition
+%I Prentice-Hall
+%C Harlow, England
+%D 2001
+%K book
+
+%A T. E. Cheatham, III
+%A B. R. Brooks
+%A P. A. Kollman
+%T Molecular modeling of nucleic acid structure
+%B Current Protocols in Nucleic Acid Chemistry
+%I Wiley
+%C New York
+%P Sections 7.5, 7.8, 7.9, 7.10
+%D 1999
+
+%A M.F. Crowley
+%A T.A. Darden
+%A T.E. Cheatham, III
+%A D.W. Deerfield, II
+%T Adventures in improving the scaling and accuracy of a parallel
+molecular dynamics program
+%J J. Supercomput.
+%V 11
+%P 255-278
+%D 1997
+
+%A A. Onufriev
+%A D. Bashford
+%A D.A. Case
+%T Exporling protein native states and large-scale conformational changes with
+a modified generalized Born model
+%J Proteins
+%V 55
+%P 383-394
+%D 2004
+%K GBAO
+
+%A M. Feig 
+%A A. Onufriev 
+%A M. Lee 
+%A W. Im 
+%A  D. A. Case 
+%A  C. L. Brooks, III
+%T Performance Comparison of the Generalized Born and Poisson Methods in the Calculation of the Electrostatic Solvation Energies for Protein Structures
+%J J. Comput. Chem.
+%V 25
+%P 265-284
+%D 2004
+%K Mfeig04
+
+
+%A A. Mitsutake
+%A Y. Sugita
+%A Y. Okamoto
+%T Generalized-ensemble algorithms for molecular simulations of biopolymers
+%J Biopolymers
+%V 60
+%P 96-123
+%D 2001
+%K review
+
+%A I. Kolossváry
+%A W.C. Guida
+%T Low mode search. An efficient, automated computational method for
+conformational analysis: Application to cyclic and acyclic alkanes and
+cyclic peptides
+%J J. Am. Chem. Soc.
+%V 118
+%P 5011-5019
+%D 1996
+%K kolossvary
+
+%A I. Kolossváry
+%A G.M. Keserü
+%T Hessian-free low-mode conformational search for large-scale protein
+loop optimization: Application to c-jun N-terminal kinase JNK3
+%J J. Comput. Chem.
+%V 22
+%P 21-30
+%D 2001
+%K kolossvary
+
+%A G.M. Keserü
+%A I. Kolossváry
+%T Fully flexible low-mode docking: Application to induced fit in HIV
+integrase
+%J J. Am. Chem. Soc.
+%V 123
+%P 12708-12709
+%D 2001
+%K kolossvary
+
+%A I. Kolossváry
+%A W.C. Guida
+%T Low-mode conformatinoal search elucidated: Application to 
+C\*<39\*>H\*<80\*> and flexible docking of 9-deazaguanine inhibitors into PNP
+%J J. Comput. Chem.
+%V 20
+%P 1671-1684
+%D 1999
+%K kolossvary
+
+%A J.J. Prompers
+%A R. Brüschweiler
+%T Dynamic and structural analysis of isotropically distributed molecular 
+ensembles
+%J Proteins
+%V 46
+%P 177-189
+%D 2002
+%K bruschweiler
+
+%A J.J. Prompers
+%A R. Brüschweiler
+%T General framework for studying the dynamics of folded and nonfolded
+proteins by NMR relaxation spectroscopy and MD simulation
+%J J. Am. Chem. Soc.
+%V 124
+%P 4522-4534
+%D 2002
+%K bruschweiler
+
+%A R.J. Loncharich
+%A B.R. Brooks
+%A R.W. Pastor
+%T Langevin dynamics of peptides: The frictional dependence of isomerization 
+rates of N-actylananyl-N'-methylamide
+%J Biopolymers
+%V 32
+%P 523-535
+%D 1992
+
+%A T.A. Andrea
+%A W.C. Swope
+%A H.C. Andersen
+%T The role of long ranged forces in determining the structure and properties
+of liquid water
+%J J. Chem. Phys.
+%V 79
+%P 4576-4584
+%D 1983
+%K temperature coupling
+
+%A H.C. Andersen
+%T Molecular dynamics simulations at constant pressure and/or temperature
+%J J. Chem. Phys.
+%V 72
+%P 2384-2393
+%D 1980
+
+%A R.W. Pastor
+%A B.R. Brooks
+%A A. Szabo
+%T An analysis of the accuracy of Langevin and molecular dynamics algorithms
+%J Mol. Phys.
+%V 65
+%P 1409-1419
+%D 1988
+
+%A J.P. Valleau
+%A G.M. Torrie
+%B Modern Theoretical Chemistry, Vol. 5: Statistical Mechanics, Part A,
+Equilibrium Techniques
+%E B.J. Berne
+%I Plenum Press
+%C New York
+%D 1977
+
+%A S. Kumar
+%A D. Bouzida
+%A R.H. Swendsen
+%A P.A. Kollman
+%A J.M. Rosenberg
+%T The weighted histogram analysis method for free-energy calculations
+on biomolecules.  I. The method
+%J J. Comput. Chem.
+%V 13
+%P 1011-1021
+%D 1992
+
+%A S. Kumar
+%A J.M. Rosenberg
+%A D. Bouzida
+%A R.H. Swendsen
+%A P.A. Kollman
+%T Multidimensional free-energy calculations using the weighted histogram
+analysis method
+%J J. Comput. Chem.
+%V 16
+%P 1339-1350
+%D 1995
+
+%A J. Kottalam
+%A D.A. Case
+%T Dynamics of ligand escape from the heme pocket of myoglobin
+%J J. Am. Chem. Soc.
+%V 110
+%P 7690-7697
+%D 1988
+
+%A B. Roux
+%T The calculation of the potential of mean force using computer simulations
+%J Comput. Phys. Comm.
+%V 91
+%P 275-282
+%D 1995
+
+%A J.A. Izaguirre
+%A D.P. Catarello
+%A J.M. Wozniak
+%A R.D. Skeel
+%T Langevin stabilization of molecular dynamics
+%J J. Chem. Phys.
+%V 114
+%P 2090-2098
+%D 2001
+
+%A J.W. Ponder
+%A D.A. Case
+%T Force fields for protein simulations
+%J Adv. Prot. Chem.
+%V 66
+%P 27-85
+%D 2003
+%K review
+
+%A W.H. Press
+%A B.P. Flannery
+%A S.A. Teukolsky
+%A W.T. Vetterling
+%B Numerical Recipes: The Art of Scientific Computing
+%I Cambridge University Press
+%C New York
+%D 1989
+
+%A C.J. Cramer
+%A D.G. Truhlar
+%T Implicit Solvation Models: Equilibria, Structure, Spectra, and
+Dynamics
+%J Chem. Rev.
+%V 99
+%P 2161-2200
+%D 1999
+
+%A P. Beroza
+%A D.A. Case
+%T Calculations of proton-binding thermodynamics in proteins
+%J Meth. Enzymol.
+%V 295
+%P 170-189
+%D 1998
+
+%A J.D. Madura
+%A M.E. Davis
+%A M.K. Gilson
+%A R.C. Wade
+%A B.A. Luty
+%A J.A. McCammon
+%T Biological applications of electrostatic calculations and brownian
+dynamics simulations
+%J Rev. Computat. Chem.
+%V 5
+%P 229-267
+%D 1994
+
+%A M.K. Gilson
+%T Theory of electrostatic interactions in macromolecules
+%J Curr. Opin. Struct. Biol.
+%V 5
+%P 216-23
+%D 1995
+
+%A M. Scarsi
+%A J. Apostolakis
+%A A. Caflisch
+%T Continuum Electrostatic Energies of Macromolecules in Aqueous
+Solutions
+%J J. Phys. Chem. A
+%V 101
+%P 8098-8106
+%D 1997
+
+%A R. Luo
+%A L. David
+%A M.K. Gilson
+%T Accelerated Poisson-Boltzmann Calculations for Static and Dynamic Systems
+%J J. Comput. Chem.
+%V 23
+%P 1244-1253
+%D 2002
+
+%A T. Simonson
+%T Electrostatics and dynamics of proteins
+%J Rep. Prog. Phys.
+%V 66
+%P 737-787
+%D 2003
+%K review
+
+%A D. Bashford
+%A M. Karplus
+%T p`K sub a`'s of ionizable groups in proteins: Atomic detail
+from a continuum electrostatic model
+%J Biochemistry
+%V 29
+%P 10219-10225
+%D 1990
+%K lysozyme
+
+%A M. Schaefer
+%A M. Karplus
+%T A comprehensive analytical treatment of continuum electrostatics
+%J J. Phys. Chem.
+%V 100
+%P 1578-1599
+%D 1996
+
+%A S.R. Edinger
+%A C. Cortis
+%A P.S. Shenkin
+%A R.A. Friesner
+%T Solvation free energies of peptides: Comparison of approximate continuum
+solvation models with accurate solution of the Poisson-Boltzmann equation
+%J J. Phys. Chem. B
+%V 101
+%P 1190-1197
+%D 1997
+
+%A A. Ghosh
+%A C.S. Rapp
+%A R.A. Friesner
+%T Generalized Born Model Based on a Surface Integral Formulation
+%J J. Phys. Chem. B
+%V 102
+%P 10983-10990
+%D 1998
+
+%A B.N. Dominy
+%A C.L. Brooks, III
+%T Development of a Generalized Born Model Parameterization for Proteins
+and Nucleic Acids
+%J J. Phys. Chem. B
+%V 103
+%P 3765-3773
+%D 1999
+
+%A N. Calimet
+%A M. Schaefer
+%A T. Simonson
+%T Protein Molecular Dynamics With the Generalized Born/ACE Solvent Model
+%J Proteins
+%V 45
+%P 144-158
+%D 2001
+
+%A A. Onufriev
+%A D.A. Case
+%A D. Bashford
+%T Effective Born radii in the generalized Born approximation: The importance
+%of being perfect
+%J J. Comput. Chem.
+%V 23
+%P 1297-1304
+%D 2002
+
+%A F.M. Richards
+%T Areas, volumes, packing, and protein structure
+%J Ann. Rev. Biophys. Bioeng.
+%V 6
+%P 151-176
+%D 1977
+%K R77
+
+%A Y. Duan
+%A C. Wu
+%A S. Chowdhury
+%A M.C. Lee
+%A G. Xiong
+%A W. Zhang
+%A R. Yang
+%A P. Cieplak
+%A R. Luo
+%A T. Lee
+%T A Point-Charge Force Field for Molecular Mechanics Simulations of Proteins
+%Based on Condensed-Phase Quantum Mechanical Calculations
+%J J. Comput. Chem.
+%V 24
+%P 1999-2012
+%D 2003
+%K ff03
+
+%A J.D. Jackson
+%T Classical Electrodynamics
+%I Wiley and Sons
+%C New York
+%D 1975
+%K book
+
+%A M.S. Lee
+%A F.R. Salsbury, Jr.
+%A C.L. Brooks, III
+%T Novel generalized Born methods
+%J J. Chem. Phys.
+%V 116
+%P 10606-10614
+%D 2002
+
+%A Q. Lu
+%A R. Luo
+%T A Poisson-Boltzmann dynamics method with nonperiodic boundary condition
+%J J. Chem. Phys.
+%V 119
+%P 11035-11047
+%D 2003
+
+%A M. Feig
+%A J. Karanicolas
+%A C.L. Brooks, III
+%T MMTSB Tool Set: Enhanced sampling and multiscale modeling methods for
+application in structural biology
+%J J. Mol. Graphics Mod.
+%D 2004
+%O (in press).
+
+%A C. Simmerling
+%A B. Strockbine
+%A A.E. Roitberg
+%T All-Atom Structure Prediction and Folding Simulations of a Stable Protein
+%J J. Am. Chem. Soc.
+%V 124
+%P 11258-11259
+%D 2002
+
+%A A.E. García
+%A K.Y. Sanbonmatsu
+%T `alpha`-helical stabilization by side chain shielding of backbone
+hydrogen bonds
+%J Proc. Natl. Acad. Sci. USA
+%V 99
+%P 2782-2787
+%D 2002
+%K garcia
+
+%A J. Wang
+%A R.M. Wolf
+%A J.W. Caldwell
+%A P.A. Kollamn
+%A D.A. Case
+%T Development and testing of a general Amber force field
+%J J. Comput. Chem.
+%V 25
+%P 1157-1174
+%D 2004
+%K gaff
+
+%A K.N. Kirschner
+%A R.J. Woods
+%T Solvent interactions determine carbohydrate conformation
+%J Proc. Natl. Acad. Sci. USA
+%V 98
+%P 10541-10545
+%D 2001
+
+%A M. Basma
+%A S. Sundara
+%A D. Calgan
+%A T. Venali
+%A R.J. Woods
+%T Solvated ensemble averaging in the calculation of partial atomic charges
+%J J. Comput. Chem.
+%V 22
+%P 1125-1137
+%D 2001
+
+%A K.N. Kirschner
+%A R.J. Woods
+%A Quantum mechanical study of the nonbonded forces in water-methanol complexes
+%J J. Phys. Chem. A
+%V 105
+%P 4150-4155
+%D 2001
+
+%A K.A. Sharp
+%A B. Honig
+%T Electrostatic interactions in macromolecules: Theory and
+experiment
+%J Annu. Rev. Biophys. Biophys. Chem.
+%V 19
+%P 301-332
+%D 1990
+%K annual review
+
+%A M.K. Gilson
+%A K.A. Sharp
+%A B.H. Honig
+%T Calculating the electrostatic potential of molecules in solution:  method
+%and error assessment.
+%J J. Comput. Chem.
+%V 9
+%P 327-35
+%D 1988
+
+%A J. Warwicker
+%A H.C. Watson
+%J J. Mol. Biol.
+%T Calculation of the electric potential in the active site cleft due to
+%ahelix dipoles
+%V 157
+%P 671-679
+%D 1982
+%K WW82
+
+%A I. Klapper
+%A R. Hagstrom
+%A R. Fine
+%A K. Sharp
+%A B. Honig
+%T Focussing of electric fields in the active stie of Cu, Zn superoxide
+dismutase
+%J Proteins
+%V 1
+%P 47-59
+%D 1986
+%K KHF86
+
+%A A. Nicholls
+%A B. Honig
+%T A rapid finite difference algorithm, utilizing successive
+over-relaxation to solve the Poisson-Boltzmann equation
+%J J. Comput. Chem.
+%V 12
+%P 435-445
+%D 1991
+
+%A M.E. Davis
+%A J.A. McCammon
+%T Dielectric boundary smoothing in finite difference solutions
+of the Poisson equation: An approach to improve accuracy and convergence
+%J J. Comput. Chem.
+%V 12
+%P 909-912
+%D 1991
+
+%A M.E. Davis
+%A J.A. McCammon
+%T Electrostatics in biomolecular structure and dynamics
+%J Chem. Rev.
+%V 90
+%P 509-521
+%D 1990
+
+%A M.E. Davis
+%A J.A. McCammon
+%T Solving the finite-difference linearized Poisson-Boltmann equation --
+a comparison of relaxation and conjugate gradient methods
+%J J. Comput. Chem.
+%V 10
+%P 386-391
+%D 1989
+
+%A D. Bashford
+%T An object-oriented programming suite for electrostatic effects in
+biological molecules
+%J Lect. Notes Comput. Sci.
+%V 1343
+%P 233-240
+%D 1997
+
+%A B.A. Luty
+%A M.E. Davis
+%A J.A. McCammon
+%T Electrostatic energy calculations by a finite-difference method: Rapid 
+calculation of charge-solvent interaction energies
+%J J. Comput. Chem.
+%V 13
+%P 768-771
+%D 1992
+
+%A U.C. Singh
+%A S.J. Weiner
+%A P.A. Kollman
+%T Molecular dynamics simulations of d(C-G-C-G-A).d(T-C-G-C-G) with and
+without "hydrated" counterions
+%J Proc. Nat. Acad. Sci.
+%V 82
+%P 755-759
+%D 1985
+
+%A J. Gao
+%T Absolute free energy of solvation from Monte Carlo simulations
+using combined quantum and molecular mechanical potentials
+%J J. Phys. Chem.
+%V 96
+%P 537-540
+%D 1992
+
+%A A. Warshel
+%A M. Levitt
+%T Theoretical studies of enzymic reactions: Dielectric, electrostatic and
+steric stabilization of the carbonium ion in the reaction of lysozyme
+%J J. Mol. Biol.
+%V 103
+%P 227-249
+%D 1976
+
+%A M.J. Field
+%A P.A. Bash
+%A M. Karplus
+%T A combined quantum mechanical and molecular mechanical potential for 
+molecular dynamics simulations
+%J J. Comput. Chem.
+%V 11
+%P 700-733
+%D 1990
+
+%A R.V. Stanton
+%A D.S. Hartsough
+%A K.M. Merz, Jr.
+%T An examination of a density functional/molecular mechanical coupled
+potential
+%J J. Comput. Chem.
+%V 16
+%P 113-128
+%D 1994
+
+%A R.V. Stanton
+%A L.R. Little
+%A K.M. Merz, Jr.
+%T An examination of a Hartree-Fock/molecular mechanical coupled potential
+%J J. Phys. Chem.
+%V 99
+%P 17344-17348
+%D 1995
+
+%A R.V. Stanton
+%A D.S. Hartsough
+%A K.M. Merz, Jr.
+%T Calculations of solvation free energies using a density
+functional/molecular dynamics coupled potential
+%J J. Phys. Chem.
+%V 97
+%P 11868-11870
+%D 1993
+
+%A W. Yang
+%A T.-S. Lee
+%J J. Chem. Phys.
+%T A density-matrix divide-and-conquer approach for electronic structure
+calculations of large molecules
+%V 103
+%P 5674-5678
+%D 1995
+
+%A S.L. Dixon
+%A K.M. Merz, Jr.
+%J J. Chem. Phys.
+%T Semiempirical molecular orbital calculations with linear system size
+scaling
+%V 104
+%P 6643-6649
+%D 1996
+
+%A S.L. Dixon
+%A K.M. Merz, Jr.
+%J J. Chem. Phys.
+%T Fast, accurate semiempirical molecular orbital calculations for
+macromolecules
+%V 107
+%P 879-893
+%D 1997
+
+%A D.C. Liu
+%A J. Nocedal
+%T On the limited memory BFGS method for large scale optimization
+%J Mathematical Programming
+%V 45
+%P 503-528
+%D 1989
+
+%A J. Nocedal
+%A S.J. Wright
+%T Numerical Optimization
+%I Springer-Verlag
+%C New York
+%P Section 9.1
+%D 1999
+
+%A S.G. Nash
+%T A survey of truncated-Newton methods
+%J J. of Computational and Applied Mathematics
+%V 124
+%P 45-59
+%D 2000
+%K review
+
+%A J. Nocedal
+%A J.L. Morales
+%T Automatic preconditioning by limited memory Quasi-Newton updating
+%J SIAM J. Optimization
+%V 10
+%P 1079-1096
+%D 2000
+
+%A X. Cheng
+%A V. Hornak
+%A C. Simmerling
+%T Improved conformational sampling through an efficient combination of
+mean-field simulation approaches
+%J J. Phys. Chem. B
+%V 108
+%D 2004
+
+%A M.C. Lee
+%A Y. Duan
+%T Distinguish protein decoys by using a scoring function based on a new Amber
+force field, short molecular dynamics simulations, and the generalized Born
+solvent model
+%J Proteins
+%V 55
+%P 620-634
+%D 2004
+
+%A J. Chu
+%A B.L. Trout
+%A B.R. Brooks
+%D 2003
+%T A super-linear minimization scheme for the nudged elastic band method
+%J J. Chem. Phys.
+%V 119
+%P 12708-12717
+
+%A R. Elber
+%A M. Karplus M
+%D 1987
+%T A method for determining reaction paths in large molecules: Application to myoglobin
+%J Chem. Phys. Lett.
+%V 139
+%P 375-380
+
+%A G. Henkelman
+%A H. Jónsson
+%D 2000
+%T Improved tangent estimate in the nudged elastic band method for 
+finding minimum energy paths and saddle points
+%J J. Chem. Phys.
+%V 113
+%P 9978-9985
+
+%A G. Henkelman
+%A B.P. Uberuaga
+%A H. Jónsson
+%D 2000
+%T A climbing image nudged elastic band method for finding saddle points 
+and minimum energy paths
+%J J. Chem. Phys.
+%V 113
+%P 9901-9904
+
+%A H. Jónsson
+%A G. Mills
+%A K.W. Jacobsen
+%D 1998
+%T Nudged elastic band method for finding minimum energy paths of transitions
+%E B.J. Berne
+%E G. Ciccoti
+%E D.F. Coker
+%B Classical and Quantum Dynamics in Condensed Phase Simulations
+%C Singapore
+%I World Scientific
+%P 385-404
+
+%A G. Mills
+%A H. Jónsson
+%D 1994
+%T Quantum and thermal effects in H\*<2\*> dissociative adsorption: 
+Evaluation of free energy barriers in multidimensional quantum systems
+%J Phys. Rev. Lett.
+%V 72
+%P 1124-1127
+
+%A J. Mongan
+%A D.A. Case
+%A J.A. McCammon
+%T Constant pH molecular dynamics in generalized Born implicit solvent
+%J J. Comput. Chem.
+%V 25
+%P 2038-2048
+%D 2004
+

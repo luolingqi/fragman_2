@@ -1,0 +1,9 @@
+REMARK  SUBUNITS OF 1CHX; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:22      CREATED BY USER: gychuang                
+ATOM      1  C1  CHX     1       1.400  -0.469   0.091  1.00  0.00      X   
+ATOM      2  C2  CHX     1       0.981   0.575  -0.949  1.00  0.00      X   
+ATOM      3  C3  CHX     1      -0.228   1.387  -0.462  1.00  0.00      X   
+ATOM      4  C4  CHX     1      -1.401   0.470  -0.091  1.00  0.00      X   
+ATOM      5  C5  CHX     1      -0.978  -0.576   0.947  1.00  0.00      X   
+ATOM      6  C6  CHX     1       0.227  -1.387   0.464  1.00  0.00      X   
+END

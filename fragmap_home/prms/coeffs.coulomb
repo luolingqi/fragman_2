@@ -1,0 +1,12 @@
+block   0   repvdw               0       repvdw          0
+block   1   attvdw               0       point           0
+block   2   coulombic_potential  3       charge_point    0
+block   3   cavity               3       point           0
+block   4   receptor_eigen       0       ligand_eigen    0
+
+set   0
+cor   0    10.0    0   0.0   1     5.0
+cor   1    -0.9    1  10.0   0     0.0
+cor   2    40.0    0   0.0   0     0.0
+cor   3    -0.8    0   0.0   0     0.0
+cor   4     3.0    0   0.0   0     0.0

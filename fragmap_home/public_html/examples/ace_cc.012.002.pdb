@@ -1,0 +1,11 @@
+HEADER crosscluster.012.002.pdb
+ATOM      1  C1  ETH N   1      37.972  42.959  61.388   1.000
+ATOM      2  C2  ETH N   1      37.356  44.075  60.526   1.000
+ATOM      3  C1  DME N   2      38.022  42.882  61.462   1.000
+ATOM      4  O1  DME N   2      38.229  44.121  60.780   1.000
+ATOM      5  C2  DME N   2      37.002  44.611  60.233   1.000
+REMARK Residue 1
+CONECT    1    2
+REMARK Residue 2
+CONECT    3    4
+CONECT    4    5

@@ -1,0 +1,82 @@
+HEADER crosscluster.005.008.pdb
+ATOM      1  C1  ACN U   1       7.561  14.606  -2.550   1.000
+ATOM      2  C2  ACN U   1       8.201  14.204  -1.302   1.000
+ATOM      3  N   ACN U   1       8.703  13.894  -0.302   1.000
+ATOM      4  C1  ADY U   2       7.658  15.128  -2.807   1.000
+ATOM      5  C2  ADY U   2       7.653  13.879  -1.951   1.000
+ATOM      6  O1  ADY U   2       7.860  13.934  -0.763   1.000
+ATOM      7  H1  ADY U   2       7.454  12.947  -2.474   1.000
+ATOM      8  N1  ACD U   3       7.333  13.642  -2.327   1.000
+ATOM      9  C2  ACD U   3       7.978  14.404  -1.434   1.000
+ATOM     10  C3  ACD U   3       8.414  15.742  -1.994   1.000
+ATOM     11  O4  ACD U   3       8.200  14.079  -0.274   1.000
+ATOM     12  H1  ACD U   3       7.795  13.347  -3.165   1.000
+ATOM     13  H2  ACD U   3       6.391  13.346  -2.173   1.000
+ATOM     14  C1  AMN U   4       8.132  14.331  -1.447   1.000
+ATOM     15  N1  AMN U   4       7.106  14.036  -2.457   1.000
+ATOM     16  H1  AMN U   4       6.420  13.400  -2.069   1.000
+ATOM     17  H2  AMN U   4       7.536  13.555  -3.238   1.000
+ATOM     18  CG  BEN U   5       8.722  16.465  -1.668   1.000
+ATOM     19  CD1 BEN U   5       7.994  16.208  -2.854   1.000
+ATOM     20  CE1 BEN U   5       7.411  14.936  -3.063   1.000
+ATOM     21  CZ  BEN U   5       7.552  13.924  -2.086   1.000
+ATOM     22  CE2 BEN U   5       8.286  14.178  -0.904   1.000
+ATOM     23  CD2 BEN U   5       8.870  15.449  -0.695   1.000
+ATOM     24  C2  DFO U   6       7.385  14.392  -2.821   1.000
+ATOM     25  N3  DFO U   6       8.163  15.070  -1.959   1.000
+ATOM     26  O4  DFO U   6       6.242  14.025  -2.587   1.000
+ATOM     27  C3  DFO U   6       8.426  16.486  -2.194   1.000
+ATOM     28  C1  DFO U   6       8.723  14.371  -0.807   1.000
+ATOM     29  H1  DFO U   6       7.905  14.217  -3.758   1.000
+ATOM     30  C1  DME U   7       7.646  14.420  -2.251   1.000
+ATOM     31  O1  DME U   7       7.810  15.804  -1.930   1.000
+ATOM     32  C2  DME U   7       8.132  16.562  -3.099   1.000
+ATOM     33  C   URE U   8       8.036  14.365  -1.551   1.000
+ATOM     34  O   URE U   8       8.047  14.134  -0.348   1.000
+ATOM     35  N1  URE U   8       8.748  15.319  -1.986   1.000
+ATOM     36  N2  URE U   8       7.313  13.638  -2.293   1.000
+ATOM     37  H1  URE U   8       9.376  15.200  -2.781   1.000
+ATOM     38  H2  URE U   8       8.734  16.248  -1.567   1.000
+ATOM     39  H3  URE U   8       7.672  13.218  -3.152   1.000
+ATOM     40  H4  URE U   8       6.345  13.414  -2.065   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    2    3
+REMARK Residue 2
+CONECT    4    5
+CONECT    5    6
+CONECT    5    7
+REMARK Residue 3
+CONECT    8    9
+CONECT    8   12
+CONECT    8   13
+CONECT    9   10
+CONECT    9   11
+REMARK Residue 4
+CONECT   14   15
+CONECT   15   16
+CONECT   15   17
+REMARK Residue 5
+CONECT   18   19
+CONECT   18   23
+CONECT   19   20
+CONECT   23   22
+CONECT   20   21
+CONECT   22   21
+REMARK Residue 6
+CONECT   24   25
+CONECT   24   26
+CONECT   25   27
+CONECT   25   28
+CONECT   24   29
+REMARK Residue 7
+CONECT   30   31
+CONECT   31   32
+REMARK Residue 8
+CONECT   33   34
+CONECT   35   33
+CONECT   35   37
+CONECT   35   38
+CONECT   36   33
+CONECT   36   39
+CONECT   36   40

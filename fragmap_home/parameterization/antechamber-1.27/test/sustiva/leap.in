@@ -1,0 +1,5 @@
+source leaprc.gaff
+mods = loadamberparams frcmod
+SUS = loadmol2 sustiva.mol2
+saveamberparm SUS prmtop prmcrd
+quit

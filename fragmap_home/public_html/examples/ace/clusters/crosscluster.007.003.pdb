@@ -1,0 +1,44 @@
+ATOM      1  C1  BDY     1      27.455  46.509  53.370   1.000
+ATOM      2  C2  BDY     1      27.008  45.661  54.408   1.000
+ATOM      3  C3  BDY     1      27.553  44.370  54.541   1.000
+ATOM      4  C4  BDY     1      28.541  43.944  53.629   1.000
+ATOM      5  C5  BDY     1      28.983  44.778  52.580   1.000
+ATOM      6  C6  BDY     1      28.435  46.069  52.450   1.000
+ATOM      7  C7  BDY     1      26.904  47.864  53.259   1.000
+ATOM      8  H1  BDY     1      27.230  48.416  52.380   1.000
+ATOM      9  O1  BDY     1      26.155  48.355  54.069   1.000
+ATOM     10  C1  CHX     2      28.181  43.968  54.766   1.000
+ATOM     11  C2  CHX     2      28.965  43.779  53.464   1.000
+ATOM     12  C3  CHX     2      29.227  45.126  52.781   1.000
+ATOM     13  C4  CHX     2      27.924  45.895  52.534   1.000
+ATOM     14  C5  CHX     2      27.123  46.067  53.830   1.000
+ATOM     15  C6  CHX     2      26.870  44.719  54.514   1.000
+ATOM     16  C2  DFO     3      28.039  46.428  51.993   1.000
+ATOM     17  N3  DFO     3      27.340  46.699  53.115   1.000
+ATOM     18  O4  DFO     3      28.506  45.332  51.708   1.000
+ATOM     19  C3  DFO     3      26.838  48.049  53.361   1.000
+ATOM     20  C1  DFO     3      27.099  45.629  54.080   1.000
+ATOM     21  H1  DFO     3      28.141  47.311  51.366   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    6
+CONECT    2    3
+CONECT    3    4
+CONECT    4    5
+CONECT    5    6
+CONECT    1    7
+CONECT    7    8
+CONECT    7    9
+REMARK Residue 2
+CONECT   10   11
+CONECT   10   15
+CONECT   11   12
+CONECT   12   13
+CONECT   13   14
+CONECT   14   15
+REMARK Residue 3
+CONECT   16   17
+CONECT   16   18
+CONECT   17   19
+CONECT   17   20
+CONECT   16   21

@@ -1,0 +1,15 @@
+ TITLE>  * THE SUBUNITS OF PW1
+ TITLE>  *  DATE:     7/ 8/ 8     14:33:18      CREATED BY USER: drhall
+ TITLE>  *
+PRIN ENR:  Eval#     ENERgy      Delta-E         GRMS
+PRIN INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+PRIN EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+PRIN ACE1:      HYDRophobic         SELF    SCREENing      COULomb 
+PRIN ACE2:        SOLVation  INTERaction 
+ ----------       ---------    ---------    ---------    ---------    ---------
+PRIN>        1     15.78037      0.00000      0.00000
+PRIN INTERN>        1.40222      0.56533      0.00000      0.00000      0.00000
+PRIN EXTERN>       10.53093      3.28187      0.00000      0.00000      0.00000
+PRIN   ACE1>        3.77770     -5.85813      5.15467      0.20763
+PRIN   ACE2>       -0.70346      5.36230
+ ----------       ---------    ---------    ---------    ---------    ---------

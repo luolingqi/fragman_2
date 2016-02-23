@@ -1,0 +1,3 @@
+#!/bin/csh -f
+../../exe/database -i all_amino94.in -d prep.def 
+exit(1)

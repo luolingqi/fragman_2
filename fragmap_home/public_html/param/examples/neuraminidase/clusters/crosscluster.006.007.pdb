@@ -1,0 +1,71 @@
+ATOM      1  CG  BEN     1      54.001  23.875 -16.752   1.000
+ATOM      2  CD1 BEN     1      53.703  22.635 -17.365   1.000
+ATOM      3  CE1 BEN     1      54.629  21.568 -17.289   1.000
+ATOM      4  CZ  BEN     1      55.851  21.741 -16.599   1.000
+ATOM      5  CE2 BEN     1      56.150  22.981 -15.988   1.000
+ATOM      6  CD2 BEN     1      55.226  24.048 -16.065   1.000
+ATOM      7  N1  ACD     2      56.013  21.174 -16.403   1.000
+ATOM      8  C2  ACD     2      56.003  22.492 -16.154   1.000
+ATOM      9  C3  ACD     2      55.371  23.307 -17.263   1.000
+ATOM     10  O4  ACD     2      56.457  23.011 -15.142   1.000
+ATOM     11  H1  ACD     2      56.450  20.547 -15.759   1.000
+ATOM     12  H2  ACD     2      55.597  20.804 -17.233   1.000
+ATOM     13  C1  ACN     3      55.460  21.913 -16.887   1.000
+ATOM     14  C2  ACN     3      56.147  23.032 -16.254   1.000
+ATOM     15  N   ACN     3      56.699  23.929 -15.759   1.000
+ATOM     16  C   ACT     4      56.110  23.094 -16.081   1.000
+ATOM     17  O   ACT     4      56.301  22.677 -14.945   1.000
+ATOM     18  CH1 ACT     4      55.420  22.254 -17.134   1.000
+ATOM     19  CH2 ACT     4      56.541  24.483 -16.505   1.000
+ATOM     20  C1  DME     5      56.492  24.448 -16.305   1.000
+ATOM     21  O1  DME     5      56.199  23.220 -15.634   1.000
+ATOM     22  C2  DME     5      55.813  22.210 -16.569   1.000
+ATOM     23  CH  THS     6      55.833  22.084 -16.957   1.000
+ATOM     24  CH1 THS     6      54.417  22.259 -17.508   1.000
+ATOM     25  CH2 THS     6      56.180  23.172 -15.943   1.000
+ATOM     26  OT  THS     6      55.964  20.789 -16.368   1.000
+ATOM     27  HO  THS     6      56.853  20.649 -16.066   1.000
+ATOM     28  C   URE     7      55.873  22.460 -16.107   1.000
+ATOM     29  O   URE     7      56.416  22.904 -15.104   1.000
+ATOM     30  N1  URE     7      56.058  21.240 -16.396   1.000
+ATOM     31  N2  URE     7      55.155  23.246 -16.793   1.000
+ATOM     32  H1  URE     7      56.661  20.642 -15.830   1.000
+ATOM     33  H2  URE     7      55.628  20.795 -17.206   1.000
+ATOM     34  H3  URE     7      55.025  24.223 -16.535   1.000
+ATOM     35  H4  URE     7      54.670  22.949 -17.640   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    6
+CONECT    2    3
+CONECT    6    5
+CONECT    3    4
+CONECT    5    4
+REMARK Residue 2
+CONECT    7    8
+CONECT    7   11
+CONECT    7   12
+CONECT    8    9
+CONECT    8   10
+REMARK Residue 3
+CONECT   13   14
+CONECT   14   15
+REMARK Residue 4
+CONECT   18   16
+CONECT   16   17
+CONECT   16   19
+REMARK Residue 5
+CONECT   20   21
+CONECT   21   22
+REMARK Residue 6
+CONECT   24   23
+CONECT   23   26
+CONECT   23   25
+CONECT   26   27
+REMARK Residue 7
+CONECT   28   29
+CONECT   30   28
+CONECT   30   32
+CONECT   30   33
+CONECT   31   28
+CONECT   31   34
+CONECT   31   35

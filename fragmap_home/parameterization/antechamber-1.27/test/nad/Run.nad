@@ -1,0 +1,59 @@
+#!/bin/csh -f
+
+echo
+echo [31m"Step 1"[0m
+echo [31m"make the coordinate center at (0,0,0), the tranlation vector is saved in file vector.save. The purpose of this step"[0m
+echo [31m"is to avoide the problem of big coordinates causing no space between two values in gaussian output, which makes some programs (such as espgen) fail."[0m
+
+../../exe/translate -i nad.mol2 -f mol2 -o nad_c.mol2 -c center -a1 0 > vector.save || goto error
+
+echo
+echo [31m"Step 2"[0m
+echo [31m"run antechamber to generate gaussian gcrt file"[0m
+../../exe/antechamber -i nad_c.mol2 -fi mol2 -o nad.gau -fo gcrt || goto error 
+
+echo
+echo [31m"Step 3"[0m
+echo [31m"run gaussian, then generate a new mol2 file (nad_c.mol2) from the gaussian output file, using the"[0m
+echo [31m"charge flag of '-resp' if ESP were printed out in the gaussian output file."[0m
+echo 
+echo [32m"../../exe/antechamber -i nad.gout -fi gout -fo mol2 -o nad_c.mol2 -c resp || goto error (not performed)"[0m
+echo 
+echo [31m"since the coordinates have been translated, one may translate the molecule back using the 'translate'"[0m
+echo [31m"program with the saved vectors or do a Least-square fitting "[0m
+
+echo
+echo [31m"Step 4"[0m
+echo [31m"translate the molecular back"[0m
+../../exe/translate -i nad_c.mol2 -f mol2 -o nad.mol2 -c translate -vx -45.1416 -vy -52.7378 -vz -78.7059 || goto error
+
+echo
+echo  [31m"or do a Least-square fitting"[0m
+
+../../exe/translate -i nad_c.mol2 -f mol2 -o nad.mol2 -c match -r nad.mol2 || goto error
+
+echo
+echo [31m"Step 5"[0m
+echo [31m"If one wants to use am1-bcc charge, skip the above steps and just run the following command"[0m
+../../exe/antechamber -i nad.mol2 -fi mol2 -o nad.mol2 -fo mol2  \
+   -c bcc -s 2 -df 0 || goto error
+
+echo
+echo [31m"Step 6"[0m
+echo [31m"run parmchk to find missing force field parameters"[0m
+../../exe/parmchk -i nad.mol2 -f mol2 -o frcmod || goto error
+
+echo
+echo [31m"Step 7"[0m
+echo [31m"run tleap to generate topology file"[0m
+../../exe/tleap -s -f leap.in > leap.out
+
+../../exe/dacdif -t 1 nad.mol2.save nad.mol2
+../../exe/dacdif frcmod.save frcmod
+
+/bin/rm -f ANTE* ATOMTYPE.INF BCCTYPE.INF for* FOR* NEWPDB.PDB PREP.INF mopac.in
+exit(0)
+
+error:
+echo "  ${0}:  Program error"
+exit(1)

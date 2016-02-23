@@ -1,0 +1,6 @@
+REMARK   single acetone probe
+ATOM      1  C   ACT     1       0.000   0.000   0.000  0.60  3.00      1ACT
+ATOM      2  O   ACT     1      -0.009   1.045   0.640 -0.55 11.00      1ACT
+ATOM      3  CH1 ACT     1      -0.005  -0.010  -1.515 -0.02516.00      1ACT
+ATOM      4  CH2 ACT     1       0.016  -1.354   0.679 -0.02516.00      1ACT
+END

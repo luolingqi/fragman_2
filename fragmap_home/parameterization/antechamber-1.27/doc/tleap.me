@@ -1,0 +1,1997 @@
+.if t .he 'LEaP'Introduction'Page %'
+.bp
+\ 
+.nr ii 1.0i
+.nr sp 16
+.sh 1 LEaP
+.nr sp 13
+.sh 2 "Introduction"
+.pp
+LEaP is a module from the AMBER suite of programs, which can be used to
+generate force field files compatible with NAB.
+Using \fItleap\fR, the user can:
+.(l
+Read AMBER PREP input files
+Read AMBER PARM format parameter sets
+Read and write Object File Format files (OFF)
+Read and write PDB files
+Construct new residues and molecules using simple commands
+Link together residues and create nonbonded complexes of molecules
+Modify internal coordinates within a molecule
+Generate files that contain topology and parameters for AMBER and NAB
+.)l
+This is a simplified version of the LEaP documentation.  It does not describe
+elements that are not supported by NAB; these include
+the graphical user interface, commands related to
+periodic boundary simulations, and items related to perturbation calculations.  A more
+complete account can be had in the the \fIAmber Users' Manual\fR, which is
+available at \fChttp://amber.scripps.edu\fR.
+.if t .he 'LEaP'Concepts'Page %'
+.sp
+.sh 2 "Concepts"
+.pp
+In order to effectively use LEaP it is necessary to understand the
+philosophy behind the program, especially of concepts of LEaP \fIcommands,
+variables,\fR and \fIobjects.\fR In addition to exploring these concepts,
+this section also addresses the use of external files and libraries with the
+program.
+.sh 3 "Commands"
+.pp
+A researcher uses LEaP by entering commands that manipulate objects.  An
+object is just a basic building block; some examples of objects are ATOMs,
+RESIDUEs, UNITs, and PARMSETs.  The commands that are supported within LEaP
+are described throughout the manual and are defined in detail in the
+"Command Reference" section.
+.pp
+The heart of LEaP is a command-line interface that accepts text commands
+which direct the program to perform operations on objects. All LEaP commands
+have one of the following two forms:
+.(l
+command argument1 argument2 argument3 ...
+variable = command argument1 argument2 ...
+.)l
+For example:
+.(l
+edit ALA
+trypsin = loadPdb trypsin.pdb
+.)l
+Each command is followed by zero or more arguments that are separated by
+whitespace. Some commands return objects which are then associated with a
+variable using an assignment (=) statement.  Each command acts upon its
+arguments, and some of the commands modify their arguments' contents.  The
+commands themselves are case- insensitive.  That is, in the above example,
+\fCedit\fR could have been entered as \fCEdit\fR, \fCeDiT\fR, or any
+combination of upper and lower case characters.  Similarly, \fCloadPdb\fR
+could have been entered a number of different ways, including \fCloadpdb\fR.
+In this manual, we frequently use a mixed case for commands.  We do this to
+enhance the differences between commands and as a mnemonic device.  Thus,
+while we write \fCcreateAtom\fR, \fCcreateResidue\fR, and \fCcreateUnit\fR
+in the manual, the user can use any case when entering these commands into
+the program.
+.pp
+The arguments in the command text may be \fIobjects\fR such as NUMBERs,
+STRINGs, or LISTs or they may be \fIvariables\fR.  These two subjects are
+discussed next.
+.sh 3 Variables
+.pp
+A \fIvariable\fR is a handle for accessing an object.  A variable name can
+be any alphanumeric string whose first character is an alphabetic character.
+(Alphanumeric means that the characters of the name may be letters, numbers,
+or special symbols such as "*".  The following special symbols should not be
+used in variable names: dollar sign, comma, period, pound sign, equal sign,
+space, semicolon, double quote, or list open or close characters { and }.
+LEaP commands should not be used as variable names.  Variable names are
+case-sensitive: "ARG" and "arg" are different variables.  Variables are
+associated with objects using an assignment statement not unlike regular
+computer languages such as FORTRAN or C.
+.(l
+mole = 6.02E23
+MOLE = 6.02E23 
+myName = "Joe Smith" 
+listOf7Numbers = { 1.2 2.3 3.4 4.5 6 7 8 }
+.)l
+In the above examples, both \fCmole\fR and \fCMOLE\fR are variable names,
+whose contents are the same (6.02E23).  Despite the fact that both
+\fCmole\fR and \fCMOLE\fR have the same contents, they are \fInot\fR the
+same variable.  This is due to the fact that variable names are
+case-sensitive.  LEaP maintains a list of variables that are currently
+defined and this list can be displayed using the \fClist\fR command.
+The contents of a variable can be printed using the \fCdesc\fR command.
+.sh 3 Objects
+.pp
+The \fIobject\fR is the fundamental entity in LEaP. Objects range from the
+simple objects NUMBERS and STRINGS to the complex objects UNITs, RESIDUEs,
+ATOMs. Complex objects have properties that can be altered using the
+\fCset\fR command and some complex objects can contain other objects. For
+example, RESIDUEs are complex objects that can contain ATOMs and have the
+properties: residue name, connect atoms, and residue type.
+.sh 4 NUMBERs
+.pp
+NUMBERs are simple objects and they are identical to double precision
+variables in FORTRAN and double in C.
+.sh 4 STRINGs
+.pp
+STRINGS are simple objects that are identical to character arrays in C and
+similar to character strings in FORTRAN.  STRINGS are represented by
+sequences of characters which may be delimited by double quote characters.
+Example strings are:
+.(l
+"Hello there" 
+"String with a "" (quote) character" 
+"Strings contain letters and numbers:1231232"
+.)l
+.sh 4 LISTs
+.pp
+LISTs are made up of sequences of other objects delimited by LIST open and
+close characters. The LIST open character is an open curly bracket ({) and
+the LIST close character is a close curly bracket (}). LISTs can contain
+other LISTs and be nested arbitrarily deep. Example LISTs are:
+.(l
+{ 1 2 3 4 } 
+{ 1.2 "string" } 
+{ 1 2 3 { 1 2 } { 3 4 } }
+.)l
+LISTs are used by many commands to provide a more flexible way of passing
+data to the commands. The \fCzMatrix\fR command has two arguments, one of
+which is a LIST of LISTs where each subLIST contains between three and eight
+objects.
+.sh 4 "PARMSETs (Parameter Sets)"
+.pp
+PARMSETs are objects that contain bond, angle, torsion, and nonbond
+parameters for AMBER force field calculations.  They are normally loaded
+from \fIe.g.\fC parm94.dat\fR and \fCfrcmod\fR files.
+.sh 4 ATOMs
+.pp
+ATOMs are complex objects that do not contain any other objects.  The ATOM
+object is similar to the chemical concept of atoms.  Thus, it is a single
+entity that may be bonded to other ATOMs and it may be used as a building
+block for creating molecules.  ATOMs have many properties that can be
+changed using the \fCset\fR command.  These properties are defined below.
+.ip \fCname\fR
+.br
+This is a case-sensitive STRING property and it is the ATOM's name.  The
+\fCname\fRs for all ATOMs in a RESIDUE should be unique.  The \fCname\fR has
+no relevance to molecular mechanics force field parameters; it is chosen
+arbitrarily as a means to identify ATOMs. Ideally, the \fCname\fR should
+correspond to the PDB standard, being 3 characters long except for
+hydrogens, which can have an extra digit as a 4th character.
+.ip \fCtype\fR
+.br
+This is a STRING property.  It defines the AMBER force field atom type.  It
+is important that the character case match the canonical type definition
+used in the appropriate "parm.dat" or "frcmod" file.  For smooth operation,
+all atom types need to have element and hybridization defined by the
+\fCaddAtomTypes\fR command. The standard AMBER force field atom types are
+added by the default "leaprc" file.
+.ip \fCcharge\fR
+.br
+The \fCcharge\fR property is a NUMBER that represents the ATOM's
+electrostatic point charge to be used in a molecular mechanics force field.
+.ip \fCelement\fR
+.br
+The atomic element provides a simpler description of the atom than the
+\fCtype\fR, and is used only for LEaP's internal purposes (typically when
+force field information is not available). The element names correspond to
+standard nomenclature; the character "?" is used for special cases.
+.ip \fCposition\fR
+.br
+This property is a LIST of NUMBERS.  The LIST must contain three values: the
+(X, Y, Z) Cartesian coordinates of the ATOM.
+.sh 4 RESIDUEs
+.pp
+RESIDUEs are complex objects that contain ATOMs.  RESIDUEs are collections
+of ATOMs, and are either molecules (e.g. formaldehyde) or are linked
+together to form molecules (e.g. amino acid monomers).  RESIDUEs have
+several properties that can be changed using the \fCset\fR command.
+(Note that database RESIDUEs are each contained within a UNIT having
+the same name; the residue GLY is referred to as GLY.1 when setting
+properties. When two of these single-UNIT residues are joined, the
+result is a single UNIT containing the two RESIDUEs.)
+.pp
+One property of RESIDUEs is connection ATOMs.  Connection ATOMs are ATOMs
+that are used to make linkages between RESIDUEs.  For example, in order to
+create a protein, the N-terminus of one amino acid residue must be linked to
+the C-terminus of the next residue.  This linkage can be made within LEaP by
+setting the N ATOM to be a connection ATOM at the N-terminus and the C ATOM
+to be a connection ATOM at the C-terminus.  As another example, two CYX
+amino acid residues may form a disulfide bridge by crosslinking a connection
+atom on each residue.
+.pp
+There are several properties of RESIDUEs that can be modified using the
+\fCset\fR command. The properties are described below:
+.ip \fCconnect0\fR
+.br
+This defines an ATOM that is used in making links to other RESIDUEs.  In
+UNITs containing single RESIDUEs, the RESIDUEs'  \fCconnect0\fR ATOM is
+usually defined as the UNITs' \fChead\fR ATOM. (This is how the standard
+library UNITs are defined.)   For amino acids, the convention is to make the
+N-terminal nitrogen the \fCconnect0\fR ATOM.
+.ip \fCconnect1\fR
+This defines an ATOM that is used in making links to other RESIDUEs.  In
+UNITs containing single RESIDUEs, the RESIDUEs' \fCconnect1\fR ATOM is
+usually defined as the UNITs' \fCtail\fR ATOM. (This is done in the standard
+library UNITs.)  For amino acids, the convention is to make the C-terminal
+oxygen the \fCconnect1\fR ATOM.
+.ip \fCconnect2\fR
+This is an ATOM property which defines an ATOM that can be used in making
+links to other RESIDUEs.  In amino acids, the convention is that this is the
+ATOM to which disulphide bridges are made.
+.ip \fCrestype\fR
+This property is a STRING that represents the type of the RESIDUE.
+Currently, it can have one of the following values: \fC"undefined"\fR,
+\fC"solvent"\fR, \fC"protein"\fR, \fC"nucleic"\fR, or \fC"saccharide"\fR.
+Some of the  LEaP commands behave in different ways depending on the type of
+a residue.  For example, the solvate commands require that the solvent
+residues be of type \fC"solvent"\fR. It is important that the proper
+character case be used when defining this property.
+.ip \fCname\fR
+The RESIDUE name is a STRING property.  It is important that the proper
+character case be used when defining this property.
+.sh 4 UNITs
+.pp
+UNITs are the most complex objects within LEaP, and the most important.
+UNITs, when paired with one or more PARMSETs, contain all of the information
+required to perform a calculation using AMBER.  UNITs have the
+following properties which can be changed using the \fCset\fR command:
+.ip \fChead\fR
+.ip \fCtail\fR
+These define the ATOMs within the UNIT that are connected when UNITs are
+joined together using the \fCsequence\fR command or when UNITs are joined
+together with the PDB or PREP file reading commands. The \fCtail\fR ATOM of
+one UNIT is connected to the \fChead\fR ATOM of the next UNIT in any
+sequence. (Note: a "TER card" in a PDB file causes a new UNIT to be
+started.)
+.ip \fCbox\fR
+This property can either be \fCnull\fR, a NUMBER, or a LIST.  The property
+defines the bounding box of the UNIT.  If it is defined as \fCnull\fR then
+no bounding box is defined.  If the value is a single NUMBER then the
+bounding box will be defined to be a cube with each side being NUMBER of
+angstroms across.  If the value is a LIST then it must be a LIST containing
+three numbers, the lengths of the three sides of the bounding box.
+.ip \fCcap\fR
+This property can either be \fCnull\fR or a LIST.  The property defines the
+solvent cap of the UNIT.  If it is defined as \fCnull\fR then no solvent cap
+is defined.  If the value is a LIST then it must contain four numbers, the
+first three define the Cartesian coordinates (X, Y, Z) of the origin of the
+solvent cap in angstroms, the fourth NUMBER defines the radius of the
+solvent cap in angstroms.
+.lp
+Examples of setting the above properties are:
+.(l
+set dipeptide head dipeptide.1.N 
+set dipeptide box { 5.0 10.0 15.0 } 
+set dipeptide cap { 15.0 10.0 5.0 8.0 }
+.)l
+.lp
+The first example makes the amide nitrogen in the first 
+RESIDUE within "dipeptide" the \fChead\fR ATOM. The second example 
+places a rectangular bounding box around the origin 
+with the (X, Y, Z) dimensions 
+of ( 5.0, 10.0, 15.0 ) in angstroms.
+The third example defines a solvent cap centered 
+at ( 15.0, 10.0, 5.0 )
+angstroms with a radius of 8.0 Å.
+\fBNote:\fR the "set cap" command does not actually solvate,
+it just sets an attribute. See the \fCsolvateCap\fR
+command for a more practical case.
+.lp
+UNITs are complex objects that can contain RESIDUEs and ATOMs.  UNITs can be 
+created using the \fCcreateUnit\fR command and modified 
+using the \fCset\fR commands. The contents of a UNIT can be 
+modified using the \fCadd\fR and \fCremove\fR commands.  
+.sh 4 "Complex objects and accessing subobjects"
+.pp
+UNITs and RESIDUEs are complex objects. Among 
+other things, this means that they can contain other objects.
+There is a loose hierarchy of complex objects and what they
+are allowed to contain.  The hierarchy is as follows:
+.ip \(bu
+UNITs can contain RESIDUEs and ATOMs.
+.ip \(bu
+RESIDUEs can contain ATOMs.
+.lp
+The hierarchy is loose because it does not forbid UNITs from 
+containing ATOMs directly.  However, the convention that has 
+evolved within LEaP is to have UNITs directly 
+contain RESIDUEs which directly contain ATOMs. 
+.lp
+Objects that are contained within other objects can be accessed 
+using dot "." notation. An example would be a UNIT which 
+describes a dipeptide ALA-PHE. The UNIT contains two 
+RESIDUEs each of which contain several ATOMs. 
+If the UNIT is referenced (named) by the variable 
+\fCdipeptide\fR, then the RESIDUE named ALA can be accessed 
+in two ways. The user may type one of the following commands 
+to display the contents of the RESIDUE:
+.(l
+desc dipeptide.ALA
+desc dipeptide.1
+.)l
+.lp
+The first translates to "some RESIDUE named \fCALA\fR within the UNIT named
+\fCdipeptide\fR". The second form translates as "the RESIDUE with sequence
+number \fC1\fR within the UNIT named \fCdipeptide\fR". The second form is
+more useful because every subobject within an object is guaranteed to have a
+unique sequence number. If the first form is used and there is more than one
+RESIDUE with the name \fCALA\fR, then an arbitrary residue with the name
+\fCALA\fR is returned. To access ATOMs within RESIDUEs, the notation to use
+is as follows:
+.(l
+desc dipeptide.1.CA
+desc dipeptide.1.3
+.)l
+.lp
+Assuming that the ATOM with the name \fCCA\fR has a sequence number \fC3\fR,
+then both of the above commands will print a description of the
+$alpha$\-carbon of RESIDUE \fCdipeptide.ALA\fR or \fCdipeptide.1\fR.  The
+reader should keep in mind that \fCdipeptide.1.CA\fR is the ATOM, an object,
+contained within the RESIDUE named \fCALA\fR within the variable
+\fCdipeptide\fR.  This means that \fCdipeptide.1.CA\fR can be used as an
+argument to any command that requires an ATOM as an argument. However
+\fCdipeptide.1.CA\fR is not a variable and cannot be used on the left hand
+side of an assignment statement.
+.pp
+In order to further illustrate the concepts of UNITs, RESIDUEs, and ATOMs,
+we can examine the log file from a LEaP session.  Part of this log file is
+printed below.
+.(l
+> loadOff all_amino94.lib
+> desc GLY
+UNIT name: GLY
+Head atom: .R<GLY 1>.A<N 1>
+Tail atom: .R<GLY 1>.A<C 6>
+Contents:
+R<GLY 1> 
+> desc GLY.1 
+RESIDUE name: GLY 
+RESIDUE sequence number: 1 
+RESIDUE PDB sequence number: 0
+Type: protein 
+Connection atoms: 
+ Connect atom 0: A<N 1> 
+ Connect atom 1: A<C 6> 
+Contents:  
+A<N 1> 
+A<HN 2> 
+A<CA 3> 
+A<HA2 4> 
+A<HA3 5> 
+A<C 6> 
+A<O 7> 
+> desc GLY.1.3 
+ATOM 
+Normal                 Perturbed
+Name:    CA            CA   
+Type:    CT            CT   
+Charge:  -0.025        0.000
+Element: C             (not affected by pert)
+Atom position: 3.970048, 2.845795, 0.000000
+Atom velocity: 0.000000, 0.000000, 0.000000
+  Bonded to .R<GLY 1>.A<N 1> by a single bond.
+  Bonded to .R<GLY 1>.A<HA2 4> by a single bond.
+  Bonded to .R<GLY 1>.A<HA3 5> by a single bond.
+  Bonded to .R<GLY 1>.A<C 6> by a single bond.
+.)l
+.lp
+In this example, command lines are prefaced by ">" 
+and the LEaP program output has no such character preface.
+The first command,
+.(l
+> loadOff all_amino94.lib
+.)l
+.lp
+loads an OFF library containing amino acids. The second command,
+.(l
+> desc GLY
+.)l
+.lp
+allows us to examine the contents of the amino acid UNIT, 
+GLY.  The UNIT contains one RESIDUE which is 
+named GLY and this RESIDUE is the first residue in the UNIT 
+(\fCR<GLY 1>\fR).
+In fact, it is also the only RESIDUE in the UNIT.
+The \fChead\fR and \fCtail\fR ATOMs of the UNIT are defined
+as the N- and C-termini, respectively.  The
+\fCbox\fR and \fCcap\fR UNIT properties are defined as "null".  If
+these latter two properties had values other than "null", the information
+would have been included in the output of the \fCdesc\fR command.
+.pp
+The next command line in the session,
+.(l
+> desc GLY.1
+.)l
+.lp
+enables us to examine the first residue in the GLY UNIT.  This RESIDUE is
+named GLY and its residue type is that of a \fCprotein\fR.  The
+\fCconnect0\fR ATOM (N) is the same as the UNITs' \fChead\fR ATOM and the
+\fCconnect1\fR ATOM (C) is the same as the UNITs' \fCtail\fR ATOM.  There
+are seven ATOM objects contained within the RESIDUE GLY in the UNIT GLY.
+.pp
+Finally, let us look at one of the ATOMs in the GLY RESIDUE.
+.(l
+> desc GLY.1.3
+.)l
+.lp
+The ATOM has a name (CA) that is unique among the atoms of the residue.  The
+AMBER force field atom type for CA is CT.  The type of element, atomic point
+charge, and Cartesian coordinates for this ATOM have been defined along with
+its bonding attributes.  Other force field parameters, such as the van der
+Waals well depth, are obtained from PARMSETs.
+
+.if t .he 'LEaP'Using LEap with AMBER'Page %'
+.sp
+.sh 2 "Basic instructions for using LEaP with NAB"
+.pp
+This section gives an overview of how LEaP is most commonly used.  Detailed
+descriptions of all the commands are given in the following section
+.sh 3 "Building a Molecule For Molecular Mechanics"
+.pp
+In order to prepare a molecule within LEaP for AMBER, three basic tasks need
+to be completed.  
+.np
+Any needed UNIT or PARMSET objects must be loaded;
+.np
+The molecule must be constructed within LEaP;
+.np
+The user must output topology and coordinate 
+files from LEaP to use in AMBER. 
+.lp
+The most typical command sequence is the following:
+.(l
+source leaprc.ff94            \fIload a force field\fC
+x = loadPdb trypsin.pdb       \fIload in a structure\fC
+   ....                       \fIadd in cross-links, solvate, etc.\fC
+set default OldPrmtopFormat on \fINAB uses an older version format\fC
+saveAmberParm x prmtop prmcrd \fIsave files for sander or gibbs\fC
+.)l
+.lp
+There are a number of variants of this:
+.np
+Although \fIloadPdb\fR is by far the most common way to enter a structure,
+one might use \fIloadOff\fR, or
+\fIloadAmberPrep\fR, or use the \fIzmat\fR command to build a molecule from
+a z-matrix.  See the Commands section below for desciptions of these
+options.  For case where you do not have a starting structure (in
+the form of a pdb file) LEaP can be used to build the molecule; you will
+find, however, that this is not always as easy as it might be.  Many
+experienced Amber users turn to other (commerical and non-commerical)
+programs to create their initial structures.
+.np
+Be very attentive to any errors produced in the \fIloadPdb\fR step; these
+generally mean that LEaP has mis-read the file.  A general rule of thumb is
+to keep editing your input pdb file until LEaP stops complaining.
+It is often convenient to use the \fIaddPdbAtomMap\fR or \fIaddPdbResMap\fR
+commands to make systematic changes from the names in your pdb files to
+those in the Amber topology files; see the \fIleaprc\fR files for examples
+of this.
+.np
+The \fIsaveAmberParm\fR command cited above is appropriate for calculations
+that do not compute free energies; for the latter you will need to use
+\fIsaveAmberParmPert\fR.  For polarizable force fields, you will need to
+add \fIPol\fR to the above commands (see the Commands section, below.)
+.sh 3 "Amino Acid Residues"
+.pp
+The accompanying table shows the amino acid UNITs and their aliases 
+are defined  in the LEaP libraries.  
+.(z
+.TS
+center box;
+ci c
+l  l .
+Group or residue	Residue Name, Alias
+_
+Acetyl beginning group	ACE
+Amine ending group	NHE
+N-methylamine ending group	NME
+Alanine	ALA
+Arginine	ARG
+Asparagine	ASN
+Aspartic acid	ASP
+Aspartic acid--protonated	ASH
+Cysteine	CYS
+Cystine, S--S crosslink	CYX
+Glutamic acid	GLU
+Glutamic acid--protonated	GLH
+Glutamine	GLN
+Glycine	GLY
+Histidine, delta H	HID
+Histidine, epsilon H	HIE
+Histidine, protonated	HIP
+Isoleucine	ILE
+Leucine	LEU
+Lysine	LYS
+Methionine	MET
+Phenylalanine	PHE
+Proline	PRO
+Serine	SER
+Threonine	THR
+Tryptophan	TRP
+Tyrosine	TYR
+Valine	VAL
+.TE
+.)z
+.pp
+For each of the amino acids found in the LEaP
+libraries, there has been created an n-terminal and a c-terminal analog.
+The n-terminal amino acid UNIT/RESIDUE names and aliases are prefaced by the
+letter N (e.g. NALA) and the c-terminal amino acids by the letter C (e.g.
+CALA}.  If the user models a peptide or protein within LEaP, they may choose
+one of three ways to represent the terminal amino acids.  The user may use
+1) standard amino acids, 2) protecting groups (ACE/NME), or 3) the charged
+c- and n-terminal amino acid UNITs/RESIDUEs.  If the standard amino acids
+are used for the terminal residues, then these residues will have incomplete
+valences.  These three options are illustrated below:
+.(l
+{ ALA VAL SER PHE }
+{ ACE ALA VAL SER PHE NME }
+{ NALA VAL SER CPHE }
+.)l
+The default for loading from PDB files is to use n- and c-terminal residues;
+this is established by the \fCaddPdbResMap\fR command in the default
+\fCleaprc\fR files. To force incomplete valences with the standard residues,
+one would have to define a sequence ("\fC x = { ALA VAL SER PHE }\fR") and
+use \fCloadPdbUsingSeq\fR, or use \fCclearPdbResMap\fR to completely remove
+the mapping feature.
+.pp
+Histidine can exist either as the protonated species or as a neutral species
+with a hydrogen at the delta or epsilon position.  For this reason, the
+histidine UNIT/RESIDUE name is either HIP, HID, or HIE (but not HIS).  The
+default "leaprc" file assigns the name HIS to HID.  Thus, if a PDB file is
+read that contains the residue HIS, the residue will be assigned to the HID
+UNIT object.  This feature can be changed within one's own "leaprc" file.
+.pp
+The AMBER force fields also differentiate between the residue cysteine (CYS)
+and the similar residue which participates in disulfide bridges, cystine
+(CYX).  The user will have to explicitly define, using the \fCbond\fR
+command, the disulfide bond for a pair of cystines, as this information is
+not read from the PDB file.  In addition, the user will need to load the PDB
+file using the \fCloadPdbUsingSeq\fR command, substituting CYX for CYS in
+the sequence wherever a disulfide bond will be created.
+.sh 3 "Nucleic Acid Residues"
+.pp
+The following are defined for the 1994 force field.
+.TS
+center box;
+ci c
+l  l .
+Group or residue	Residue Name, Alias
+_
+Adenine	DA,RA
+Thymine	DT
+Uracil	RU
+Cytosine	DC,RC
+Guanine	DG,RG
+.TE
+.pp
+The "D" or "R" prefix can be used to distinguish between deoxyribose and
+ribose units; with the default \fCleaprc\fR file, ambiguous residues are
+assumed to be deoxy.  Residue names like "DA" can be followed by a "5" or
+"3" ("DA5", "DA3") for residues at the ends of chains; this is also the
+default established by \fCaddPdbResMap\fR, even if the "5" or "3" are not 
+added in the PDB file. The "5" and "3" residues are "capped" by a hydrogen;
+the plain and "3" residues include a "leading" phosphate group.
+Neutral residues capped by hydrogens are end in "N," such as "DAN."
+.sh 3 "Miscellaneous Residues"
+.TS
+center box;
+ci c
+l  l .
+Miscellaneous Residue	unit/residue name
+_
+TIP3P water molecule	TP3
+TIP4P water model	TP4
+TIP5P water model	TP5
+SPC/E water model	SPC
+Cesium cation	Cs+
+Potassium cation	K+
+Rubidium cation	Rb+ 
+Lithium cation	Li+
+Sodium cation	Na+ or IP
+Chlorine	Cl- or IM
+Large cation	IB 
+.TE
+.lp
+"IB" represents a solvated monovalent cation (say, sodium) for use in vacuum
+simulations.  The cation UNITs are found in the files "ions91.lib" and
+"ions94.lib", while the water UNITs are in the file "solvents.lib".  The
+\fCleaprc\fR files assign the variables WAT and HOH to the TP3 UNIT
+found in the OFF library file.  Thus, if a PDB file is read and that file
+contains either the residue name HOH or WAT, the TP3 UNIT will be
+substituted.  See Chapter 3 for a discussion of how to use other water
+models.
+.pp
+A periodic box of 216 TIP3P waters (WATBOX216) is provided in the file
+"solvents.lib".  The box measures 18.774 angstroms on a side.  This box of
+waters has been equilibrated by a Monte Carlo simulation.  It is the UNIT
+that should be used to solvate systems with TIP3P water molecules within
+LEaP.  It has been provided by W. L. Jorgensen.  Boxes are also available
+for chloroform, methanol, and N-methylacetamide; these are described in
+Chapter 2.
+
+.if t .he 'LEaP'Commands'Page %'
+.sp
+.nr ii 0.5i
+.sh 2 Commands
+.pp
+The following is a description of the commands that can be accessed using
+the command line interface in \fItleap\fR, or through the command line editor in
+\fIxleap\fR.  Whenever an argument in a command line definition is enclosed in
+brackets ([arg]), then that argument is optional.  When examples are shown,
+the command line is prefaced by "> ", and the program output is shown
+without this character preface.
+.pp
+Some commands that are almost never used have been removed from this
+description to save space.  You can use the "help" facility to obtain
+information about these commands; most only make sense if you understand
+what the program is doing behind the scenes.
+.sh 3 add
+.ix add
+.ip
+\fCadd   a  b\fR
+.(l
+UNIT/RESIDUE/ATOM  \fIa,b\fR
+.)l
+.ip
+Add the object \fIb\fR to the object \fIa\fR. 
+This command is used to place ATOMs within
+RESIDUEs, and RESIDUEs within UNITs.
+This command will work only if \fIb\fR is not contained 
+by any other object.
+.ip
+The following example illustrates both the \fCadd\fR command 
+and the way the tip3p water molecule 
+is created for the LEaP distribution tape.
+.(l
+> h1 = createAtom H1 HW  0.417  
+> h2 = createAtom H2 HW  0.417 
+> o  = createAtom O  OW -0.834  
+>  
+> set h1 element H  
+> set h2 element H  
+> set o  element O  
+>   
+> r = createResidue TIP3  
+> add r h1  
+> add r h2  
+> add r o  
+>   
+> bond h1 o  
+> bond h2 o  
+> bond h1 h2  
+>   
+> TIP3 = createUnit TIP3  
+>   
+> add TIP3 r  
+> set TIP3.1 restype solvent  
+> set TIP3.1 imagingAtom TIP3.1.O  
+>   
+> zMatrix TIP3 {  
+>       { H1 O 0.9572 }  
+>       { H2 O H1 0.9572 104.52 }  
+> }  
+>   
+> saveOff TIP3 water.lib  
+Saving TIP3.  
+Building topology.  
+Building atom parameters.
+.)l
+.sh 3 addAtomTypes
+.ix addAtomTypes
+.ip
+\fCaddAtomTypes { { type element hybrid } { ... } ... }\fR
+.(l
+STRING	type
+STRING	element
+STRING	hybrid
+.)l
+Define element and hybridization for force field atom types. This command
+for the standard force fields can be seen in the default \fCleaprc\fR files.
+The STRINGs are most safely rendered using quotation marks. If atom types
+are not defined, confusing messages about hybridization can result when
+loading PDB files.
+.sh 3 addIons
+.ix addIons
+.ip
+\fCaddIons unit ion1 numIon1 [ion2 numIon2]\fR
+.(l
+UNIT	unit
+UNIT	ion1
+NUMBER	numIon1
+UNIT	ion2
+NUMBER	numIon2
+.)l
+Adds counterions in a shell around \fIunit\fR using a Coulombic potential on
+a grid. If \fInumIon1\fR is 0, then the \fIunit\fR is neutralized.  In this
+case, \fInumIon1\fR must be opposite in charge to \fIunit\fR and
+\fInumIon2\fR cannot be specified.
+If solvent is present, it is ignored in the charge
+and steric calculations, and if an ion has a steric conflict with a solvent
+molecule, the ion is moved to the center of said molecule, and the latter is
+deleted. (To avoid this behavior, either solvate _after_ addions, or use
+addIons2.) Ions must be monoatomic.  This procedure is not guaranteed to
+globally minimize the electrostatic energy. When neutralizing
+regular-backbone nucleic acids, the first cations will generally be placed
+between phosphates, leaving the final two ions to be placed somewhere around
+the middle of the molecule.The default grid resolution is 1 Å, extending
+from an inner radius of  ( maxIonVdwRadius + maxSoluteAtomVdwRadius )  to
+an outer radius 4 Å beyond. A distance-dependent dielectric is used
+for speed. 
+.sh 3 addIons2
+.ix addIons2
+.ip
+\fCaddIons2 unit ion1 numIon1 [ion2 numIon2]\fR
+.(l
+UNIT	unit
+UNIT	ion1
+NUMBER	numIon1
+UNIT	ion2
+NUMBER	numIon2
+.)l
+Same as addIons, except solvent and solute are treated the same.
+.sh 3 addPath
+.ix   addPath
+.ip
+\fCaddPath path\fR
+.(l
+STRING	path
+.)l
+Add the directory in \fIpath\fR to the list of directories that
+are searched for files specified by other commmands.
+The following example illustrates this command.
+.(l
+> addPath /disk/howard 
+/disk/howard added to file search path.
+.)l
+After the above command is entered, the program will search for a file in
+this directory if a file is specified in a command.  Thus, if a user has a
+library named "/disk/howard/rings.lib" and the user wants to load that
+library, one only needs to enter load rings.lib and not load
+/disk/howard/rings.lib.
+.sh 3 addPdbAtomMap
+.ix   addPdbAtomMap
+.ip
+\fCaddPdbAtomMap list\fR
+.(l
+LIST	list
+.)l
+The atom Name Map is used to try to map atom names read from PDB files to
+atoms within residue UNITs when the atom name in the PDB file does not match
+an atom in the residue.  This enables PDB files to be read in without
+extensive editing of atom names.  Typically, this command is placed in the
+LEaP start-up file, "leaprc", so that assignments are made at the beginning
+of the session.  The LIST is a LIST of LISTs.  Each sublist contains  two
+entries to add to the Name Map.  Each entry has the form:
+.(l
+{ string string }
+.)l
+where the first \fIstring\fR is the name within the PDB file, 
+and the second \fIstring is the name in the residue UNIT.
+.sh  3 addPdbResMap
+.ix    addPdbResMap
+.ip
+\fCaddPdbResMap list\fR
+.(l
+LIST	list
+.)l
+The Name Map is used to map RESIDUE names read from PDB files to variable
+names within LEaP.  Typically, this command is placed in the LEaP start-up
+file, "leaprc", so that assignments are made at the beginning of the
+session.  The LIST is a LIST of LISTs.  Each sublist contains  two or three
+entries to add to the Name Map.  Each entry has the form:
+.(l
+{ double string string }
+.)l
+where \fIdouble\fR can be 0 or 1, the first string is the name within the
+PDB file, and the second string is the variable name to which the first
+string will be mapped.  To illustrate, the following is part of the Name Map
+that exists when LEaP is started from the "leaprc" file included in the
+distribution tape:
+.(l
+  ADE  -->  DADE
+  :  :
+ 0 ALA  -->  NALA
+ 0 ARG  -->  NARG
+    :  :
+ 1 ALA  -->  CALA
+ 1 ARG  -->  CARG
+    :  :
+ 1 VAL  -->  CVAL
+.)l
+Thus, the residue \fCALA\fR will be mapped to 
+\fCNALA\fR if it is the N-terminal residue 
+and \fCCALA\fR if it is found at the C-terminus.  
+The above Name Map was produced using the following 
+(edited) command line:
+.(l
+> addPdbResMap {
+> { 0 ALA NALA }  { 1 ALA CALA }
+> { 0 ARG NARG } { 1 ARG CARG }
+          :    :
+> { 0 VAL NVAL }  { 1 VAL CVAL }
+>
+          :  :
+> { ADE DADE }
+          :  :
+> }
+.)l
+.sh  3 alias
+.ix    alias
+.ip
+\fCalias [ string1 [ string2 ] ]\fR
+.(l
+STRING	string1
+STRING	string2
+.)l
+This command will add or remove an entry to the Alias Table or list entries
+in the Alias Table.  If both strings are present, then string1 becomes the
+alias to string2, the original command.  If only one string is used as an
+argument, then this string is removed from the Alias Table.  If no arguments
+are given with the command, the current aliases stored in the Alias Table
+will be listed.
+.ip
+The proposed alias is first checked for conflict with the LEaP commands and
+it is rejected if a conflict is found.  A proposed alias will replace an
+existing alias with a warning being issued.  The alias can stand for more
+than a single word, but also as an entire string so the user can quickly
+repeat entire lines of input.
+.sh  3 bond
+.ix    bond
+.ip
+\fCbond atom1 atom2 [ order ]\fR
+.(l
+ATOM	atom1
+ATOM	atom2
+STRING	order
+.)l
+Create a bond between atom1 and atom2. Both of 
+these ATOMs must be contained by the same UNIT. By 
+default, the bond will be a single bond.  By specifying
+"-", "=", "#", or ":" as the optional argument, 
+\fIorder\fR, the user can specify a single, double, 
+triple, or aromatic bond, respectively.  Example:
+.(l
+bond trx.32.SG trx.35.SG
+.)l
+.sh  3 bondByDistance
+.ix    bondByDistance
+.ip
+\fCbondByDistance container [ maxBond ]\fR
+.(l
+CONT	container
+NUMBER	maxBond
+.)l
+Create single bonds between all ATOMs 
+in container that are within maxBond 
+angstroms of each other.  If maxBond is 
+not specified then a default distance will be used.
+This command is especially useful in building 
+molecules.  Example:
+.(l
+bondByDistance alkylChain
+.)l
+.sh  3 check
+.ix    check
+.ip
+\fCcheck unit [ parms ]\fR
+.(l
+UNIT	unit
+PARMSET	parms
+.)l
+This command can be used to check the UNIT for 
+internal inconsistencies that could cause 
+problems when performing calculations.  This is a 
+very useful command that should be used before a UNIT is saved 
+with \fIsaveAmberParm or its variants. Currently it checks for the 
+following possible problems:
+.(l
+\(bu	long bonds
+\(bu	short bonds
+\(bu	non-integral total charge of the UNIT.
+\(bu	missing force field atom types
+\(bu	close contacts (< 1.5 Å) between nonbonded ATOMs.  
+.)l
+The user may collect any missing molecular mechanics 
+parameters in a PARMSET for subsequent 
+editing.  In the following example, the alanine 
+UNIT found in the amino acid 
+library has been examined by the \fIcheck command:
+.(l
+> check ALA 
+Checking 'ALA'.... 
+Checking parameters for unit 'ALA'. 
+Checking for bond parameters. 
+Checking for angle parameters. 
+Unit is OK.
+.)l
+.sh  3 combine
+.ix    combine
+.ip
+\fCvariable = combine  list\fR
+.(l
+object	variable
+LIST	list
+.)l
+Combine the contents of the UNITs within list into 
+a single UNIT. The new UNIT is placed in variable. 
+This command is similar to the \fIsequence\fR command 
+except it does not link the ATOMs of the 
+UNITs together.  In the following example, the input 
+and output should be compared with the example 
+given for the \fIsequence\fR command.
+.(l
+> tripeptide = combine { ALA GLY PRO } 
+Sequence: ALA 
+Sequence: GLY 
+Sequence: PRO 
+> desc tripeptide 
+UNIT name: ALA     !! bug: this should be tripeptide!
+Head atom: .R<ALA 1>.A<N 1> 
+Tail atom: .R<PRO 3>.A<C 13> 
+Contents:  
+R<ALA 1> 
+R<GLY 2> 
+R<PRO 3> 
+.)l
+.sh  3 copy
+.ix    copy
+.ip
+\fCnewvariable = copy  variable\fR
+.(l
+object	newvariable
+object	variable
+.)l
+Creates an exact duplicate of the object variable.  
+Since newvariable is not pointing to the same 
+object as variable, changing the contents of one 
+object will not alter the other object.  Example:
+.(l
+> tripeptide = sequence { ALA GLY PRO } 
+> tripeptideSol = copy tripeptide 
+> solvateBox tripeptideSol WATBOX216 8 2
+.)l
+In the above example, tripeptide is a separate object 
+from tripeptideSol and is not solvated.  Had 
+the user instead entered
+.(l
+> tripeptide = sequence { ALA GLY PRO } 
+> tripeptideSol = tripeptide 
+> solvateBox tripeptideSol WATBOX216 8 2
+.)l
+then both tripeptide and tripeptideSol would be 
+solvated since they would both point to the same 
+object.
+.sh  3 createAtom
+.ix    createAtom
+.ip
+\fCvariable = createAtom  name type charge\fR
+.(l
+ATOM	variable
+STRING	name
+STRING	type
+NUMBER	charge
+.)l
+Return a new and empty ATOM with name, 
+type, and charge as its atom name, 
+atom type, and electrostatic point charge.
+(See the \fIadd\fR command for an example of 
+the \fIcreateAtom\fR command.)
+.sh  3 createParmset
+.ix    createParmset
+.ip
+\fCvariable = createParmset  name\fR
+.(l
+PARMSET	variable
+STRING	name
+.)l
+Return a new and empty PARMSET with the 
+name "name".
+.(l
+> newparms = createParmset pertParms
+.)l
+.sh  3 createResidue
+.ix    createResidue
+.ip
+\fCvariable = createResidue  name\fR
+.(l
+RESIDUE	variable
+STRING	name
+.)l
+Return a new and empty RESIDUE with 
+the name "name".  (See the 
+\fIadd\fR command for an example 
+of the \fIcreateResidue\fR command.)
+.sh  3 createUnit
+.ix    createUnit
+.ip
+\fCvariable = createUnit  name\fR
+.(l
+UNIT	variable
+STRING	name
+.)l
+Return a new and empty UNIT  with the name 
+"name".  (See the \fIadd\fR command for an example of 
+the \fIcreateUnit\fR command.)
+.sh  3 deleteBond
+.ix    deleteBond
+.ip
+\fCdeleteBond atom1 atom2\fR
+.(l
+ATOM	atom1
+ATOM	atom2
+.)l
+Delete the bond between the ATOMs atom1 and 
+atom2. If no bond exists, an error will be 
+displayed.
+.sh  3 desc
+.ix    desc
+.ip
+\fCdesc variable\fR
+.(l
+object	variable
+.)l
+Print a description of the object.  In the following 
+example, the alanine UNIT found in the amino 
+acid library has been examined by the \fIdesc\fR command:
+.(l
+> desc ALA 
+UNIT name: ALA 
+Head atom: .R<ALA 1>.A<N 1> 
+Tail atom: .R<ALA 1>.A<C 9> 
+Contents: 
+R<ALA 1>
+.)l
+Now, the \fIdesc\fR command is used to examine the 
+first residue (1) of the alanine UNIT:
+.(l
+> desc ALA.1 
+RESIDUE name: ALA 
+RESIDUE sequence number: 1 
+Type: protein 
+Connection atoms: 
+Connect atom 0: A<N 1> 
+Connect atom 1: A<C 9> 
+Contents: 
+A<N 1> 
+A<HN 2> 
+A<CA 3> 
+A<HA 4> 
+A<CB 5> 
+A<HB1 6> 
+A<HB2 7> 
+A<HB3 8> 
+A<C 9> 
+A<O 10>
+.)l
+Next, we illustrate the desc command by examining 
+the ATOM \fIN\fR of the first residue 
+(1) of the alanine UNIT:
+.(l
+> desc ALA.1.N 
+ATOM 
+Name:    N 
+Type:    N 
+Charge:  -0.463 
+Element: N 
+Atom flags: 20000|posfxd- posblt- posdrn- sel- pert-
+notdisp- tchd- posknwn+ int - nmin- nbld- 
+Atom position: 3.325770, 1.547909, -0.000002 
+Atom velocity: 0.000000, 0.000000, 0.000000 
+Bonded to .R<ALA 1>.A<HN 2> by a single bond. 
+Bonded to .R<ALA 1>.A<CA 3> by a single bond.
+.)l
+Since the N ATOM is also the first 
+atom of the ALA residue, the following 
+command will give the same output as the 
+previous example:
+.(l
+> desc ALA.1.1 
+.)l
+.sh  3 edit
+.ix    edit
+.ip
+\fCedit unit\fR
+.(l
+UNIT	unit
+.)l
+In xleap this command creates a Unit Editor that 
+contains the UNIT unit. The user can 
+view and edit the contents of the UNIT using the mouse. 
+The command causes a copy of the object to 
+be edited.  If the object that the user wants to 
+edit is "null", then the edit command assumes that 
+the user wants to edit a new UNIT with a 
+single RESIDUE within it.  PARMSETs can also be edited. In tleap this 
+command prints an error message.
+.sh  3 groupSelectedAtoms
+.ix    groupSelectedAtoms
+.ip
+\fCgroupSelectedAtoms unit name\fR
+.(l
+UNIT	unit
+STRING	name
+.)l
+Create a group within unit with the name, 
+"name", using all of the ATOMs within 
+the UNIT that are selected.  If the group has 
+already been defined then
+overwrite the old group.  The \fIdesc\fR 
+command can be used to list groups.
+Example:
+.(l
+groupSelectedAtoms TRP sideChain
+.)l
+An expression like "TRP@sideChain" returns a 
+LIST, so any commands that require LIST 's can 
+take advantage of this notation.  After 
+assignment, one can access groups using the "@" 
+notation.  Examples:
+.(l
+select TRP@sideChain
+.)l
+.(l
+center TRP@sideChain
+.)l
+The latter example will calculate the center 
+of the atoms in the "sideChain" group.  
+(see the \fIselect\fR command for a more 
+detailed example.)
+.sh  3 help
+.ix    help
+.ip
+\fChelp [string]\fR
+.(l
+STRING	string
+.)l
+This command prints a description of the command in 
+string. If the STRING is not given then 
+a list of help topics is provided.
+.sh  3 impose
+.ix    impose
+.ip
+\fCimpose unit seqlist internals\fR
+.(l
+UNIT	unit
+LIST	seqlist
+LIST	internals
+.)l
+The impose command allows the user to impose 
+internal coordinates on the UNIT. The list of 
+RESIDUEs to impose the internal coordinates 
+upon is in seqlist. The internal coordinates 
+to impose are in the LIST internals. 
+.ip
+The command works by looking into each 
+RESIDUE within the UNIT that is listed 
+in the seqlist argument and attempts 
+to apply each of the internal coordinates 
+within internals. The seqlist 
+argument is a LIST of NUMBERS that represent 
+sequence numbers or ranges of sequence numbers. 
+Ranges of sequence numbers are represented 
+by two element LISTs that contain the first 
+and last sequence number in the range. The user 
+can specify sequence number ranges
+that are larger than what is found in the UNIT. 
+For example, the range { 1 999 } represents 
+all RESIDUEs in a 200 RESIDUE UNIT.
+.ip
+The internals argument is a LIST of LISTs. 
+Each sublist contains a sequence of ATOM names 
+which are of type STRING followed by the 
+value of the internal coordinate. An example of the 
+impose command would be:
+.(l
+impose peptide { 1 2 3 } { 
+{ N CA C N -40.0 } 
+{ C N CA C -60.0 } 
+}
+.)l
+This would cause the RESIDUE with sequence 
+numbers 1, 2, and 3 within the 
+UNIT peptide to 
+assume an alpha helical conformation.  The command
+.(l
+impose peptide { 1 2 { 5 10 } 12 } {
+ { CA CB 5.0 } }
+.)l
+will impose on the residues with sequence numbers 
+1, 2, 5, 6, 
+7, 8, 9, 10, and 12 
+within the UNIT peptide a bond length of 5.0 
+angstroms between the alpha and beta carbons. RESIDUEs without
+an ATOM named CB (like glycine) will be unaffected.
+.ip
+Three types of conformational change are supported: 
+bond length changes, bond angle 
+changes, and torsion angle changes. If the 
+conformational change involves a torsion angle, 
+then all dihedrals around the central pair of 
+atoms are rotated. The entire list of internals are 
+applied to each RESIDUE.
+.sh  3 list
+.ix    list
+.ip
+List all of the variables currently defined.
+To illustrate, the following (edited) output 
+shows the variables defined when LEaP is 
+started from the leaprc file included in 
+the distribution tape:
+.(l
+> list
+A
+ACE 	 ALA
+ARG 	 ASN
+ : 	 :
+VAL 	 W
+WAT 	 Y
+.)l
+.sh  3 loadAmberParams
+.ix    loadAmberParams
+.ip
+\fCvariable = loadAmberParams  filename\fR
+.(l
+PARMSET	variable
+STRING	filename
+.)l
+Load an AMBER format parameter set file and place it in variable. 
+All interactions defined in the parameter set 
+will be contained within variable. This 
+command causes the loaded parameter set to be included 
+in LEaP 's list of parameter sets that are searched when 
+parameters are required.  General proper and 
+improper torsion parameters are 
+modified during the command execution with the LEaP general
+type "?" replacing the AMBER general type "X".
+.(l
+> parm91 = loadAmberParams parm91X.dat
+> saveOff parm91 parm91.lib
+Saving parm91.
+.)l
+.sh  3 loadAmberPrep
+.ix    loadAmberPrep
+.ip
+\fCloadAmberPrep filename [ prefix ]\fR
+.(l
+STRING	filename
+STRING	prefix
+.)l
+This command loads an AMBER PREP input file. For 
+each residue that is loaded, a new UNIT is constructed 
+that contains a single RESIDUE and a variable is created 
+with the same name as the name of the residue within the  
+PREP file. If the optional argument prefix is 
+provided it will be prefixed to each variable name; 
+this feature is used to prefix UATOM residues, 
+which have the same names as AATOM residues with 
+the string "U" to distinguish them.
+Let us imagine that the following AMBER PREP 
+input file exists:
+.(l
+   0  0  2 
+     Crown Fragment A 
+cra.res 
+CRA  INT 0 
+CORRECT  NOMIT DU  BEG 
+0.0 
+1  DUMM  DU M  0  0  0     0.      0.      0. 
+2  DUMM  DU M  0  0  0     1.000   0.      0. 
+3  DUMM  DU M  0  0  0     1.000  90.      0. 
+4  C1    CT M  0  0  0     1.540 112.    169. 
+5  H1A   HC E  0  0  0     1.098 109.47  -110.0 
+6  H1B   HC E  0  0  0     1.098 109.47   110.0 
+7  O2    OS M  0  0  0     1.430 112.    -72. 
+8  C3    CT M  0  0  0     1.430 112.    169. 
+9  H3A   HC E  0  0  0     1.098 109.47  -49.0 
+10 H3B   HC E  0  0  0     1.098 109.47   49.0 
+ 
+CHARGE 
+ 0.2442  -0.0207  -0.0207  -0.4057  0.2442 
+ -0.0207  -0.0207 
+ 
+DONE 
+STOP
+.)l
+This fragment can be loaded into LEaP 
+using the following command:
+.(l
+> loadAmberPrep cra.in
+Loaded UNIT: CRA
+.)l
+.sh  3 loadOff
+.ix    loadOff
+.ip
+\fCloadOff filename\fR
+.(l
+STRING	filename
+.)l
+This command loads the OFF library within the file 
+named filename. All UNITs and PARMSETs 
+within the library will be loaded. The objects 
+are loaded into LEaP under the variable names 
+the objects had when they were saved. Variables 
+already in existence that have the same 
+names as the objects being loaded will be overwritten.
+Any PARMSETs loaded using this command are included in 
+LEaP 's library of PARMSETs that is searched 
+whenever parameters are required (The old AMBER
+format is used for PARMSETs rather than the OFF 
+format in the default configuration).
+Example command line:
+.(l
+> loadOff parm91.lib 
+Loading library: parm91.lib 
+Loading: PARAMETERS
+.)l
+.sh  3 loadMol2
+.ix    loadMol2
+.ip
+\fCvariable = loadMol2 filename\fR
+.(l
+STRING  filename
+object  variable
+.)l
+Load a Sybyl MOL2 format file in a UNIT.  This command is very much
+like \fIloadOff\fR, except that it only creates a single UNIT.
+.sh  3 loadPdb
+.ix    loadPdb
+.ip
+\fCvariable = loadPdb filename\fR
+.(l
+STRING	filename
+object	variable
+.)l
+Load a Protein Databank format file with the 
+file name filename. The sequence numbers 
+of the RESIDUEs will be determined from the order of 
+residues within the PDB file ATOM records. 
+This function will search the variables currently 
+defined within LEaP for variable 
+names that map to residue names within the ATOM 
+records of the PDB file.  If a matching variable 
+name is found then the contents of the variable are 
+added to the UNIT that will contain the structure 
+being loaded from the PDB file. Adding the 
+contents of the matching UNIT into 
+the UNIT being constructed means that the contents 
+of the matching UNIT are copied into the UNIT 
+being built and that a bond is created between 
+the connect0 ATOM of the matching UNIT 
+and the connect1 ATOM of the UNIT being built. 
+The UNITs are combined in the same way UNITs are combined
+using the sequence command.
+As atoms are read from the ATOM records their 
+coordinates are written into the correspondingly 
+named ATOMs within the UNIT being built. If 
+the entire residue is read and it is found that 
+ATOM coordinates are missing, then external 
+coordinates are built from the internal coordinates 
+that were defined in the matching UNIT. 
+This allows LEaP to build coordinates for hydrogens and lone-pairs
+which are not specified in PDB files.
+.(l
+> crambin = loadPdb 1crn 
+Loading PDB file 
+Matching PDB residue names to LEaP variables. 
+Mapped residue THR, term: 0, seq. number: 0 to: NTHR. 
+Residue THR, term: M, seq. number: 1 was not
+found in name map. 
+Residue CYS, term: M, seq. number: 2 was not
+found in name map. 
+Residue CYS, term: M, seq. number: 3 was not
+found in name map. 
+Residue PRO, term: M, seq. number: 4 was not
+found in name map. 
+:               :               : 
+Residue TYR, term: M, seq. number: 43 was not
+found in name map. 
+Residue ALA, term: M, seq. number: 44 was not
+found in name map. 
+Mapped residue ASN, term: 1, seq. number: 45 to: CASN. 
+Joining NTHR - THR 
+Joining THR - CYS 
+Joining CYS - CYS 
+Joining CYS - PRO 
+:               :               : 
+Joining ASP - TYR 
+Joining TYR - ALA 
+Joining ALA - CASN
+.)l
+The above edited listing shows the use of this command 
+to load a PDB file for the protein 
+crambin.  Several disulphide bonds are present in the 
+protein and these bonds are indicated in 
+the PDB file.  The loadPdb command, however, 
+cannot read this information from the PDB 
+file.  It is necessary for the user to explicitly 
+define disulphide bonds using the \fIbond\fR
+command.
+.sh  3 loadPdbUsingSeq
+.ix    loadPdbUsingSeq
+.ip
+\fCloadPdbUsingSeq filename unitlist\fR
+.(l
+STRING	filename
+LIST	unitlist
+.)l
+This command reads a Protein Data Bank format file 
+from the file named filename. This command is 
+identical to \fIloadPdb\fR except it does 
+not use the residue names within the PDB file. 
+Instead the sequence is defined by the user in unitlist.
+For more details see \fIloadPdb.
+.(l
+> peptSeq = { UALA UASN UILE UVAL UGLY } 
+> pept = loadPdbUsingSeq pept.pdb peptSeq
+.)l
+In the above example,  a variable is first  
+defined as a LIST of united atom RESIDUEs.  
+A PDB file is then loaded, in this sequence 
+order, from the file "pept.pdb".
+.sh  3 logFile
+.ix    logFile
+.ip
+\fClogFile filename\fR
+.(l
+STRING	filename
+.)l
+This command opens the file with the file 
+name filename as a log file. User input and 
+all output is written to the log file. Output is 
+written to the log file as if the verbosity level 
+were set to 2.
+An example of this command is:
+.(l
+> logfile /disk/howard/leapTrpSolvate.log
+.)l
+.sh  3 measureGeom
+.ix    measureGeom
+.ip
+\fCmeasureGeom atom1 atom2 [ atom3 [ atom4 ] ]\fR
+.(l
+ATOM	atom1
+ATOM	atom2
+ATOM	atom3
+ATOM	atom4
+.)l
+Measure the distance, angle, or torsion between 
+two, three, or four ATOMs, respectively.
+.ip
+In the following example, we first describe 
+the RESIDUE ALA of the ALA
+UNIT in order to find the identity of the ATOMs.  
+Next, the measureGeom command is used to determine a 
+distance, simple angle, and a dihedral angle.  
+As shown in the example, the ATOMs may be identified 
+using atom names or numbers.
+.(l
+> desc ALA.ALA 
+RESIDUE name: ALA 
+RESIDUE sequence number: 1 
+Type: protein 
+Connection atoms: 
+Connect atom 0: A<N 1> 
+Connect atom 1: A<C 9> 
+Contents:  
+A<N 1> 
+A<HN 2> 
+A<CA 3> 
+A<HA 4> 
+A<CB 5> 
+A<HB1 6> 
+A<HB2 7> 
+A<HB3 8> 
+A<C 9> 
+A<O 10> 
+> measureGeom ALA.ALA.1 ALA.ALA.3 
+Distance: 1.45 angstroms 
+> measureGeom ALA.ALA.1 ALA.ALA.3 ALA.ALA.5 
+Angle: 111.10 degrees 
+> measureGeom ALA.ALA.N ALA.ALA.CA ALA.ALA.C ALA.ALA.O 
+Torsion angle: 0.00 degrees
+.)l
+.sh  3 quit
+.ix    quit
+.ip
+Quit the LEaP program.
+
+.sh  3 remove
+.ix    remove
+.ip
+\fCremove a b\fR
+.(l
+CONT	a
+CONT	b
+.)l
+Remove the object b from the object a. 
+If b is not contained by a then 
+an error message will be displayed. This command 
+is used to remove ATOMs from RESIDUEs, and 
+RESIDUEs from UNITs. If the object represented 
+by b is not referenced by some variable name 
+then it will be destroyed.
+.(l
+> dipeptide = combine { ALA GLY } 
+Sequence: ALA 
+Sequence: GLY 
+> desc dipeptide 
+UNIT name: ALA     !! bug: this should be dipeptide!
+Head atom: .R<ALA 1>.A<N 1> 
+Tail atom: .R<GLY 2>.A<C 6> 
+Contents:  
+R<ALA 1> 
+R<GLY 2> 
+> remove dipeptide dipeptide.2 
+> desc dipeptide 
+UNIT name: ALA     !! bug: this should be dipeptide!
+Head atom: .R<ALA 1>.A<N 1> 
+Tail atom: null 
+Contents:  
+R<ALA 1>
+.)l
+.sh  3 saveAmberParm
+.ix    saveAmberParm
+.ip
+\fCsaveAmberParm unit topologyfilename coordinatefilename\fR
+.(l
+UNIT	unit
+STRING	topologyfilename
+STRING	coordinatefilename
+.)l
+Save the AMBER/NAB topology and coordinate 
+files for the UNIT into the files named 
+topologyfilename and coordinatefilename 
+respectively. This command will cause LEaP to 
+search its list of PARMSETs for parameters 
+defining all of the interactions between the ATOMs within
+the UNIT. This command produces topology files 
+and coordinate files that are identical in format to 
+those produced by AMBER PARM and
+can be read into AMBER and NAB for calculations. 
+The output of this operation can be used for minimizations, dynamics, 
+and thermodynamic perturbation calculations. 
+.ip
+In the following example, the topology and coordinates 
+from the all_amino94.lib UNIT ALA are generated:
+.pp
+.(l
+> saveamberparm ALA ala.top ala.crd 
+Building topology. 
+Building atom parameters. 
+Building bond parameters. 
+Building angle parameters. 
+Building proper torsion parameters. 
+Building improper torsion parameters. 
+Building H-Bond parameters.
+.)l
+.sh  3 saveOff
+.ix    saveOff
+.ip
+\fCsaveOff object filename\fR
+.(l
+object	object
+STRING	filename
+.)l
+The saveOff command allows the user to save 
+UNITs and PARMSETs to a file named \fIfilename\fR. 
+The file is written using the Object File Format 
+(off) and can accommodate an unlimited number of 
+uniquely named objects. The names by which 
+the objects are stored are the variable 
+names specified in the argument of this command. 
+If the file \fIfilename\fR already exists then the 
+new objects will be added to the file. 
+If there are objects within the file with 
+the same names as objects being saved then 
+the old objects will be overwritten. The 
+argument object can be a single UNIT, a single 
+PARMSET, or a LIST of mixed UNITs and PARMSETs.
+(See the \fIadd\fR command for an example of 
+the \fIsaveOff\fR command.)
+.sh  3 savePdb
+.ix    savePdb
+.ip
+\fCsavePdb unit filename\fR
+.(l
+UNIT	unit
+STRING	filename
+.)l
+Write UNIT to the file \fIfilename\fR as a 
+PDB format file.  In the following 
+example, the PDB file from the "all_amino94.lib" 
+UNIT ALA is generated:
+.(l
+> savepdb ALA ala.pdb
+.)l
+.sh  3 sequence
+.ix    sequence
+.ip
+\fCvariable = sequence  list\fR
+.(l
+UNIT	variable
+LIST	list
+.)l
+The sequence command is used to create 
+a new UNIT by combining the contents of a 
+LIST of UNITs. The first argument is a LIST 
+of UNITs. A new UNIT is constructed by taking 
+each UNIT in the sequence in turn 
+and copying its contents into the UNIT being 
+constructed. As each new UNIT is copied, 
+a bond is created between the tail ATOM of 
+the UNIT being constructed and the head 
+ATOM of the UNIT being copied, if both connect 
+ATOMs are defined. If only one is defined, a
+warning is generated and no bond is created. 
+If neither connection ATOM is defined then no 
+bond is created. As each RESIDUE is copied 
+into the UNIT being constructed it is assigned a 
+sequence number which represents the order the 
+RESIDUEs are added. Sequence numbers 
+are assigned to the RESIDUEs so as to maintain 
+the same order as was in the UNIT before it was 
+copied into the UNIT being constructed. 
+This command builds reasonable starting coordinates 
+for all ATOMs within the UNIT; it does this by 
+assigning internal coordinates to the linkages 
+between the RESIDUEs and building the external 
+coordinates from the internal coordinates from the 
+linkages and the internal coordinates 
+that were defined for the individual UNITs in 
+the sequence.
+.(l
+> tripeptide = sequence { ALA GLY PRO } 
+Sequence: ALA 
+Sequence: GLY 
+Joining ALA - GLY 
+Sequence: PRO 
+Joining GLY - PRO 
+> desc tripeptide 
+UNIT name: ALA     !! bug: this should be tripeptide!
+Head atom: .R<ALA 1>.A<N 1> 
+Tail atom: .R<PRO 3>.A<C 13> 
+Contents:  
+R<ALA 1> 
+R<GLY 2> 
+R<PRO 3>
+.)l
+.sh  3 set
+.ix    set
+.ip
+\fCset default variable value\fR
+.(l
+STRING	variable
+STRING	value
+.)l
+.br
+\fIor\fR
+.br
+\fCset container parameter object\fR
+.(l
+CONT	container
+STRING	parameter
+object	object
+.)l
+This command sets the values of some global parameters (when the first
+argument is "default") or sets various parameters associated 
+with container.  The following parameters can be set within LEaP:
+.ba +5n
+.nr ii 1.0i
+.ip
+\fIFor "default" parameters\fR
+.ip OldPrmtopFormat
+If set to "on", the saveAmberParm command will write a prmtop file in the
+format used in Amber6 and before; if set to "off" (the default), it will
+use the new format.
+.ip Dielectric
+If set to "distance" (the default), electrostatic calculations in LEaP will
+use a distance-dependent dielectric; if set to "constant", and constant
+dielectric will be used.
+.ip PdbWriteCharges
+If set to "on", atomic charges will be placed in the "B-factor" field of
+pdb files saved with the savePdb command; if set to "off" (the default), no
+such charges will be written.
+
+.ip
+\fIFor ATOMs:\fR
+.ip name
+A unique STRING descriptor used to identify ATOMs.
+.ip type
+This is a STRING property that defines the AMBER force field atom type.
+.ip charge
+The charge property is a NUMBER that represents 
+the ATOM's electrostatic point charge to be used in a molecular mechanics force field.
+.ip position
+This property is a LIST of NUMBERS 
+containing three values: the (X, Y, Z) 
+Cartesian coordinates of the ATOM.
+.ip pertName
+The STRING is a unique identifier for an ATOM 
+in its final state 
+during a Free Energy Perturbation calculation.
+.ip pertType
+The STRING is the AMBER force field atom type
+of a perturbed ATOM. 
+.ip pertCharge
+This  NUMBER represents the final
+electrostatic point charge on an ATOM
+during a Free Energy Perturbation.
+
+.ip
+\fIFor RESIDUEs:\fR
+.ip connect0
+This defines an ATOM that
+is used in making links to other RESIDUEs.  
+In UNITs containing single RESIDUEs, the 
+RESIDUEsS  connect0 ATOM is usually defined as the 
+UNIT's head ATOM. 
+.ip connect1
+This is an ATOM property which defines an ATOM that
+is used in making links to other RESIDUEs. 
+In UNITs containing single RESIDUEs, the 
+RESIDUEsS connect1 ATOM is usually defined as the 
+UNIT's tail ATOM. 
+.ip connect2
+This is an ATOM property which defines an ATOM that
+can be used in making links to other RESIDUEs.  In amino acids,
+the convention is that this is the ATOM to which 
+disulphide bridges are made.
+.ip restype
+This property is a STRING that represents the type of
+the RESIDUE.  Currently, it can have one of the following
+values: "undefined", "solvent", "protein",
+"nucleic", or "saccharide".
+.ip name
+This STRING property is the RESIDUE name.
+
+.ip
+\fIFor UNITs:\fR
+.ip head
+.ir
+Defines the ATOM within the UNIT that is connected when 
+UNITs are joined together: the tail ATOM of one UNIT is connected 
+to the head ATOM of the
+subsequent UNIT in any sequence.
+.ip tail
+Defines the ATOM within the UNIT that is connected when UNITs are joined
+together: the tail ATOM of one UNIT is connected to the head ATOM of the
+subsequent UNIT in any sequence.
+.ip box
+The property defines the bounding box of the UNIT.  If it is defined as null
+then no bounding box is defined.  If the value is a single NUMBER then the
+bounding box will be defined to be a cube with each side being NUMBER of
+angstroms across.  If the value is a LIST then it must be a LIST containing
+three numbers, the lengths of the three sides of the bounding box.
+.ip cap
+The property defines the solvent cap of the UNIT.  If
+it is defined as null then no solvent cap is defined.
+If the value is a LIST then it must contain four numbers,
+the first three define the Cartesian coordinates 
+(X, Y, Z) of the origin of
+the solvent cap in angstroms, 
+the fourth NUMBER defines the radius of the solvent cap
+in angstroms.
+.ba -5n
+.nr ii 0.5i
+
+.sh  3 solvateCap
+.ix    solvateCap
+.ip
+\fCsolvateCap solute solvent position radius [ closeness ]\fR
+.(l
+UNIT	solute
+UNIT	solvent
+object	position
+NUMBER	radius
+NUMBER	closeness
+.)l
+The solvateCap command creates a solvent cap around the solute UNIT. 
+The solute UNIT is modified by the addition of solvent RESIDUEs. 
+The solvent box will be repeated in all three spatial directions 
+to create a large solvent sphere with a radius of radius angstroms. 
+.ip
+The position argument defines where the center of the solvent 
+cap is to be placed. If position is a RESIDUE, ATOM, or
+a LIST of UNITs, RESIDUEs, or ATOMs, then the geometric center of 
+the ATOMs within the object will be used as the center of the solvent 
+cap sphere. If position is a LIST containing three NUMBERS,
+then the position argument will be treated as a vector that defines 
+the position of the solvent cap sphere center.
+.ip
+The optional closeness parameter can be used to control how close,
+in angstroms, solvent ATOMs can come to solute ATOMs. The default 
+value of the closeness argument is 1.0. Smaller values allow solvent 
+ATOMs to come closer to solute ATOMs. The criterion for rejection of 
+overlapping solvent RESIDUEs is if the distance between any solvent 
+ATOM to the closest solute ATOM is less than the sum of the ATOMs 
+VANDERWAAL's distances multiplied by the closeness argument.
+.ip
+This command modifies the solute UNIT 
+in several ways. First, the UNIT is modified 
+by the addition of solvent RESIDUEs copied 
+from the solvent UNIT. Secondly, the cap 
+parameter of the UNIT solute is modified 
+to reflect the fact that a solvent cap has 
+been created around the solute.
+.(l
+>> mol = loadpdb my.pdb
+>> solvateCap mol WATBOX216 mol.2.CA 8.0 2.0 
+Added 3 residues.
+.)l
+.sh  3 solvateShell
+.ix    solvateShell
+.ip
+\fCsolvateShell solute solvent thickness [ closeness ]\fR
+.(l
+UNIT	solute
+UNIT	solvent
+NUMBER	thickness
+NUMBER	closeness
+.)l
+The \fIsolvateShell\fR command adds a solvent shell to the solute 
+UNIT. The resulting solute/solvent UNIT will be irregular in shape 
+since it will reflect the contours of the solute. The solute UNIT 
+is modified by the addition of solvent RESIDUEs. The solvent box will 
+be repeated in three directions to create a large solvent 
+box that can contain the entire solute and a shell thickness
+angstroms thick. The solvent RESIDUEs are then added to the solute 
+UNIT if they lie within the shell defined by thickness and do not 
+overlap with the solute ATOMs. The optional closeness parameter can 
+be used to control how close solvent ATOMs can come to solute 
+ATOMs. The default value of the closeness argument is 1.0. 
+Please see the \fIsolvateBox\fR command for more 
+details on the closeness parameter.
+.(l
+>> mol = loadpdb my.pdb
+>> solvateShell mol WATBOX216 8.0
+  Solute vdw bounding box:              7.512 12.339 12.066
+  Total bounding box for atom centers:  23.512 28.339 28.066
+  Solvent unit box:                     18.774 18.774 18.774
+  Added 147 residues.
+.)l
+.sh  3 source
+.ix    source
+.ip
+\fCsource filename\fR
+.(l
+STRING	filename
+.)l
+This command executes commands within a text file. 
+To display the commands as they are read, see 
+the \fIverbosity\fR command.
+.sh  3 transform
+.ix    transform
+.ip
+\fCtransform atoms, matrix\fR
+.(l
+CONT	atoms
+LIST	matrix
+.)l
+Transform all of the ATOMs within 
+atoms by the ( 3 `times` 3 ) 
+or ( 4 `times` 4 ) matrix represented by the 
+nine or sixteen NUMBERS in the LIST 
+of LISTs \fImatrix\fR.  
+The general matrix looks like:
+.(l
+r11	r12	r13	-tx
+r21	r22	r23	-ty
+r31	r32	r33	-tz
+0	0	0  	1  
+.)l
+The matrix elements 
+represent the intended symmetry 
+operation.  For example, a reflection 
+in the (x, y) plane would be produced 
+by the matrix:
+.(l
+1	0	 0
+0	1	 0
+0	0	-1 
+.)l
+This reflection could be combined with a 
+six angstrom translation along the x-axis 
+by using the following matrix.
+.(l
+1	0	 0	6
+0	1	 0	0
+0	0	-1	0
+0	0	 0	1 
+.)l
+In the following example, wrB is transformed 
+by an inversion operation:
+.(l
+transform wrpB {
+ { -1  0  0  }
+ {  0 -1  0  }
+ {  0  0 -1  }
+ }
+.)l
+.sh  3 translate
+.ix    translate
+.ip
+\fCtranslate atoms direction\fR
+.(l
+CONT	atoms
+LIST	direction
+.)l
+Translate all of the ATOMs within atoms 
+by the vector defined by the three NUMBERS 
+in the LIST \fIdirection\fR.
+.ip
+Example:
+.(l
+translate wrpB { 0  0 -24.53333 }
+.)l
+.sh  3 verbosity
+.ix    verbosity
+.ip
+\fCverbosity level\fR
+.(l
+NUMBER	level
+.)l
+This command sets the level of output that LEaP provides the user. A value
+of 0 is the default, providing the minimum of messages. A value of 1 will
+produce more output, and a value of 2 will produce all of the output of
+level 1 and display the text of the script lines executed with the
+\fIsource\fR command.  The following line is an example of this command:
+.(l
+> verbosity 2
+Verbosity level: 2
+.)l
+.sh  3 zMatrix
+.ix    zMatrix
+.ip
+\fCzMatrix object zmatrix\fR
+.(l
+CONT	object
+LIST	matrix
+.)l
+The \fIzMatrix\fR command is quite complicated.  It is used to define the
+external coordinates of ATOMs within object using internal coordinates.  The
+second parameter of the \fIzMatrix\fR command is a LIST of LISTs; each
+sub-list has several arguments:
+.(l
+{ a1 a2 bond12 }
+.)l
+This entry defines the coordinate of a1 by placing it bond12 angstroms along
+the x-axis from ATOM a2.  If ATOM a2 does not have coordinates defined then
+ATOM a2 is placed at the origin.
+.(l
+{ a1 a2 a3 bond12 angle123 }
+.)l
+This entry defines the coordinate of a1 by placing it bond12 angstroms away
+from ATOM a2 making an angle of angle123 degrees between a1, a2 and a3. The
+angle is measured in a right hand sense and in the x-y plane.  ATOMs a2 and
+a3 must have coordinates defined.
+.(l
+{ a1 a2 a3 a4 bond12 angle123 torsion1234 }
+.)l
+This entry defines the coordinate of a1 by placing it bond12 angstroms away
+from ATOM a2, creating an angle of angle123 degrees between a1, a2, and a3,
+and making a torsion angle of torsion1234 between a1, a2, a3, and a4.
+.(l
+{ a1 a2 a3 a4 bond12 angle123 angle124 orientation }
+.)l
+This entry defines the coordinate of a1 by placing it bond12 angstroms away
+from ATOM a2, making angles angle123 between ATOMs a1, a2, and a3, and
+angle124 between ATOMs a1, a2, and a4. The argument orientation defines
+whether the ATOM a1 is above or below a plane defined by the ATOMs a2, a3,
+and a4. If orientation is positive then a1 will be placed in such a way so
+that the inner product of (a3-a2) cross (a4-a2) with (a1-a2) is positive.
+Otherwise a1 will be placed on the other side of the plane. This allows the
+coordinates of a molecule like fluoro-chloro-bromo-methane to be defined
+without having to resort to dummy atoms.
+.ip
+The first arguments within the \fIzMatrix\fR entries ( a1, a2, a3, a4 ) are
+either ATOMs or STRINGS containing names of ATOMs within object.  The
+subsequent arguments are all NUMBERS.  Any ATOM can be placed at the a1
+position, even those that have coordinates defined.  This feature can be
+used to provide an endless supply of dummy atoms, if they are required.  A
+predefined dummy atom with the name "*" (a single asterisk, no quotes) can
+also be used.
+.ip
+There is no order imposed in the sub-lists.  The user can place sub-lists in
+arbitrary order, as long as they maintain the requirement that all atoms a2,
+a3, and a4 must have external coordinates defined, except for entries that
+define the coordinate of an ATOM using only a bond length.  (See the
+\fIadd\fR command for an example of the \fIzMatrix\fR command.)

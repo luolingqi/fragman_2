@@ -1,0 +1,39 @@
+HEADER crosscluster.007.004.pdb
+ATOM      1  C2  EOL S   1      45.857  30.641  37.511   1.000
+ATOM      2  C1  EOL S   1      47.361  30.526  37.759   1.000
+ATOM      3  O   EOL S   1      45.448  29.669  36.546   1.000
+ATOM      4  H1  EOL S   1      46.010  29.773  35.790   1.000
+ATOM      5  C   BUT S   2      46.255  31.020  37.784   1.000
+ATOM      6  C1  BUT S   2      46.212  32.481  37.304   1.000
+ATOM      7  C2  BUT S   2      45.577  30.890  39.159   1.000
+ATOM      8  C3  BUT S   2      47.711  30.524  37.851   1.000
+ATOM      9  O   BUT S   2      45.543  30.225  36.870   1.000
+ATOM     10  H1  BUT S   2      46.105  30.134  36.111   1.000
+ATOM     11  C2  EOL S   3      47.372  30.903  39.160   1.000
+ATOM     12  C1  EOL S   3      45.865  30.783  39.359   1.000
+ATOM     13  O   EOL S   3      47.966  31.271  40.400   1.000
+ATOM     14  H1  EOL S   3      48.322  30.480  40.773   1.000
+ATOM     15  CH  THS S   4      46.129  30.604  37.594   1.000
+ATOM     16  CH1 THS S   4      47.607  30.240  37.676   1.000
+ATOM     17  CH2 THS S   4      45.972  32.086  37.278   1.000
+ATOM     18  OT  THS S   4      45.480  29.816  36.594   1.000
+ATOM     19  HO  THS S   4      45.899  29.956  35.758   1.000
+REMARK Residue 1
+CONECT    1    2
+CONECT    1    3
+CONECT    3    4
+REMARK Residue 2
+CONECT    5    6
+CONECT    5    7
+CONECT    5    8
+CONECT    5    9
+CONECT    9   10
+REMARK Residue 3
+CONECT   11   12
+CONECT   11   13
+CONECT   13   14
+REMARK Residue 4
+CONECT   16   15
+CONECT   15   18
+CONECT   15   17
+CONECT   18   19

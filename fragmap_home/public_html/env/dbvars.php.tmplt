@@ -1,0 +1,5 @@
+<?php
+$dbname='cluspro';
+$dbuser='postgres';
+
+$dbconn = pg_connect("dbname=$dbname user=$dbuser") or die('Could not connect: ' . pg_last_error());

@@ -1,0 +1,7 @@
+REMARK  SUBUNITS OF 1AMN; INITIAL CHARMM COORDS                                       
+REMARK   DATE:     2/11/ 9     16:56:18      CREATED BY USER: gychuang                
+ATOM      1  C1  AMN     1      -0.304   0.047 -10.645  1.00  0.00      X   
+ATOM      2  N1  AMN     1       0.493   0.449  -9.499  1.00  0.00      X   
+ATOM      3  H1  AMN     1       0.833   1.389  -9.566  1.00  0.00      X   
+ATOM      4  H2  AMN     1       0.708  -0.130  -8.694  1.00  0.00      X   
+END

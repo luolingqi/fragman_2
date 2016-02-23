@@ -1,0 +1,37 @@
+#!/bin/csh
+
+set filename = $1
+echo 'Coordinates file:   [' $filename ']'
+echo ' '
+
+cp $ligdir/ligplot.prm ./
+
+set hetdic = $ligdir'/het_dictionary.txt'
+
+#-----------#
+# H B A D D #
+#-----------#
+echo 'Running hbadd: '
+echo ' '
+if (-e hbplus.rc) then
+	\rm hbplus.rc
+endif
+$ligdir/hbadd $filename $hetdic >! hbadd.log
+grep "\*\*\*" hbadd.log
+echo ' '
+echo '.................................................................'
+
+#-------------#
+# H B P L U S #
+#-------------#
+echo 'Running hbplus: '
+echo ' '
+
+$hbdir/hbplus -L -f hbplus.rc -h 2.9 -d 5 -N $filename >! nnb.log
+$hbdir/hbplus -L -f hbplus.rc -h 2.7 -d 3.35 $filename >! hhb.log
+
+grep -i error nnb.log
+grep -i error hhb.log
+echo ' '
+echo '.................................................................'
+

@@ -1,0 +1,8 @@
+-u 'URE'
+-M 'URE' " C   O   N1  N2 "
+-T 'URE' " C   O  : C   N1 : C   N2 :"
+-E 'URE' " N1 " 2
+-E 'URE' " N2 " 2
+-e 'URE' " O  " 2
+-e 'URE' " N1 " 1
+-e 'URE' " N2 " 1

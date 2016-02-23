@@ -1,0 +1,67 @@
+#loginform {
+    margin: 0 auto;
+    padding: 0;
+    width:34%;
+}
+
+#loginform fieldset {
+    margin: 1em 0;
+    padding: 0 0.5em;
+    border: none;
+    border-top: 1px solid #777;
+}
+
+#loginform legend {
+    margin: 1em 0;
+    padding: 0 .5em;
+    background: transparent;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#loginform label {
+    float: left;
+    width: 70px;
+    padding: 0 1em;
+    text-align: right;
+    font-weight:bold;
+    vertical-align:center;
+}
+
+#loginform div {
+    margin-bottom: .5em;
+    padding: 0;
+    display: block;
+}
+
+#loginform input[type=text], #loginform input[type=password], #loginform textarea {
+    width: 150px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 1px;
+    color: #333;
+}
+
+#loginform textarea {
+   height:16em;
+   width:27em;
+}
+
+#loginform select {
+    padding: 1px;
+}
+
+#loginform #submit {
+    clear: both;
+    padding-top: 1em;
+    text-align: center;
+    font-weight:bold;
+}
+
+#loginform input:focus, #loginform textarea:focus {
+    background: #efefef;
+    color: #000;
+}
+

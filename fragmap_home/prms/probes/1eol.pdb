@@ -1,0 +1,7 @@
+REMARK  NONE *                                                                        
+REMARK   DATE:     2/ 6/ 6     16:42:22      CREATED BY USER: dlancia                 
+ATOM      1  C2  EOL     1        .000   -.008    .031 0.125 13.00      CH2E
+ATOM      2  C1  EOL     1        .000    .015  -1.498 0.125  2.00      CH3E
+ATOM      3  O   EOL     1        .000   1.334    .529 -0.65 13.00      OT
+ATOM      4  H1  EOL     1        .000   1.272   1.483  0.40  0.00      HO
+END
