@@ -20,6 +20,8 @@ if (! preg_match('/^(\w|\?|h\w{3,4})?(\s(\w|\?|h\w{3,4}))*$/i', $_POST['protchai
     $errors[] = 'Protein chains must be white space separated alphanumeric characters.';
 }
 
+
+
 // check pdb id
 // rec
 if ( $_POST['useprotpdbid'] )
