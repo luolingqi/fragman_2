@@ -44,7 +44,7 @@ $form['redir'] = isset($_GET['redir']) ? $_GET['redir'] : 'home.php';
 ?>
 <div style="padding-top:1em;width:60%;">
 <h2>
-Welcome to the new FTMap Server!
+Welcome to the new FragMap Server!
 </h2>
 </div>
 
@@ -75,7 +75,7 @@ if ( isset($error) )
 </form>
 
 <br/>
-<p><a href="nousername.php">Use FTMap without the benefits of your own account</a></p>
+<p><a href="nousername.php">Use FragMap without the benefits of your own account</a></p>
 
 <br />
 Need an Account?
