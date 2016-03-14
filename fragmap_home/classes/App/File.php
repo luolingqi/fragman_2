@@ -56,6 +56,7 @@ class App_File extends File {
          case 'summary_file':
             $path = $this->job->jobid . '/probes/cluster/crossclustersummary';
             break;
+            /*
          case 'ftsite_zip':
             $path = $this->job->jobid . '/ftsite.zip';
 				if (!file_exists(STORAGE_DIR.'/'.$path)) { //this file is not created by default
@@ -118,7 +119,7 @@ class App_File extends File {
                  $zip->addFromString('ftmap.pdb', $model_pdb_string);
                  $zip->close();
              }
-             break;
+             break;*/
          case 'model_img':
             $path = $this->job->jobid . '/model.' . sprintf('%03d', $this->coeffi) . '.' . sprintf('%02d', $this->model) . '.png';
             break;
@@ -134,7 +135,7 @@ class App_File extends File {
       }
 
       if ($this->gzipped()) {
-         $path .= '.gz';
+         //$path .= '.gz';
       }
 
 

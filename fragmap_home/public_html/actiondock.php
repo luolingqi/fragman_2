@@ -10,7 +10,8 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
 // check the chains
 // rec
-$lenmax = 20;
+//$lenmax = 20;
+/*
 if (strlen ($_POST['protchains']) > $lenmax)
 {
     $errors[] = "Protein chains must be fewer than $lenmax characters.";
@@ -19,11 +20,12 @@ if (! preg_match('/^(\w|\?|h\w{3,4})?(\s(\w|\?|h\w{3,4}))*$/i', $_POST['protchai
 {
     $errors[] = 'Protein chains must be white space separated alphanumeric characters.';
 }
-
+*/
 
 
 // check pdb id
 // rec
+/*
 if ( $_POST['useprotpdbid'] )
 {
     if (! preg_match('/^\d\w{3}$/', $_POST['protpdb']) )
@@ -31,9 +33,19 @@ if ( $_POST['useprotpdbid'] )
         $errors[] = 'Protein PDB id must be 4 alphanumeric characters.';
     }
 }
+*/
+
+//check the format of the ftmap file. Only either pdb or pse is allowed
+if ( isset ($_FILES[$recupfile]) )
+{
+    if ( ! preg_match('/.*pdb$|.*pse$/', $_FILES[$recupfile]['name']) )
+    {
+        $errors[] = "The FTMap file must end up with either '.pdb' or 'pse'! ";
+    }
+}
+
 if (isset ($_FILES[$recupfile]) &&
-    ($_FILES[$recupfile]['error'] !== UPLOAD_ERR_OK) &&
-    (! $_POST['useprotpdbid']) )
+    ($_FILES[$recupfile]['error'] !== UPLOAD_ERR_OK) )
 {
     switch($_FILES[$recupfile]['error']) {
         case UPLOAD_ERR_INI_SIZE:
@@ -52,7 +64,7 @@ if (isset ($_FILES[$recupfile]) &&
             break;
     }
 }
-
+/*
 if (isset($_POST['pbmode']))
 {
     $modes = array('orig', 'new', 'newtors');
@@ -61,12 +73,13 @@ if (isset($_POST['pbmode']))
         $errors[] = 'Invalid PB mode';
     }
 }
-
+*/
+/*
 $sets = array('orig', 'aa', '1c2a', '1172', '1173', '1174');
 if (! in_array($_POST['probeset'], $sets) ) {
     $errors[] = 'Invalid Probe Set';
 }
-
+*/
 if (isset($_POST['callbackurl']) ) {
     $callbackurl = filter_var($_POST['callbackurl'], FILTER_VALIDATE_URL);
     if ($callbackurl === false) {
@@ -91,7 +104,7 @@ if (sizeof($errors) === 0)
     elseif ( $jobname === '')
         $jobname = $id;
 
-    $protchains = pg_escape_string($_POST['protchains']);
+    //$protchains = pg_escape_string($_POST['protchains']);
 
     $userid = pg_escape_string($_SESSION['userid']);
     $callbackurl = pg_escape_string($callbackurl);
@@ -100,7 +113,7 @@ if (sizeof($errors) === 0)
       into jobs
       (id, jobname, userid, status, nrots, time, ip, protchains, touched, callbackurl)
       values
-      ('$id', '$jobname', '$userid', 'l.g', '$nrots', 'now', '$ip', '$protchains', 'now', '$callbackurl')
+      ('$id', '$jobname', '$userid', 'l.g', '$nrots', 'now', '$ip', 'N/A', 'now', '$callbackurl')
 QUERY;
     pg_query($query) or die('query failed: ' . pg_last_error());
 
@@ -121,14 +134,15 @@ QUERY;
     // upload rec and lig if given
     $job->status = 'l.g';
 
-    $recofile = "$iddir/$recorig";
-    if (isset ($_FILES[$recupfile]) && ($_FILES[$recupfile]['error'] === UPLOAD_ERR_OK) &&
-        (! $_POST['useprotpdbid']) )
+    $recfiletype = pathinfo($_FILES[$recupfile]['name'])['extension'];
+    $recofile = "$iddir/$recorigpre" . ".$recfiletype";
+
+    if (isset ($_FILES[$recupfile]) && ($_FILES[$recupfile]['error'] === UPLOAD_ERR_OK) )
     {
         // save a copy of users files
         if ( is_uploaded_file($_FILES[$recupfile]['tmp_name']) )
         {
-            $job->protname = $_FILES[$recupfile]['name'];
+            $job->ftmapfilename = $_FILES[$recupfile]['name'];
 
             $src = $_FILES[$recupfile]['tmp_name'];
             $dst = "$iddir/user/" . $_FILES[$recupfile]['name'];
@@ -140,6 +154,27 @@ QUERY;
         upload_file($recupfile, $recofile);
     }
 
+    $fragfiletype = pathinfo($_FILES[$fragmentupfile]['name'])['extension'];
+    $fragofile = "$iddir/$fragorigpre" . ".$fragfiletype";
+    if (isset ($_FILES[$fragmentupfile]) && ($_FILES[$fragmentupfile]['error'] === UPLOAD_ERR_OK) )
+    {
+        // save a copy of fragment file
+        if ( is_uploaded_file($_FILES[$fragmentupfile]['tmp_name']) )
+        {
+            $job->fragmentfilename = $_FILES[$fragmentupfile]['name'];
+
+            $src = $_FILES[$fragmentupfile]['tmp_name'];
+            $dst = "$iddir/user/" . $_FILES[$fragmentupfile]['name'];
+            if (! copy ($src, $dst))
+            {
+                $job->le('fragment copy failed');
+            }
+        }
+        upload_file($fragmentupfile, $fragofile);
+    }
+
+
+/*
     if ( isset( $_FILES['protmask'] ) && $_FILES['protmask']['error'] === UPLOAD_ERR_OK )
     {
         if ( is_uploaded_file($_FILES['protmask']['tmp_name']) )
@@ -157,6 +192,8 @@ QUERY;
         }
         upload_file('coeff_file', "$iddir/uploaded_coeff.0.0.4");
     }
+*/
+
 
     // exec dock script
     // serialize post array and escape args for command line passing

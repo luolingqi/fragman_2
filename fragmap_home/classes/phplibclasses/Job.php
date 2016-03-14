@@ -137,6 +137,8 @@ abstract class Job {
    public static function convertLongStatus($status)
    {
 		switch ($status) {
+            case 'l.p':
+                return "fragment parameterization";
 		   case 'l.e':
 			   return "error on local system";
 		      break;

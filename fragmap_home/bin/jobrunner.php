@@ -16,7 +16,7 @@ $job->touch();
 
 $remote_dir = SCV_STORAGE . "/$jobid";
 $local_dir  = STORAGE_DIR . "/$jobid";
-$prms_dir   = "$remote_dir/prms";
+//$prms_dir   = "$remote_dir/prms";
 
 //most diffs between servers here
 //but there are other diffs further
@@ -30,6 +30,7 @@ if ('scc2' == $job->server)
     $piper = '~tanggis/bin/piper.0.0.6-0.mpi';
     $status_column = 5;
 }
+/*
 if ('katana' == $job->server)
 {
     $r_server = 'katana';
@@ -48,7 +49,7 @@ elseif ('lee' == $job->server)
     $piper = '~/ft.bin/piper.cavity.bgl.20080327';
     $status_column = 8;
 }
-
+*/
 
 //kill the script and break out of infinite loop if ssh disconnects
 //we'll pick it back up with a script
@@ -66,7 +67,9 @@ while(1)
     echo "status: $job->status\n";
     $job->touch();
     switch ($job->status) {
+
     case 'l.b':
+        /*
         $cwd = getcwd();
         # skip pb for fast mapping
         if ($job->owner()->username == 'ftdyn') {
@@ -110,124 +113,12 @@ while(1)
         }
         //move back into directory we started in
         chdir($cwd);
+        */
 
-    case 'l.m':
-        $cwd = getcwd();
-        chdir($local_dir);
-        if ($job->keep_metals == 't') {
-            $cmd = copy("1rec.pdb", "1rec_for_min.pdb");
-        } else {
-            $cmd  = "grep -Ev '(ZN)|(HE(C|M))|(CO)|(MN)' 1rec.pdb | "; //remove metals
-            $cmd .= "cut -c -67 > 1rec_for_min.pdb"; //and only keep first 67 columns for charmm
-        }
-        echo $cmd, "\n";
-        system($cmd);
-
-        $cmd = "echo 'END' >> 1rec_for_min.pdb"; //append END to make charmm happy
-        echo $cmd, "\n";
-        system($cmd);
-
-        $cmd = 'pdb.renumberAtoms.pl 1rec_for_min.pdb';
-        echo $cmd, "\n";
-        system($cmd);
-
-        if ($job->nucleic_acid != 't') { # skip 1sidehphobe for DNA
-            $cmd  = "1sidehphobe_markms 1rec.pdb 1rec.1sidehp3.ms ";
-            $cmd .= PRMS_DIR . "/atoms.0.0.4.prm.ms.3cap+0.5ace_hphobe3.Hr0rec 2>ms.err";
-            echo $cmd, "\n";
-            system($cmd);
-
-            if (!file_exists("1rec.1sidehp3.ms")){
-                if (filesize("ms.err") != 0) {
-                    $cmd = "grep 'not defined' ms.err";
-                    $output = array();//reset so output only contains stuff from this command
-                    exec($cmd, $output, $status);
-                    if ($status == 0) {
-                        $job->le($output[0]);
-                    }
-                    $cmd = "grep 'error: accs.c' ms.err";
-                    $output = array();//reset so output only contains stuff from this command
-                    exec($cmd, $output, $status);
-                    if ($status == 0) {
-                        $job->le('Too many overlapping atoms. Please check input file.');
-                    }
-                }
-                $job->le('Processing failed on receptor');
-            }
-        }
-
-
-        PDB::prep($local_dir, '1rec_for_min.pdb');
-        if ($job->nucleic_acid == 't') {
-            PDB::nmin($local_dir, '1rec_for_min.pdb', '', null, PRMS_DIR.'/beta/pdbamino.rtf', PRMS_DIR.'/beta/parm.prm', true, 0, 0);
-        } else {
-            App_PDB::nmin($local_dir, '1rec_for_min.pdb', '');
-        }
-        //give us our probes
-        if ($job->nucleic_acid == 't') {
-            $cmd  = "tar xf " . PRMS_DIR . "/probes-fma.tar";
-        } else {
-            $cmd  = "tar xf " . PRMS_DIR . "/probes-$job->probeset.tar";
-        }
-        echo $cmd, "\n";
-        system($cmd);
-
-        rename("1rec.pdb", "probes/rec/1rec.pdb");
-        rename("protorig_nmin.psf", "probes/rec/1rec.psf");
-        rename("1rec_for_min.pdb", "probes/rec/1rec_for_min.pdb");
-        if ($job->keep_metals == 't') {
-            rename("protorig_nmin_xplor.psf", "probes/rec/1rec_for_min_xplor.psf");
-        } else {
-            rename("1rec_for_min_nmin_xplor.psf", "probes/rec/1rec_for_min_xplor.psf");
-        }
-        rename("pb.dx", "probes/rec/pb.dx");
-        rename("1rec.1sidehp3.ms", "probes/rec/1rec.1sidehp3.ms");
-        if ($job->protmask != '')
-        {
-            rename("mask.pdb", "probes/rec/mask.pdb");
-
-            $cmd = "fake_msur.pl probes/rec/mask.pdb probes/rec/mask.ms";
-            echo $cmd, "\n";
-            system($cmd);
-        }
-
-        $cmd = ">complexs";
-        echo $cmd, "\n";
-        system($cmd);
-
-        chdir('probes');
-        exec('ls -d */', $content);
-
-        foreach ($content as $line )
-        {
-            $probeid = rtrim($line, '/');
-            if ($probeid !== 'rec')
-            {
-                chdir($local_dir);
-                $probe = new App_Probe($jobid, $probeid);
-
-                $cmd = "echo $probeid >> complexs";
-                echo $cmd, "\n";
-                system($cmd);
-
-                chdir("$local_dir/probes/$probeid");
-
-                $cmd = "pdb_psf_concat.pl --rtf=pdbamino_new.rtf --prefix=1rec1lig 1rec_for_min_xplor.psf 1rec_for_min.pdb 1lig_xplor.psf 1lig.ms";
-                echo $cmd, "\n";
-                system($cmd);
-
-                $cmd = 'tail -n `wc -l 1lig.ms | awk \'{print $1}\'` 1rec1lig.pdb > 1lig.pdb';
-                echo $cmd, "\n";
-                system($cmd);
-
-            }
-        }
-
-        //move back into directory we started in
-        chdir($cwd);
 
         $job->status = 'l.r';
         //job is ready to transmit files
+
     case 'l.r':
         $job->touch();
 
@@ -249,7 +140,7 @@ while(1)
     case 'r.q':
     case 'r.r':
         $job->touch();
-
+        /*
         $unsubmitted_fft = $job->probes_w_status('f.i');
         if ( sizeof($unsubmitted_fft) > 0 )
         {
@@ -636,13 +527,13 @@ while(1)
                 # end of validation of ace_min results
             }
         }
+*/
 
-        $job->touch();
-
+/*
         if ($job->probes_running())
         {
             $job->status = 'r.r';
-        }
+        }*/
         if ($job->probes_finished())
         {
             $job->status = 'r.f';
@@ -656,6 +547,7 @@ while(1)
         $job->touch();
         //do any verifying of results
         //check if any of the probes had errors
+        /*
         if ($job->probes_errored())
         {
             $job->status = 'r.e';
@@ -667,7 +559,7 @@ while(1)
         $cmd .= "cluster";
         echo $cmd, "\n";
         ssh2_exec($c, $cmd);
-
+*/
         $job->status = 'r.o';
     case 'r.o':
         $job->touch();
@@ -682,7 +574,7 @@ while(1)
         if ( $job->skipcharmm == 't' ) {
             $job->status = 'c.f';
         }
-
+/*
     case 'l.i':
     case 'l.c':
         $job->touch();
@@ -922,7 +814,7 @@ while(1)
             $cmd = "sort -k2,2 -k1,1n result.all.hhb.out.rawextract > hbonded.$jobid.rawextract";
             echo "$cmd\n";
             system($cmd);
-        }
+        }*/
 
         //clean everything up
         //$cmd = "rm -r workdir probes/*/pbg.dx probes/*/r_CA_nothphil_cavity_sigma_10.0.dx";

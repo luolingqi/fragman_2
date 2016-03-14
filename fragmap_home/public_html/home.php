@@ -75,17 +75,17 @@ $page->header();
 
 $defaultform = array(
    'server'     => 'scc2', //server option only available to privileged
-   'protpdb'     => '',
-   'protchains'     => '',
+   #'protpdb'     => '',
+   #'protchains'     => '',
    'jobname'    => '',
-   'advanced'      => '0',
-   'useprotpdbid'   => '1',
+   #'advanced'      => '0',
+   #'useprotpdbid'   => '1',
    'pbmode'         => 'newtors', //option only available to privileged
    'probeset'         => 'orig',
-   'skipcharmm'  => '',
-   'ppimode'  => '',
-   'nucleic_acid'  => '',
-   'keep_metals'  => '',
+   #'skipcharmm'  => '',
+   #'ppimode'  => '',
+   #'nucleic_acid'  => '',
+   #'keep_metals'  => '',
 );
 
 $form = array_merge($defaultform, $_POST);
@@ -142,7 +142,7 @@ if ( 'piper' === $liuser->username) {
 
    <!--<div>
       <label for="protchains">Chains:</label> 
-      <input type="text" name="protchains" id="protchains" value="<?php echo $form['protchains']; ?>" />
+      <input type="text" name="protchains" id="protchains" value="<?php #echo $form['protchains']; ?>" />
 
 
 	<div>
@@ -155,7 +155,7 @@ if ( 'piper' === $liuser->username) {
 	</div>
 	<div>
 		Please upload a file containing the fragments to dock. The compatible chemical formats include: <br />
-		sdf, smi, mol2, pdb
+		<b>sdf, smi, mol2, pdb</b>
 	</div>
 
 

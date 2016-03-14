@@ -9,7 +9,7 @@ define('SERVER_EMAIL', 'bufragmap@gmail.com');
 $rootdir='/vagrant/fragmap_home';
 define('ROOT_DIR', $rootdir);
 define('CLASS_DIR', "$rootdir/classes");
-$storagedir = "/vagrant/fragmap_data";
+$storagedir = "/home/vagrant/fragmap_data";
 define('STORAGE_DIR', $storagedir);
 $prmsdir = "$rootdir/prms";
 define('PRMS_DIR', $prmsdir);
@@ -27,15 +27,19 @@ define('DEFAULT_ROTS'  , 'rot70k.0.0.4.prm');
 
 # filenames
 # original user submitted files
-$recorigpre = 'protorig';
-$recorig = $recorigpre . '.pdb';
+$recorigpre = 'ftmaporig';
+//$recorig = $recorigpre; // temporarily just name without extension
+$fragorigpre = 'fragorig';
+//$fragorig = $fragorigpre; // temporarily just name without extension
+
 
 # processed files
 $rec='prot.pdb';
 
 # form fields
-$recupfile='prot';
-$recpdb='protpdb';
+$recupfile='ftmap';
+$fragmentupfile='fraglist';
+#$recpdb='protpdb';
 
 # parameters
 $nrots=500;

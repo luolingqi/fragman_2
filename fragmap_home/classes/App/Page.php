@@ -83,7 +83,7 @@ JS;
           <li><a id='tabMap' href='home.php'>Map</a></li>
 <?php } ?>
         </ul>
-      <img src='image/banner_ftmap.png' width='750' height='160' alt=''/>
+      <img src='image/bcl-xl_map_banner_950x190.png' width='750' height='160' alt=''/>
     </div>
       <div id="bd">
       <!--<p style="margin: 1em auto;padding:0; width;70%">

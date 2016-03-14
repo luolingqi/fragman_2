@@ -20,7 +20,7 @@ $page->header();
 
 echo "<div class='results'>";
 
-$job->quickPropertyLoad('jobname', 'protname', 'protchains',
+$job->quickPropertyLoad('jobname', 'ftmapfilename', 'fragmentfilename', 'protchains',
                         'errstring', 'status', 'time', 'nrots');
 
 echo "<h3>$job->jobid: $job->jobname</h3>";

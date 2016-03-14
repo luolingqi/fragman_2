@@ -25,7 +25,7 @@ abstract class File {
       
       header('Content-Type: ' . $this->content_type());
       header('Content-Length: ' . filesize( $this->fullpath() ) );
-      header('Content-Disposition: attachment; filename=' . basename( $this->fullpath(), '.gz' ) );
+      //header('Content-Disposition: attachment; filename=' . basename( $this->fullpath(), '.gz' ) );
       if ($this->gzipped()) {
          header('Content-Encoding: gzip');
       }
