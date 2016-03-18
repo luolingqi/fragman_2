@@ -16,9 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web_config.vm.host_name = "web"
     web_config.vm.network "private_network", ip: "10.10.10.30"
     web_config.vm.network :forwarded_port, guest: 80, host: 4567
-    web_config.vm.synced_folder "./storage", "/var/storage", create: true
-    web_config.vm.synced_folder "./fragmap_home", "/var/fragmap_home", create: true
-    web_config.vm.synced_folder "./fragmap_data", "/var/fragmap_data", create: true 
+    web_config.vm.synced_folder "./storage", "/var/storage", create: true,
+                                id: "job-storage",
+                                owner: "vagrant",
+                                group: "www-data",
+                                mount_options: ["dmode=775,fmode=664"]
   end
 
   config.vm.define :db do |db_config|
